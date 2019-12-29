@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/gauth/invoke', 'SocialAuth@redirectToProvider');
+Route::get('/gauth/callback', 'SocialAuth@handleProviderCallback');
