@@ -1,12 +1,13 @@
+# Refer to http://bit.ly/GithubWFSyntax
 name: Laravel
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   laravel-tests:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v1 # See http://bit.ly/37fbW8b
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies
@@ -14,11 +15,8 @@ jobs:
     - name: Generate key
       run: php artisan key:generate
     - name: Create Database
-      run: |
-        mkdir -p database
-        touch database/database.sqlite
+    - run: mysql -u root -proot -e "CREATE DATABASE laravel"
+    - name: Migrate the Database
+      run: php artisan migrate:fresh
     - name: Execute tests (Unit and Feature tests) via PHPUnit
-      env:
-        DB_CONNECTION: sqlite
-        DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
