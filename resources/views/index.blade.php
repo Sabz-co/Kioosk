@@ -37,65 +37,94 @@
                 </div>
               </div>
             <!-- End of fellow readers -->
-
-            <hr class="border my-5 border-gray-600">
+            <hr class="border my-5">
 
             <div class="flex items-center my-4">
                 <h1 class="text-lg">کتاب برتر هفته</h1>
-                <a href="#" class="text-brown rounded-full hover:bg-gray-200 hover:text-black px-2 mr-2">مشاهدهٔ همه</a>
+                <a href="#" class="text-brown rounded-full hover:bg-gray-200 hover:text-black px-2 mr-2">دیدن همه</a>
             </div>
 
-            <div class="flex flex-wrap justify-between">
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mx-auto mb-3">
+            <div class="flex flex-wrap justify-start">
+                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3">
                     <a href="">
-                        <img src="{{ asset('images/books/13.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl hover:grow hover:shadow-lg">
-                        <h4 class="text-brown font-bold text-base lg:text-lg">ملت عشق </h4>
+                        <img src="{{ asset('images/books/12.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl hover:grow hover:shadow-lg">
+                        <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                         <p class="text-sm">الیف شافتاک</p>
                     </a>
                 </div>
 
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mx-auto mb-3">
+                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3">
                     <a href="">
                         <img src="{{ asset('images/books/13.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl hover:grow hover:shadow-lg">
-                        <h4 class="text-brown font-bold text-base lg:text-lg">ملت عشق </h4>
+                        <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                         <p class="text-sm">الیف شافتاک</p>
                     </a>
                 </div>
 
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mx-auto mb-3">
+                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3">
                     <a href="">
-                        <img src="{{ asset('images/books/13.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl hover:grow hover:shadow-lg">
-                        <h4 class="text-brown font-bold text-base lg:text-lg">ملت عشق </h4>
+                        <img src="{{ asset('images/books/14.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl hover:grow hover:shadow-lg">
+                        <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                         <p class="text-sm">الیف شافتاک</p>
                     </a>
                 </div>
 
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mx-auto mb-3">
+                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3">
                     <a href="">
-                        <img src="{{ asset('images/books/13.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl hover:grow hover:shadow-lg">
-                        <h4 class="text-brown font-bold text-base lg:text-lg">ملت عشق </h4>
+                        <img src="{{ asset('images/books/17.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl hover:grow hover:shadow-lg">
+                        <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                         <p class="text-sm">الیف شافتاک</p>
                     </a>
                 </div>
 
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mx-auto mb-3">
+                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3">
                     <a href="">
                         <img src="{{ asset('images/books/13.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl hover:grow hover:shadow-lg">
-                        <h4 class="text-brown font-bold text-base lg:text-lg">ملت عشق </h4>
+                        <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                         <p class="text-sm">الیف شافتاک</p>
                     </a>
                 </div>
 
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mx-auto mb-3">
+                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3">
                     <a href="">
                         <img src="{{ asset('images/books/13.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl hover:grow hover:shadow-lg">
-                        <h4 class="text-brown font-bold text-base lg:text-lg">ملت عشق </h4>
+                        <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                         <p class="text-sm">الیف شافتاک</p>
                     </a>
                 </div>
                 
             </div>
 
+
+
+            {{-- Start of Timeline --}}
+
+            <hr class="border my-5">
+
+            <div class="flex items-center my-4">
+                <h1 class="text-lg">آخرین اتفاقات</h1>
+                <a href="#" class="text-brown rounded-full hover:bg-gray-200 hover:text-black px-2 mr-2">دیدن همه</a>
+            </div>
+
+
+            <div class="flex flex-col justify-start">
+                <div class="bg-white rounded-xl border p-4">
+                    <div class="flex flex-col sm:flex-row">
+                        <img src="{{ asset('images/avatar.jpg') }}" class="w-16 lg:w-20 h-16 lg:h-20 rounded-full" alt="">
+
+                        <div class="flex flex-col">
+                            <h3>سزاریوس به <span class="font-bold">خاطرات یک مغ</span> امتیاز داد</h3>
+                            <div class="flex">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
         <!-- End of right side -->
