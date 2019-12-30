@@ -20,4 +20,7 @@ jobs:
     - name: Migrate the Database
       run: php artisan migrate:fresh
     - name: Execute tests (Unit and Feature tests) via PHPUnit
+      env:
+        GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+        GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
       run: vendor/bin/phpunit
