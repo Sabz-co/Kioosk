@@ -16,7 +16,7 @@ jobs:
     - name: Generate key
       run: php artisan key:generate
     - name: Create Database
-      run: mysql --defaults-file .mysql_default -e "CREATE DATABASE laravel"
+      run: mysql --defaults-file=.mysql_default -e "CREATE DATABASE laravel"
     - name: Migrate the Database
       run: php artisan migrate:fresh
     - name: Execute tests (Unit and Feature tests) via PHPUnit
