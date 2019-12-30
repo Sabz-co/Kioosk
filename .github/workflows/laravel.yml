@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1 # See http://bit.ly/37fbW8b
     - name: Copy .env
-      run: php -r "file_exists('.env') || copy('.env.testing', '.env');"
+      run: php -r "file_exists('.env') || rename('.env.testing', '.env');"
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
     - name: Generate key
