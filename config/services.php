@@ -29,9 +29,14 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    // Socialite Config(s)
+    /**
+    * Google requires the exact URI (tested without trailing /) to be set in its
+    * console and passed as redirect. otherwise it will fail.
+    */
     'google' => [
       'client_id' => env('GOOGLE_CLIENT_ID'),
       'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-      'redirect' => 'http://localhost/gauth/callback' // This will probably fail, but we don't have a domain yet.
+      'redirect' => 'http://localhost/gauth/callback'
     ],
 ];
