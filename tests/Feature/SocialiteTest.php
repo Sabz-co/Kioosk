@@ -18,7 +18,7 @@ class SocialiteTest extends TestCase
      * @see https://laracasts.com/discuss/channels/testing/testing-socialite
      * @return void
      */
-    public function socialiteTest()
+    public function testSocialite()
     {
       $abstractUser = Mockery::mock('Laravel\Socialite\Two\User');
       $abstractUser->shouldReceive('getId')
