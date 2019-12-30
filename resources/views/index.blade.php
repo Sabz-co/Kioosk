@@ -109,18 +109,31 @@
 
             <div class="flex flex-col justify-start">
                 <div class="bg-white rounded-xl border p-4">
-                    <div class="flex flex-col sm:flex-row">
-                        <img src="{{ asset('images/avatar.jpg') }}" class="w-16 lg:w-20 h-16 lg:h-20 rounded-full" alt="">
+                    <div class="flex flex-col sm:flex-row items-center sm:items-start">
+                        <img src="{{ asset('images/avatar.jpg') }}" class="w-24 h-24 rounded-full mb-3 sm:mb-0" alt="">
 
-                        <div class="flex flex-col">
+                        <div class="flex flex-col mr-2 mr-0 sm:mr-2">
                             <h3>سزاریوس به <span class="font-bold">خاطرات یک مغ</span> امتیاز داد</h3>
-                            <div class="flex">
+                            <div class="flex text-yellow-500 my-2 justify-center sm:justify-start">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
                             </div>
+                            <div class="flex flex-row">
+                                <div class="text-gray-700 text-center m-2">
+                                    <img src="{{ asset('images/books/3.jpg') }}" class="h-32 rounded-lg" alt="">
+                                </div>
+                                <div class="flex flex-col text-gray-700 text-center m-2 justify-between">
+                                    <div class="flex justify-between">
+                                        <p class="text-brown">قمارباز</p>
+                                        <p>۳۴ نقد</p>
+                                    </div>
+                                    <p>فئودور داستایوفسکی</p>
+                                    <a href="" class="rounded-lg bg-brown text-white p-2">اضافه کردن به قفسه</a>
+                                </div>
+                              </div>
                         </div>
                     </div>
                 </div>
