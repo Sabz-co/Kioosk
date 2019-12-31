@@ -20,12 +20,12 @@ class CreateAuthorsTable extends Migration
             $table->string('last_name', 30);
             // URL-friendly title used to generate paths, used along with
             // author id to support changing and similar slugs.
-            $table->string('slug', 50);
+            $table->text('slug');
             // To avoid limiting the system, city column is an string instead of
             // an enum, however, it may be a good idea to provide users with a
             // select rather than having them type (possibly different) iterations
             // of the same name.
-            $table->string('location', 50);
+            $table->string('location', 50)->nullable();
             $table->text('website')->nullable();
             $table->timestamps();
         });

@@ -16,11 +16,11 @@ class CreatePublishersTable extends Migration
         Schema::create('publishers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title', 50);
-            $table->string('location', 50);
+            $table->string('location', 50)->nullable();
             // For convinience, no database level checks are done on this column
             // However, checks may be implemented through form validation.
-            $table->string('phone_number', 30);
-            $table->string('slug', 50);
+            $table->string('phone_number', 30)->nullable();
+            $table->text('slug');
             $table->timestamps();
         });
     }

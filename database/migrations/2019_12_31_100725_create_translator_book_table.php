@@ -19,8 +19,8 @@ class CreateTranslatorBookTable extends Migration
           $table->unsignedBigInteger('book_id');
           $table->timestamps();
 
-          $table->foreign_key('translator_id')->references('id')->on('authors')->onDelete('cascade');
-          $table->foreign_key('book_id')->references('id')->on('books')->onDelete('cascade');
+          $table->foreign('translator_id')->references('id')->on('authors')->onDelete('cascade');
+          $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
         });
     }
 
