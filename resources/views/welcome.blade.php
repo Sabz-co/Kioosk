@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <!-- Styles -->
         <style>
             html, body {
@@ -35,9 +35,9 @@
                 position: relative;
             }
 
-            .top-right {
+            .top-left {
                 position: absolute;
-                right: 10px;
+                left: 10px;
                 top: 18px;
             }
 
@@ -54,7 +54,6 @@
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
-                letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
             }
@@ -67,14 +66,20 @@
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-left links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}">خانه</a>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            خروج
+                        </a>
+                        
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-
+                        <a href="{{ route('login') }}">ورود</a>
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}">ثبت نام</a>
                         @endif
                     @endauth
                 </div>
@@ -82,18 +87,14 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Kioosk
+                    Kioosk - کیوسک
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://laravel-news.com">اخبار (غیر فعال)</a>
+                    <a href="https://blog.laravel.com">بلاگ (غیرفعال)</a>
+                    <a href="http://sabz-co.ir">راهکارهای نرم‌افزاری سبز</a>
+                    <a href="https://github.com/Sabz-co/Kioosk">گیت‌هاب</a>
                 </div>
             </div>
         </div>
