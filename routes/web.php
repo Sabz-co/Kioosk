@@ -22,6 +22,11 @@ Route::get('/home', function () {
 Route::get('/publisher', function () {
     return view('publisher.show');
 });
+
+Route::get('/author', function () {
+    return view('author.show');
+});
+
 Auth::routes();
 
 Route::get('/gauth/invoke', 'SocialAuth@redirectToProvider');

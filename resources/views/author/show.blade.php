@@ -6,7 +6,7 @@
         <div class="w-full sm:w-2/3 lg:w-3/4 p-2">
 
             <div class="flex items-center my-4 border-b pb-2">
-                <h1 class="text-lg">کتاب برتر منتشر شده از نشر چشمه</h1>
+                <h1 class="text-lg">کتاب برتر منتشر شده از این نویسنده</h1>
                 <a href="#" class="text-brown rounded-full hover:bg-gray-200 hover:text-black px-2 mr-auto">دیدن همه</a>
             </div>
 
@@ -114,8 +114,8 @@
             <div>
                 <div class="text-center mb-4 pb-2">
                     <div class="flex flex-col items-center justify-center p-3 rounded-xl bg-gray-200">
-                        <img src="{{ asset('images/publishers/cheshmeh.png') }}" class="w-20 h-20 object-contain rounded" alt="">
-                        <h2 class="font-bold text-black my-2">نشر چشمه</h2>
+                        <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full" alt="">
+                        <h2 class="font-bold text-black my-2">الیف شافتاک</h2>
                         <h3 class="mb-2">تهران، ایران</h3>
 
                         <a href="#" class="my-2 mx-auto w-full sm:w-5/6 rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-gray-100 text-white py-1 px-2 lg:px-6">دنبال کردن</a>
