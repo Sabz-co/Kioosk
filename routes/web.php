@@ -15,10 +15,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('index');
+Route::get('/home', function () {
+    return view('home');
 });
 
+Route::get('/publisher', function () {
+    return view('publisher.show');
+});
+
+Route::get('/author', function () {
+    return view('author.show');
+});
+
+Route::get('/book', function () {
+    return view('book.show');
+});
 Auth::routes();
 
 Route::get('/gauth/invoke', 'SocialAuth@redirectToProvider');
