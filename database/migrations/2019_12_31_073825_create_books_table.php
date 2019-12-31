@@ -15,9 +15,9 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title', 255);
+            $table->text('title');
             $table->text('image_src')->nullable();
-            $table->string('isbn', 20)->nullable(); // TODO apply database level formatting.
+            $table->text('isbn')->nullable(); // TODO apply database level formatting.
             $table->unsignedBigInteger('publisher_id');
             $table->unsignedInteger('page_count')->nullable(); // No. of pages / page count.
             $table->text('description')->nullable();

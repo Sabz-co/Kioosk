@@ -16,8 +16,8 @@ class CreateAuthorsTable extends Migration
     {
         Schema::create('authors', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('first_name', 30);
-            $table->string('last_name', 30);
+            $table->text('first_name');
+            $table->text('last_name');
             // URL-friendly title used to generate paths, used along with
             // author id to support changing and similar slugs.
             $table->text('slug');
@@ -25,7 +25,7 @@ class CreateAuthorsTable extends Migration
             // an enum, however, it may be a good idea to provide users with a
             // select rather than having them type (possibly different) iterations
             // of the same name.
-            $table->string('location', 50)->nullable();
+            $table->text('location')->nullable();
             $table->text('website')->nullable();
             $table->timestamps();
         });
