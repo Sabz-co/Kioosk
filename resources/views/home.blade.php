@@ -40,8 +40,8 @@
                         <div class="text-right">
                             <h4 class="">۵۹ نقد دارد</h4>
                         </div>
-                        <a href="#" class="sm:mr-auto text-gray-700 hover:text-brown hover:bg-white p-1 rounded-lg sm:ml-4">بروز رسانی مطالعه</a>
-                        <a href="#" class="text-gray-700 hover:text-brown hover:bg-white p-1 rounded-lg">دیدن بقیه لیست</a>
+                        <a href="#" class="hover:shadow sm:mr-auto text-gray-700 hover:text-brown hover:bg-white p-1 rounded-lg sm:ml-4">بروز رسانی مطالعه</a>
+                        <a href="#" class="hover:shadow text-gray-700 hover:text-brown hover:bg-white p-1 rounded-lg">دیدن بقیه لیست</a>
                     </div>
                 </div>
               </div>
@@ -50,12 +50,12 @@
 
             <div class="flex items-center my-4">
                 <h1 class="text-lg">کتاب برتر هفته</h1>
-                <a href="#" class="text-brown rounded-full hover:bg-gray-200 hover:text-black px-2 mr-2">دیدن همه</a>
+                <a href="#" class="hover:shadow text-brown rounded-full hover:bg-gray-200 hover:text-black px-2 mr-2 hover:shadow ">دیدن همه</a>
             </div>
 
             <div class="flex flex-wrap justify-start">
                 <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="">
+                    <a href="#">
                         <div class="relative aspect-ratio-book">
                             <img src="{{ asset('images/books/11.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                         </div>
@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="">
+                    <a href="#">
                         <div class="relative aspect-ratio-book">
                             <img src="{{ asset('images/books/12.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                         </div>
@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="">
+                    <a href="#">
                         <div class="relative aspect-ratio-book">
                             <img src="{{ asset('images/books/13.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                         </div>
@@ -86,7 +86,7 @@
                 </div>
 
                 <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="">
+                    <a href="#">
                         <div class="relative aspect-ratio-book">
                             <img src="{{ asset('images/books/14.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                         </div>
@@ -96,7 +96,7 @@
                 </div>
 
                 <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="">
+                    <a href="#">
                         <div class="relative aspect-ratio-book">
                             <img src="{{ asset('images/books/15.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                         </div>
@@ -106,7 +106,7 @@
                 </div>
 
                 <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="">
+                    <a href="#">
                         <div class="relative aspect-ratio-book">
                             <img src="{{ asset('images/books/16.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                         </div>
@@ -125,7 +125,7 @@
 
             <div class="flex items-center my-4">
                 <h1 class="text-lg">آخرین اتفاقات</h1>
-                <a href="#" class="text-brown rounded-full hover:bg-gray-200 hover:text-black px-2 mr-2">دیدن همه</a>
+                <a href="#" class="text-brown rounded-full hover:bg-gray-200 hover:text-black px-2 mr-2 hover:shadow ">دیدن همه</a>
             </div>
 
 
@@ -154,7 +154,7 @@
                                         <p>۳۴ نقد</p>
                                     </div>
                                     <p>فئودور داستایوفسکی</p>
-                                    <a href="" class="rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-white text-white p-2">اضافه کردن به قفسه</a>
+                                    <a href="#" class="rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-white text-white p-2 shadow hover:shadow-xl">اضافه کردن به قفسه</a>
                                 </div>
                               </div>
                         </div>
@@ -236,7 +236,7 @@
                                         <p>۳۴ نقد</p>
                                     </div>
                                     <p>فئودور داستایوفسکی</p>
-                                    <a href="" class="rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-white text-white p-2">اضافه کردن به قفسه</a>
+                                    <a href="#" class="rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-white text-white p-2 shadow hover:shadow-xl">اضافه کردن به قفسه</a>
                                 </div>
                               </div>
                         </div>
@@ -253,7 +253,7 @@
 
             <div class="flex items-center my-4">
                 <h1 class="text-lg">نویسنده‌های برتر</h1>
-                <a href="#" class="text-brown rounded-full hover:bg-gray-200 hover:text-black px-2 mr-2">دیدن همه</a>
+                <a href="#" class="text-brown rounded-full hover:bg-gray-200 hover:text-black px-2 mr-2 hover:shadow ">دیدن همه</a>
             </div>
 
             <div class="flex flex-wrap">
@@ -267,7 +267,7 @@
                         <h6 class="text-brown text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
                     </div> 
                     <div class="flex my-1">
-                        <a href="#" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-gray-100 text-white py-1 px-2">مشاهده پروفایل</a>
+                        <a href="#" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-gray-100 text-white py-1 px-2 shadow hover:shadow-xl">مشاهده پروفایل</a>
                     </div>
                 </div>
 
@@ -281,7 +281,7 @@
                         <h6 class="text-brown text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
                     </div> 
                     <div class="flex my-1">
-                        <a href="#" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-gray-100 text-white py-1 px-2">مشاهده پروفایل</a>
+                        <a href="#" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-gray-100 text-white py-1 px-2 shadow hover:shadow-xl">مشاهده پروفایل</a>
                     </div>
                 </div>
 
@@ -295,7 +295,7 @@
                         <h6 class="text-brown text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
                     </div> 
                     <div class="flex my-1">
-                        <a href="#" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-gray-100 text-white py-1 px-2">مشاهده پروفایل</a>
+                        <a href="#" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-gray-100 text-white py-1 px-2 shadow hover:shadow-xl">مشاهده پروفایل</a>
                     </div>
                 </div>
 
@@ -309,7 +309,7 @@
                         <h6 class="text-brown text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
                     </div> 
                     <div class="flex my-1">
-                        <a href="#" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-gray-100 text-white py-1 px-2">مشاهده پروفایل</a>
+                        <a href="#" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-gray-100 text-white py-1 px-2 shadow hover:shadow-xl">مشاهده پروفایل</a>
                     </div>
                 </div>
 
@@ -338,7 +338,7 @@
                     </div>
                     <h6 class="my-2 text-sm">سورنا و سه نفر دیگر در حال مطالعه‌ی ملت عشق هستند.</h6>
 
-                    <a href="#" class="mx-auto w-full sm:w-5/6 rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white py-1 px-2 lg:px-6">دیدن تمام هم‌خوان‌ها</a>
+                    <a href="#" class="mx-auto w-full sm:w-5/6 rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white py-1 px-2 lg:px-6 shadow hover:shadow-xl">دیدن تمام هم‌خوان‌ها</a>
                 </div>
 
                 <div class="sticky top-0 bg-white">
@@ -348,7 +348,7 @@
                             <i class="fas fa-check"></i>
                             <h2 class="mr-1">آخرین خوانده شده‌ها</h2>
                         </div>
-                        <a href="#" class="mr-auto text-brown hover:bg-gray-200 rounded-full px-2 hover:text-black">دیدن همه</a>
+                        <a href="#" class="mr-auto text-brown hover:bg-gray-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
     
                     </div>
     
@@ -383,7 +383,7 @@
                             <i class="fas fa-book"></i>
                             <h2 class="mr-1">آخرین در حال خواندن</h2>
                         </div>
-                        <a href="#" class="mr-auto text-brown hover:bg-gray-200 rounded-full px-2 hover:text-black">دیدن همه</a>
+                        <a href="#" class="mr-auto text-brown hover:bg-gray-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
     
                     </div>
     
@@ -417,7 +417,7 @@
                             <i class="fas fa-star"></i>
                             <h2 class="mr-1">آخرین نشان شده‌ها</h2>
                         </div>
-                        <a href="#" class="mr-auto text-brown hover:bg-gray-200 rounded-full px-2 hover:text-black">دیدن همه</a>
+                        <a href="#" class="mr-auto text-brown hover:bg-gray-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
     
                     </div>
     
@@ -450,7 +450,7 @@
                             <i class="far fa-user"></i>
                             <h2 class="mr-1">شاید بشناسید</h2>
                         </div>
-                        <a href="#" class="mr-auto text-brown hover:bg-gray-200 rounded-full px-2 hover:text-black">دیدن همه</a>
+                        <a href="#" class="mr-auto text-brown hover:bg-gray-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
     
                     </div>
     
@@ -462,7 +462,7 @@
                                 <h6 class="text-black font-bold">حسین مهرنواز</h6>
                                 <span class="text-gray-600">۲۳۷ دنبال کننده</span>
                             </div>
-                            <a href="#" class="mr-auto  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white py-1 px-2">دنبال کردن</a>
+                            <a href="#" class="mr-auto  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white py-1 px-2  shadow hover:shadow-xl">دنبال کردن</a>
                         </div>
     
                         <div class="flex flex-row items-center mb-4">
@@ -472,7 +472,7 @@
                                 <h6 class="text-black font-bold">حسین مهرنواز</h6>
                                 <span class="text-gray-600">۲۳۷ دنبال کننده</span>
                             </div>
-                            <a href="#" class="mr-auto  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white py-1 px-2">دنبال کردن</a>
+                            <a href="#" class="mr-auto  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white py-1 px-2  shadow hover:shadow-xl">دنبال کردن</a>
                         </div>
     
                         <div class="flex flex-row items-center mb-4">
@@ -482,7 +482,7 @@
                                 <h6 class="text-black font-bold">حسین مهرنواز</h6>
                                 <span class="text-gray-600">۲۳۷ دنبال کننده</span>
                             </div>
-                            <a href="#" class="mr-auto  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white py-1 px-2">دنبال کردن</a>
+                            <a href="#" class="mr-auto  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white py-1 px-2  shadow hover:shadow-xl">دنبال کردن</a>
                         </div>
     
     
