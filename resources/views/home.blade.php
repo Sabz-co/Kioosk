@@ -6,8 +6,10 @@
             <h1 class="text-xl mb-2">از کتاب‌هایی که شما مطالعه می‌کنید:</h1>
             <!-- Fellow readers -->
             <div class="flex bg-gray-200 flex-col md:flex-row rounded-lg text-sm md:text-base">
-                <div class="text-gray-700 text-center px-4 py-2 m-2">
-                    <img src="{{ asset('images/books/13.jpg') }}" alt="" class="w-24 lg:w-32 h-32 lg:h-48 object-cover rounded-xl mx-auto">
+                <div class="mx-auto text-gray-700 text-center px-4 py-2 m-2 w-2/6 md:w-1/4 lg:w-1/5">
+                    <div class="relative aspect-ratio-book w-full">
+                        <img src="{{ asset('images/books/13.jpg') }}" alt="" class="absolute h-full object-cover rounded-xl group-hover:shadow-lg">
+                    </div>
                 </div>
                 <div class="flex flex-col flex-1 text-center p-4 m-2 items-center justify-between">
                     <div class="flex flex-col sm:flex-row justify-between w-full items-center">
@@ -54,7 +56,9 @@
             <div class="flex flex-wrap justify-start">
                 <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
                     <a href="">
-                        <img src="{{ asset('images/books/12.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl group-hover:shadow-lg">
+                        <div class="relative aspect-ratio-book">
+                            <img src="{{ asset('images/books/11.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
+                        </div>
                         <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                         <p class="text-sm">الیف شافتاک</p>
                     </a>
@@ -62,7 +66,10 @@
 
                 <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
                     <a href="">
-                        <img src="{{ asset('images/books/13.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl group-hover:shadow-lg">
+                        <div class="relative aspect-ratio-book">
+                            <img src="{{ asset('images/books/12.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
+                        </div>
+                        
                         <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                         <p class="text-sm">الیف شافتاک</p>
                     </a>
@@ -70,7 +77,9 @@
 
                 <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
                     <a href="">
-                        <img src="{{ asset('images/books/14.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl group-hover:shadow-lg">
+                        <div class="relative aspect-ratio-book">
+                            <img src="{{ asset('images/books/13.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
+                        </div>
                         <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                         <p class="text-sm">الیف شافتاک</p>
                     </a>
@@ -78,7 +87,9 @@
 
                 <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
                     <a href="">
-                        <img src="{{ asset('images/books/17.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl group-hover:shadow-lg">
+                        <div class="relative aspect-ratio-book">
+                            <img src="{{ asset('images/books/14.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
+                        </div>
                         <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                         <p class="text-sm">الیف شافتاک</p>
                     </a>
@@ -86,7 +97,9 @@
 
                 <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
                     <a href="">
-                        <img src="{{ asset('images/books/13.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl group-hover:shadow-lg">
+                        <div class="relative aspect-ratio-book">
+                            <img src="{{ asset('images/books/15.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
+                        </div>
                         <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                         <p class="text-sm">الیف شافتاک</p>
                     </a>
@@ -94,7 +107,9 @@
 
                 <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
                     <a href="">
-                        <img src="{{ asset('images/books/13.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl group-hover:shadow-lg">
+                        <div class="relative aspect-ratio-book">
+                            <img src="{{ asset('images/books/16.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
+                        </div>
                         <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                         <p class="text-sm">الیف شافتاک</p>
                     </a>
@@ -129,7 +144,9 @@
 
                             <div class="flex flex-row">
                                 <div class="text-gray-700 text-center m-2">
-                                    <img src="{{ asset('images/books/3.jpg') }}" class="h-32 rounded-lg" alt="">
+                                    <div class="relative aspect-ratio-book w-24">
+                                        <img src="{{ asset('images/books/3.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
+                                    </div>
                                 </div>
                                 <div class="flex flex-col text-gray-700 text-center m-2 justify-between">
                                     <div class="flex justify-between">
@@ -210,8 +227,9 @@
                             </div>
                             <div class="flex flex-row">
                                 <div class="text-gray-700 text-center m-2">
-                                    <img src="{{ asset('images/books/3.jpg') }}" class="h-32 rounded-lg" alt="">
-                                </div>
+                                    <div class="relative aspect-ratio-book w-24">
+                                        <img src="{{ asset('images/books/3.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
+                                    </div>                                </div>
                                 <div class="flex flex-col text-gray-700 text-center m-2 justify-between">
                                     <div class="flex justify-between">
                                         <p class="text-brown">قمارباز</p>
@@ -310,7 +328,7 @@
         <!-- End of right side -->
 
         <!-- Sidebar -->
-        <div class="h-16  hidden sm:block sm:w-1/3 lg:w-1/4 p-2">
+        <div class="hidden sm:block sm:w-1/3 lg:w-1/4 p-2 text-xs md:text-sm lg:text-base">
             <div>
                 <div class="text-center mb-4 pb-4">
                     <div class="flex items-center justify-center">
@@ -337,17 +355,23 @@
                     <div class="flex flex-row mb-6">
                         <div class="w-1/3 p-1">
                             <a href="#">
-                                <img src="{{ asset('images/books/19.jpg') }}" class="rounded-lg hover:grow" alt="">
+                                <div class="relative aspect-ratio-book w-full">
+                                    <img src="{{ asset('images/books/18.jpg') }}" alt="" class="hover:grow absolute w-full h-full object-cover rounded-lg group-hover:shadow-lg">
+                                </div>
                             </a>
                         </div>
                         <div class="w-1/3 p-1">
                             <a href="#">
-                                <img src="{{ asset('images/books/18.jpg') }}" class="rounded-lg hover:grow" alt="">
+                                <div class="relative aspect-ratio-book w-full">
+                                    <img src="{{ asset('images/books/19.jpg') }}" alt="" class="hover:grow absolute w-full h-full object-cover rounded-lg group-hover:shadow-lg">
+                                </div>
                             </a>
                         </div>
                         <div class="w-1/3 p-1">
                             <a href="#">
-                                <img src="{{ asset('images/books/15.jpg') }}" class="rounded-lg hover:grow" alt="">
+                                <div class="relative aspect-ratio-book w-full">
+                                    <img src="{{ asset('images/books/20.jpg') }}" alt="" class="hover:grow absolute w-full h-full object-cover rounded-lg group-hover:shadow-lg">
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -366,17 +390,23 @@
                     <div class="flex flex-row mb-6">
                         <div class="w-1/3 p-1">
                             <a href="#">
-                                <img src="{{ asset('images/books/11.jpg') }}" class="rounded-lg hover:grow" alt="">
+                                <div class="relative aspect-ratio-book w-full">
+                                    <img src="{{ asset('images/books/21.jpg') }}" alt="" class="hover:grow absolute w-full h-full object-cover rounded-lg group-hover:shadow-lg">
+                                </div>
                             </a>
                         </div>
                         <div class="w-1/3 p-1">
                             <a href="#">
-                                <img src="{{ asset('images/books/12.jpg') }}" class="rounded-lg hover:grow" alt="">
+                                <div class="relative aspect-ratio-book w-full">
+                                    <img src="{{ asset('images/books/22.jpg') }}" alt="" class="hover:grow absolute w-full h-full object-cover rounded-lg group-hover:shadow-lg">
+                                </div>
                             </a>
                         </div>
                         <div class="w-1/3 p-1">
                             <a href="#">
-                                <img src="{{ asset('images/books/13.jpg') }}" class="rounded-lg hover:grow" alt="">
+                                <div class="relative aspect-ratio-book w-full">
+                                    <img src="{{ asset('images/books/23.jpg') }}" alt="" class="hover:grow absolute w-full h-full object-cover rounded-lg group-hover:shadow-lg">
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -394,17 +424,23 @@
                     <div class="flex flex-row mb-6">
                         <div class="w-1/3 p-1">
                             <a href="#">
-                                <img src="{{ asset('images/books/16.jpg') }}" class="rounded-lg hover:grow" alt="">
+                                <div class="relative aspect-ratio-book w-full">
+                                    <img src="{{ asset('images/books/24.jpg') }}" alt="" class="hover:grow absolute w-full h-full object-cover rounded-lg group-hover:shadow-lg">
+                                </div>
                             </a>
                         </div>
                         <div class="w-1/3 p-1">
                             <a href="#">
-                                <img src="{{ asset('images/books/17.jpg') }}" class="rounded-lg hover:grow" alt="">
+                                <div class="relative aspect-ratio-book w-full">
+                                    <img src="{{ asset('images/books/25.jpg') }}" alt="" class="hover:grow absolute w-full h-full object-cover rounded-lg group-hover:shadow-lg">
+                                </div>
                             </a>
                         </div>
                         <div class="w-1/3 p-1">
                             <a href="#">
-                                <img src="{{ asset('images/books/10.jpg') }}" class="rounded-lg hover:grow" alt="">
+                                <div class="relative aspect-ratio-book w-full">
+                                    <img src="{{ asset('images/books/26.jpg') }}" alt="" class="hover:grow absolute w-full h-full object-cover rounded-lg group-hover:shadow-lg">
+                                </div>
                             </a>
                         </div>
                     </div>

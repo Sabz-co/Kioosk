@@ -30,6 +30,11 @@ Route::get('/author', function () {
 Route::get('/book', function () {
     return view('book.show');
 });
+
+
+Route::get('/book/add', function () {
+    return view('book.add');
+});
 Auth::routes();
 
 Route::get('/gauth/invoke', 'SocialAuth@redirectToProvider');
