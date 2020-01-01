@@ -5929,6 +5929,290 @@ readers do not read off random characters that represent icons */
 }
 
 @font-face {
+  font-family: dana;
+
+  font-style: normal;
+
+  font-weight: 100;
+
+  src: url("../fonts/eot/dana-thin.eot");
+
+  src: url("../fonts/eot/dana-thin.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/dana-thin.woff2") format("woff2"), url("../fonts/woff/dana-thin.woff") format("woff");
+
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: dana;
+
+  font-style: normal;
+
+  font-weight: 200;
+
+  src: url("../fonts/eot/dana-extralight.eot");
+
+  src: url("../fonts/eot/dana-extralight.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/dana-extralight.woff2") format("woff2"), url("../fonts/woff/dana-extralight.woff") format("woff");
+
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: dana;
+
+  font-style: normal;
+
+  font-weight: 300;
+
+  src: url("../fonts/eot/dana-light.eot");
+
+  src: url("../fonts/eot/dana-light.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/dana-light.woff2") format("woff2"), url("../fonts/woff/dana-light.woff") format("woff");
+
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: dana;
+
+  font-style: normal;
+
+  font-weight: 500;
+
+  src: url("../fonts/eot/dana-medium.eot");
+
+  src: url("../fonts/eot/dana-medium.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/dana-medium.woff2") format("woff2"), url("../fonts/woff/dana-medium.woff") format("woff");
+
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: dana;
+
+  font-style: normal;
+
+  font-weight: 600;
+
+  src: url("../fonts/eot/dana-demibold.eot");
+
+  src: url("../fonts/eot/dana-demibold.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/dana-demibold.woff2") format("woff2"), url("../fonts/woff/dana-demibold.woff") format("woff");
+
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: dana;
+
+  font-style: normal;
+
+  font-weight: 750;
+
+  src: url("../fonts/eot/dana-ultrabold.eot");
+
+  src: url("../fonts/eot/dana-ultrabold.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/dana-ultrabold.woff2") format("woff2"), url("../fonts/woff/dana-ultrabold.woff") format("woff");
+
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: dana;
+
+  font-style: normal;
+
+  font-weight: 800;
+
+  src: url("../fonts/eot/dana-extrabold.eot");
+
+  src: url("../fonts/eot/dana-extrabold.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/dana-extrabold.woff2") format("woff2"), url("../fonts/woff/dana-extrabold.woff") format("woff");
+
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: dana;
+
+  font-style: normal;
+
+  font-weight: 900;
+
+  src: url("../fonts/eot/dana-black.eot");
+
+  src: url("../fonts/eot/dana-black.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/dana-black.woff2") format("woff2"), url("../fonts/woff/dana-black.woff") format("woff");
+
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: dana;
+
+  font-style: normal;
+
+  font-weight: bold;
+
+  src: url("../fonts/eot/dana-bold.eot");
+
+  src: url("../fonts/eot/dana-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/dana-bold.woff2") format("woff2"), url("../fonts/woff/dana-bold.woff") format("woff");
+
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: dana;
+
+  font-style: normal;
+
+  font-weight: normal;
+
+  src: url("../fonts/eot/dana-regular.eot");
+
+  src: url("../fonts/eot/dana-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/dana-regular.woff2") format("woff2"), url("../fonts/woff/dana-regular.woff") format("woff");
+
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+/**
+Iranic fonts	
+**/
+
+@font-face {
+  font-family: dana;
+
+  font-style: italic;
+
+  font-weight: 10;
+
+  src: url("../fonts/eot/dana-thinitalic.eot");
+
+  src: url("../fonts/eot/dana-thinitalic.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/dana-thinitalic.woff2") format("woff2"), url("../fonts/woff/dana-thinitalic.woff") format("woff");
+
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: dana;
+
+  font-style: italic;
+
+  font-weight: 200;
+
+  src: url("../fonts/eot/dana-extralightitalic.eot");
+
+  src: url("../fonts/eot/dana-extralightitalic.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/dana-extralightitalic.woff2") format("woff2"), url("../fonts/woff/dana-extralightitalic.woff") format("woff");
+
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: dana;
+
+  font-style: italic;
+
+  font-weight: 300;
+
+  src: url("../fonts/eot/dana-lightitalic.eot");
+
+  src: url("../fonts/eot/dana-lightitalic.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/dana-lightitalic.woff2") format("woff2"), url("../fonts/woff/dana-lightitalic.woff") format("woff");
+
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: dana;
+
+  font-style: italic;
+
+  font-weight: 500;
+
+  src: url("../fonts/eot/dana-mediumitalic.eot");
+
+  src: url("../fonts/eot/dana-mediumitalic.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/dana-mediumitalic.woff2") format("woff2"), url("../fonts/woff/dana-mediumitalic.woff") format("woff");
+
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: dana;
+
+  font-style: italic;
+
+  font-weight: 600;
+
+  src: url("../fonts/eot/dana-demibolditalic.eot");
+
+  src: url("../fonts/eot/dana-demibolditalic.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/dana-demibolditalic.woff2") format("woff2"), url("../fonts/woff/dana-demibolditalic.woff") format("woff");
+
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: dana;
+
+  font-style: italic;
+
+  font-weight: 750;
+
+  src: url("../fonts/eot/dana-ultrabolditalic.eot");
+
+  src: url("../fonts/eot/dana-ultrabolditalic.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/dana-ultrabolditalic.woff2") format("woff2"), url("../fonts/woff/dana-ultrabolditalic.woff") format("woff");
+
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: dana;
+
+  font-style: italic;
+
+  font-weight: 800;
+
+  src: url("../fonts/eot/dana-extrabolditalic.eot");
+
+  src: url("../fonts/eot/dana-extrabolditalic.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/dana-extrabolditalic.woff2") format("woff2"), url("../fonts/woff/dana-extrabolditalic.woff") format("woff");
+
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: dana;
+
+  font-style: italic;
+
+  font-weight: 900;
+
+  src: url("../fonts/eot/dana-blackitalic.eot");
+
+  src: url("../fonts/eot/dana-blackitalic.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/dana-blackitalic.woff2") format("woff2"), url("../fonts/woff/dana-blackitalic.woff") format("woff");
+
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: dana;
+
+  font-style: italic;
+
+  font-weight: bold;
+
+  src: url("../fonts/eot/dana-bolditalic.eot");
+
+  src: url("../fonts/eot/dana-bolditalic.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/dana-bolditalic.woff2") format("woff2"), url("../fonts/woff/dana-bolditalic.woff") format("woff");
+
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: dana;
+
+  font-style: italic;
+
+  font-weight: normal;
+
+  src: url("../fonts/eot/dana-regularitalic.eot");
+
+  src: url("../fonts/eot/dana-regularitalic.eot?#iefix") format("embedded-opentype"), url("../fonts/woff2/dana-regularitalic.woff2") format("woff2"), url("../fonts/woff/dana-regularitalic.woff") format("woff");
+
+  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
   font-family: IRANSans;
 
   font-style: normal;
@@ -6599,6 +6883,10 @@ video {
   height: auto;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "dana";
+}
+
 body {
   direction: rtl;
   font-family: "IRANSans" !important;
@@ -6636,6 +6924,263 @@ body {
   }
 }
 
+.form-input{
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #fff;
+  border-color: #e2e8f0;
+  border-width: 1px;
+  border-radius: 0.25rem;
+  padding-top: 0.5rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.form-input::-webkit-input-placeholder{
+  color: #a0aec0;
+  opacity: 1;
+}
+
+.form-input::-moz-placeholder{
+  color: #a0aec0;
+  opacity: 1;
+}
+
+.form-input:-ms-input-placeholder{
+  color: #a0aec0;
+  opacity: 1;
+}
+
+.form-input::-ms-input-placeholder{
+  color: #a0aec0;
+  opacity: 1;
+}
+
+.form-input::placeholder{
+  color: #a0aec0;
+  opacity: 1;
+}
+
+.form-input:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+  border-color: #63b3ed;
+}
+
+.form-textarea{
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #fff;
+  border-color: #e2e8f0;
+  border-width: 1px;
+  border-radius: 0.25rem;
+  padding-top: 0.5rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.form-textarea::-webkit-input-placeholder{
+  color: #a0aec0;
+  opacity: 1;
+}
+
+.form-textarea::-moz-placeholder{
+  color: #a0aec0;
+  opacity: 1;
+}
+
+.form-textarea:-ms-input-placeholder{
+  color: #a0aec0;
+  opacity: 1;
+}
+
+.form-textarea::-ms-input-placeholder{
+  color: #a0aec0;
+  opacity: 1;
+}
+
+.form-textarea::placeholder{
+  color: #a0aec0;
+  opacity: 1;
+}
+
+.form-textarea:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+  border-color: #63b3ed;
+}
+
+.form-multiselect{
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #fff;
+  border-color: #e2e8f0;
+  border-width: 1px;
+  border-radius: 0.25rem;
+  padding-top: 0.5rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.form-multiselect:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+  border-color: #63b3ed;
+}
+
+.form-select{
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23a0aec0'%3e%3cpath d='M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z'/%3e%3c/svg%3e");
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-print-color-adjust: exact;
+          color-adjust: exact;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  border-color: #e2e8f0;
+  border-width: 1px;
+  border-radius: 0.25rem;
+  padding-top: 0.5rem;
+  padding-right: 2.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-position: right 0.5rem center;
+  background-size: 1.5em 1.5em;
+}
+
+.form-select::-ms-expand{
+  color: #a0aec0;
+  border: none;
+}
+
+@media not print{
+  .form-select::-ms-expand{
+    display: none;
+  }
+}
+
+@media print and (-ms-high-contrast: active), print and (-ms-high-contrast: none){
+  .form-select{
+    padding-right: 0.75rem;
+  }
+}
+
+.form-select:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+  border-color: #63b3ed;
+}
+
+.form-checkbox{
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-print-color-adjust: exact;
+          color-adjust: exact;
+  display: inline-block;
+  vertical-align: middle;
+  background-origin: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  flex-shrink: 0;
+  height: 1em;
+  width: 1em;
+  color: #4299e1;
+  background-color: #fff;
+  border-color: #e2e8f0;
+  border-width: 1px;
+  border-radius: 0.25rem;
+}
+
+.form-checkbox:checked{
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e");
+  border-color: transparent;
+  background-color: currentColor;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media not print{
+  .form-checkbox::-ms-check{
+    border-width: 1px;
+    color: transparent;
+    background: inherit;
+    border-color: inherit;
+    border-radius: inherit;
+  }
+}
+
+.form-checkbox:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+  border-color: #63b3ed;
+}
+
+.form-radio{
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-print-color-adjust: exact;
+          color-adjust: exact;
+  display: inline-block;
+  vertical-align: middle;
+  background-origin: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  flex-shrink: 0;
+  border-radius: 100%;
+  height: 1em;
+  width: 1em;
+  color: #4299e1;
+  background-color: #fff;
+  border-color: #e2e8f0;
+  border-width: 1px;
+}
+
+.form-radio:checked{
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+  border-color: transparent;
+  background-color: currentColor;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media not print{
+  .form-radio::-ms-check{
+    border-width: 1px;
+    color: transparent;
+    background: inherit;
+    border-color: inherit;
+    border-radius: inherit;
+  }
+}
+
+.form-radio:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+  border-color: #63b3ed;
+}
+
 .progress-bar-wrapper {
   width: 100%;
   background-color: #f7fafc;
@@ -6663,6 +7208,36 @@ body {
 .hover\:grow:hover {
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
+}
+
+.vue-tags-input {
+  background-color: #e2e8f0;
+  color: #4a5568;
+  border-radius: 0.25rem;
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.vue-tags-input:focus-within {
+  outline: 0 !important;
+  background-color: #edf2f7 !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.vue-tags-input .ti-input {
+  background-color: #e2e8f0;
+  color: #4a5568;
+  border-radius: 0.25rem;
+  border: 0 !important;
+}
+
+.ti-new-tag-input-wrapper input {
+  background-color: #e2e8f0;
+}
+
+.vue-tags-input .ti-tag {
+  background-color: #c1aa78 !important;
+  border-radius: 0.25rem !important;
 }
 
 .sr-only{
@@ -17587,6 +18162,26 @@ body {
   z-index: auto;
 }
 
+.aspect-ratio-square{
+  padding-bottom: 100%;
+}
+
+.aspect-ratio-16\/9{
+  padding-bottom: 56.25%;
+}
+
+.aspect-ratio-4\/3{
+  padding-bottom: 75%;
+}
+
+.aspect-ratio-21\/9{
+  padding-bottom: 42.857142857142854%;
+}
+
+.aspect-ratio-book{
+  padding-bottom: 150%;
+}
+
 @media (min-width: 640px){
   .sm\:sr-only{
     position: absolute;
@@ -28508,6 +29103,26 @@ body {
 
   .sm\:z-auto{
     z-index: auto;
+  }
+
+  .sm\:aspect-ratio-square{
+    padding-bottom: 100%;
+  }
+
+  .sm\:aspect-ratio-16\/9{
+    padding-bottom: 56.25%;
+  }
+
+  .sm\:aspect-ratio-4\/3{
+    padding-bottom: 75%;
+  }
+
+  .sm\:aspect-ratio-21\/9{
+    padding-bottom: 42.857142857142854%;
+  }
+
+  .sm\:aspect-ratio-book{
+    padding-bottom: 150%;
   }
 }
 
@@ -39433,6 +40048,26 @@ body {
   .md\:z-auto{
     z-index: auto;
   }
+
+  .md\:aspect-ratio-square{
+    padding-bottom: 100%;
+  }
+
+  .md\:aspect-ratio-16\/9{
+    padding-bottom: 56.25%;
+  }
+
+  .md\:aspect-ratio-4\/3{
+    padding-bottom: 75%;
+  }
+
+  .md\:aspect-ratio-21\/9{
+    padding-bottom: 42.857142857142854%;
+  }
+
+  .md\:aspect-ratio-book{
+    padding-bottom: 150%;
+  }
 }
 
 @media (min-width: 1024px){
@@ -50357,6 +50992,26 @@ body {
   .lg\:z-auto{
     z-index: auto;
   }
+
+  .lg\:aspect-ratio-square{
+    padding-bottom: 100%;
+  }
+
+  .lg\:aspect-ratio-16\/9{
+    padding-bottom: 56.25%;
+  }
+
+  .lg\:aspect-ratio-4\/3{
+    padding-bottom: 75%;
+  }
+
+  .lg\:aspect-ratio-21\/9{
+    padding-bottom: 42.857142857142854%;
+  }
+
+  .lg\:aspect-ratio-book{
+    padding-bottom: 150%;
+  }
 }
 
 @media (min-width: 1280px){
@@ -61280,5 +61935,25 @@ body {
 
   .xl\:z-auto{
     z-index: auto;
+  }
+
+  .xl\:aspect-ratio-square{
+    padding-bottom: 100%;
+  }
+
+  .xl\:aspect-ratio-16\/9{
+    padding-bottom: 56.25%;
+  }
+
+  .xl\:aspect-ratio-4\/3{
+    padding-bottom: 75%;
+  }
+
+  .xl\:aspect-ratio-21\/9{
+    padding-bottom: 42.857142857142854%;
+  }
+
+  .xl\:aspect-ratio-book{
+    padding-bottom: 150%;
   }
 }
