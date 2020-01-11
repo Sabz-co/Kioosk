@@ -51,24 +51,16 @@ $fa-font-path:        "../node_modules/~@fortawesome/fontawesome-free/webfonts";
 		 url('../fonts/woff2/dana-demibold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
 		 url('../fonts/woff/dana-demibold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 }
-@font-face {
-	font-family: dana;
-	font-style: normal;
-	font-weight: 750;
-	src: url('../fonts/eot/dana-ultrabold.eot');
-	src: url('../fonts/eot/dana-ultrabold.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
-		 url('../fonts/woff2/dana-ultrabold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
-		 url('../fonts/woff/dana-ultrabold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-}
-@font-face {
-	font-family: dana;
-	font-style: normal;
-	font-weight: 800;
-	src: url('../fonts/eot/dana-extrabold.eot');
-	src: url('../fonts/eot/dana-extrabold.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
-		 url('../fonts/woff2/dana-extrabold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
-		 url('../fonts/woff/dana-extrabold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-}
+// @font-face {
+// 	font-family: dana;
+// 	font-style: normal;
+// 	font-weight: 750;
+// 	src: url('../fonts/eot/dana-ultrabold.eot');
+// 	src: url('../fonts/eot/dana-ultrabold.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+// 		 url('../fonts/woff2/dana-ultrabold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+// 		 url('../fonts/woff/dana-ultrabold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+// }
+
 @font-face {
 	font-family: dana;
 	font-style: normal;
@@ -78,15 +70,7 @@ $fa-font-path:        "../node_modules/~@fortawesome/fontawesome-free/webfonts";
 		 url('../fonts/woff2/dana-black.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
 		 url('../fonts/woff/dana-black.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 }
-@font-face {
-	font-family: dana;
-	font-style: normal;
-	font-weight: bold;
-	src: url('../fonts/eot/dana-bold.eot');
-	src: url('../fonts/eot/dana-bold.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
-		 url('../fonts/woff2/dana-bold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
-		 url('../fonts/woff/dana-bold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-}
+
 @font-face {
 	font-family: dana;
 	font-style: normal;
@@ -321,23 +305,23 @@ Iranic fonts
 }
 
 .vue-tags-input {
-	@apply bg-gray-300  text-gray-700  rounded;
+	@apply bg-silver-300  text-silver-700  rounded;
 	max-width: 100% !IMPORTANT;
 	padding: 0 !IMPORTANT;
 }
 
 
 .vue-tags-input:focus-within {
-	@apply outline-none bg-gray-200 shadow-lg #{!important};
+	@apply outline-none bg-silver-200 shadow-lg #{!important};
 }
 
 .vue-tags-input  .ti-input {
-	@apply bg-gray-300  text-gray-700 rounded;
+	@apply bg-silver-300  text-silver-700 rounded;
 	border: 0 !IMPORTANT;
 }
 
 .ti-new-tag-input-wrapper input {
-	@apply bg-gray-300;
+	@apply bg-silver-300;
 }
 
 .vue-tags-input .ti-tag {

@@ -6,7 +6,7 @@
         <div class="w-full sm:w-2/3 lg:w-3/4 p-3">
             <!-- Book Info -->
             <div class="flex flex-col md:flex-row text-sm md:text-base border-b">
-                <div class="text-gray-700 text-center sm:pl-4 py-2 my-2">
+                <div class="text-silver-700 text-center sm:pl-4 py-2 my-2">
                     <img src="{{ asset('images/books/13.jpg') }}" alt="" class="w-32 lg:w-40 h-40 lg:h-56 object-cover rounded-xl mx-auto">
                     <div class="mt-4">
                         <a href="#" class="w-full h-full rounded-lg p-2 bg-green-500 hover:bg-green-600 text-white hover:shadow-lg mt-4">افزودن به لیست</a>
@@ -29,7 +29,7 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-row justify-between w-full items-center my-4 border-t border-b py-2 border-gray-400">
+                    <div class="flex flex-row justify-between w-full items-center my-4 border-t border-b py-2 border-silver-400">
                         <div>
                             <h6>الیف شافاک</h6>
                         </div>
@@ -63,7 +63,7 @@
                 <h1 class="text-lg text-brown font-bold">نقدهای این کتاب</h1>
                 <div class="mr-auto flex items-center ">
                     <span>بر اساس</span>
-                    <select name="" id="" class="rounded text-gray-700 bg-gray-100 mr-2">
+                    <select name="" id="" class="rounded text-silver-700 bg-silver-100 mr-2">
                         <option value="">جدیدترین</option>
                         <option value="">قدیمی ترین</option>
                     </select>
@@ -74,12 +74,12 @@
             <div class="mb-5 border-b flex flex-col">
                 <div class="flex flex-row my-2 justify-start items-center">
                     <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full object-cover" alt="">
-                    <h2 class="text-gray-600 font-bold text-lg mr-2">محسن رضابالا</h2>
+                    <h2 class="text-silver-600 font-bold text-lg mr-2">محسن رضابالا</h2>
                 </div>
 
                 <div class="flex flex-row my-2 justify-between items-center">
-                    <h2 class="text-gray-800 font-bold text-xl mr-2">کتاب خوبی بود اما ...</h2>
-                    <span class="text-gray-600">۳ روز پیش</span>
+                    <h2 class="text-silver-800 font-bold text-xl mr-2">کتاب خوبی بود اما ...</h2>
+                    <span class="text-silver-600">۳ روز پیش</span>
                     
                 </div>
 
@@ -90,7 +90,7 @@
                     
                 </div>
 
-                <div class="flex flex-row my-2 justify-end text-gray-700">
+                <div class="flex flex-row my-2 justify-end text-silver-700">
                     <div class="ml-4">
                         <a href="#" class="hover:text-red-500">
                             <i class="far fa-heart    "></i> ۸۵ 
@@ -114,12 +114,12 @@
             <div class="mb-5 border-b flex flex-col">
                 <div class="flex flex-row my-2 justify-start items-center">
                     <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full object-cover" alt="">
-                    <h2 class="text-gray-600 font-bold text-lg mr-2">محسن رضابالا</h2>
+                    <h2 class="text-silver-600 font-bold text-lg mr-2">محسن رضابالا</h2>
                 </div>
 
                 <div class="flex flex-row my-2 justify-between items-center">
-                    <h2 class="text-gray-800 font-bold text-xl mr-2">کتاب خوبی بود اما ...</h2>
-                    <span class="text-gray-600">۳ روز پیش</span>
+                    <h2 class="text-silver-800 font-bold text-xl mr-2">کتاب خوبی بود اما ...</h2>
+                    <span class="text-silver-600">۳ روز پیش</span>
                     
                 </div>
 
@@ -130,7 +130,7 @@
                     
                 </div>
 
-                <div class="flex flex-row my-2 justify-end text-gray-700">
+                <div class="flex flex-row my-2 justify-end text-silver-700">
                     <div class="ml-4">
                         <a href="#" class="hover:text-red-500">
                             <i class="far fa-heart    "></i> ۸۵ 
@@ -150,13 +150,13 @@
 
             <div class="flex flex-col">
                 <div>
-                    <a href="#" class="flex w-full text-black p-2 rounded-lg bg-gray-200 hover:bg-gray-300 items-center justify-center hover:shadow">نقدهای بیشتر</a>
+                    <a href="#" class="flex w-full text-black p-2 rounded-lg bg-silver-200 hover:bg-silver-300 items-center justify-center hover:shadow">نقدهای بیشتر</a>
                 </div>
 
                 <div class="my-3 flex flex-row  items-start">
                     <img src="{{ asset('images/avatar.jpg') }}" class="hidden sm:flex w-16 h-16 rounded-full object-cover ml-2" alt="">
 
-                    <textarea class=" w-full bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 appearance-none leading-normal focus:shadow" name="" id="" cols="30" rows="10"></textarea>
+                    <textarea class=" w-full bg-white focus:outline-none border border-silver-300 rounded-lg py-2 px-4 appearance-none leading-normal focus:shadow" name="" id="" cols="30" rows="10"></textarea>
                 </div>
 
                 <div class="flex justify-end">
@@ -178,12 +178,12 @@
         <div class="flex sm:w-1/3 lg:w-1/4 p-3">
             <div class="">
                 <div class="sticky top-0 bg-white">
-                    <div class="border-b flex mb-1 pb-2">
-                        <div class="text-gray-800 flex items-baseline pt-2">
+                    <div class="border-b flex mb-1 py-2">
+                        <div class="text-silver-800 flex items-baseline">
     
                             <h2 class="mr-1 font-bold">از همین نویسنده</h2>
                         </div>
-                        <a href="#" class="mr-auto text-brown hover:bg-gray-200 rounded-full px-2 hover:text-black">دیدن همه</a>
+                        <a href="#" class="mr-auto text-brown hover:bg-silver-200 rounded-full px-2 hover:text-black">دیدن همه</a>
     
                     </div>
     
@@ -206,21 +206,21 @@
                     </div>
 
 
-                    <div class=" flex mb-1 pb-2">
-                        <div class="text-gray-800 flex items-baseline pt-2">
+                    <div class=" flex mb-1 py-2">
+                        <div class="text-silver-800 flex items-baseline ">
     
                             <h2 class="mr-1 font-bold">ژانر</h2>
                         </div>
     
                     </div>
                     <div class="flex flex-wrap mb-4 border-b pb-3 mb-3">
-                        <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white px-2 mb-2 text-sm">علمی</a>
-                        <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white px-2 mb-2 text-sm">تخیلی</a>
-                        <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white px-2 mb-2 text-sm">رمان</a>
-                        <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white px-2 mb-2 text-sm">ادبیات مقاومت</a>
-                        <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white px-2 mb-2 text-sm">جنایی</a>
+                        <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white px-2 mb-2 text-sm">علمی</a>
+                        <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white px-2 mb-2 text-sm">تخیلی</a>
+                        <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white px-2 mb-2 text-sm">رمان</a>
+                        <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white px-2 mb-2 text-sm">ادبیات مقاومت</a>
+                        <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white px-2 mb-2 text-sm">جنایی</a>
     
-                        <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white px-2 mb-2 text-sm">داستان عاشقانه</a>
+                        <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white px-2 mb-2 text-sm">داستان عاشقانه</a>
                     </div>
                     
 
