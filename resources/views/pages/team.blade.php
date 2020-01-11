@@ -63,27 +63,6 @@
 
             </div>
 
-            <div class="flex flex-row rounded-lg border-2 p-3 justify-center items-center my-8">
-                <div class="flex flex-col items-center p-4">
-                    <h4 class="text-lg">نقدها</h4>
-                    <span class="text-3xl">۹۰۲۱</span>
-                </div>
-
-                <div class="flex flex-col items-center p-4">
-                    <h4 class="text-lg">کتاب‌ها</h4>
-                    <span class="text-3xl">۳۴۹۸</span>
-                </div>
-
-                <div class="flex flex-col items-center p-4">
-                    <h4 class="text-lg">نویسندگان</h4>
-                    <span class="text-3xl">۲۰۱</span>
-                </div>
-
-                <div class="flex flex-col items-center p-4">
-                    <h4 class="text-lg">ناشرین</h4>
-                    <span class="text-3xl">۴۷</span>
-                </div>
-            </div>
 
         </div>
         <!-- End of right side -->
