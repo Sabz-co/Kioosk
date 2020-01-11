@@ -49,6 +49,7 @@ Route::get('/terms', 'PagesController@terms');
 
 Route::get('/about-us', 'PagesController@about');
 
+Route::get('/team', 'PagesController@team');
 
 // Authentication
 Auth::routes();
