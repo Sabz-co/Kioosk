@@ -49,6 +49,9 @@ Route::get('/terms', 'PagesController@terms');
 
 Route::get('/about-us', 'PagesController@about');
 
+Route::get('/contact-us', 'PagesController@contact');
+
+
 Route::get('/team', 'PagesController@team');
 
 // Authentication
