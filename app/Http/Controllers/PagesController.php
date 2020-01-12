@@ -20,4 +20,8 @@ class PagesController extends Controller
     public function team(){
         return view('pages.team');
     }
+
+    public function contact(){
+        return view('pages.contact-us');
+    }
 }

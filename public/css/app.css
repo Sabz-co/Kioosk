@@ -6858,6 +6858,10 @@ body {
   font-family: "YekanBakh";
 }
 
+.ltr {
+  direction: ltr;
+}
+
 .container{
   width: 100%;
 }

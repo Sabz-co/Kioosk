@@ -5,7 +5,7 @@
         <!-- Right side -->
     <div class="flex flex-col sm:flex-row">
         <div class="w-full sm:w-2/3  p-2 text-black text-justify p-6 md:p-8 lg:p-10 sm:border-l">
-            <h1 class="text-3xl mb-3 font-bold">می‌خواهید با سازندگان کیوسک ارتباط برقرار کنید؟</h1>
+            <h1 class="text-xl md:text-2xl lg:text-3xl mb-3 font-bold">می‌خواهید با سازندگان کیوسک ارتباط برقرار کنید؟</h1>
 
 
             <div class="flex flex-row justify-center">
