@@ -6,6 +6,8 @@
         <div class="w-full sm:w-2/3 p-3">
             <!-- Add book form -->
             <div class="flex flex-col w-full text-sm md:text-base mb-5 pb-5 border-b text-silver-700">
+                {!! Form::open(['route' => 'book.store']) !!}
+                {!! Form::token() !!}
                 <div class="w-5/6 sm:w-2/3 mx-auto mb-4">
                     <input type="text" name="title" class="bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 w-full" placeholder="عنوان">
                 </div>
@@ -15,29 +17,30 @@
                     <input type="text" class="collector" class="bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 w-full" placeholder="گردآورنده">
                     <div class="flex items-center">
                         <label class="inline-flex items-center mr-2 sm:mr-4 md:mr-6">
-                          <input type="radio" class="form-radio" name="collectorType" value="personal">
+                          <input type="radio" class="form-radio" name="collectorType" value="author">
                           <span class="mr-1 sm:mr-2">نویسنده</span>
                         </label>
                         <label class="inline-flex items-center mr-2 sm:mr-4 md:mr-6">
-                          <input type="radio" class="form-radio" name="collectorType" value="busines">
+                          <input type="radio" class="form-radio" name="collectorType" value="translator">
                           <span class="mr-1 sm:mr-2">مترجم</span>
                         </label>
                       </div>
                 </div>
 
                 <div class="w-5/6 sm:w-2/3 mx-auto mb-6">
-                    <input type="text" name="publisher" class="bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 w-full" placeholder="ناشر">
+                    {!! Form::select('publisher_id', $publishers, null, ['class' => 'bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 w-full']) !!}
+
                 </div>
 
 
                 <div class="w-5/6 sm:w-2/3 mx-auto mb-6 flex flex-col md:flex-row">
                     <input type="text" name="isbn" class="mb-6 md:mb-0 bg-silver-300 w-auto md:w-1/2 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 " placeholder="ISBN">
 
-                    <input type="text" class="bg-silver-300 w-auto md:w-1/2 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 md:mr-3" placeholder="سال انتشار">
+                    <input type="text" name="publishYear" class="bg-silver-300 w-auto md:w-1/2 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 md:mr-3" placeholder="سال انتشار">
                 </div>
 
                 <div class="w-5/6 sm:w-2/3 mx-auto mb-6 flex">
-                    <input type="text" name="publishYear" class="w-full md:w-1/2 bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 " placeholder="تعداد صفحات">
+                    <input type="text" name="pages" class="w-full md:w-1/2 bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 " placeholder="تعداد صفحات">
                 </div>
 
                 <div class="w-5/6 sm:w-2/3 mx-auto mb-6 flex flex-col">
@@ -64,9 +67,10 @@
                 </div>
 
                 <div  class="w-5/6 sm:w-2/3 mb-6 flex items-end justify-end mx-auto">
-                    <a href="#" class="text-white bg-green-500 hover:bg-green-600 rounded-lg py-2 px-3 mx-2">اضافه کردن کتاب</a>
+                    {{ Form::submit('اضافه کردن کتاب', ['class' => 'text-white bg-green-500 hover:bg-green-600 rounded-lg py-2 px-3 mx-2']) }}
                     <a href="#" class="text-white bg-silver-500 hover:bg-silver-600 rounded-lg py-2 px-3">انصراف</a>
                 </div>
+                {!! Form::close() !!}
               </div>
             <!-- End of Add book form -->
 

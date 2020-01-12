@@ -27,7 +27,7 @@ Route::get('/author', function () {
     return view('author.show');
 });
 
-Route::get('/book', function () {
+Route::get('/book/preview', function () {
     return view('book.show');
 });
 
@@ -37,9 +37,11 @@ Route::get('/review', function () {
 });
 
 
-Route::get('/book/add', function () {
-    return view('book.add');
-});
+
+
+// Resources 
+
+Route::resource('/book', 'BookController');
 
 
 
