@@ -7,7 +7,7 @@
 
             <div class="flex items-center my-4 border-b pb-2">
                 <h1 class="text-lg">کتاب برتر منتشر شده از نشر چشمه</h1>
-                <a href="#" class="text-brown rounded-full hover:bg-gray-200 hover:text-black px-2 mr-auto">دیدن همه</a>
+                <a href="#" class="text-brown rounded-full hover:bg-silver-200 hover:text-black px-2 mr-auto">دیدن همه</a>
             </div>
 
             <div class="flex flex-wrap justify-start">
@@ -113,13 +113,13 @@
         <div class="h-16  w-full sm:w-1/3 lg:w-1/4 p-2">
             <div>
                 <div class="text-center mb-4 pb-2">
-                    <div class="flex flex-col items-center justify-center p-3 rounded-xl bg-gray-200">
+                    <div class="flex flex-col items-center justify-center p-3 rounded-xl bg-silver-200">
                         <img src="{{ asset('images/publishers/cheshmeh.png') }}" class="w-20 h-20 object-contain rounded" alt="">
                         <h2 class="font-bold text-black my-2">نشر چشمه</h2>
                         <h3 class="mb-2">تهران، ایران</h3>
 
-                        <a href="#" class="my-2 mx-auto w-full sm:w-5/6 rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-gray-100 text-white py-1 px-2 lg:px-6">دنبال کردن</a>
-                        <div class="flex flex-row justify-around text-gray-700 w-full  mt-2">
+                        <a href="#" class="my-2 mx-auto w-full sm:w-5/6 rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-silver-100 text-white py-1 px-2 lg:px-6">دنبال کردن</a>
+                        <div class="flex flex-row justify-around text-silver-700 w-full  mt-2">
                             <div>
                                 <i class="fas fa-book    "></i>
                                 ۲۷ دنبال کننده
@@ -132,7 +132,7 @@
                     </div>
                 </div>
 
-                <div class=" mb-4 pb-2 border-b text-gray-800">
+                <div class=" mb-4 pb-2 border-b text-silver-800">
                     <div class="flex items-baseline justify-end my-2">
                         <p class="ml-2">www.cheshmehpub.ir</p><i class="fas fa-globe    "></i> 
                     </div>
@@ -142,25 +142,25 @@
                 </div>
 
                 <div class="flex flex-wrap mb-4">
-                    <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white px-2 mb-2 text-sm">علمی</a>
-                    <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white px-2 mb-2 text-sm">تخیلی</a>
-                    <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white px-2 mb-2 text-sm">رمان</a>
-                    <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white px-2 mb-2 text-sm">ادبیات مقاومت</a>
-                    <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white px-2 mb-2 text-sm">جنایی</a>
+                    <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white px-2 mb-2 text-sm">علمی</a>
+                    <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white px-2 mb-2 text-sm">تخیلی</a>
+                    <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white px-2 mb-2 text-sm">رمان</a>
+                    <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white px-2 mb-2 text-sm">ادبیات مقاومت</a>
+                    <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white px-2 mb-2 text-sm">جنایی</a>
 
-                    <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white px-2 mb-2 text-sm">داستان عاشقانه</a>
+                    <a href="#" class="ml-2  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white px-2 mb-2 text-sm">داستان عاشقانه</a>
                 </div>
 
                 <div class="sticky top-0 bg-white">
 
 
                     <div class="border-b flex mb-1 pb-2 hidden xl:flex">
-                        <div class="text-gray-600 flex items-baseline">
+                        <div class="text-silver-600 flex items-baseline">
     
                             <i class="far fa-user"></i>
                             <h2 class="mr-1">شاید بشناسید</h2>
                         </div>
-                        <a href="#" class="mr-auto text-brown hover:bg-gray-200 rounded-full px-2 hover:text-black">دیدن همه</a>
+                        <a href="#" class="mr-auto text-brown hover:bg-silver-200 rounded-full px-2 hover:text-black">دیدن همه</a>
     
                     </div>
     
@@ -170,9 +170,9 @@
     
                             <div class="mr-2">
                                 <h6 class="text-black font-bold">حسین مهرنواز</h6>
-                                <span class="text-gray-600">۲۳۷ دنبال کننده</span>
+                                <span class="text-silver-600">۲۳۷ دنبال کننده</span>
                             </div>
-                            <a href="#" class="mr-auto  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white py-1 px-2">دنبال کردن</a>
+                            <a href="#" class="mr-auto  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white py-1 px-2">دنبال کردن</a>
                         </div>
     
                         <div class="flex flex-row items-center mb-4">
@@ -180,9 +180,9 @@
     
                             <div class="mr-2">
                                 <h6 class="text-black font-bold">حسین مهرنواز</h6>
-                                <span class="text-gray-600">۲۳۷ دنبال کننده</span>
+                                <span class="text-silver-600">۲۳۷ دنبال کننده</span>
                             </div>
-                            <a href="#" class="mr-auto  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white py-1 px-2">دنبال کردن</a>
+                            <a href="#" class="mr-auto  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white py-1 px-2">دنبال کردن</a>
                         </div>
     
                         <div class="flex flex-row items-center mb-4">
@@ -190,9 +190,9 @@
     
                             <div class="mr-2">
                                 <h6 class="text-black font-bold">حسین مهرنواز</h6>
-                                <span class="text-gray-600">۲۳۷ دنبال کننده</span>
+                                <span class="text-silver-600">۲۳۷ دنبال کننده</span>
                             </div>
-                            <a href="#" class="mr-auto  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-gray-100 hover:text-white py-1 px-2">دنبال کردن</a>
+                            <a href="#" class="mr-auto  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white py-1 px-2">دنبال کردن</a>
                         </div>
     
     

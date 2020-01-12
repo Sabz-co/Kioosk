@@ -27,15 +27,43 @@ Route::get('/author', function () {
     return view('author.show');
 });
 
-Route::get('/book', function () {
+Route::get('/book/preview', function () {
     return view('book.show');
 });
 
 
-Route::get('/book/add', function () {
-    return view('book.add');
+Route::get('/review', function () {
+    return view('review.show');
 });
+
+
+
+
+// Resources 
+
+Route::resource('/book', 'BookController');
+
+
+
+// Other Pages
+
+Route::get('/terms', 'PagesController@terms');
+
+Route::get('/about-us', 'PagesController@about');
+
+Route::get('/contact-us', 'PagesController@contact');
+
+
+Route::get('/team', 'PagesController@team');
+
+// Authentication
 Auth::routes();
 
 Route::get('/gauth/invoke', 'SocialAuth@redirectToProvider');
 Route::get('/gauth/callback', 'SocialAuth@handleProviderCallback');
+
+
+
+// Scripts
+
+Route::get('/crawler', 'ScriptController@crawler');

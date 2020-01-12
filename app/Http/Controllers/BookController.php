@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Book;
+use App\Publisher;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -24,7 +25,8 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        $publishers = Publisher::all(['id', 'title']);
+        return view('book.add', compact('publishers'));
     }
 
     /**
@@ -35,7 +37,17 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required|unique:books|max:200',
+            // 'publisher_id' => 'required',
+            'description' => 'required',
+        ]);
+
+        $book = new Book();
+
+        return $request->all();
+
+        // return $book;
     }
 
     /**

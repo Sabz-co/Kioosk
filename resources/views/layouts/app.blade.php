@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <div class="bg-gray-800">
+        <div class="bg-gray-500">
             @include('partials.navbar')
     
         </div>
