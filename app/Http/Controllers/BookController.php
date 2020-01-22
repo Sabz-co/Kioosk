@@ -25,7 +25,8 @@ class BookController extends Controller
      */
     public function create()
     {
-        $publishers = Publisher::all(['id', 'title']);
+        $publishers = Publisher::pluck('title', 'id');
+        // return $publishers;
         return view('book.add', compact('publishers'));
     }
 
@@ -39,15 +40,25 @@ class BookController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required|unique:books|max:200',
-            // 'publisher_id' => 'required',
+            'publisher_id' => 'required',
             'description' => 'required',
         ]);
 
-        $book = new Book();
+        // $book = Book::create($request->all());
+            $book = new Book();
 
-        return $request->all();
+            $book->title = request('title');
+            $book->publisher_id = request('publisher_id');
 
-        // return $book;
+            $book->description = request('description');
+            $book->isbn = request('isbn');
+            $book->publish_year = request('publishYear');
+
+            //Temporary
+            $book->slug = $book->title;
+            $book->save();
+            
+        return redirect()->route('book.show', $book->id);
     }
 
     /**
@@ -58,7 +69,7 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        //
+        return view('book.show', compact('book'));
     }
 
     /**

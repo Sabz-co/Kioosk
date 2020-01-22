@@ -90,12 +90,12 @@
                     Kioosk - کیوسک
                 </div>
 
-                <div class="links">
+                {{-- <div class="links">
                     <a href="https://laravel-news.com">اخبار (غیر فعال)</a>
                     <a href="https://blog.laravel.com">بلاگ (غیرفعال)</a>
                     <a href="http://sabz-co.ir">راهکارهای نرم‌افزاری سبز</a>
                     <a href="https://github.com/Sabz-co/Kioosk">گیت‌هاب</a>
-                </div>
+                </div> --}}
             </div>
         </div>
     </body>

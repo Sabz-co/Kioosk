@@ -15,10 +15,13 @@
                 <div class="flex flex-col flex-1 text-center py-2 pl-2 sm:pl-0 pr-2 sm:py-4 sm:pr-2 my-2 items-center justify-between">
                     <div class="flex flex-col sm:flex-row justify-between w-full items-center">
                         <div class="text-center sm:text-right">
-                            <h4 class="text-brown font-bold text-2xl">ملت عشق                          
+                            <h4 class="text-brown font-bold text-2xl">{{ isset($book) ? $book->title : 'ملت عشق'}}                      
                             </h4>
+                            @if (!isset($book))
                             <h4 class="text-brown font-bold text-xl">ُThe Love Nation                      
-                            </h4>
+                            </h4>                                
+                            @endif
+
                         </div>
                         <div class="">
                             <i class="fas fa-star text-yellow-500"></i>
@@ -35,7 +38,7 @@
                         </div>
 
                         <div>
-                            <h6>گروه انتشاراتی ققنوس</h6>
+                            <h6>{{ $book->publisher->title }}</h6>
                         </div>
 
                         <div>

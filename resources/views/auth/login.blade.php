@@ -13,11 +13,11 @@
     <div class="flex items-center justify-center w-full lg:w-1/2 h-20 bg-silver-300  min-h-full">
 
         <div class="w-5/6 sm:w-2/3 md:w-1/2 mx-auto flex flex-col">
-            <input class="mb-3 bg-white focus:outline-none rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow" type="email" placeholder="نام و نام خانوادگی">
+            <input class="mb-3 bg-white focus:outline-none rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow" type="text" placeholder="نام و نام خانوادگی">
 
             <input class="mb-3 bg-white focus:outline-none rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow" type="email" placeholder="ایمیل">
 
-            <input class="mb-3 bg-white focus:outline-none rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow" type="email" placeholder="کلمه عبور">
+            <input class="mb-3 bg-white focus:outline-none rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow" type="password" placeholder="کلمه عبور">
         
 
             <div class="flex flex-row">

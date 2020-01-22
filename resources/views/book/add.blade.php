@@ -14,7 +14,7 @@
 
                 <div class="w-5/6 sm:w-2/3 mx-auto mb-6 flex">
 
-                    <input type="text" class="collector" class="bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 w-full" placeholder="گردآورنده">
+                    <input type="text" name="collector" class="bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 w-full" placeholder="گردآورنده">
                     <div class="flex items-center">
                         <label class="inline-flex items-center mr-2 sm:mr-4 md:mr-6">
                           <input type="radio" class="form-radio" name="collectorType" value="author">
