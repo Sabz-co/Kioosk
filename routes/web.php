@@ -45,6 +45,7 @@ Route::resource('/book', 'BookController');
 
 Route::resource('review', 'ReviewController');
 
+Route::resource('comment', 'CommentController');
 
 // Other Pages
 

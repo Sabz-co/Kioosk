@@ -100,16 +100,13 @@
                     </div>
                     {{-- End of comment --}}
 
+                    @foreach ($review->comments as $comment)
                     {{-- Comment --}}
                     <div class="flex flex-row w-full items-start border-b mb-4 pb-2">
                         <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full mx-4" alt="">
                         <div class="flex flex-col text-right">
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
+                            <p>
+                                {{ $comment->body }}
                             </p>
                             <div class="flex flex-row text-silver-700 text-center justify-start w-full mt-4">
                                 <div class="ml-4">
@@ -127,7 +124,27 @@
                             </div>
                         </div>
                     </div>
-                    {{-- End of comment --}}
+                    {{-- End of comment --}}                        
+                    @endforeach
+
+                    {!! Form::open(['route' => 'comment.store', 'class' => 'w-full  border-b mb-4 pb-2']) !!}
+
+                    <div class="flex flex-row w-full items-start">
+
+                        {!! Form::token() !!}
+                            <img src="{{ asset('images/avatar.jpg') }}" class="hidden sm:flex w-16 h-16 rounded-full object-cover ml-2" alt="">
+                            {!! Form::hidden('review_id', $review->id) !!}
+                            <textarea class=" w-full bg-white focus:outline-none border border-silver-300 rounded-lg py-2 px-4 appearance-none leading-normal focus:shadow"  id="" rows="10" name="body"></textarea>
+        
+
+        
+        
+                    </div>
+                    <div class="flex justify-end my-2">
+                        {!! Form::submit('ثبت نقد', ['class' => 'mr-auto py-2 px-3 text-white bg-green-500 hover:bg-green-600 rounded-lg hover:shadow-lg']) !!}
+                    </div>
+                    {!! Form::close() !!}
+
                 </div>
               </div>
             <!-- End of Book Info -->
