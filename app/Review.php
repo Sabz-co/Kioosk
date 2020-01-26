@@ -26,4 +26,12 @@ class Review extends Model
     {
       return $this->hasMany(Reply::class);
     }
+
+    /**
+     * Get all of the review's comments.
+     */
+    public function comments()
+    {
+        return $this->morphMany('App\Comment', 'commentable');
+    }
 }
