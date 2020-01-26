@@ -8,6 +8,12 @@ class Book extends Model
 {
 
   protected $guarded = [];
+  protected $casts = [
+    'thumbnail' => 'string',
+];
+
+
+
   public function authors()
   {
     return $this->belongsToMany('App\Author');
@@ -27,4 +33,5 @@ class Book extends Model
   {
     return $this->belongsTo('App\Publisher');
   }
+
 }

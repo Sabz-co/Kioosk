@@ -6,11 +6,17 @@
         <div class="w-full sm:w-2/3 p-3">
             <!-- Add book form -->
             <div class="flex flex-col w-full text-sm md:text-base mb-5 pb-5 border-b text-silver-700">
-                {!! Form::open(['route' => 'book.store']) !!}
+                {!! Form::open(['route' => 'book.store','files' => true]) !!}
                 {!! Form::token() !!}
                 <div class="w-5/6 sm:w-2/3 mx-auto mb-4">
                     <input type="text" name="title" class="bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 w-full" placeholder="عنوان">
                 </div>
+                @error('title')
+                    <div class="w-5/6 sm:w-2/3 mx-auto mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative text-sm" role="alert">
+                        {{-- <strong class="font-bold">Holy smokes!</strong> --}}
+                        <span class="block sm:inline">{{ $message }}</span>
+                    </div>
+                @enderror
 
                 <div class="w-5/6 sm:w-2/3 mx-auto mb-6 flex">
 
@@ -49,22 +55,35 @@
                     <tag-input name="tags" :classes="'w-full'"></tag-input>
                 </div>
 
-                <div class="w-5/6 sm:w-2/3 mx-auto mb-6 flex">
-                
-                <textarea name="description" id="" cols="30" rows="10" placeholder="توضیجی کوتاه در مورد کتاب" class="w-full bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2"></textarea>
+                <div class="w-5/6 sm:w-2/3 mx-auto mb-6 flex flex-col">
+
+                    <p class="mb-1">عکس جلد کتاب را انتخاب کنید</p>
+                    <div class="form-group">
+                      <label for=""></label>
+                      <input type="file" class="form-control-file" name="image" id="" placeholder="" aria-describedby="fileHelpId">
+                    </div>
+                    <small id="fileHelpId" class="form-text text-muted">نسبت عکس باید ۱ به ۱.۶ و اندازه آن حداکثر ۳۰۰ کیلوبایت باشد</small>
+
                 </div>
 
-                <div class="w-5/6 sm:w-2/3 mx-auto mb-6 flex sm:hidden">
-                    <div class="flex w-full items-center justify-center rounded-lg bg-silver-300">
-                        <label class="w-full flex flex-row p-2 items-center bg-white text-brown rounded-lg shadow-lg uppercase border border-brown cursor-pointer hover:bg-brown hover:text-white">
-                            <svg class="w-6 h-6 ml-2 " fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
-                            </svg>
-                            <span class=" text-small leading-normal">عکس جلد کتاب را انتخاب کنید</span>
-                            <input type='file' class="hidden" />
-                        </label>
+                @error('image')
+                    <div class="w-5/6 sm:w-2/3 mx-auto mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative text-sm" role="alert">
+                        {{-- <strong class="font-bold">Holy smokes!</strong> --}}
+                        <span class="block sm:inline">{{ $message }}</span>
                     </div>
+                @enderror
+
+
+                <div class="w-5/6 sm:w-2/3 mx-auto mb-6 flex">
+                    <textarea name="description" id="" cols="30" rows="10" placeholder="توضیجی کوتاه در مورد کتاب" class="w-full bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2"></textarea>
                 </div>
+                @error('description')
+                    <div class="w-5/6 sm:w-2/3 mx-auto mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative text-sm" role="alert">
+                        {{-- <strong class="font-bold">Holy smokes!</strong> --}}
+                        <span class="block sm:inline">{{ $message }}</span>
+                    </div>
+                @enderror
+
 
                 <div  class="w-5/6 sm:w-2/3 mb-6 flex items-end justify-end mx-auto">
                     {{ Form::submit('اضافه کردن کتاب', ['class' => 'text-white bg-green-500 hover:bg-green-600 rounded-lg py-2 px-3 mx-2']) }}
@@ -90,10 +109,10 @@
         <div class="hidden sm:flex flex-col sm:w-1/3 p-3">
 
 
-            <image-input></image-input>
+            {{-- <image-input></image-input>
 
             <p class="mt-1 text-silver-700">عکسی که از کتاب بارگزاری می‌کنید باید در اندازه ۵۰۰ در ۲۰۰ و دارای رزولوشن ۷۲ باشد.</p>
-
+ --}}
 
 
         </div>

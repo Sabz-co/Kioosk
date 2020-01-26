@@ -18,7 +18,9 @@ class CreateBooksTable extends Migration
             $table->string('title', 255);
             $table->text('image_src')->nullable();
             $table->string('isbn', 20)->nullable(); // TODO apply database level formatting.
-            $table->unsignedBigInteger('publisher_id');
+            $table->unsignedBigInteger('publisher_id')->nullable();
+            $table->unsignedBigInteger('author_id')->nullable();
+            $table->unsignedBigInteger('translator_id')->nullable();
             $table->unsignedInteger('page_count')->nullable(); // No. of pages / page count.
             $table->text('description')->nullable();
             $table->unsignedInteger('publish_year')->nullable();
@@ -26,6 +28,7 @@ class CreateBooksTable extends Migration
             $table->timestamps();
 
             $table->foreign('publisher_id')->references('id')->on('publishers');
+            $table->foreign('author_id')->references('id')->on('authors');
         });
     }
 
