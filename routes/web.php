@@ -43,6 +43,7 @@ Route::get('/review', function () {
 
 Route::resource('/book', 'BookController');
 
+Route::resource('review', 'ReviewController');
 
 
 // Other Pages

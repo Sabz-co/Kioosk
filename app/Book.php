@@ -33,5 +33,9 @@ class Book extends Model
   {
     return $this->belongsTo('App\Publisher');
   }
-
+  
+  public function reviews()
+  {
+    return $this->hasMany(Review::class);
+  }
 }

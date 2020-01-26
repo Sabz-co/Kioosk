@@ -73,7 +73,7 @@
             </div>
 
             {{-- Review --}}
-            <div class="mb-5 border-b flex flex-col">
+            {{-- <div class="mb-5 border-b flex flex-col">
                 <div class="flex flex-row my-2 justify-start items-center">
                     <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full object-cover" alt="">
                     <h2 class="text-silver-600 font-bold text-lg mr-2">محسن رضابالا</h2>
@@ -106,27 +106,28 @@
                         
                     </div>
                 </div>
-            </div>
+            </div> --}}
             {{-- End of review --}}
 
 
 
-
+            @foreach ($book->reviews as $review)
             {{-- Review --}}
             <div class="mb-5 border-b flex flex-col">
                 <div class="flex flex-row my-2 justify-start items-center">
                     <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full object-cover" alt="">
-                    <h2 class="text-silver-600 font-bold text-lg mr-2">محسن رضابالا</h2>
+                    <h2 class="text-silver-600 font-bold text-lg mr-2">{{ $review->owner->name }}</h2>
                 </div>
 
-                <div class="flex flex-row my-2 justify-between items-center">
+                {{-- <div class="flex flex-row my-2 justify-between items-center">
                     <h2 class="text-silver-800 font-bold text-xl mr-2">کتاب خوبی بود اما ...</h2>
                     <span class="text-silver-600">۳ روز پیش</span>
                     
-                </div>
+                </div> --}}
 
                 <div class="flex flex-row my-2 justify-start text-justify">
-                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                    <p>
+                        {!! $review->body !!}
                         <a href="#" class="text-blue-400 hover:text-blue-500">مشاهده‌ی این نقد ...</a> 
                     </p>
                     
@@ -147,23 +148,29 @@
                     </div>
                 </div>
             </div>
-            {{-- End of review --}}
+            {{-- End of review --}}                
+            @endforeach
+
 
 
             <div class="flex flex-col">
                 <div>
                     <a href="#" class="flex w-full text-black p-2 rounded-lg bg-silver-200 hover:bg-silver-300 items-center justify-center hover:shadow">نقدهای بیشتر</a>
                 </div>
-
+                {!! Form::open(['route' => 'review.store']) !!}
+                {!! Form::token() !!}
                 <div class="my-3 flex flex-row  items-start">
                     <img src="{{ asset('images/avatar.jpg') }}" class="hidden sm:flex w-16 h-16 rounded-full object-cover ml-2" alt="">
-
-                    <textarea class=" w-full bg-white focus:outline-none border border-silver-300 rounded-lg py-2 px-4 appearance-none leading-normal focus:shadow" name="" id="" cols="30" rows="10"></textarea>
+                    {!! Form::hidden('book_id', $book->id) !!}
+                    <textarea class=" w-full bg-white focus:outline-none border border-silver-300 rounded-lg py-2 px-4 appearance-none leading-normal focus:shadow"  id="" cols="30" rows="10" name="body"></textarea>
                 </div>
 
                 <div class="flex justify-end">
-                    <a href="#" class="mr-auto py-2 px-3 text-white bg-green-500 hover:bg-green-600 rounded-lg hover:shadow-lg">ثبت نظر</a>
+                    {!! Form::submit('ثبت نقد', ['class' => 'mr-auto py-2 px-3 text-white bg-green-500 hover:bg-green-600 rounded-lg hover:shadow-lg']) !!}
                 </div>
+
+                {!! Form::close() !!}
+
             </div>
             
 

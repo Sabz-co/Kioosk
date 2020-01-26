@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Review;
-use App\Book;
+use App\Comment;
 use Illuminate\Http\Request;
 
-class ReviewController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,32 +35,27 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        $review = new Review();
-        $review->user_id = auth()->user()->id;
-        $review->book_id = request('book_id');
-        $review->body = request('body');
-        $review->save();
-        return redirect()->back()->with('flash', 'نقد شما به درستی در سیستم ثبت شد');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Review  $review
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show(Review $review)
+    public function show(Comment $comment)
     {
-        return view('review.show', compact('review'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Review  $review
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Review $review)
+    public function edit(Comment $comment)
     {
         //
     }
@@ -70,10 +64,10 @@ class ReviewController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Review  $review
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Review $review)
+    public function update(Request $request, Comment $comment)
     {
         //
     }
@@ -81,10 +75,10 @@ class ReviewController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Review  $review
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Review $review)
+    public function destroy(Comment $comment)
     {
         //
     }

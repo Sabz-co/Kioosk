@@ -24,13 +24,16 @@
 
                     <div class="flex flex-row justify-center sm:justify-start text-xl font-bold w-full items-center my-2 py-2 border-silver-400">
                         <div class="pl-4 text-brown">
-                            <h6>ملت عشق</h6>
+                            <h6>{{ $review->book->title }}</h6>
                         </div>
 
+                        @if (!empty($review->book->author))
                         <div class="flex pr-4 border-r text-silver-700 items-center">
                             <img src="{{ asset('images/avatar.jpg') }}" class="w-10 h-10 rounded-full object-cover" alt="">
-                            <h6 class=" mr-2">ارسلان فصیحی</h6>
-                        </div>
+                            <h6 class=" mr-2">{{ $review->book->author }}</h6>
+                        </div>                        
+                        @endif
+
 
 
                     </div>

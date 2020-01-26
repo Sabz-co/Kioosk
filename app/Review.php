@@ -8,7 +8,7 @@ class Review extends Model
 {
     protected $guarded = [];
 
-    protected $appends = ['favoritesCount', 'isFavorited', 'modelName', 'isSubscribedTo', 'ownerName', 'replies'];
+    // protected $appends = ['favoritesCount', 'isFavorited', 'modelName', 'isSubscribedTo', 'ownerName', 'replies'];
 
 
     public function owner()
