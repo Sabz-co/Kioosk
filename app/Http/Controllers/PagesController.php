@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Book;
+
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
+
+    public function home() {
+        $books = Book::take(15)->get();
+        return view('home', compact('books'));
+    }
     
 
     public function terms(){

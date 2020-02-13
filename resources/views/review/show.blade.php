@@ -101,8 +101,10 @@
                     {{-- End of comment --}}
 
                     @foreach ($review->comments as $comment)
+
+                    <div class=" border-b border-gray-200 w-full flex flex-col  mb-5 pb-5">
                     {{-- Comment --}}
-                    <div class="flex flex-row w-full items-start border-b mb-4 pb-2">
+                    <div class="flex flex-row w-full items-start">
                         <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full mx-4" alt="">
                         <div class="flex flex-col text-right">
                             <p>
@@ -123,7 +125,35 @@
                                 </div>
                             </div>
                         </div>
+
+
                     </div>
+                    {{-- @foreach ($comment->comments as $child_comment)
+                    <div class="flex flex-row w-5/6 items-start mr-auto border-b mb-4 pb-2">
+                        <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full mx-4" alt="">
+                        <div class="flex flex-col text-right">
+                            <p>
+                                {{ $child_comment->body }}
+                            </p>
+                            <div class="flex flex-row text-silver-700 text-center justify-start w-full mt-4">
+                                <div class="ml-4">
+                                    <a href="#" class="hover:text-red-500">
+                                        <i class="far fa-heart    "></i> ۸۵ 
+                                    </a>
+                                    
+                                </div>
+                                <div>
+                                    <a href="#" class="hover:text-green-500">
+                                        <i class="fas fa-reply    "></i> ۶۹ 
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>      
+                    @endforeach --}}
+                </div>                  
+
                     {{-- End of comment --}}                        
                     @endforeach
 

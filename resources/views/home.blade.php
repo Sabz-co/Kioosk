@@ -54,15 +54,19 @@
             </div>
 
             <div class="flex flex-wrap justify-start">
+
+                @foreach ($books as $book)
                 <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="#">
+                    <a href="{{ route('book.show', $book->id) }}">
                         <div class="relative aspect-ratio-book">
-                            <img src="{{ asset('images/books/11.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
+                            <img src="{{ !empty($book->image_src) ? asset('images/books/thumbnail/' . $book->image_src) : asset('images/books/placeholder.png') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                         </div>
-                        <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                        <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">{{ $book->title }} </h4>
                         <p class="text-sm">الیف شافتاک</p>
                     </a>
-                </div>
+                </div>                    
+                @endforeach
+
 
                 <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
                     <a href="#">

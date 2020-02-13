@@ -17,5 +17,12 @@ class Comment extends Model
         return $this->morphTo();
     }
 
+    /**
+     * Get all of the review's comments.
+     */
+    public function comments()
+    {
+        return $this->morphMany('App\Comment', 'commentable');
+    }
 
 }

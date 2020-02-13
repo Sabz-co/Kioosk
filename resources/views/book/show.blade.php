@@ -33,9 +33,12 @@
                     </div>
 
                     <div class="flex flex-row justify-between w-full items-center my-4 border-t border-b py-2 border-silver-400">
+                        @if($book->author)
                         <div>
-                            <h6>الیف شافاک</h6>
+                            <h6>{{ $book->author->first_name . ' ' . $book->author->last_name}}</h6>
+
                         </div>
+                        @endif
 
                         <div>
                             <h6>{{ $book->publisher()->exists() ?  $book->publisher->title : 'ناشر نامشخص' }}</h6>

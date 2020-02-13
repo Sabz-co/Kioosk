@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use App\Review;
+use App\Book;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -36,8 +37,20 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        $review = Review::findOrFail(request('review_id'));
-        $review->comments()->create(['body' => request('body'), 'user_id' => auth()->user()->id]);
+        $model_input = request('model');
+        switch ($model_input) {
+            case "book":
+                $model = Book::findOrFail(request('id'));
+                break;
+            case "review":
+                $model = Review::findOrFail(request('id'));
+                break;
+            case "comment":
+                $model = Comment::findOrFail(request('id'));
+                break;
+            default:
+            $model = Book::findOrFail(request('id'));
+        $model->comments()->create(['body' => request('body'), 'user_id' => auth()->user()->id]);
 
         return redirect()->back();
     }

@@ -6,6 +6,7 @@ use App\Book;
 use App\Publisher;
 use Illuminate\Http\Request;
 use Image;
+use Slug;
 
 class BookController extends Controller
 {
@@ -58,6 +59,7 @@ class BookController extends Controller
             $book->description = request('description');
             $book->isbn = request('isbn');
             $book->publish_year = request('publishYear');
+            // $book->slug = Slug::slugify($book->title);
 
 
             if (request()->has('image')) {

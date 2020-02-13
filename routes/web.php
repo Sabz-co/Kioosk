@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
+Route::get('/home', 'PagesController@home');
 
 Route::get('/publisher', function () {
     return view('publisher.show');
@@ -35,6 +33,11 @@ Route::get('/book/preview', function () {
 Route::get('/review', function () {
     return view('review.show');
 });
+
+
+// POST requests
+
+Route::posst('/reviews/{comment}/favorites', 'FavoriteController@store');
 
 
 
