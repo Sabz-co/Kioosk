@@ -138,9 +138,12 @@
 
                 <div class="flex flex-row my-2 justify-end text-silver-700">
                     <div class="ml-4">
-                        <a href="#" class="hover:text-red-500">
-                            <i class="far fa-heart    "></i> ۸۵ 
-                        </a>
+                        <form action="/reviews/{{ $review->id }}/favorites" method="post">
+                        {{ csrf_field() }}
+                        <button type="submit" class="hover:text-red-500 cursor-pointer focus:outline-none" {{ $review->isFavorited() ? "disabled" : "" }}>
+                            <i class="far fa-heart    "></i>  {{ $review->favorites()->count() }}
+                        </button>
+                        </form>
                         
                     </div>
                     <div>

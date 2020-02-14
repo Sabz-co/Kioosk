@@ -34,10 +34,12 @@ Route::get('/review', function () {
     return view('review.show');
 });
 
+Route::get('/profiles/{user}', 'ProfilesController@show');
+
 
 // POST requests
 
-Route::post('/reviews/{comment}/favorites', 'FavoriteController@store');
+Route::post('/reviews/{review}/favorites', 'FavoritesController@store');
 
 
 
