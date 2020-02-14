@@ -37,7 +37,7 @@ Route::get('/review', function () {
 
 // POST requests
 
-Route::posst('/reviews/{comment}/favorites', 'FavoriteController@store');
+Route::post('/reviews/{comment}/favorites', 'FavoriteController@store');
 
 
 
