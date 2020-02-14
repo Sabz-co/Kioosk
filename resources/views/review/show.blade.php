@@ -30,7 +30,7 @@
                         @if (!empty($review->book->author))
                         <div class="flex pr-4 border-r text-silver-700 items-center">
                             <img src="{{ asset('images/avatar.jpg') }}" class="w-10 h-10 rounded-full object-cover" alt="">
-                            <h6 class=" mr-2">{{ $review->book->author }}</h6>
+                            <h6 class=" mr-2">{{ $review->book->author->first_name . ' ' . $review->book->author->last_name }}</h6>
                         </div>                        
                         @endif
 
