@@ -7,19 +7,36 @@ trait RecordsActivity
 
     protected static function bootRecordsActivity()
     {
-        static::created(function ($thread) {
-            $thread->recordActivity('created');
+        if (auth()->guest()) return;
+
+        foreach(static::getActivitiesToRecord() as $event) {
+            static::$event(function ($model) use ($event) {
+                $model->recordActivity($event);
+            });
+        }
+
+        static::deleting(function ($model){
+            $model->activity()->delete();
         });
+
     }
+
+
+    protected static function getActivitiesToRecord()
+    {
+        return ['created'];
+    }
+
+
     protected function recordActivity($event)
     {
-
         $this->activity()->create([
             'user_id' => auth()->id(),
             'type' => $this->getActivityType($event)
         ]);
 
     }
+
 
     protected function getActivityType($event)
     {

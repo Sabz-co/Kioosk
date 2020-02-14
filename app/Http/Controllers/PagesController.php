@@ -31,4 +31,11 @@ class PagesController extends Controller
     public function contact(){
         return view('pages.contact-us');
     }
+
+    public function test(){
+        $book = Book::findOrFail(11);
+        $book->delete();
+
+        return 'deleted';
+    }
 }

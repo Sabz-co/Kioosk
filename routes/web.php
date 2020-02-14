@@ -35,6 +35,7 @@ Route::get('/review', function () {
 });
 
 Route::get('/profiles/{user}', 'ProfilesController@show');
+Route::get('/test', 'PagesController@test');
 
 
 // POST requests

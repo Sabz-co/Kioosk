@@ -15,7 +15,14 @@ class Book extends Model
 ];
 
 
+  protected static function boot()
+  {
+    parent::boot();
 
+    static::deleting(function ($book) {
+      $book->reviews->each->delete();
+    });
+  }
 
   public function author()
   {
