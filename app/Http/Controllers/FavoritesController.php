@@ -18,7 +18,7 @@ class FavoritesController extends Controller
     public function store(Review $review) 
     {
 
-        $review->favorite();
+        return $review->favorite();
         
     }
 }
