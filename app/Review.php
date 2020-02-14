@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
+
+    use RecordsActivity;
+
+    
     protected $guarded = [];
 
     // protected $appends = ['favoritesCount', 'isFavorited', 'modelName', 'isSubscribedTo', 'ownerName', 'replies'];
