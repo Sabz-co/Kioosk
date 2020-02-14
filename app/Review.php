@@ -34,4 +34,9 @@ class Review extends Model
     {
         return $this->morphMany('App\Comment', 'commentable');
     }
+
+    public function favorites()
+    {
+      return $this->morphMany(Favorite::class, 'favorited');
+    }
 }
