@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Favorite;
+use App\Review;
 
 class FavoritesController extends Controller
 {
@@ -13,12 +15,12 @@ class FavoritesController extends Controller
     }
 
 
-    public function store(Comment $comment) 
+    public function store(Review $review) 
     {
-        return DB::table('favorites')->insert([
+        Favorite::create('favorites')->insert([
             'user_id' => auth()->id(),
-            'favorited_id' => $comment->id,
-            'favorited_type' => get_class($comment)
+            'favorited_id' => $review->id,
+            'favorited_type' => get_class($review)
         ]);
     }
 }
