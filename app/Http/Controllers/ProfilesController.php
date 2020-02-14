@@ -8,6 +8,8 @@ use App\User;
 class ProfilesController extends Controller
 {
     public function show(User $user){
-        return view('profiles.show', compact('user'));
+        $activities = $user->activity()->with('subject')->get();
+        
+        return view('profiles.show', compact('user', 'activities'));
     }
 }

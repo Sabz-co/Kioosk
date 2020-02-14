@@ -7,10 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
 
+  use RecordsActivity;
+
   protected $guarded = [];
   protected $casts = [
     'thumbnail' => 'string',
 ];
+
 
 
 

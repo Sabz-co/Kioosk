@@ -37,23 +37,24 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
+
         $model_input = request('model');
         switch ($model_input) {
             case "book":
-                $model = Book::findOrFail(request('id'));
+                $model = Book::findOrFail(request('model_id'));
                 break;
             case "review":
-                $model = Review::findOrFail(request('id'));
+                $model = Review::findOrFail(request('model_id'));
                 break;
             case "comment":
-                $model = Comment::findOrFail(request('id'));
+                $model = Comment::findOrFail(request('model_id'));
                 break;
             default:
-            $model = Book::findOrFail(request('id'));
-        $model->comments()->create(['body' => request('body'), 'user_id' => auth()->user()->id]);
-
-        return redirect()->back();
+            $model = Book::findOrFail(request('model_id'));
     }
+    $model->comments()->create(['body' => request('body'), 'user_id' => auth()->user()->id]);
+    return redirect()->back();
+}
 
     /**
      * Display the specified resource.
