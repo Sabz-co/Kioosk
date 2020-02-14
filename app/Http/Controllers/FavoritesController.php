@@ -17,10 +17,8 @@ class FavoritesController extends Controller
 
     public function store(Review $review) 
     {
-        Favorite::create('favorites')->insert([
-            'user_id' => auth()->id(),
-            'favorited_id' => $review->id,
-            'favorited_type' => get_class($review)
-        ]);
+
+        $review->favorite();
+        
     }
 }
