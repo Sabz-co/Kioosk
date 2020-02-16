@@ -11,7 +11,7 @@
 
         <div class="w-3/5 flex lg:flex-grow lg:items-center">
             <div class="text-sm flex items-center">
-                <a href="#responsive-header"
+                <a href="/home"
                     class="mt-4 hidden lg:inline-block py-1 px-2 rounded lg:mt-0 text-gray-200 hover:text-white hover:bg-gray-700 ml-3 xl:ml-5">
                     خانه
                 </a>

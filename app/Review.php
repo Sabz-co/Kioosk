@@ -9,7 +9,15 @@ class Review extends Model
 
     use RecordsActivity;
 
-    
+    protected static function boot()
+    {
+      parent::boot();
+  
+      static::deleting(function ($review) {
+        $review->comments->each->delete();
+      });
+    }
+
     protected $guarded = [];
 
     // protected $appends = ['favoritesCount', 'isFavorited', 'modelName', 'isSubscribedTo', 'ownerName', 'replies'];

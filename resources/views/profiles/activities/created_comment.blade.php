@@ -7,7 +7,8 @@
 
                         <div class="flex flex-col mr-2 mr-0 sm:mr-2 w-full">
                             <div class="flex flex-wrap justify-between">
-                                <h3>{{ $user->name }}  یک نظر افزود </h3>
+                                <h3>{{ $user->name }}   یک نظر افزود </h3>
+                                
                                 <h6 class="text-silver-600">{{ $activity->subject->created_at->diffForHumans() }}</h6>
                             </div>
 

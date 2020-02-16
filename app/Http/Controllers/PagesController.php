@@ -33,7 +33,7 @@ class PagesController extends Controller
     }
 
     public function test(){
-        $book = Book::findOrFail(11);
+        $book = Book::findOrFail(5);
         $book->delete();
 
         return 'deleted';
