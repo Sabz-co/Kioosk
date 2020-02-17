@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use App\Filters\BookFilters;
+use Illuminate\Support\Facades\Redis;
 
 use Illuminate\Http\Request;
 
@@ -12,11 +13,10 @@ class PagesController extends Controller
 
     public function home(BookFilters $filters) {
         $books = Book::latest()->withCount('reviews')->filter($filters)->get();
+        $trending = array_map('json_decode', Redis::zrevrange('trending_books', 0, 14));
 
-        foreach($books as $book)
-        echo $book->reviews_count;
-        // var_dump($books);
-        return view('home', compact('books'));
+
+        return view('home', compact('books', 'trending'));
     }
     
 

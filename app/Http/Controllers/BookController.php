@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Book;
 use App\Publisher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 use Image;
 use Slug;
 
@@ -89,6 +90,11 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
+        Redis::zincrby('trending_books', 1, json_encode([
+            'title' => $book->title,
+            'image' => $book->image_src,
+            'path' => $book->path()
+        ]));
         return view('book.show', compact('book'));
     }
 

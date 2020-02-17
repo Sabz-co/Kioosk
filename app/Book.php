@@ -67,4 +67,9 @@ class Book extends Model
     {
         return $this;
     }
+
+    public function path()
+    {
+      return '/books/' . $this->id;
+    }
 }
