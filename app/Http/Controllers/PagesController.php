@@ -3,14 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Book;
+use App\Filters\BookFilters;
 
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
 
-    public function home() {
-        $books = Book::take(15)->get();
+    public function home(BookFilters $filters) {
+        $books = Book::latest()->withCount('reviews')->filter($filters)->get();
+
+        foreach($books as $book)
+        echo $book->reviews_count;
+        // var_dump($books);
         return view('home', compact('books'));
     }
     
