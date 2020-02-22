@@ -23,7 +23,10 @@
                             @endif
 
                         </div>
-                        <div class="">
+                        <div class="views text-xs text-gray-400 mr-auto ml-2">
+                            {{ $book->visits() }} بازدید
+                        </div>
+                        <div class="flex items-center">
                             <i class="fas fa-star text-yellow-500"></i>
                             <i class="fas fa-star text-yellow-500"></i>
                             <i class="fas fa-star text-yellow-500"></i>

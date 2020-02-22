@@ -90,11 +90,14 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        Redis::zincrby('trending_books', 1, json_encode([
-            'title' => $book->title,
-            'image' => $book->image_src,
-            'path' => $book->path()
-        ]));
+        // Redis::zincrby('trending_books', 1, json_encode([
+        //     'title' => $book->title,
+        //     'image' => $book->image_src,
+        //     'path' => $book->path()
+        // ]));
+
+        // $book->recordVisit();
+
         return view('book.show', compact('book'));
     }
 

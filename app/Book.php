@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
 
-  use RecordsActivity;
+  use RecordsActivity, RecordsVisits;
 
   protected $guarded = [];
   protected $casts = [
@@ -70,6 +70,8 @@ class Book extends Model
 
     public function path()
     {
-      return '/books/' . $this->id;
+      return '/book/' . $this->id;
     }
+
+
 }
