@@ -37,6 +37,6 @@ return [
     'google' => [
       'client_id' => env('GOOGLE_CLIENT_ID'),
       'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-      'redirect' => '/gauth/callback' // Appends this to APP_URL set in .env
+      'redirect' => env('GOOGLE_REDIRECT') // Appends this to APP_URL set in .env
     ],
 ];

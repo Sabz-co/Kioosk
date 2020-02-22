@@ -15,10 +15,56 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('index');
+Route::get('/home', 'PagesController@home');
+
+Route::get('/publisher', function () {
+    return view('publisher.show');
 });
 
+Route::get('/author', function () {
+    return view('author.show');
+});
+
+Route::get('/book/preview', function () {
+    return view('book.show');
+});
+
+
+Route::get('/review', function () {
+    return view('review.show');
+});
+
+Route::get('/profiles/{user}', 'ProfilesController@show');
+Route::get('/test', 'PagesController@test');
+
+
+// POST requests
+
+Route::post('/reviews/{review}/favorites', 'FavoritesController@store');
+
+
+
+
+// Resources 
+
+Route::resource('/book', 'BookController');
+
+Route::resource('review', 'ReviewController');
+
+Route::resource('comment', 'CommentController');
+
+// Other Pages
+
+Route::get('/terms', 'PagesController@terms');
+
+Route::get('/about-us', 'PagesController@about');
+
+Route::get('/contact-us', 'PagesController@contact');
+
+
+Route::get('/team', 'PagesController@team');
+
+// Authentication
 Auth::routes();
 
 // Temporary solution since an in-app solution is not available yet.
@@ -29,3 +75,9 @@ if(App::environment('local')){
 
 Route::get('/gauth/invoke', 'SocialAuth@redirectToProvider');
 Route::get('/gauth/callback', 'SocialAuth@handleProviderCallback');
+
+
+
+// Scripts
+
+Route::get('/crawler', 'ScriptController@crawler');
