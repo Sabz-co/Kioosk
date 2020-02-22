@@ -67,12 +67,7 @@ Route::get('/team', 'PagesController@team');
 // Authentication
 Auth::routes();
 
-// Temporary solution since an in-app solution is not available yet.
-// Only works in non-production envs.
-if(App::environment('local')){ 
-    Route::get('/logout', 'Auth\LoginController@logout');
-}
-
+// Google Authentication
 Route::get('/gauth/invoke', 'SocialAuth@redirectToProvider');
 Route::get('/gauth/callback', 'SocialAuth@handleProviderCallback');
 
