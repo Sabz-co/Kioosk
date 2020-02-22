@@ -27,8 +27,8 @@ class CreateBooksTable extends Migration
             $table->text('slug');
             $table->timestamps();
 
-            $table->foreign('publisher_id')->references('id')->on('publishers');
-            $table->foreign('author_id')->references('id')->on('authors');
+            $table->foreign('publisher_id')->references('id')->on('publishers')->onDelete('set null');
+            $table->foreign('author_id')->references('id')->on('authors')->onDelete('set null');
         });
     }
 
