@@ -13,25 +13,26 @@
     </div>
     <div class="flex items-center justify-center w-full lg:w-1/2 h-20 bg-silver-300  min-h-full">
 
-        <div class="w-5/6 sm:w-2/3 md:w-1/2 mx-auto flex flex-col">
-            <input class="mb-3 bg-white focus:outline-none rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow" type="text" placeholder="نام و نام خانوادگی">
+        <form class="w-5/6 sm:w-2/3 md:w-1/2 mx-auto flex flex-col" action="{{ route('register') }}" method="POST">
+            <input class="mb-3 bg-white focus:outline-none rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow" type="text" name="name" placeholder="نام و نام خانوادگی">
 
-            <input class="mb-3 bg-white focus:outline-none rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow" type="email" placeholder="ایمیل">
+            <input class="mb-3 bg-white focus:outline-none rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow" type="email" name="email" placeholder="ایمیل">
 
-            <input class="mb-3 bg-white focus:outline-none rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow" type="password" placeholder="کلمه عبور">
+            <input class="mb-3 bg-white focus:outline-none rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow" type="password" name="password" placeholder="کلمه عبور">
         
-            <input class="mb-3 bg-white focus:outline-none rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow" type="password" placeholder="تکرار کلمه عبور">
+            <input class="mb-3 bg-white focus:outline-none rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow" type="password" name="password_confirmation" placeholder="تکرار کلمه عبور">
 
+            {{ csrf_field() }}
             <div class="flex flex-row">
                 <div class="w-1/2 ml-2">
-                    <a href="{{ url('/gauth/invoke') }}" class="p-2 rounded-full bg-white text-black shadow hover:shadow-xl flex items-center justify-center">ثبت نام با گوگل </a>
-                </div>
+                    <button href="#" class="p-2 rounded-full border border-transparent bg-green-700 hover:bg-green-100 text-white hover:text-green-700 hover:border-green-700 shadow hover:shadow-xl flex items-center justify-center w-full">ثبت نام</button>
+                </div>  
                 <div class="w-1/2 mr-2">
-                    <a href="#" class="p-2 rounded-full border border-transparent bg-green-700 hover:bg-green-100 text-white hover:text-green-700 hover:border-green-700 shadow hover:shadow-xl flex items-center justify-center">ثبت نام</a>
-                </div>            
+                    <a href="{{ url('/gauth/invoke') }}" class="p-2 rounded-full bg-white text-black shadow hover:shadow-xl flex items-center justify-center">ثبت نام با گوگل </a>
+                </div>          
             </div>
         
-        </div>
+        </form>
     </div>
 
 
