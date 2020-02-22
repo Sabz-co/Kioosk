@@ -63,4 +63,9 @@ class SocialAuth extends Controller
       }
       return $dbUser;
     }
+
+    public function __construct()
+    {
+      $this->middleware('guest');
+    }
 }
