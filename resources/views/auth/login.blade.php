@@ -12,6 +12,15 @@
     </div>
     <div class="flex items-center justify-center w-full lg:w-1/2 h-20 bg-silver-300  min-h-full">
         <form class="w-5/6 sm:w-2/3 md:w-1/2 mx-auto flex flex-col" method="POST" action="{{ route('login') }}">
+            @if($errors->any())
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg relative mb-1">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <input class="mb-3 bg-white focus:outline-none rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow" type="email" placeholder="ایمیل" name="email">
 
             <input class="mb-3 bg-white focus:outline-none rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow" type="password" placeholder="کلمه عبور" name="password">

@@ -146,6 +146,11 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'email' => 'ایمیل',
+        'password' => 'کلمه‌عبور',
+        'password_confirmation' => 'تائید کلمه‌عبور',
+        'name' => 'نام'
+    ],
 
 ];

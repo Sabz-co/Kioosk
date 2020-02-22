@@ -14,6 +14,15 @@
     <div class="flex items-center justify-center w-full lg:w-1/2 h-20 bg-silver-300  min-h-full">
 
         <form class="w-5/6 sm:w-2/3 md:w-1/2 mx-auto flex flex-col" action="{{ route('register') }}" method="POST">
+            @if($errors->any())
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg relative mb-1">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
             <input class="mb-3 bg-white focus:outline-none rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow" type="text" name="name" placeholder="نام و نام خانوادگی">
 
             <input class="mb-3 bg-white focus:outline-none rounded-lg py-2 px-4 block w-full appearance-none leading-normal focus:shadow" type="email" name="email" placeholder="ایمیل">
