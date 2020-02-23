@@ -45,4 +45,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Activity::class);
     }
+
+    public function shelves()
+    {
+        return $this->hasMany(Shelf::class);
+    }
 }

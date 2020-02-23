@@ -73,5 +73,7 @@ class Book extends Model
       return '/book/' . $this->id;
     }
 
-
+    public function shelves(){
+      return $this->hasMany(Shelf::class);
+    }
 }
