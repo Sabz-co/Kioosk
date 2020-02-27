@@ -10,17 +10,18 @@ class UserEarnedExperience
 {
     use Dispatchable, SerializesModels;
 
-    public $user, $experience;
+    public $user, $points, $totalPoints;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($user, $experience)
+    public function __construct($user, $points, $totalPoints)
     {
         $this->user = $user;
-        $this->experience = $experience;
+        $this->points = $points;
+        $this->totalPoints = $totalPoints;
     }
 
  
