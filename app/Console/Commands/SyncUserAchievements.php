@@ -11,14 +11,14 @@ class SyncUserAchievements extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'kioosk:sync-user-achievements';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Sync all the user achievements in the database';
 
     /**
      * Create a new command instance.
