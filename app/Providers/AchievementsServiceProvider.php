@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Achievements\FirstThousandPoints;
 use App\Achievements\FirstTenThousandPoints;
+use App\Achievements\KiooskMastery;
 use Illuminate\Support\ServiceProvider;
 
 class AchievementsServiceProvider extends ServiceProvider
@@ -11,7 +12,8 @@ class AchievementsServiceProvider extends ServiceProvider
 
     protected $achievements = [
         FirstThousandPoints::class,
-        FirstTenThousandPoints::class
+        FirstTenThousandPoints::class,
+        KiooskMastery::class
     ];
 
     /**
