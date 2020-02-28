@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateExperiencesTable extends Migration
+class CreateUserAchievementsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateExperiencesTable extends Migration
      */
     public function up()
     {
-        Schema::create('experiences', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('user_achievements', function (Blueprint $table) {
+            $table->primary(['user_id', 'achievement_id']);
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('achievement_id');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateExperiencesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('experiences');
+        Schema::dropIfExists('user_achievements');
     }
 }

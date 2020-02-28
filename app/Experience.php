@@ -2,9 +2,10 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Events\UserEarnedExperience;
+use Illuminate\Database\Eloquent\Model as Eloquent;
 
-class Experience extends Model
+class Experience extends Eloquent
 {
     protected $table = 'forum_experience';
 
@@ -18,6 +19,7 @@ class Experience extends Model
 
     public function awardExperience($points)
     {
+        
         $this->increment('points', $points);
 
         UserEarnedExperience::dispatch($this->user, $points, $this->points);

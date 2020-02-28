@@ -11,11 +11,24 @@
 |
 */
 
+Event::listen(\App\Events\UserEarnedExperience::class, function ($event) {
+    $achievementIdsToAwardTheUser = app('achievements')->filter(function ($achievement) use ($event) {
+        return $achievement->qualifier($event->user);
+    })->map(function ($achievement) {
+        return $achievement->modelKey();
+    });
+
+    $event->user->achievements()->sync($achievementIdsToAwardTheUser);
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/home', 'PagesController@home');
+
+Route::get('/test', 'PagesController@test');
+
 
 Route::get('/publisher', function () {
     return view('publisher.show');
