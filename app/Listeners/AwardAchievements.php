@@ -26,6 +26,8 @@ class AwardAchievements
      */
     public function handle(UserEarnedExperience $event)
     {
-        //
+        $event->user->achievements()->sync(
+            app('achievements')->filter->qualifier($event->user)->map->modelKey()
+        );
     }
 }

@@ -11,11 +11,7 @@
 |
 */
 
-Event::listen(\App\Events\UserEarnedExperience::class, function ($event) {
-    $event->user->achievements()->sync(
-        app('achievements')->filter->qualifier($event->user)->map->modelKey()
-    );
-});
+Event::listen(\App\Events\UserEarnedExperience::class, App\Listeners\AwardAchievements::class);
 
 Route::get('/', function () {
     return view('welcome');
