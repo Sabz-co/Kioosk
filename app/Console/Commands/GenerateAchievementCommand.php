@@ -11,14 +11,14 @@ class GenerateAchievementCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'make:achievement';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Generate a new achievement class stub';
 
     /**
      * Create a new command instance.
