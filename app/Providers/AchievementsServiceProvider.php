@@ -2,19 +2,24 @@
 
 namespace App\Providers;
 
-use App\Achievements\FirstThousandPoints;
-use App\Achievements\FirstTenThousandPoints;
-use App\Achievements\KiooskMastery;
+use App\Achievements\Types;
 use Illuminate\Support\ServiceProvider;
+use App\Achievements\Console\GenerateAchievementCommand;
 
 class AchievementsServiceProvider extends ServiceProvider
 {
 
     protected $achievements = [
-        FirstThousandPoints::class,
-        FirstTenThousandPoints::class,
-        KiooskMastery::class
+        Types\FirstThousandPoints::class,
+        Types\FirstTenThousandPoints::class,
+        Types\KiooskMastery::class
     ];
+
+
+    public function boot()
+    {
+        \Event::listen(\App\Events\UserEarnedExperience::class, \App\Listeners\AwardAchievements::class);
+    }
 
     /**
      * Register services.
@@ -28,6 +33,8 @@ class AchievementsServiceProvider extends ServiceProvider
                 return new $achievement;
             });
         });
+
+        $this->commands(GenerateAchievementCommand::class);
     }
 
 

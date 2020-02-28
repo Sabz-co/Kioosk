@@ -11,7 +11,6 @@
 |
 */
 
-Event::listen(\App\Events\UserEarnedExperience::class, App\Listeners\AwardAchievements::class);
 
 Route::get('/', function () {
     return view('welcome');

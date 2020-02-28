@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Achievements;
+namespace App\Achievements\Types;
 
 
 class FirstTenThousandPoints extends AchievementType
