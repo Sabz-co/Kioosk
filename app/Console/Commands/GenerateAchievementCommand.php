@@ -20,15 +20,6 @@ class GenerateAchievementCommand extends Command
      */
     protected $description = 'Generate a new achievement class stub';
 
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
 
     /**
      * Execute the console command.
