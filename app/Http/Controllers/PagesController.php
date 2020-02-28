@@ -39,7 +39,7 @@ class PagesController extends Controller
     }
 
     public function test(){
-        $user = User::first()->experience->awardExperience(4000);
+        $user = User::first()->experience->awardExperience(900);
         var_dump($user);
     }
 }
