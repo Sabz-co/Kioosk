@@ -20,15 +20,7 @@ class SyncUserAchievements extends Command
      */
     protected $description = 'Sync all the user achievements in the database';
 
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
+
 
     /**
      * Execute the console command.
