@@ -8,9 +8,24 @@
             <div class="flex flex-col md:flex-row text-sm md:text-base border-b">
                 <div class="text-silver-700 text-center sm:pl-4 py-2 my-2">
                     <img src="{{ $book->image_src ?  asset('images/books/extensive/'. $book->image_src) : asset('images/books/placeholder.png') }}" alt="" class="w-32 lg:w-40 h-40 lg:h-56 object-cover rounded-xl mx-auto">
-                    <div class="mt-4">
+                    {{-- <div class="mt-4">
                         <a href="#" class="w-full h-full rounded-lg p-2 bg-green-500 hover:bg-green-600 text-white hover:shadow-lg mt-4">افزودن به لیست</a>
-                    </div>
+                    </div> --}}
+
+                    <div class="">
+                        <div class="dropdown inline-block relative">
+                          <button class="inline-flex items-center w-full h-full rounded-lg p-2 bg-green-500 hover:bg-green-600 text-white hover:shadow-lg mt-4">
+                            <span class="mr-1">افزودن به لیست</span>
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+                          </button>
+                          <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 w-full">
+                            <li class=""><a class="rounded-t bg-gray-200 hover:bg-white py-2 px-4 block whitespace-no-wrap" href="#">خوانده شده</a></li>
+                            <li class=""><a class="bg-gray-200 hover:bg-white py-2 px-4 block whitespace-no-wrap" href="#">در حال خواندن</a></li>
+                            <li class=""><a class="rounded-b bg-gray-200 hover:bg-white py-2 px-4 block whitespace-no-wrap" href="#">برای خواندن</a></li>
+                          </ul>
+                        </div>
+                      
+                      </div>
                 </div>
                 <div class="flex flex-col flex-1 text-center py-2 pl-2 sm:pl-0 pr-2 sm:py-4 sm:pr-2 my-2 items-center justify-between">
                     <div class="flex flex-col sm:flex-row justify-between w-full items-center">

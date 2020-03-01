@@ -11,11 +11,15 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/home', 'PagesController@home');
+
+Route::get('/test', 'PagesController@test');
+
 
 Route::get('/publisher', function () {
     return view('publisher.show');

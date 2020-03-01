@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Book;
+use App\User;
 use App\Filters\BookFilters;
 use Illuminate\Support\Facades\Redis;
 
@@ -38,9 +39,7 @@ class PagesController extends Controller
     }
 
     public function test(){
-        $book = Book::findOrFail(5);
-        $book->delete();
-
-        return 'deleted';
+        $user = User::first()->experience->awardExperience(900);
+        var_dump($user);
     }
 }

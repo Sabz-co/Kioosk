@@ -46,8 +46,20 @@ class User extends Authenticatable
         return $this->hasMany(Activity::class);
     }
 
+
     public function shelves()
     {
         return $this->hasMany(Shelf::class);
+    }
+  
+    public function achievements()
+    {
+        return $this->belongsToMany(Achievement::class, 'user_achievements')->withTimestamps();
+    }
+
+    public function experience()
+    {
+        return $this->hasOne(Experience::class);
+
     }
 }
