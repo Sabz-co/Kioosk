@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\User;
 
 class SyncUserAchievements extends Command
 {
@@ -29,6 +30,17 @@ class SyncUserAchievements extends Command
      */
     public function handle()
     {
-        //
+        $users = User::chunk(100, function ($users, $index) {
+            $from = ($index - 1) * 100;
+            $to = ($index - 1) * 100 + 100;
+            $this->info("Syncing achievements for users {$from} - {$to}");
+            $users->each(function ($user) {
+                $user->achievements()->sync(
+                    app('achievements')->filter->qualifier($user)->map->modelKey()
+                );
+            });
+        });
+
+        $this->info('Finished!');
     }
 }
