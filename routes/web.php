@@ -57,6 +57,9 @@ Route::resource('review', 'ReviewController');
 
 Route::resource('comment', 'CommentController');
 
+Route::resource('shelf', 'ShelfController');
+
+
 // Other Pages
 
 Route::get('/terms', 'PagesController@terms');

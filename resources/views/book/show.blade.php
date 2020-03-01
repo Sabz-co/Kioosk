@@ -19,10 +19,38 @@
                             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
                           </button>
                           <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 w-full">
-                            <li class=""><a class="rounded-t bg-gray-200 hover:bg-white py-2 px-4 block whitespace-no-wrap" href="#">خوانده شده</a></li>
-                            <li class=""><a class="bg-gray-200 hover:bg-white py-2 px-4 block whitespace-no-wrap" href="#">در حال خواندن</a></li>
-                            <li class=""><a class="rounded-b bg-gray-200 hover:bg-white py-2 px-4 block whitespace-no-wrap" href="#">برای خواندن</a></li>
-                          </ul>
+
+                            <li class="">
+                                {!! Form::open(['route' => 'shelf.store']) !!}
+                                {!! Form::token() !!}
+                                {!! Form::hidden('book_id', 1) !!}
+                                {!! Form::hidden('user_id', 1) !!}
+                                {!! Form::hidden('shelf', 'read') !!}
+                                {!! Form::submit('خوانده شده', ['class' => 'w-full rounded-t bg-gray-200 hover:bg-white py-2 px-4 block whitespace-no-wrap']) !!}
+                                {!! Form::close() !!}
+
+                            </li>
+                            <li class="">
+                                {!! Form::open(['route' => 'shelf.store']) !!}
+                                {!! Form::token() !!}
+                                {!! Form::hidden('book_id', 1) !!}
+                                {!! Form::hidden('user_id', 1) !!}
+                                {!! Form::hidden('shelf', 'reading') !!}
+                                {!! Form::submit('در حال خواندن', ['class' => 'w-full rounded-t bg-gray-200 hover:bg-white py-2 px-4 block whitespace-no-wrap']) !!}
+                                {!! Form::close() !!}
+
+                            </li>
+                            <li class="">
+                                {!! Form::open(['route' => 'shelf.store']) !!}
+                                {!! Form::token() !!}
+                                {!! Form::hidden('book_id', 1) !!}
+                                {!! Form::hidden('user_id', 1) !!}
+                                {!! Form::hidden('shelf', 'to read') !!}
+                                {!! Form::submit('برای خواندن', ['class' => 'w-full rounded-t bg-gray-200 hover:bg-white py-2 px-4 block whitespace-no-wrap']) !!}
+                                {!! Form::close() !!}
+
+                            </li>
+                        </ul>
                         </div>
                       </div>
                 </div>

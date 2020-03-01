@@ -35,7 +35,12 @@ class ShelfController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $this->form_validation($request);
+
+        $item = Shelf::firstOrCreate(['book_id' => $data['book_id'], 'user_id'=> $data['user_id']]);
+        $item->shelf = $data['shelf'];
+        $item->update();
+        dd($item);
     }
 
     /**
@@ -81,5 +86,18 @@ class ShelfController extends Controller
     public function destroy(Shelf $shelf)
     {
         //
+    }
+
+
+
+    // Thanks to Mikey for this clean validation
+    private function form_validation(Request $request)
+    {
+        return $request->validate([
+            'user_id' => ['exists:users,id', 'required'],
+            'book_id' => ['exists:books,id', 'required'],
+            'shelf' => ['in:read,to_read,reading', 'required']
+            // 'rating' => ['between:0,5', 'numeric', 'present']
+        ]);
     }
 }

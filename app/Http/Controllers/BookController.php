@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Shelf;
 use App\Book;
 use App\Publisher;
 use Illuminate\Http\Request;
@@ -97,6 +98,9 @@ class BookController extends Controller
         // ]));
 
         // $book->recordVisit();
+        if (auth()->user()) {
+            $on_list = Shelf::where([['user_id', '=', auth()->user()->id], ['book_id', '=',  $book->id]])->first();
+        }
 
         return view('book.show', compact('book'));
     }

@@ -46,6 +46,7 @@ class User extends Authenticatable
         return $this->hasMany(Activity::class);
     }
 
+
     public function achievements()
     {
         return $this->belongsToMany(Achievement::class, 'user_achievements')->withTimestamps();
@@ -54,5 +55,31 @@ class User extends Authenticatable
     public function experience()
     {
         return $this->hasOne(Experience::class);
+    }
+
+
+    // All the relationships regarding book shelves go here:
+
+
+    public function shelves()
+    {
+        return $this->hasMany(Shelf::class);
+    }
+
+    public function want_to_read_list()
+    {
+        return $this->shelves()->where('shelf', 'to_read');
+    }
+
+
+    public function read_list()
+    {
+        return $this->shelves()->where('shelf', 'read');
+    }
+
+
+    public function reading_list()
+    {
+        return $this->shelves()->where('shelf', 'reading');
     }
 }
