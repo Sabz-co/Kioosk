@@ -82,4 +82,22 @@ class User extends Authenticatable
     {
         return $this->shelves()->where('shelf', 'reading');
     }
+
+    public function subscribeUser($userId = null)
+    {
+        $this->subscriptions()->create([
+            'user_id' => $userId ?: auth()->id()
+        ]);
+    }
+
+
+    public function unsubscribeUser($userId = null)
+    {
+        $this->subscriptions()->where('user_id', $userId ?: auth()->id())->delete();
+    }
+
+    public function subscriptions()
+    {
+        return $this->morphMany(Subscription::class, 'subscribable');
+    }
 }
