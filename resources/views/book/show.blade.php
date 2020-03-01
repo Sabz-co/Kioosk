@@ -24,7 +24,6 @@
                             <li class=""><a class="rounded-b bg-gray-200 hover:bg-white py-2 px-4 block whitespace-no-wrap" href="#">برای خواندن</a></li>
                           </ul>
                         </div>
-                      
                       </div>
                 </div>
                 <div class="flex flex-col flex-1 text-center py-2 pl-2 sm:pl-0 pr-2 sm:py-4 sm:pr-2 my-2 items-center justify-between">
