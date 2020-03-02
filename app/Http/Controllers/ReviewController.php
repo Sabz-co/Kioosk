@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Review;
 use App\Book;
+use App\User;
+use App\Notifications\ReviewHasBeenWritten;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -41,6 +43,15 @@ class ReviewController extends Controller
         $review->book_id = request('book_id');
         $review->body = request('body');
         $review->save();
+
+        $user = User::findOrFail(auth()->user()->id);
+
+        $review->owner->subscriptions->filter(function ($sub) use ($review){
+            return $sub->user_id != $review->user_id;
+        })->each(function ($sub) use ($review) {
+            $sub->user->notify(new ReviewHasBeenWritten($review->user, $review));
+        });
+
         return redirect()->back()->with('flash', 'نقد شما به درستی در سیستم ثبت شد');
     }
 
