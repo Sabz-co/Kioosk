@@ -21,7 +21,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('subscribe-button', require('./components/SubscribeButton.vue').default);
-
+Vue.component('user-notifications', require('./components/UserNotifications.vue'));
 Vue.component('tag-input', require('./components/TagsComponent.vue').default);
 Vue.component('image-input', require('./components/ImageInputComponent.vue').default);
 

@@ -38206,7 +38206,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("button", { class: _vm.classes, on: { click: _vm.subscribe } })
+  return _c("button", { class: _vm.classes, on: { click: _vm.subscribe } }, [
+    _vm._v("دنبال کردن")
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -50444,6 +50446,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 Vue.component('subscribe-button', __webpack_require__(/*! ./components/SubscribeButton.vue */ "./resources/js/components/SubscribeButton.vue")["default"]);
+Vue.component('user-notifications', __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module './components/UserNotifications.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())));
 Vue.component('tag-input', __webpack_require__(/*! ./components/TagsComponent.vue */ "./resources/js/components/TagsComponent.vue")["default"]);
 Vue.component('image-input', __webpack_require__(/*! ./components/ImageInputComponent.vue */ "./resources/js/components/ImageInputComponent.vue")["default"]);
 /**

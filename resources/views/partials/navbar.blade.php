@@ -44,6 +44,10 @@
                     id="grid-first-name" type="text" placeholder="جستجو" />
             </div>
             <div class="flex items-center mr-auto">
+                @if (Auth::guest())
+                    
+                @else
+                <user-notifications></user-notifications>
                 <a href="#responsive-header"
                     class="mt-4 hidden lg:inline-flex items-center p-1 rounded lg:mt-0 text-gray-200 hover:text-white hover:bg-gray-700 mr-3 xl:mr-5  -ml-1">
                     <span class="ml-2 flex items-center justify-center  rounded bg-brown border border-transparent border-brown text-white px-2 text-sm">۲۳</span>
@@ -58,7 +62,9 @@
 
                 <a href="{{ route('book.create') }}" class="mt-4 hidden lg:inline-flex items-center justify-center rounded lg:mt-0 text-white hover:text-white hover:bg-gray-700 mr-3 xl:mr-5 border-2 border-white rounded-full h-8 w-8">
                     <i class="fas fa-plus"></i>
-                </a>
+                </a>                    
+                @endif
+
 
 
                 {{-- <a href="#"

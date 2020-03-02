@@ -1,5 +1,5 @@
 <template>
-    <button :class="classes" @click="subscribe"></button>
+    <button :class="classes" @click="subscribe">دنبال کردن</button>
 </template>
 
 <script>
