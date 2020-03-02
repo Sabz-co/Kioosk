@@ -40,6 +40,7 @@ Route::get('/review', function () {
 
 Route::get('/profiles/{user}', 'ProfilesController@show');
 
+Route::get('/profiles/{user}/notifications', 'NotificationController@index');
 Route::delete('/profiles/{user}/notifications/{notification}', 'NotificationController@destroy');
 
 Route::post('/profiles/{user}/subscribe', 'SubscriptionController@store')->middleware('auth');
