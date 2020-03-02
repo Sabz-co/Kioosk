@@ -1980,16 +1980,20 @@ __webpack_require__.r(__webpack_exports__);
   props: ['active'],
   computed: {
     classes: function classes() {
-      return ['my-2 mx-auto w-full sm:w-5/6 rounded-lg  py-1 px-2 lg:px-6', this.active ? 'bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-silver-100 text-white' : 'hover:bg-brown border  text-brown border-brown bg-silver-100 hover:text-white'];
+      return ['outline-none focus:outline-none my-2 mx-auto w-full sm:w-5/6 rounded-lg  py-1 px-2 lg:px-6', this.active ? 'bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-silver-100 text-white' : 'hover:bg-brown border  text-brown border-brown bg-silver-100 hover:text-white'];
     }
+  },
+  data: function data() {
+    return {
+      isSubscribed: this.active ? 'لغو ' : 'مشترک شدن'
+    };
   },
   mounted: function mounted() {
     console.log('Component mounted.');
   },
   methods: {
     subscribe: function subscribe() {
-      var requestType = this.active ? 'delete' : 'post';
-      axios[requestTyle].post(location.pathname + '/subscribe');
+      axios[this.active ? 'delete' : 'post'](location.pathname + '/subscribe');
       this.active = !this.active;
       console.log(location.pathname + '/subscribe');
     }
@@ -38202,9 +38206,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("button", { class: _vm.classes, on: { click: _vm.subscribe } }, [
-    _vm._v("دنبال کردن")
-  ])
+  return _c("button", { class: _vm.classes, on: { click: _vm.subscribe } })
 }
 var staticRenderFns = []
 render._withStripped = true

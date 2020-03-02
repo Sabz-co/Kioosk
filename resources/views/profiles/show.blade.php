@@ -53,7 +53,9 @@
                         <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full" alt="">
                         <h2 class="font-bold text-black my-2">{{ $user->name }}</h2>
                         <h3 class="mb-2">تهران، ایران</h3>
-                        <subscribe-button :active="{{ json_encode($user->isSubscribedTo) }}"></subscribe-button>
+                        @if ($user->id != auth()->id())
+                            <subscribe-button :active="{{ json_encode($user->isSubscribedTo) }}"></subscribe-button>
+                        @endif
                         {{-- <a href="#" class="my-2 mx-auto w-full sm:w-5/6 rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-silver-100 text-white py-1 px-2 lg:px-6">دنبال کردن</a> --}}
                         <div class="flex flex-row justify-around text-silver-700 w-full  mt-2">
                             <div>
