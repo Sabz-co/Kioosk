@@ -19,6 +19,8 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
+    protected $appends = ['isSubscribedTo'];
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -99,5 +101,10 @@ class User extends Authenticatable
     public function subscriptions()
     {
         return $this->morphMany(Subscription::class, 'subscribable');
+    }
+
+    public function getIsSubscribedToAttribute()
+    {
+        return $this->subscriptions()->where('user_id', auth()->id())->exists();
     }
 }

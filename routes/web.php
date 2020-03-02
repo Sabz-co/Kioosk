@@ -39,6 +39,7 @@ Route::get('/review', function () {
 });
 
 Route::get('/profiles/{user}', 'ProfilesController@show');
+Route::post('/profiles/{user}/subscribe', 'SubscriptionController@store')->middleware('auth');
 Route::get('/test', 'PagesController@test');
 
 
@@ -52,6 +53,8 @@ Route::post('/reviews/{review}/favorites', 'FavoritesController@store');
 // Resources 
 
 Route::resource('/book', 'BookController');
+
+Route::resource('/author', 'AuthorController');
 
 Route::resource('review', 'ReviewController');
 

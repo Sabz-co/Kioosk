@@ -19,6 +19,7 @@ class CreateSubscriptionsTable extends Migration
             $table->integer('subscribable_id');
             $table->string('subscribable_type');
             $table->timestamps();
+            $table->unique(['user_id', 'subscribable_id']);
         });
     }
 
