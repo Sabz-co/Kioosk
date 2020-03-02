@@ -10,6 +10,12 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    <script>
+        window.Kioosk = <?php echo json_encode([
+            'user'      => Auth::user()
+        ]); ?>
+    </script>
+
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->

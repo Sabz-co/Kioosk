@@ -21,7 +21,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('subscribe-button', require('./components/SubscribeButton.vue').default);
-Vue.component('user-notifications', require('./components/UserNotifications.vue'));
+Vue.component('user-notifications', require('./components/UserNotifications.vue').default);
 Vue.component('tag-input', require('./components/TagsComponent.vue').default);
 Vue.component('image-input', require('./components/ImageInputComponent.vue').default);
 
@@ -30,7 +30,7 @@ Vue.component('image-input', require('./components/ImageInputComponent.vue').def
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
+window.User = window.Kioosk.user;
 const app = new Vue({
     el: '#app',
 });

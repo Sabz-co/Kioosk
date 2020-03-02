@@ -48,12 +48,12 @@
                     
                 @else
                 <user-notifications></user-notifications>
-                <a href="#responsive-header"
+                {{-- <a href="#responsive-header"
                     class="mt-4 hidden lg:inline-flex items-center p-1 rounded lg:mt-0 text-gray-200 hover:text-white hover:bg-gray-700 mr-3 xl:mr-5  -ml-1">
                     <span class="ml-2 flex items-center justify-center  rounded bg-brown border border-transparent border-brown text-white px-2 text-sm">۲۳</span>
 
                     <i class="fa fa-bullhorn"></i>
-                </a>
+                </a> --}}
 
                 <a href="/profiles/{{auth()->id()}}"
                     class="mt-4 hidden lg:inline-flex items-center justify-center rounded-full lg:mt-0 text-white h-8 w-8 hover:text-white hover:bg-gray-700 mr-3 xl:mr-5 border-2 border-white">
