@@ -40,6 +40,8 @@ Route::get('/review', function () {
 
 Route::get('/profiles/{user}', 'ProfilesController@show');
 Route::post('/profiles/{user}/subscribe', 'SubscriptionController@store')->middleware('auth');
+Route::delete('/profiles/{user}/subscribe', 'SubscriptionController@destroy')->middleware('auth');
+
 Route::get('/test', 'PagesController@test');
 
 

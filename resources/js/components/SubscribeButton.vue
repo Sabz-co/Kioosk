@@ -23,7 +23,7 @@
 
                 axios[requestTyle].post(location.pathname + '/subscribe')
 
-                this.active = true;
+                this.active = ! this.active;
 
                 console.log(location.pathname + '/subscribe')
             }

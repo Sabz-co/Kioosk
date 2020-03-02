@@ -1990,7 +1990,7 @@ __webpack_require__.r(__webpack_exports__);
     subscribe: function subscribe() {
       var requestType = this.active ? 'delete' : 'post';
       axios[requestTyle].post(location.pathname + '/subscribe');
-      this.active = true;
+      this.active = !this.active;
       console.log(location.pathname + '/subscribe');
     }
   }
