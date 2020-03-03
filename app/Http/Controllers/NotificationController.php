@@ -13,6 +13,11 @@ class NotificationController extends Controller
         $this->middleware('auth');
     }
 
+    public function index(User $user)
+    {
+        return auth()->user()->notifications;
+    }
+
     public function destroy(User $user, $notificationId)
     {
         auth()->user()->notifications()->findOrFail($notificationId)->markAsRead();

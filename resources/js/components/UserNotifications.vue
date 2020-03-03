@@ -9,7 +9,7 @@
     </button>
     <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 z-10 left-0">
         <li v-for="notification in notifications">
-            <a class="rounded-t bg-white text-gray-600 hover:text-black border-b border-gray-200 py-2 px-4 block whitespace-no-wrap" href="#" v-text="notification.data.message"></a>
+            <a class="rounded-t bg-white text-gray-600 hover:text-black border-b border-gray-200 py-2 px-4 block whitespace-no-wrap" :href="notification.data.link" v-text="notification.data.message" @click.prevent="markAsRead(notification)"></a>
         </li>
     </ul>
   </div>

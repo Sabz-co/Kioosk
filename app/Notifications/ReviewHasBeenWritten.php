@@ -45,7 +45,8 @@ class ReviewHasBeenWritten extends Notification
     public function toArray($notifiable)
     {
         return [
-            'message' => 'نقد جدید موجود است!'
+            'message' => $this->user->name . ' برای کتاب ' . $this->review->book->title . ' یک نقد نوشت',
+            'link' => $this->review->path()
         ];
     }
 }

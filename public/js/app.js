@@ -38339,8 +38339,14 @@ var render = function() {
                 _c("a", {
                   staticClass:
                     "rounded-t bg-white text-gray-600 hover:text-black border-b border-gray-200 py-2 px-4 block whitespace-no-wrap",
-                  attrs: { href: "#" },
-                  domProps: { textContent: _vm._s(notification.data.message) }
+                  attrs: { href: notification.data.link },
+                  domProps: { textContent: _vm._s(notification.data.message) },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.markAsRead(notification)
+                    }
+                  }
                 })
               ])
             }),

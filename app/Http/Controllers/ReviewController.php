@@ -49,7 +49,7 @@ class ReviewController extends Controller
         $review->owner->subscriptions->filter(function ($sub) use ($review){
             return $sub->user_id != $review->user_id;
         })->each(function ($sub) use ($review) {
-            $sub->user->notify(new ReviewHasBeenWritten($review->user, $review));
+            $sub->user->notify(new ReviewHasBeenWritten(auth()->user(), $review));
         });
 
         return redirect()->back()->with('flash', 'نقد شما به درستی در سیستم ثبت شد');

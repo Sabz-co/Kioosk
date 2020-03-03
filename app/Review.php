@@ -39,6 +39,11 @@ class Review extends Model
       return $this->hasMany(Reply::class);
     }
 
+    public function path()
+    {
+      return '/review/' . $this->id;
+    }
+
     /**
      * Get all of the review's comments.
      */
