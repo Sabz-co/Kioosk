@@ -56,7 +56,6 @@
                 </div>
 
                 <div class="w-5/6 sm:w-2/3 mx-auto mb-6 flex flex-col">
-
                     <p class="mb-1">عکس جلد کتاب را انتخاب کنید</p>
                     <div class="form-group">
                       <label for=""></label>
