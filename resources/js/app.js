@@ -6,6 +6,8 @@
 
 require('./bootstrap');
 
+// import 'jquery-ui/ui/widgets/autocomplete.js';
+
 window.Vue = require('vue');
 
 /**
@@ -31,6 +33,10 @@ Vue.component('image-input', require('./components/ImageInputComponent.vue').def
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 window.User = window.Kioosk.user;
+Vue.config.ignoredElements = ['trix-editor'];
+Vue.component('trix', {
+    template: '<trix-editor></trix-editor>'
+});
 const app = new Vue({
     el: '#app',
 });

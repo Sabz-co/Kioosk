@@ -15,4 +15,9 @@ class Author extends Model
   {
     return $this->belongsToMany('App\Book', 'translator_book', 'translator_id', 'book_id');
   }
+
+  public function getFullNameAttribute()
+  {
+     return ucfirst($this->first_name) . ' ' . ucfirst($this->last_name);
+  }
 }

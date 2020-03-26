@@ -11,12 +11,14 @@
 
     <!-- Scripts -->
     <script>
+
         window.Kioosk = <?php echo json_encode([
             'user'      => Auth::user()
         ]); ?>
     </script>
 
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/trix.css') }}">
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -24,6 +26,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
 </head>
 <body>
     <div id="app">
@@ -44,4 +47,10 @@
 
 
 </body>
+
+<script src="{{ asset('js/app.js') }}" ></script>
+    <script type="text/javascript" src="{{ asset('js/trix.js') }}"></script>
+    
+    <script type="text/javascript" src="{{ asset('js/jquery.autocomplete.js') }}"></script>
+    @yield('footer-assets')
 </html>

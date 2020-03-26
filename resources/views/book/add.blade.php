@@ -20,7 +20,7 @@
 
                 <div class="w-5/6 sm:w-2/3 mx-auto mb-6 flex">
 
-                    <input type="text" name="collector" class="bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 w-full" placeholder="گردآورنده">
+                    <input type="text" id="author-search" name="collector" class="bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 w-full" placeholder="گردآورنده">
                     <div class="flex items-center">
                         <label class="inline-flex items-center mr-2 sm:mr-4 md:mr-6">
                           <input type="radio" class="form-radio" name="collectorType" value="author">
@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="w-5/6 sm:w-2/3 mx-auto mb-6">
-                    {!! Form::select('publisher_id', $publishers, null, ['class' => 'bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 w-full']) !!}
+                    {!! Form::select('publisher_id', $publishers, null, [ 'class' => 'bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 w-full']) !!}
 
                 </div>
 
@@ -84,10 +84,18 @@
                     </div>
                 @enderror
 
+                <div id="remote">
+    <!-- For defining autocomplete -->
+    <input type="text" id='employee_search'>
+    <input type="text" class="w-full h-12 bg-red-200" name="country" id="autocomplete"/>
 
+
+    <!-- For displaying selected option value from autocomplete suggestion -->
+    <input type="text" id='employeeid' readonly>
+                  </div>
                 <div  class="w-5/6 sm:w-2/3 mb-6 flex items-end justify-end mx-auto">
                     {{ Form::submit('اضافه کردن کتاب', ['class' => 'text-white bg-green-500 hover:bg-green-600 rounded-lg py-2 px-3 mx-2']) }}
-                    <a href="#" class="text-white bg-silver-500 hover:bg-silver-600 rounded-lg py-2 px-3">انصراف</a>
+                    <a href="#" name="term" class="text-white bg-silver-500 hover:bg-silver-600 rounded-lg py-2 px-3">انصراف</a>
                 </div>
                 {!! Form::close() !!}
               </div>
@@ -95,7 +103,6 @@
 
 
             
-
 
 
 
@@ -118,4 +125,50 @@
         </div>
         <!-- End of sidebar -->
     </div>
+@endsection
+
+
+@section('footer-assets')
+    <script type="text/javascript">
+$(document).ready(function(){
+
+
+$('#autocomplete').autocomplete({
+    serviceUrl: "{{url('author/search')}}",
+    onSelect: function (suggestion) {
+        return {
+            suggestions: $.map(suggestion, function(dataItem) {
+                return { value: dataItem.first_name, data: dataItem.last_name };
+            })
+        };
+        alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
+    }
+});
+
+
+// $( "#employee_search" ).autocomplete({
+//   source: function( request, response ) {
+//     // Fetch data
+//     $.ajax({
+//       url:"{{url('author/search')}}",
+//       type: 'get',
+//       dataType: "json",
+//       data: {
+//          search: request.term
+//       },
+//       success: function( data ) {
+//          response( data );
+//       }
+//     });
+//   },
+//   select: function (event, ui) {
+//      // Set selection
+//      $('#employee_search').val(ui.item.label); // display the selected text
+//      $('#employeeid').val(ui.item.value); // save selected id to input
+//      return false;
+//   }
+// });
+
+});
+    </script>
 @endsection

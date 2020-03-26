@@ -2084,6 +2084,11 @@ __webpack_require__.r(__webpack_exports__);
     axios.get("/profiles/" + window.Kioosk.user.id + "/notifications").then(function (response) {
       return _this.notifications = response.data;
     });
+  },
+  methods: {
+    markAsRead: function markAsRead(notification) {
+      axios["delete"]('/profiles/' + window.Kioosk.user.id + '/notifications/' + notification.id);
+    }
   }
 });
 
@@ -38326,7 +38331,25 @@ var render = function() {
   return _vm.notifications.length
     ? _c("div", {}, [
         _c("div", { staticClass: "dropdown inline-block relative" }, [
-          _vm._m(0),
+          _c(
+            "button",
+            {
+              staticClass:
+                "mt-4 hidden lg:inline-flex items-center p-1 rounded lg:mt-0 text-gray-200 hover:text-white hover:bg-gray-700 mr-3 xl:mr-5  -ml-1"
+            },
+            [
+              _c(
+                "span",
+                {
+                  staticClass:
+                    "ml-2 flex items-center justify-center  rounded bg-brown border border-transparent border-brown text-white px-2 text-sm"
+                },
+                [_vm._v(_vm._s(_vm.notifications.length))]
+              ),
+              _vm._v(" "),
+              _c("i", { staticClass: "fa fa-bullhorn" })
+            ]
+          ),
           _vm._v(" "),
           _c(
             "ul",
@@ -38343,7 +38366,6 @@ var render = function() {
                   domProps: { textContent: _vm._s(notification.data.message) },
                   on: {
                     click: function($event) {
-                      $event.preventDefault()
                       return _vm.markAsRead(notification)
                     }
                   }
@@ -38356,32 +38378,7 @@ var render = function() {
       ])
     : _vm._e()
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass:
-          "mt-4 hidden lg:inline-flex items-center p-1 rounded lg:mt-0 text-gray-200 hover:text-white hover:bg-gray-700 mr-3 xl:mr-5  -ml-1"
-      },
-      [
-        _c(
-          "span",
-          {
-            staticClass:
-              "ml-2 flex items-center justify-center  rounded bg-brown border border-transparent border-brown text-white px-2 text-sm"
-          },
-          [_vm._v("۲۳")]
-        ),
-        _vm._v(" "),
-        _c("i", { staticClass: "fa fa-bullhorn" })
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -50557,7 +50554,8 @@ module.exports = function(module) {
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // import 'jquery-ui/ui/widgets/autocomplete.js';
+
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
@@ -50582,6 +50580,10 @@ Vue.component('image-input', __webpack_require__(/*! ./components/ImageInputComp
  */
 
 window.User = window.Kioosk.user;
+Vue.config.ignoredElements = ['trix-editor'];
+Vue.component('trix', {
+  template: '<trix-editor></trix-editor>'
+});
 var app = new Vue({
   el: '#app'
 });
@@ -50931,15 +50933,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************************************!*\
   !*** ./resources/js/components/UserNotifications.vue ***!
   \*******************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _UserNotifications_vue_vue_type_template_id_23249cfc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UserNotifications.vue?vue&type=template&id=23249cfc& */ "./resources/js/components/UserNotifications.vue?vue&type=template&id=23249cfc&");
 /* harmony import */ var _UserNotifications_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./UserNotifications.vue?vue&type=script&lang=js& */ "./resources/js/components/UserNotifications.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _UserNotifications_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _UserNotifications_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -50969,7 +50970,7 @@ component.options.__file = "resources/js/components/UserNotifications.vue"
 /*!********************************************************************************!*\
   !*** ./resources/js/components/UserNotifications.vue?vue&type=script&lang=js& ***!
   \********************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

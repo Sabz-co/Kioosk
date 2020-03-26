@@ -12,47 +12,7 @@
                         <a href="#" class="w-full h-full rounded-lg p-2 bg-green-500 hover:bg-green-600 text-white hover:shadow-lg mt-4">افزودن به لیست</a>
                     </div> --}}
 
-                    <div class="">
-                        <div class="dropdown inline-block relative">
-                          <button class="inline-flex items-center w-full h-full rounded-lg p-2 bg-green-500 hover:bg-green-600 text-white hover:shadow-lg mt-4">
-                            <span class="mr-1">افزودن به لیست</span>
-                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
-                          </button>
-                          <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 w-full">
-
-                            <li class="">
-                                {!! Form::open(['route' => 'shelf.store']) !!}
-                                {!! Form::token() !!}
-                                {!! Form::hidden('book_id', 1) !!}
-                                {!! Form::hidden('user_id', 1) !!}
-                                {!! Form::hidden('shelf', 'read') !!}
-                                {!! Form::submit('خوانده شده', ['class' => 'w-full rounded-t bg-gray-200 hover:bg-white py-2 px-4 block whitespace-no-wrap']) !!}
-                                {!! Form::close() !!}
-
-                            </li>
-                            <li class="">
-                                {!! Form::open(['route' => 'shelf.store']) !!}
-                                {!! Form::token() !!}
-                                {!! Form::hidden('book_id', 1) !!}
-                                {!! Form::hidden('user_id', 1) !!}
-                                {!! Form::hidden('shelf', 'reading') !!}
-                                {!! Form::submit('در حال خواندن', ['class' => 'w-full rounded-t bg-gray-200 hover:bg-white py-2 px-4 block whitespace-no-wrap']) !!}
-                                {!! Form::close() !!}
-
-                            </li>
-                            <li class="">
-                                {!! Form::open(['route' => 'shelf.store']) !!}
-                                {!! Form::token() !!}
-                                {!! Form::hidden('book_id', 1) !!}
-                                {!! Form::hidden('user_id', 1) !!}
-                                {!! Form::hidden('shelf', 'to read') !!}
-                                {!! Form::submit('برای خواندن', ['class' => 'w-full rounded-t bg-gray-200 hover:bg-white py-2 px-4 block whitespace-no-wrap']) !!}
-                                {!! Form::close() !!}
-
-                            </li>
-                        </ul>
-                        </div>
-                      </div>
+                    @include('partials.shelves.list')
                 </div>
                 <div class="flex flex-col flex-1 text-center py-2 pl-2 sm:pl-0 pr-2 sm:py-4 sm:pr-2 my-2 items-center justify-between">
                     <div class="flex flex-col sm:flex-row justify-between w-full items-center">
@@ -173,10 +133,10 @@
                     
                 </div> --}}
 
-                <div class="flex flex-row my-2 justify-start text-justify">
+                <div class="flex flex-row my-2 justify-start text-justify items-end">
                     <p>
-                        {!! $review->body !!}
-                        <a href="#" class="text-blue-400 hover:text-blue-500">مشاهده‌ی این نقد ...</a> 
+                        {!! $review->excerpt() !!}
+                        <a href="{{ $review->path() }}" class="text-blue-400 hover:text-blue-500">مشاهده‌ی این نقد ...</a> 
                     </p>
                     
                 </div>
@@ -203,7 +163,7 @@
             @endforeach
 
 
-
+            <div class="trix-content"></div>
             <div class="flex flex-col">
                 <div>
                     <a href="#" class="flex w-full text-black p-2 rounded-lg bg-silver-200 hover:bg-silver-300 items-center justify-center hover:shadow">نقدهای بیشتر</a>
@@ -212,8 +172,12 @@
                 {!! Form::token() !!}
                 <div class="my-3 flex flex-row  items-start">
                     <img src="{{ asset('images/avatar.jpg') }}" class="hidden sm:flex w-16 h-16 rounded-full object-cover ml-2" alt="">
+
                     {!! Form::hidden('book_id', $book->id) !!}
-                    <textarea class=" w-full bg-white focus:outline-none border border-silver-300 rounded-lg py-2 px-4 appearance-none leading-normal focus:shadow"  id="" cols="30" rows="10" name="body"></textarea>
+                    <div class="trix-editor flex flex-col w-full">
+                        <input type="hidden"  name="body" id="body" />
+                        <trix input="body" class="trix-content"></trix>
+                    </div>
                 </div>
 
                 <div class="flex justify-end">

@@ -44,6 +44,19 @@ class Review extends Model
       return '/review/' . $this->id;
     }
 
+    public function excerpt($startPos=0, $maxLength=150) {
+      if(strlen($this->body) > $maxLength) {
+          $excerpt   = substr($this->body, $startPos, $maxLength-3);
+          $lastSpace = strrpos($excerpt, ' ');
+          $excerpt   = substr($excerpt, 0, $lastSpace);
+          $excerpt  .= '...';
+      } else {
+          $excerpt = $this->body;
+      }
+      
+      return $excerpt;
+  }
+
     /**
      * Get all of the review's comments.
      */
