@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use Auth;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,9 +11,12 @@ class Book extends Model
   use RecordsActivity, RecordsVisits;
 
   protected $guarded = [];
+
   protected $casts = [
     'thumbnail' => 'string',
   ];
+
+  protected $appends = ['on_shelf'];
 
 
 
@@ -71,6 +75,14 @@ class Book extends Model
     public function path()
     {
       return '/book/' . $this->id;
+    }
+
+
+    public function getOnShelfAttribute()
+    {
+        if (Auth::guest()) {
+          return false;
+        }
     }
 
 

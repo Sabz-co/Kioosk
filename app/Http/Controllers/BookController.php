@@ -19,7 +19,9 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        $books = Book::all();
+
+        return view('book.index', compact('books'));
     }
 
     /**
@@ -98,6 +100,7 @@ class BookController extends Controller
         // ]));
 
         // $book->recordVisit();
+        // dd($book->append('on_shelf')->toArray());
         if (auth()->user()) {
             $on_list = Shelf::where([['user_id', '=', auth()->user()->id], ['book_id', '=',  $book->id]])->first();
         }
