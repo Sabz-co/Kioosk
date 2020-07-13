@@ -24,6 +24,9 @@ Route::get('/home', 'PagesController@home');
 
 Route::get('/test', 'PagesController@test');
 
+Route::get('/genres', function () {
+    return view('genres.index');
+});
 
 Route::get('/publisher', function () {
     return view('publisher.show');
