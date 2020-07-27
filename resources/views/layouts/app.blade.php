@@ -36,7 +36,7 @@
         </div>
     
     
-        <div class="container flex flex-col flex-col-reverse sm:flex-row mb-4 mx-auto mt-6">
+        <div class="container flex flex-col flex-col-reverse sm:flex-row mb-4 mx-auto mt-6 xl:max-w-6xl">
     
             {{-- Content goes here --}}
             @yield('content')
