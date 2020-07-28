@@ -17,4 +17,13 @@ class Shelf extends Model
     {
         return $this->belongsTo(Book::class);
     }
+
+    public function review()
+    {
+        return $this->belongsTo(Review::class);
+    }
+    public static function feed($user, $take = 50)
+    {
+        return $user->shelves()->with('book')->latest()->take($take)->get();
+    }
 }

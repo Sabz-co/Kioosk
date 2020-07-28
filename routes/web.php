@@ -47,6 +47,8 @@ Route::get('/review', function () {
 
 Route::get('/profiles/{user}', 'ProfilesController@show');
 
+Route::get('/profiles/{user}/my-books', 'ProfilesController@showMyBooks')->name('my-books');
+
 Route::get('/profiles/{user}/notifications', 'NotificationController@index');
 Route::delete('/profiles/{user}/notifications/{notification}', 'NotificationController@destroy');
 

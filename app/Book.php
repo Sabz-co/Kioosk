@@ -86,4 +86,14 @@ class Book extends Model
     }
 
 
+    public function getCoverAttribute()
+    {
+      if(empty($this->image_src)) {
+        return 'images/books/placeholder.png';
+      }
+
+      return 'images/books/thumbnail/'.$this->image_src;
+    }
+
+
 }
