@@ -43,7 +43,7 @@ Route::get('/book/preview', function () {
 
 Route::get('/review', function () {
     return view('review.show');
-});
+})->name('review');
 
 Route::get('/profiles/{user}', 'ProfilesController@show');
 

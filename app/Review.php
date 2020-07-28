@@ -44,7 +44,7 @@ class Review extends Model
       return '/review/' . $this->id;
     }
 
-    public function excerpt($startPos=0, $maxLength=150) {
+    public function getExcerptAttribute($startPos=0, $maxLength=150) {
       if(strlen($this->body) > $maxLength) {
           $excerpt   = substr($this->body, $startPos, $maxLength-3);
           $lastSpace = strrpos($excerpt, ' ');
