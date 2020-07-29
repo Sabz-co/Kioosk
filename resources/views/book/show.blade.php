@@ -135,7 +135,7 @@
 
                 <div class="flex flex-row my-2 justify-start text-justify items-end">
                     <p>
-                        {!! $review->excerpt() !!}
+                        {!! $review->excerpt !!}
                         <a href="{{ $review->path() }}" class="text-blue-400 hover:text-blue-500">مشاهده‌ی این نقد ...</a> 
                     </p>
                     
