@@ -4,11 +4,12 @@ namespace App;
 use Auth;
 
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Book extends Model
 {
 
-  use RecordsActivity, RecordsVisits;
+  use RecordsActivity, RecordsVisits, Sluggable;
 
   protected $guarded = [];
 
@@ -93,6 +94,16 @@ class Book extends Model
       }
 
       return 'images/books/thumbnail/'.$this->image_src;
+    }
+
+
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
     }
 
 
