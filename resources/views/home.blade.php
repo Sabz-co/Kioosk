@@ -68,56 +68,6 @@
                 @endforeach
 
 
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="#">
-                        <div class="relative aspect-ratio-book">
-                            <img src="{{ asset('images/books/12.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
-                        </div>
-                        
-                        <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
-                        <p class="text-sm">الیف شافتاک</p>
-                    </a>
-                </div>
-
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="#">
-                        <div class="relative aspect-ratio-book">
-                            <img src="{{ asset('images/books/13.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
-                        </div>
-                        <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
-                        <p class="text-sm">الیف شافتاک</p>
-                    </a>
-                </div>
-
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="#">
-                        <div class="relative aspect-ratio-book">
-                            <img src="{{ asset('images/books/14.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
-                        </div>
-                        <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
-                        <p class="text-sm">الیف شافتاک</p>
-                    </a>
-                </div>
-
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="#">
-                        <div class="relative aspect-ratio-book">
-                            <img src="{{ asset('images/books/15.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
-                        </div>
-                        <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
-                        <p class="text-sm">الیف شافتاک</p>
-                    </a>
-                </div>
-
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="#">
-                        <div class="relative aspect-ratio-book">
-                            <img src="{{ asset('images/books/16.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
-                        </div>
-                        <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
-                        <p class="text-sm">الیف شافتاک</p>
-                    </a>
-                </div>
                 
             </div>
 
