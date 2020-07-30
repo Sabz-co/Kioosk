@@ -89,7 +89,7 @@
                     <div class="flex flex-col sm:flex-row items-center sm:items-start">
                         <img src="{{ asset('images/avatar.jpg') }}" class="w-24 h-24 rounded-full mb-3 sm:mb-0" alt="">
 
-                        <div class="flex flex-col mr-2 mr-0 sm:mr-2 w-full">
+                        <div class="flex flex-col mr-0 sm:mr-2 w-full">
                             <div class="flex flex-wrap justify-between">
                                 <h3>محمد قمارباز، <span class="font-bold">قلعه حیوانات</span>  را به قفسه‌ی حال مطالعه‌ی خود اضافه کرد </h3>
                                 <h6 class="text-silver-600">سه دقیقه پیش</h6>
