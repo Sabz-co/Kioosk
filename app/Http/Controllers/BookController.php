@@ -79,7 +79,7 @@ class BookController extends Controller
                 $book->image_src=time().$originalImage->getClientOriginalName();
             }
             //Temporary
-            $book->slug = $book->title;
+            // $book->slug = $book->title;
             $book->save();
             
         return redirect()->route('book.show', $book->id);
@@ -93,11 +93,12 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        // Redis::zincrby('trending_books', 1, json_encode([
-        //     'title' => $book->title,
-        //     'image' => $book->image_src,
-        //     'path' => $book->path()
-        // ]));
+        // Redis::del('trending_books');
+        Redis::zincrby('trending_books', 1, json_encode([
+            'title' => $book->title,
+            'image' => $book->image_src,
+            'path' => $book->path()
+        ]));
 
         // $book->recordVisit();
         // dd($book->append('on_shelf')->toArray());

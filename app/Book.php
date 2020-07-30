@@ -75,7 +75,7 @@ class Book extends Model
 
     public function path()
     {
-      return '/book/' . $this->id;
+      return '/book/' . $this->slug;
     }
 
 
