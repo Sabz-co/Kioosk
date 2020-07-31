@@ -19,9 +19,10 @@
                 @enderror
 
                 <div class="w-5/6 sm:w-2/3 mx-auto mb-6 flex">
-
-                    <input type="text" id="author-search" name="collector" class="bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 w-full" placeholder="گردآورنده">
-                    <div class="flex items-center">
+                    <author-input v-model="tags" name="authors" :classes="'bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 w-full'"></author-input>
+                    
+                    {{-- <input type="text" id="author-search" name="collector" class="bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 w-full" placeholder="گردآورنده"> --}}
+                    <div class="flex items-center"> 
                         <label class="inline-flex items-center mr-2 sm:mr-4 md:mr-6">
                           <input type="radio" class="form-radio" name="collectorType" value="author">
                           <span class="mr-1 sm:mr-2">نویسنده</span>

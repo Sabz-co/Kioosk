@@ -25,6 +25,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('subscribe-button', require('./components/SubscribeButton.vue').default);
 Vue.component('user-notifications', require('./components/UserNotifications.vue').default);
 Vue.component('tag-input', require('./components/TagsComponent.vue').default);
+Vue.component('author-input', require('./components/AuthorsInputComponent.vue').default);
+
 Vue.component('image-input', require('./components/ImageInputComponent.vue').default);
 
 /**

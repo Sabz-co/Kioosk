@@ -7,10 +7,9 @@ use App\Author;
 
 class AutoCompleteController extends Controller
 {
-    public function authors(Request $request)
+    public function authors($query)
     {
-        $search = $request->get('query');
-        $result = Author::orWhereRaw("concat(first_name, ' ', last_name)  like '%$search%' ")->get();
+        $result = Author::orWhereRaw("concat(first_name, ' ', last_name)  like '%$query%' ")->get();
         return response()->json(["suggestions" => $result]);
     }
 }

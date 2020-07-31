@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Author extends Model
 {
+
+  protected $appends = ['full_name'];
   public function books()
   {
     return $this->belongsToMany('App\Book');

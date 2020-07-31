@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 // Search authors
 
-Route::get('author/search', 'AutoCompleteController@authors');
+Route::get('author/search/{query}', 'AutoCompleteController@authors');
 
 Route::get('/home', 'PagesController@home');
 
