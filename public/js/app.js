@@ -2148,6 +2148,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -38797,7 +38798,7 @@ var render = function() {
       "button",
       {
         staticClass:
-          "block mt-4 items-center justify-center rounded-full lg:mt-0 text-white h-8 w-8 hover:text-white hover:bg-gray-700 mr-3 xl:mr-5 border-2 border-white",
+          "relative z-10 block mt-4 items-center justify-center rounded-full lg:mt-0 text-white h-8 w-8 hover:text-white hover:bg-gray-700 mr-3 xl:mr-5 border-2 border-white",
         on: {
           click: function($event) {
             _vm.isOpen = !_vm.isOpen
@@ -38811,6 +38812,18 @@ var render = function() {
         })
       ]
     ),
+    _vm._v(" "),
+    _vm.isOpen
+      ? _c("button", {
+          staticClass:
+            "fixed top-0 bottom-0 right-0 left-0 w-full h-full bg-black cursor-default",
+          on: {
+            click: function($event) {
+              _vm.isOpen = false
+            }
+          }
+        })
+      : _vm._e(),
     _vm._v(" "),
     _vm.isOpen
       ? _c(
