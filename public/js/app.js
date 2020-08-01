@@ -38829,7 +38829,7 @@ var render = function() {
     _vm._v(" "),
     _vm.isOpen
       ? _c("button", {
-          staticClass: "fixed inset-0 w-full h-full bg-black cursor-default",
+          staticClass: "fixed inset-0 w-full h-full cursor-default",
           attrs: { tabindex: "-1" },
           on: {
             click: function($event) {
