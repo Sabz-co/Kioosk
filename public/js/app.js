@@ -2154,6 +2154,20 @@ __webpack_require__.r(__webpack_exports__);
     return {
       isOpen: false
     };
+  },
+  created: function created() {
+    var _this = this;
+
+    var handleEscape = function handleEscape(e) {
+      if (e.key === 'Esc' || e.key === 'Escape') {
+        _this.isOpen = false;
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    this.$once('hook:beforeDestroy', function () {
+      document.removeEventListener('keydown', handleEscape);
+    });
   }
 });
 
@@ -38815,8 +38829,7 @@ var render = function() {
     _vm._v(" "),
     _vm.isOpen
       ? _c("button", {
-          staticClass:
-            "fixed top-0 bottom-0 right-0 left-0 w-full h-full bg-black cursor-default",
+          staticClass: "fixed inset-0 w-full h-full bg-black cursor-default",
           attrs: { tabindex: "-1" },
           on: {
             click: function($event) {
