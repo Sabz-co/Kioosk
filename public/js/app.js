@@ -38817,6 +38817,7 @@ var render = function() {
       ? _c("button", {
           staticClass:
             "fixed top-0 bottom-0 right-0 left-0 w-full h-full bg-black cursor-default",
+          attrs: { tabindex: "-1" },
           on: {
             click: function($event) {
               _vm.isOpen = false
