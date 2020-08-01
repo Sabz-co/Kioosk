@@ -61,11 +61,11 @@
 
 
 
-                <profile-dropdown/>
-
                 <a href="{{ route('book.create') }}" class="mt-4 hidden lg:inline-flex items-center justify-center rounded lg:mt-0 text-white hover:text-white hover:bg-gray-700 mr-3 xl:mr-5 border-2 border-white rounded-full h-8 w-8">
                     <i class="fas fa-plus"></i>
-                </a>                    
+                </a>      
+                <profile-dropdown/>
+              
                 @endif
 
 
