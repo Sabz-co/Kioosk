@@ -59,10 +59,9 @@
                     <i class="fa fa-bullhorn"></i>
                 </a> --}}
 
-                <a href="/profiles/{{auth()->id()}}"
-                    class="mt-4 hidden lg:inline-flex items-center justify-center rounded-full lg:mt-0 text-white h-8 w-8 hover:text-white hover:bg-gray-700 mr-3 xl:mr-5 border-2 border-white">
-                    <img src="{{ asset('images/avatar.jpg') }}" alt="" class=" rounded-full">
-                </a>
+
+
+                <profile-dropdown/>
 
                 <a href="{{ route('book.create') }}" class="mt-4 hidden lg:inline-flex items-center justify-center rounded lg:mt-0 text-white hover:text-white hover:bg-gray-700 mr-3 xl:mr-5 border-2 border-white rounded-full h-8 w-8">
                     <i class="fas fa-plus"></i>
