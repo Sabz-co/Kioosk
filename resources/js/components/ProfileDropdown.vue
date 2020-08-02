@@ -17,10 +17,10 @@
             <img src="/images/avatar.jpg" alt="" class=" rounded-full">
         </div>
         
-        <div class="absolute mt-2 py-2 w-48 bg-white rounded-lg shadow-lg left-0">
-            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-500 hover:text-white">تنظیمات پروفایل</a>
-            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-500 hover:text-white">پشتیبانی</a>
-            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-500 hover:text-white">خروج</a>
+        <div class="">
+            <a href="#" class="">تنظیمات پروفایل</a>
+            <a href="#" class="">پشتیبانی</a>
+            <a href="#" class="">خروج</a>
         </div>
     </div>
 </div>

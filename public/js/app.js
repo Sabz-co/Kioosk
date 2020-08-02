@@ -38920,44 +38920,13 @@ var staticRenderFns = [
         ]
       ),
       _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass:
-            "absolute mt-2 py-2 w-48 bg-white rounded-lg shadow-lg left-0"
-        },
-        [
-          _c(
-            "a",
-            {
-              staticClass:
-                "block px-4 py-2 text-gray-800 hover:bg-gray-500 hover:text-white",
-              attrs: { href: "#" }
-            },
-            [_vm._v("تنظیمات پروفایل")]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass:
-                "block px-4 py-2 text-gray-800 hover:bg-gray-500 hover:text-white",
-              attrs: { href: "#" }
-            },
-            [_vm._v("پشتیبانی")]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass:
-                "block px-4 py-2 text-gray-800 hover:bg-gray-500 hover:text-white",
-              attrs: { href: "#" }
-            },
-            [_vm._v("خروج")]
-          )
-        ]
-      )
+      _c("div", {}, [
+        _c("a", { attrs: { href: "#" } }, [_vm._v("تنظیمات پروفایل")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("پشتیبانی")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("خروج")])
+      ])
     ])
   }
 ]
