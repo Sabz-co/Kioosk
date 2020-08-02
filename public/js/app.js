@@ -38897,17 +38897,20 @@ var render = function() {
         : _vm._e()
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "relative" }, [
+    _vm._m(0)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "relative" }, [
       _c(
-        "button",
+        "div",
         {
           staticClass:
-            "relative z-10 block mt-4 items-center justify-center rounded-full lg:mt-0 text-white h-8 w-8 hover:text-white hover:bg-gray-700 mr-3 xl:mr-5 border-2 border-white",
-          on: {
-            click: function($event) {
-              _vm.isOpen = !_vm.isOpen
-            }
-          }
+            "relative z-10 block mt-4 items-center justify-center rounded-full lg:mt-0 text-white h-8 w-8 hover:text-white hover:bg-gray-700 mr-3 xl:mr-5 border-2 border-white"
         },
         [
           _c("img", {
@@ -38917,53 +38920,45 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _vm._m(0)
+      _c(
+        "div",
+        {
+          staticClass:
+            "absolute mt-2 py-2 w-48 bg-white rounded-lg shadow-lg left-0"
+        },
+        [
+          _c(
+            "a",
+            {
+              staticClass:
+                "block px-4 py-2 text-gray-800 hover:bg-gray-500 hover:text-white",
+              attrs: { href: "#" }
+            },
+            [_vm._v("تنظیمات پروفایل")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass:
+                "block px-4 py-2 text-gray-800 hover:bg-gray-500 hover:text-white",
+              attrs: { href: "#" }
+            },
+            [_vm._v("پشتیبانی")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass:
+                "block px-4 py-2 text-gray-800 hover:bg-gray-500 hover:text-white",
+              attrs: { href: "#" }
+            },
+            [_vm._v("خروج")]
+          )
+        ]
+      )
     ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "absolute mt-2 py-2 w-48 bg-white rounded-lg shadow-lg left-0"
-      },
-      [
-        _c(
-          "a",
-          {
-            staticClass:
-              "block px-4 py-2 text-gray-800 hover:bg-gray-500 hover:text-white",
-            attrs: { href: "#" }
-          },
-          [_vm._v("تنظیمات پروفایل")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass:
-              "block px-4 py-2 text-gray-800 hover:bg-gray-500 hover:text-white",
-            attrs: { href: "#" }
-          },
-          [_vm._v("پشتیبانی")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass:
-              "block px-4 py-2 text-gray-800 hover:bg-gray-500 hover:text-white",
-            attrs: { href: "#" }
-          },
-          [_vm._v("خروج")]
-        )
-      ]
-    )
   }
 ]
 render._withStripped = true
