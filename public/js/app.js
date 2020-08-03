@@ -1965,14 +1965,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      tag: '',
+      author: '',
       tags: [],
       autocompleteItems: [],
       debounce: null
     };
   },
   watch: {
-    'tag': 'initItems'
+    'author': 'initItems'
   },
   methods: {
     update: function update(newTags) {
@@ -1982,10 +1982,10 @@ __webpack_require__.r(__webpack_exports__);
     initItems: function initItems() {
       var _this = this;
 
-      if (this.tag.length < 2) return; // const url = `https://itunes.apple.com/search?term=
-      //   ${this.tag}&entity=allArtist&attribute=allArtistTerm&limit=6`;
+      if (this.author.length < 2) return; // const url = `https://itunes.apple.com/search?term=
+      //   ${this.author}&entity=allArtist&attribute=allArtistTerm&limit=6`;
 
-      var url = '/author/search/' + this.tag;
+      var url = '/author/search/' + this.author;
       clearTimeout(this.debounce);
       this.debounce = setTimeout(function () {
         axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
@@ -38607,11 +38607,11 @@ var render = function() {
             },
             on: { "tags-changed": _vm.update },
             model: {
-              value: _vm.tag,
+              value: _vm.author,
               callback: function($$v) {
-                _vm.tag = $$v
+                _vm.author = $$v
               },
-              expression: "tag"
+              expression: "author"
             }
           })
         ],

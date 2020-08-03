@@ -3,7 +3,7 @@
 
   <div>
     <vue-tags-input
-      v-model="tag"
+      v-model="author"
       :tags="tags"
       :autocomplete-items="autocompleteItems"
       :add-only-from-autocomplete="false"
@@ -41,14 +41,14 @@ export default {
   },
   data() {
     return {
-      tag: '',
+      author: '',
       tags: [],
       autocompleteItems: [],
       debounce: null,
     };
   },
   watch: {
-    'tag': 'initItems',
+    'author': 'initItems',
   },
   methods: {
     update(newTags) {
@@ -56,10 +56,10 @@ export default {
       this.tags = newTags;
     },
     initItems() {
-      if (this.tag.length < 2) return;
+      if (this.author.length < 2) return;
       // const url = `https://itunes.apple.com/search?term=
-      //   ${this.tag}&entity=allArtist&attribute=allArtistTerm&limit=6`;
-      const url ='/author/search/' + this.tag; 
+      //   ${this.author}&entity=allArtist&attribute=allArtistTerm&limit=6`;
+      const url ='/author/search/' + this.author; 
 
       clearTimeout(this.debounce);
       this.debounce = setTimeout(() => {

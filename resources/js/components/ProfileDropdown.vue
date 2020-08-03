@@ -1,6 +1,6 @@
 <template>
     <div class="relative">
-        <button @click="isOpen = !isOpen" class="relative z-10 block mt-4 items-center justify-center rounded-full lg:mt-0 text-white h-8 w-8 hover:text-white hover:bg-gray-700 mr-3 xl:mr-5 border-2 border-white">
+        <button @click="isOpen = !isOpen" class="relative z-10 block mt-4 items-center justify-center rounded-full lg:mt-0 text-white h-8 w-8 hover:text-white hover:bg-gray-700 mr-3 xl:mr-5 focus:border-2 focus:border-white focus:outline-none">
             <img src="/images/avatar.jpg" alt="" class=" rounded-full">
         </button>
         <button v-if="isOpen" @click="isOpen = false" tabindex="-1" class="fixed inset-0 w-full h-full cursor-default"></button>
