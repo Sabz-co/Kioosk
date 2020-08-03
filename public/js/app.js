@@ -38812,7 +38812,7 @@ var render = function() {
       "button",
       {
         staticClass:
-          "relative z-10 block mt-4 items-center justify-center rounded-full lg:mt-0 text-white h-8 w-8 hover:text-white hover:bg-gray-700 mr-3 xl:mr-5 border-2 border-white",
+          "relative z-10 block mt-4 items-center justify-center rounded-full lg:mt-0 text-white h-8 w-8 hover:text-white hover:bg-gray-700 mr-3 xl:mr-5border-2 border-white focus:outline-none",
         on: {
           click: function($event) {
             _vm.isOpen = !_vm.isOpen
@@ -38829,7 +38829,8 @@ var render = function() {
     _vm._v(" "),
     _vm.isOpen
       ? _c("button", {
-          staticClass: "fixed inset-0 w-full h-full cursor-default",
+          staticClass:
+            "fixed inset-0 w-full h-full cursor-default focus:outline-none",
           attrs: { tabindex: "-1" },
           on: {
             click: function($event) {
