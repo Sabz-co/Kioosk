@@ -41,6 +41,7 @@ $(document).ready(function() {
 
             sourceType = $sourceItem.data('source-type');
             sourceId = $sourceItem.data('source-id');
+            sourceSlug = $sourceItem.data('source-slug');
             sourceValue = $sourceItem.data('value');
 
             var data = [
@@ -70,7 +71,7 @@ $(document).ready(function() {
 
 
             $.ajax({
-                url: "/ajax-request",
+                url: "/book/" + sourceSlug + "/rate",
                 type: "POST",
                 data: data,
                 success: function(response) {

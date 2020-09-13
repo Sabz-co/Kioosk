@@ -105,4 +105,4 @@ Route::get('/crawler', 'ScriptController@crawler');
 
 // Ajax Calls
 
-Route::post('ajax-request', 'BookController@storeRating');
+Route::post('book/{book}/rate', 'BookController@storeRating');

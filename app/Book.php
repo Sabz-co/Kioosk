@@ -5,11 +5,12 @@ use Auth;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Nagy\LaravelRating\Traits\Rate\Rateable;
 
 class Book extends Model
 {
 
-  use RecordsActivity, RecordsVisits, Sluggable;
+  use RecordsActivity, RecordsVisits, Sluggable, Rateable;
 
   protected $guarded = [];
 

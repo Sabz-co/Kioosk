@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
 use Image;
 use Slug;
-use JavaScript;
+use Auth;
 
 class BookController extends Controller
 {
@@ -145,7 +145,10 @@ class BookController extends Controller
         //
     }
 
-    public function storeRating(Request $request) {
-        return response()->json($request->all());
+    public function storeRating(Book $book, Request $request) {
+        // $book = Book::findOrFail($request->sourceId);
+        
+        Auth::user()->rate($book, $request->value);
+        return response()->json(['success'=>'Ajax request submitted successfully']);
     }
 }
