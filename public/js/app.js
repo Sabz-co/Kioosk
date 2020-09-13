@@ -38812,7 +38812,7 @@ var render = function() {
       "button",
       {
         staticClass:
-          "relative z-10 block mt-4 items-center justify-center rounded-full lg:mt-0 text-white h-8 w-8 hover:text-white hover:bg-gray-700 mr-3 xl:mr-5border-2 border-white focus:outline-none",
+          "relative z-10 block mt-4 items-center justify-center rounded-full lg:mt-0 text-white h-8 w-8 hover:text-white hover:bg-gray-700 mr-3 xl:mr-5 border-2 border-white focus:outline-none",
         on: {
           click: function($event) {
             _vm.isOpen = !_vm.isOpen

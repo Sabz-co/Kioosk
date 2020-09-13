@@ -15,6 +15,30 @@
                     <div class="flex flex-col sm:flex-row justify-between w-full items-center">
                         <div class="text-right">
                             <h4 class="text-brown font-bold text-lg">ملت عشق 
+
+
+
+  <!-- Rating Stars Box -->
+  <div class='rating-stars text-center'>
+    <ul id='stars'>
+      <li class='star' title='خوب نبود' data-value='1'  data-source-type="book" data-source-id="5">
+        <i class='fa fa-star fa-fw'></i>
+      </li>
+      <li class='star' title='بد نبود' data-value='2'  data-source-type="book" data-source-id="5">
+        <i class='fa fa-star fa-fw'></i>
+      </li>
+      <li class='star' title='خوب بود' data-value='3'  data-source-type="book" data-source-id="5">
+        <i class='fa fa-star fa-fw'></i>
+      </li>
+      <li class='star' title='خیلی خوب بود' data-value='4'  data-source-type="book" data-source-id="5">
+        <i class='fa fa-star fa-fw'></i>
+      </li>
+      <li class='star' title='عالی بود' data-value='5'  data-source-type="book" data-source-id="5">
+        <i class='fa fa-star fa-fw'></i>
+      </li>
+    </ul>
+  </div>
+  
                                 <i class="fas fa-star text-yellow-500"></i>
                                 <i class="fas fa-star text-yellow-500"></i>
                                 <i class="fas fa-star text-yellow-500"></i>

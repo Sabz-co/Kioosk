@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
 use Image;
 use Slug;
+use JavaScript;
 
 class BookController extends Controller
 {
@@ -93,6 +94,7 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
+
         // Redis::del('trending_books');
         Redis::zincrby('trending_books', 1, json_encode([
             'title' => $book->title,
@@ -141,5 +143,9 @@ class BookController extends Controller
     public function destroy(Book $book)
     {
         //
+    }
+
+    public function storeRating(Request $request) {
+        return response()->json($request->all());
     }
 }

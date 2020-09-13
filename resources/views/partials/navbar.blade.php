@@ -15,10 +15,13 @@
                     class="mt-4 hidden lg:inline-block py-1 px-2 rounded lg:mt-0 text-gray-200 hover:text-white hover:bg-gray-700 ml-3 xl:ml-5">
                     خانه
                 </a>
+                @if(Auth::user())
                 <a href="{{ route('my-books', Auth::user()->id) }}"
                     class="mt-4 hidden lg:inline-block py-1 px-2 rounded lg:mt-0 text-gray-200 hover:text-white hover:bg-gray-700 ml-3 xl:ml-5">
                     کتاب‌های من
-                </a>
+                </a>                    
+                @endif
+
                 <a href="{{ url('genres') }}"
                     class="mt-4 hidden lg:inline-block py-1 px-2 rounded lg:mt-0 text-gray-200 hover:text-white hover:bg-gray-700 ml-3 xl:ml-5">
                     کتب

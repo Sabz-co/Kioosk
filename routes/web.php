@@ -100,3 +100,9 @@ Route::get('/gauth/callback', 'SocialAuth@handleProviderCallback');
 // Scripts
 
 Route::get('/crawler', 'ScriptController@crawler');
+
+
+
+// Ajax Calls
+
+Route::post('ajax-request', 'BookController@storeRating');
