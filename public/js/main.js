@@ -6,7 +6,6 @@ $(document).ready(function() {
         }
     });
 
-    console.log(window.Kioosk.user);
 
     /* 1. Visualizing things on Hover - See next part for action on click */
     $('#stars li').on('mouseover', function() {
@@ -93,6 +92,66 @@ $(document).ready(function() {
         } else {
             msg = "We will improve ourselves. You rated this " + ratingValue + " stars.";
         }
+        responseMessage(msg);
+
+    });
+
+
+
+    $('#review .like').on('click', function(e) {
+        e.preventDefault(); /* prevent form submiting here */
+
+        if (window.Kioosk.user != null) {
+            console.log("test")
+            var $button = $(this);
+            var $sourceItem = $button;
+            sourceType = $sourceItem.data('source-type');
+            sourceId = $sourceItem.data('source-id');
+            sourceValue = $sourceItem.data('value');
+
+            var data = [
+                { 'name': 'sourceType', 'value': sourceType },
+                { 'name': 'sourceId', 'value': sourceId },
+                { 'name': 'value', 'value': sourceValue }
+            ];
+
+            // for (i = 0; i < stars.length; i++) {
+            //     $(stars[i]).removeClass('selected');
+            // }
+
+            // for (i = 0; i < onStar; i++) {
+            //     $(stars[i]).addClass('selected');
+            // }
+
+            // // JUST RESPONSE (Not needed)
+            // var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
+
+
+            $.ajax({
+                url: "/review/" + sourceId + "/like",
+                type: "POST",
+                data: data,
+                success: function(response) {
+                    console.log(response);
+                    if (response) {
+                        $('.success').text(response.success);
+                    }
+                },
+            });
+
+
+        } else {
+            alert("not logged in")
+        }
+
+
+
+        var msg = "";
+        // if (ratingValue > 1) {
+        //     msg = "Thanks! You rated this " + ratingValue + " stars.";
+        // } else {
+        //     msg = "We will improve ourselves. You rated this " + ratingValue + " stars.";
+        // }
         responseMessage(msg);
 
     });

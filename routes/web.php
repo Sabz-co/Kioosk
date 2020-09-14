@@ -106,3 +106,5 @@ Route::get('/crawler', 'ScriptController@crawler');
 // Ajax Calls
 
 Route::post('book/{book}/rate', 'BookController@storeRating');
+
+Route::post('review/{review}/like', 'ReviewController@storeLikes');

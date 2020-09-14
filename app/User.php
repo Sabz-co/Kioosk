@@ -5,12 +5,10 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Nagy\LaravelRating\Traits\Rate\CanRate;
-use Nagy\LaravelRating\Traits\Like\CanLike;
 
 class User extends Authenticatable
 {
-    use Notifiable, CanRate, CanLike;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.

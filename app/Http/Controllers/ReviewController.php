@@ -7,6 +7,7 @@ use App\Book;
 use App\User;
 use App\Notifications\ReviewHasBeenWritten;
 use Illuminate\Http\Request;
+use Auth;
 
 class ReviewController extends Controller
 {
@@ -52,6 +53,8 @@ class ReviewController extends Controller
             $sub->user->notify(new ReviewHasBeenWritten(auth()->user(), $review));
         });
 
+
+
         return redirect()->back()->with('flash', 'نقد شما به درستی در سیستم ثبت شد');
     }
 
@@ -63,7 +66,8 @@ class ReviewController extends Controller
      */
     public function show(Review $review)
     {
-        return view('review.show', compact('review'));
+        $page_class = "review";
+        return view('review.show', compact('review', 'page_class'));
     }
 
     /**
@@ -98,5 +102,9 @@ class ReviewController extends Controller
     public function destroy(Review $review)
     {
         //
+    }
+
+    public function storeLikes(Review $review, Request $request) {
+        return response()->json(['success'=>'Ajax request submitted successfully']);
     }
 }

@@ -6,6 +6,7 @@ use App\Book;
 use App\User;
 use App\Filters\BookFilters;
 use Illuminate\Support\Facades\Redis;
+use Auth;
 
 use Illuminate\Http\Request;
 
@@ -39,8 +40,6 @@ class PagesController extends Controller
     }
 
     public function test(){
-        $user = User::first();
-        
-        var_dump($user->unsubscribeUser(2));
+        dd(Auth::user()->rated()); 
     }
 }
