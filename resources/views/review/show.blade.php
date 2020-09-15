@@ -43,10 +43,10 @@
                     <div class="flex flex-row text-silver-700 text-center m-2 justify-start w-full" id="review">
                         <div class="ml-4">
                             @include('partials.like-button', 
-                            ['type' => 'comment', 
-                            'id' => '1', 
-                            'is_liked' => 'true', 
-                            'likes' => '97'])
+                            ['type' => 'review', 
+                            'id' => $review->id, 
+                            'is_liked' => $review->isFavorited(), 
+                            'likes' => $review->favorites()->count()])
                             
                         </div>
                         <div>
@@ -70,34 +70,6 @@
                     </div>
                     {{-- End of title section --}}
 
-                    {{-- Comment --}}
-                    <div class="flex flex-row w-full items-start border-b mb-4 pb-2">
-                        <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full mx-4" alt="">
-                        <div class="flex flex-col text-right">
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                            </p>
-                            <div class="flex flex-row text-silver-700 text-center justify-start w-full mt-4">
-                                <div class="ml-4">
-                                    <a href="#" class="like"  data-value='like'  data-source-type="comment" data-source-id="1" data-source-liked="false">
-                                        <i class="fa-heart"></i> <span class="like-numbers">85</span> 
-                                    </a>
-                                    
-                                </div>
-                                <div>
-                                    <a href="#" class="hover:text-green-500">
-                                        <i class="fas fa-reply"></i> ۶۹ 
-                                    </a>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {{-- End of comment --}}
 
                     @foreach ($review->comments as $comment)
 
@@ -115,7 +87,7 @@
                                     ['type' => 'comment', 
                                     'id' => $comment->id, 
                                     'is_liked' => $comment->isFavorited(), 
-                                    'likes' => '97'])
+                                    'likes' => $comment->favorites()->count()])
                                     
                                 </div>
                                 <div>
@@ -126,9 +98,8 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
+                    {{-- End of comment --}}
                     {{-- @foreach ($comment->comments as $child_comment)
                     <div class="flex flex-row w-5/6 items-start mr-auto border-b mb-4 pb-2">
                         <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full mx-4" alt="">

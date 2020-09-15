@@ -3,6 +3,9 @@ $(document).ready(function() {
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        error: function(xhr) {
+            alert('Request Status: ' + xhr.status + ' Status Text: ' + xhr.statusText + ' ' + xhr.responseText);
         }
     });
 
@@ -151,9 +154,11 @@ $(document).ready(function() {
                     $sourceItem.toggleClass("hover:text-red-500 text-red-500").children(".far, .fas").toggleClass("far fas");
                     console.log(response.success);
                     if (response.success == 'created') {
-                        $sourceItem.children("span").html(parseInt($('.like-numbers').html(), 10) + 1)
+                        $sourceItem.children("span").html(parseInt($($sourceItem.children("span")).html(), 10) + 1)
+                    } else if (response.success == 'deleted') {
+                        $sourceItem.children("span").html(parseInt($($sourceItem.children("span")).html(), 10) - 1)
                     } else {
-                        $sourceItem.children("span").html(parseInt($('.like-numbers').html(), 10) - 1)
+                        responseMessage("error");
                     }
                 },
             });
