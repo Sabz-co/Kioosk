@@ -60,8 +60,9 @@ Route::get('/test', 'PagesController@test');
 
 // POST requests
 
-Route::post('/reviews/{review}/favorites', 'FavoritesController@store');
+Route::post('/review/{review}/like', 'FavoritesController@storeReview');
 
+Route::post('/comment/{comment}/like', 'FavoritesController@storeComment');
 
 
 
@@ -107,4 +108,4 @@ Route::get('/crawler', 'ScriptController@crawler');
 
 Route::post('book/{book}/rate', 'BookController@storeRating');
 
-Route::post('review/{review}/like', 'ReviewController@storeLikes');
+// Route::post('review/{review}/like', 'ReviewController@storeLikes');

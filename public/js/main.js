@@ -25,6 +25,23 @@ $(document).ready(function() {
     });
 
 
+    $('.like').each(function(index, rated) {
+        var $button = $(this);
+        var $sourceItem = $button;
+        var currentlyLiked = $sourceItem.data('source-liked')
+
+        // console.log(currentlyLiked)
+
+        if (currentlyLiked == true) {
+            console.log(currentlyLiked)
+            $sourceItem.addClass("text-red-500").children(".fa-heart").addClass("fas");
+        } else {
+            $sourceItem.addClass("hover:text-red-500").children(".fa-heart").addClass("far");
+        }
+
+    });
+
+
     /* 1. Visualizing things on Hover - See next part for action on click */
     $('.stars li').on('mouseover', function() {
         var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
@@ -127,15 +144,16 @@ $(document).ready(function() {
             ];
 
             $.ajax({
-                url: "/review/" + sourceId + "/like",
+                url: "/" + sourceType + "/" + sourceId + "/like",
                 type: "POST",
                 data: data,
                 success: function(response) {
                     $sourceItem.toggleClass("hover:text-red-500 text-red-500").children(".far, .fas").toggleClass("far fas");
-                    // $sourceItem;
-                    console.log(response);
-                    if (response) {
-                        $('.success').text(response.success);
+                    console.log(response.success);
+                    if (response.success == 'created') {
+                        $sourceItem.children("span").html(parseInt($('.like-numbers').html(), 10) + 1)
+                    } else {
+                        $sourceItem.children("span").html(parseInt($('.like-numbers').html(), 10) - 1)
                     }
                 },
             });

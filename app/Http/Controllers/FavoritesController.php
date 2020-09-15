@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Favorite;
 use App\Review;
+use App\Comment;
 
 class FavoritesController extends Controller
 {
@@ -15,12 +16,35 @@ class FavoritesController extends Controller
     }
 
 
-    public function store(Review $review) 
+    public function storeReview(Review $review) 
     {
 
-        $review->favorite();
+        if($review->isFavorited()) {
+            $review->dislike();
+            $message = "deleted";
+        } else {
+            $review->favorite();
+            $message = "created";
+        }
+        
 
-        return back();
+        return response()->json(['success'=>$message]);
+        
+    }
+
+    public function storeComment(Comment $comment) 
+    {
+
+        if($comment->isFavorited()) {
+            $comment->dislike();
+            $message = "deleted";
+        } else {
+            $comment->favorite();
+            $message = "created";
+        }
+        
+
+        return response()->json(['success'=>$message]);
         
     }
 }

@@ -42,9 +42,11 @@
                     </div> 
                     <div class="flex flex-row text-silver-700 text-center m-2 justify-start w-full" id="review">
                         <div class="ml-4">
-                            <a href="#" class="hover:text-red-500 like"  data-value='like'  data-source-type="review" data-source-id="{{ $review->id }}">
-                                <i class="far fa-heart"></i> ۸۵ 
-                            </a>
+                            @include('partials.like-button', 
+                            ['type' => 'comment', 
+                            'id' => '1', 
+                            'is_liked' => 'true', 
+                            'likes' => '97'])
                             
                         </div>
                         <div>
@@ -81,8 +83,8 @@
                             </p>
                             <div class="flex flex-row text-silver-700 text-center justify-start w-full mt-4">
                                 <div class="ml-4">
-                                    <a href="#" class="text-red-500 like"  data-value='like'  data-source-type="comment" data-source-id="1">
-                                        <i class="fas fa-heart"></i> ۸۵ 
+                                    <a href="#" class="like"  data-value='like'  data-source-type="comment" data-source-id="1" data-source-liked="false">
+                                        <i class="fa-heart"></i> <span class="like-numbers">85</span> 
                                     </a>
                                     
                                 </div>
@@ -109,9 +111,11 @@
                             </p>
                             <div class="flex flex-row text-silver-700 text-center justify-start w-full mt-4">
                                 <div class="ml-4">
-                                    <a href="#" class="hover:text-red-500">
-                                        <i class="far fa-heart"></i> ۸۵ 
-                                    </a>
+                                    @include('partials.like-button', 
+                                    ['type' => 'comment', 
+                                    'id' => $comment->id, 
+                                    'is_liked' => $comment->isFavorited(), 
+                                    'likes' => '97'])
                                     
                                 </div>
                                 <div>
