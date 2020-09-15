@@ -26,7 +26,7 @@ $(document).ready(function() {
 
 
     /* 1. Visualizing things on Hover - See next part for action on click */
-    $('#stars li').on('mouseover', function() {
+    $('.stars li').on('mouseover', function() {
         var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
 
         // Now highlight all the stars that's not after the current hovered star
@@ -46,7 +46,7 @@ $(document).ready(function() {
 
 
     /* 2. Action to perform on click */
-    $('#stars li').on('click', function() {
+    $('.stars li').on('click', function() {
 
 
         if (window.Kioosk.user != null) {
@@ -77,7 +77,7 @@ $(document).ready(function() {
             }
 
             // JUST RESPONSE (Not needed)
-            var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
+            var ratingValue = parseInt($('.stars li.selected').last().data('value'), 10);
 
 
             $.ajax({
@@ -109,11 +109,11 @@ $(document).ready(function() {
 
 
 
-    $('#review .like').on('click', function(e) {
+
+    $('.like').on('click', function(e) {
         e.preventDefault(); /* prevent form submiting here */
 
         if (window.Kioosk.user != null) {
-            console.log("test")
             var $button = $(this);
             var $sourceItem = $button;
             sourceType = $sourceItem.data('source-type');
@@ -126,23 +126,13 @@ $(document).ready(function() {
                 { 'name': 'value', 'value': sourceValue }
             ];
 
-            // for (i = 0; i < stars.length; i++) {
-            //     $(stars[i]).removeClass('selected');
-            // }
-
-            // for (i = 0; i < onStar; i++) {
-            //     $(stars[i]).addClass('selected');
-            // }
-
-            // // JUST RESPONSE (Not needed)
-            // var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
-
-
             $.ajax({
                 url: "/review/" + sourceId + "/like",
                 type: "POST",
                 data: data,
                 success: function(response) {
+                    $sourceItem.toggleClass("hover:text-red-500 text-red-500").children(".far, .fas").toggleClass("far fas");
+                    // $sourceItem;
                     console.log(response);
                     if (response) {
                         $('.success').text(response.success);

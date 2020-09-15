@@ -43,13 +43,13 @@
                     <div class="flex flex-row text-silver-700 text-center m-2 justify-start w-full" id="review">
                         <div class="ml-4">
                             <a href="#" class="hover:text-red-500 like"  data-value='like'  data-source-type="review" data-source-id="{{ $review->id }}">
-                                <i class="far fa-heart    "></i> ۸۵ 
+                                <i class="far fa-heart"></i> ۸۵ 
                             </a>
                             
                         </div>
                         <div>
                             <a href="#" class="hover:text-green-500">
-                                <i class="fas fa-reply    "></i> ۶۹ 
+                                <i class="fas fa-reply"></i> ۶۹ 
                             </a>
                             
                         </div>
@@ -81,14 +81,14 @@
                             </p>
                             <div class="flex flex-row text-silver-700 text-center justify-start w-full mt-4">
                                 <div class="ml-4">
-                                    <a href="#" class="hover:text-red-500">
-                                        <i class="far fa-heart    "></i> ۸۵ 
+                                    <a href="#" class="text-red-500 like"  data-value='like'  data-source-type="comment" data-source-id="1">
+                                        <i class="fas fa-heart"></i> ۸۵ 
                                     </a>
                                     
                                 </div>
                                 <div>
                                     <a href="#" class="hover:text-green-500">
-                                        <i class="fas fa-reply    "></i> ۶۹ 
+                                        <i class="fas fa-reply"></i> ۶۹ 
                                     </a>
                                     
                                 </div>
@@ -110,13 +110,13 @@
                             <div class="flex flex-row text-silver-700 text-center justify-start w-full mt-4">
                                 <div class="ml-4">
                                     <a href="#" class="hover:text-red-500">
-                                        <i class="far fa-heart    "></i> ۸۵ 
+                                        <i class="far fa-heart"></i> ۸۵ 
                                     </a>
                                     
                                 </div>
                                 <div>
                                     <a href="#" class="hover:text-green-500">
-                                        <i class="fas fa-reply    "></i> ۶۹ 
+                                        <i class="fas fa-reply"></i> ۶۹ 
                                     </a>
                                     
                                 </div>
@@ -135,13 +135,13 @@
                             <div class="flex flex-row text-silver-700 text-center justify-start w-full mt-4">
                                 <div class="ml-4">
                                     <a href="#" class="hover:text-red-500">
-                                        <i class="far fa-heart    "></i> ۸۵ 
+                                        <i class="far fa-heart"></i> ۸۵ 
                                     </a>
                                     
                                 </div>
                                 <div>
                                     <a href="#" class="hover:text-green-500">
-                                        <i class="fas fa-reply    "></i> ۶۹ 
+                                        <i class="fas fa-reply"></i> ۶۹ 
                                     </a>
                                     
                                 </div>
