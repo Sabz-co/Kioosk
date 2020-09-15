@@ -6,6 +6,24 @@ $(document).ready(function() {
         }
     });
 
+    $('.stars').each(function(index, rated) {
+        var $button = $(this);
+        var $sourceItem = $button;
+
+        var currentRating = $sourceItem.data('rating')
+
+        var stars = $button.children('li.star');
+
+        for (i = 0; i < stars.length; i++) {
+            $(stars[i]).removeClass('selected');
+        }
+
+        for (i = 0; i < currentRating; i++) {
+            $(stars[i]).addClass('selected');
+        }
+
+    });
+
 
     /* 1. Visualizing things on Hover - See next part for action on click */
     $('#stars li').on('mouseover', function() {
@@ -33,9 +51,7 @@ $(document).ready(function() {
 
         if (window.Kioosk.user != null) {
 
-
             var $button = $(this);
-
             var $sourceItem = $button;
 
             sourceType = $sourceItem.data('source-type');
@@ -49,14 +65,9 @@ $(document).ready(function() {
                 { 'name': 'value', 'value': sourceValue }
             ];
 
-
-
             var onStar = parseInt($(this).data('value'), 10); // The star currently selected
             var stars = $(this).parent().children('li.star');
-
-
-
-
+            console.log(stars.length)
             for (i = 0; i < stars.length; i++) {
                 $(stars[i]).removeClass('selected');
             }

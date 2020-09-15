@@ -148,7 +148,7 @@ class BookController extends Controller
     public function storeRating(Book $book, Request $request) {
         // $book = Book::findOrFail($request->sourceId);
         
-        Auth::user()->rate($book, $request->value);
+        $book->rateOnce($request->value);
         return response()->json(['success'=>'Ajax request submitted successfully']);
     }
 }

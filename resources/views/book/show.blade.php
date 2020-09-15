@@ -31,7 +31,7 @@
                         <div class="flex items-center">
                             <i class="fas fa-star text-yellow-500"></i>
                             <i class="fas fa-star text-yellow-500"></i>
-                            <i class="fas fa-star text-yellow-500"></i>
+                            <i class="fas fa-star text-yellow-500 "></i>
                             <i class="fas fa-star text-yellow-500"></i>
                             <i class="far fa-star text-yellow-500"></i>    
                         </div>
