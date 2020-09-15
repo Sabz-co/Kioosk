@@ -30,7 +30,7 @@
 
                         </td>
                         <td class="border-b border-gray-100 px-2 py-4"> 
-                            <a href="{{ route('book.show', $item->book->id) }}" class="text-brown">{{ $item->book->title }}</a>
+                            <a href="{{ route('book.show', $item->book->slug) }}" class="text-brown">{{ $item->book->title }}</a>
                         </td>
                         <td class="border-b border-gray-100 px-2 py-4">
                             @foreach ($item->book->author()->get() as $author)
