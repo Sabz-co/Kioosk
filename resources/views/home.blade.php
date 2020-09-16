@@ -19,10 +19,8 @@
 
 
   <!-- Rating Stars Box -->
-  <div class='rating-stars text-right'>
 
     @include('partials.rating', ['rating' => '4'])
-  </div>
   
                                 {{-- <i class="fas fa-star text-yellow-500"></i>
                                 <i class="fas fa-star text-yellow-500"></i>

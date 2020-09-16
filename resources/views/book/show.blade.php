@@ -28,13 +28,14 @@
                         <div class="views text-xs text-gray-400 mr-auto ml-2">
                             {{ $book->visits() }} بازدید
                         </div>
-                        <div class="flex items-center">
+                        {{-- <div class="flex items-center">
                             <i class="fas fa-star text-yellow-500"></i>
                             <i class="fas fa-star text-yellow-500"></i>
                             <i class="fas fa-star text-yellow-500 "></i>
                             <i class="fas fa-star text-yellow-500"></i>
                             <i class="far fa-star text-yellow-500"></i>    
-                        </div>
+                        </div> --}}
+                            @include('partials.rating')
                     </div>
 
                     <div class="flex flex-row justify-between w-full items-center my-4 border-t border-b py-2 border-silver-400">

@@ -75,7 +75,6 @@ $(document).ready(function() {
             var $sourceItem = $button;
 
             sourceType = $sourceItem.data('source-type');
-            sourceId = $sourceItem.data('source-id');
             sourceSlug = $sourceItem.data('source-slug');
             sourceValue = $sourceItem.data('value');
 
