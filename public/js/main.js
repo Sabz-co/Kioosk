@@ -66,7 +66,7 @@ $(document).ready(function() {
 
 
     /* 2. Action to perform on click */
-    $('.stars li').on('click', function() {
+    $('.rating-stars .stars li').on('click', function() {
 
 
         if (window.Kioosk.user != null) {
@@ -80,7 +80,6 @@ $(document).ready(function() {
 
             var data = [
                 { 'name': 'sourceType', 'value': sourceType },
-                { 'name': 'sourceId', 'value': sourceId },
                 { 'name': 'value', 'value': sourceValue }
             ];
 

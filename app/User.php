@@ -60,29 +60,29 @@ class User extends Authenticatable
     }
 
 
-    // All the relationships regarding book shelves go here:
+    // All the relationships regarding book reviews go here:
 
 
-    public function shelves()
+    public function reviews()
     {
-        return $this->hasMany(Shelf::class);
+        return $this->hasMany(Review::class);
     }
 
     public function want_to_read_list()
     {
-        return $this->shelves()->where('shelf', 'to_read');
+        return $this->reviews()->where('shelf', 'to_read');
     }
 
 
     public function read_list()
     {
-        return $this->shelves()->where('shelf', 'read');
+        return $this->reviews()->where('shelf', 'read');
     }
 
 
     public function reading_list()
     {
-        return $this->shelves()->where('shelf', 'reading');
+        return $this->reviews()->where('shelf', 'reading');
     }
 
     public function subscribeUser($userId = null)

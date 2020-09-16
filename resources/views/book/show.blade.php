@@ -12,7 +12,7 @@
                         <a href="#" class="w-full h-full rounded-lg p-2 bg-green-500 hover:bg-green-600 text-white hover:shadow-lg mt-4">افزودن به لیست</a>
                     </div> --}}
 
-                    @include('partials.shelves.list')
+                    {{-- @include('partials.shelves.list') --}}
                 </div>
                 <div class="flex flex-col flex-1 text-center py-2 pl-2 sm:pl-0 pr-2 sm:py-4 sm:pr-2 my-2 items-center justify-between">
                     <div class="flex flex-col sm:flex-row justify-between w-full items-center">
@@ -35,7 +35,7 @@
                             <i class="fas fa-star text-yellow-500"></i>
                             <i class="far fa-star text-yellow-500"></i>    
                         </div> --}}
-                            @include('partials.rating')
+                            @include('partials.rating', ['rating' => $book->reviews()->avg('rating')])
                     </div>
 
                     <div class="flex flex-row justify-between w-full items-center my-4 border-t border-b py-2 border-silver-400">
@@ -81,42 +81,22 @@
                 </div>
             </div>
 
-            {{-- Review --}}
-            {{-- <div class="mb-5 border-b flex flex-col">
-                <div class="flex flex-row my-2 justify-start items-center">
-                    <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full object-cover" alt="">
-                    <h2 class="text-silver-600 font-bold text-lg mr-2">محسن رضابالا</h2>
-                </div>
 
-                <div class="flex flex-row my-2 justify-between items-center">
-                    <h2 class="text-silver-800 font-bold text-xl mr-2">کتاب خوبی بود اما ...</h2>
-                    <span class="text-silver-600">۳ روز پیش</span>
-                    
+            <div class="flex flex-row mb-4">
+                <div class="text-silver-700 text-center">
+                        <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full object-cover" alt="">
                 </div>
-
-                <div class="flex flex-row my-2 justify-start text-justify">
-                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-                        <a href="#" class="text-blue-400 hover:text-blue-500">مشاهده‌ی این نقد ...</a> 
-                    </p>
-                    
-                </div>
-
-                <div class="flex flex-row my-2 justify-end text-silver-700">
-                    <div class="ml-4">
-                        <a href="#" class="hover:text-red-500">
-                            <i class="far fa-heart    "></i> ۸۵ 
-                        </a>
-                        
+                <div class="flex flex-col text-silver-700 text-center m-2 justify-between">
+                    <div class="flex justify-between">
+                        <h4 class="text-lg text-black">{{ Auth::user()->name }}، برای کتاب {{ $book->title }} نقدی بنویسید</h4>
                     </div>
-                    <div>
-                        <a href="#" class="hover:text-green-500">
-                            <i class="fas fa-reply    "></i> ۶۹ 
-                        </a>
-                        
+                    <div class="flex flex-row">
+                        <a href="{{ route('review.create', [$book->slug]) }}" class="text-brown text-lg hover:bg-silver-200 rounded-full px-2 hover:text-black">نوشتن نقد</a>                        
                     </div>
+
                 </div>
-            </div> --}}
-            {{-- End of review --}}
+              </div>
+
 
 
 
@@ -126,6 +106,7 @@
                 <div class="flex flex-row my-2 justify-start items-center">
                     <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full object-cover" alt="">
                     <h2 class="text-silver-600 font-bold text-lg mr-2">{{ $review->owner->name }}</h2>
+                    @include('partials.rated', ['rating' => $review->rating])
                 </div>
 
                 {{-- <div class="flex flex-row my-2 justify-between items-center">
@@ -136,7 +117,7 @@
 
                 <div class="flex flex-row my-2 justify-start text-justify items-end">
                     <p>
-                        {!! $review->excerpt !!}
+                        {!! $review->body !!}
                         <a href="{{ $review->path() }}" class="text-blue-400 hover:text-blue-500">مشاهده‌ی این نقد ...</a> 
                     </p>
                     
@@ -164,7 +145,7 @@
             @endforeach
 
 
-            <div class="trix-content"></div>
+            {{-- <div class="trix-content"></div>
             <div class="flex flex-col">
                 <div>
                     <a href="#" class="flex w-full text-black p-2 rounded-lg bg-silver-200 hover:bg-silver-300 items-center justify-center hover:shadow">نقدهای بیشتر</a>
@@ -173,7 +154,6 @@
                 {!! Form::token() !!}
                 <div class="my-3 flex flex-row  items-start">
                     <img src="{{ asset('images/avatar.jpg') }}" class="hidden sm:flex w-16 h-16 rounded-full object-cover ml-2" alt="">
-
                     {!! Form::hidden('book_id', $book->id) !!}
                     <div class="trix-editor flex flex-col w-full">
                         <input type="hidden"  name="body" id="body" />
@@ -187,7 +167,7 @@
 
                 {!! Form::close() !!}
 
-            </div>
+            </div> --}}
             
 
 

@@ -72,7 +72,9 @@ Route::resource('/book', 'BookController');
 
 Route::resource('/author', 'AuthorController');
 
-Route::resource('review', 'ReviewController');
+Route::resource('review', 'ReviewController', ['except' => 'create']);
+
+Route::get('review/create/{book}', 'ReviewController@create')->name('review.create');
 
 Route::resource('comment', 'CommentController');
 

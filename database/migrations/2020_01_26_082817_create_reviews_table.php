@@ -15,9 +15,12 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id');
-            $table->integer('book_id');
-            $table->longText('body');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('book_id');
+            $table->text('body')->nullable();
+            $table->unsignedInteger('progress')->nullable();
+            $table->enum('shelf', ['to_read', 'reading', 'read'])->default('read');
+            $table->unsignedInteger('rating')->nullable();
             $table->timestamps();
 
         });

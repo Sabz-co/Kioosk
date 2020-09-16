@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Shelf;
+use App\Review;
 use App\Book;
 use App\Publisher;
 use Illuminate\Http\Request;
@@ -105,7 +105,7 @@ class BookController extends Controller
         // $book->recordVisit();
         // dd($book->append('on_shelf')->toArray());
         if (auth()->user()) {
-            $on_list = Shelf::where([['user_id', '=', auth()->user()->id], ['book_id', '=',  $book->id]])->first();
+            // $on_list = Shelf::where([['user_id', '=', auth()->user()->id], ['book_id', '=',  $book->id]])->first();
         }
 
         return view('book.show', compact('book'));
@@ -149,7 +149,7 @@ class BookController extends Controller
         // $book = Book::findOrFail($request->sourceId);
         
         // $book->rateOnce($request->value);
-        $rate = Shelf::updateOrCreate(
+        $rate = Review::updateOrCreate(
             ['user_id' => Auth::user()->id,
             'book_id' => $book->id],
             ['rating' => $request->value]);

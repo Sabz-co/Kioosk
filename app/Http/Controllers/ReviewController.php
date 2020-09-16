@@ -26,9 +26,9 @@ class ReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Book $book)
     {
-        //
+        return view('review.add', compact('book'));
     }
 
     /**
@@ -39,19 +39,45 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        $review = new Review();
-        $review->user_id = auth()->user()->id;
-        $review->book_id = request('book_id');
-        $review->body = request('body');
-        $review->save();
 
-        $user = User::findOrFail(auth()->user()->id);
 
-        $review->owner->subscriptions->filter(function ($sub) use ($review){
-            return $sub->user_id != $review->user_id;
-        })->each(function ($sub) use ($review) {
-            $sub->user->notify(new ReviewHasBeenWritten(auth()->user(), $review));
-        });
+        // $data = $this->form_validation($request);
+
+        $request->validate([
+            'book_id' => ['exists:books,id', 'required'],
+            'shelf' => ['in:read,to_read,reading', 'nullable'],
+            'rating' => ['numeric', 'nullable'],
+            'progress' => ['numeric', 'nullable'],
+            'body' => ['nullable']
+        ]);
+
+        // if(empty($data['rating']) ){
+        //     $data['rating'] = null;
+        // }
+
+        // if(empty($data['body']) ){
+        //     $data['body'] = null;
+        // }
+        
+        $review = Review::updateOrCreate(['book_id' => $request->book_id, 'user_id' => 1],
+    ['body' => $request->body, 'rating' => $request->rating ]);
+        // $item->shelf = $data['shelf'];
+        // $item->update();
+
+
+        // $review = new Review();
+        // $review->user_id = auth()->user()->id;
+        // $review->book_id = request('book_id');
+        // $review->body = request('body');
+        // $review->save();
+
+        // $user = User::findOrFail(auth()->user()->id);
+
+        // $review->owner->subscriptions->filter(function ($sub) use ($review){
+        //     return $sub->user_id != $review->user_id;
+        // })->each(function ($sub) use ($review) {
+        //     $sub->user->notify(new ReviewHasBeenWritten(auth()->user(), $review));
+        // });
 
 
 
@@ -107,4 +133,21 @@ class ReviewController extends Controller
     public function storeLikes(Review $review, Request $request) {
         return response()->json(['success'=>'Ajax request submitted successfully']);
     }
+
+
+
+        // Thanks to Mikey for this clean validation
+        private function form_validation(Request $request)
+        {
+            return $request->validate([
+                'book_id' => ['exists:books,id', 'required'],
+                'shelf' => ['in:read,to_read,reading', 'sometimes|required'],
+                'rating' => ['numeric', 'nullable'],
+                'progress' => ['numeric', 'nullable'],
+                'body' => ['nullable']
+            ]);
+        }
+
+
+
 }

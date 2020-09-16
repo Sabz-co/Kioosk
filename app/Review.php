@@ -39,6 +39,11 @@ class Review extends Model
       return $this->hasMany(Reply::class);
     }
 
+    public function shelf()
+    {
+        return $this->hasOne(Shelf::class);
+    }
+
     public function path()
     {
       return '/review/' . $this->id;
@@ -91,4 +96,33 @@ class Review extends Model
     public function isFavorited(){
       return $this->favorites()->where('user_id', auth()->id())->exists();
     }
+
+
+
+
+    public static function feed($user, $take = 50)
+    {
+        return $user->reviews()->with('book')->latest()->take($take)->get();
+    }
+
+    public function getShelfTitleAttribute()
+    {
+        switch ($this->shelf) {
+            case 'reading':
+                return 'در حال خواندن';
+                break;
+            case 'read':
+                return 'خوانده شده';
+                break;
+            case 'to_read':
+                return 'برای خواندن';
+                break;
+            default:
+                return;
+                break;
+        }
+    }
+
+
+
 }
