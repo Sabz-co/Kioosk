@@ -4,7 +4,9 @@
 <div class="flex-reserse sm:flex w-full">
         <!-- Right side -->
         <div class="w-full sm:w-2/3 p-3">
-
+          @if($errors->any())
+          {{ implode('', $errors->all('<div>:message</div>')) }}
+      @endif
             <!-- Add book form -->
                 <nav class="text-black font-bold my-8" aria-label="Breadcrumb">
                     <ol class="list-none p-0 inline-flex">
@@ -25,11 +27,11 @@
             <div class="flex flex-row">
                 <div class="text-silver-700 text-center m-2">
                     <div class="relative aspect-ratio-book w-16">
-                        <img src="{{ asset('images/books/3.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
+                        <img src="{{ asset('images/books/extensive/'.$book->image_src) }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                     </div>
                 </div>
                 <div class="flex flex-col text-silver-700 text-right m-2 justify-center">
-                    <p class="text-brown text-lg">قمارباز</p>
+                    <p class="text-brown text-lg">{{ $book->title }}</p>
                     <p>فئودور داستایوفسکی</p>
                 </div>
               </div>
@@ -37,20 +39,22 @@
 
             <div class="flex flex-col w-full text-sm md:text-base mb-5 pb-5 border-b text-silver-700">
 
-                {!! Form::open(['route' => 'book.store','files' => true]) !!}
+                {!! Form::open(['route' => [ (isset($review) ? 'review.update' : 'review.store' ), isset($review) ? $review->id : $book->slug], 'files' => true]) !!}
                 {!! Form::token() !!}
+                  <input type="text"  name="book_id" value="{{ $book->id }}" placeholder="">
+                  <input type="hidden" name="_method" value="{{ isset($review) ? 'PUT' : 'POST' }}">
                 <div class="mx-auto mb-4 flex items-center">
                     <span class="ml-1">امتیاز من: </span>
-                    @include('partials.rating')
+                    @include('partials.rating', ['rating' => $review->rating ?? 0, 'slug' => $book->slug])
                 </div>
 
                 <div class="mx-auto mb-4 flex items-center">
                     <span class="ml-1">قفسه: </span>
                     <div class="form-group">
-                      <select class="" name="" id="">
-                        <option>برای خواندن</option>
-                        <option>در حال خواندن</option>
-                        <option>خوانده شده</option>
+                      <select class="" name="shelf" id="">
+                        <option value="to_read" {{isset($review) && $review->shelf == 'to_read' ? 'selected' : '' }}>برای خواندن</option>
+                        <option value="reading" {{isset($review) && $review->shelf == 'reading' ? 'selected' : '' }}>در حال خواندن</option>
+                        <option value="read" {{isset($review) && $review->shelf == 'read' ? 'selected' : '' }}>خوانده شده</option>
                       </select>
                     </div>
                 </div>
@@ -59,8 +63,8 @@
                 <div class=" mx-auto mb-4">
                     <span class="ml-1">در مورد کتاب چه فکر می‌کنید؟ </span>
                     <div class="trix-editor flex flex-col w-full">
-                        <input type="hidden"  name="body" id="body" />
-                        <trix input="body" class="trix-content"></trix>
+                        <input type="hidden" value="{{ $review->body ?? "" }}" name="body" id="body" />
+                        <trix input="body"  class="trix-content"></trix>
                     </div>
                     <div class="form-check">
                       <label class="form-check-label">

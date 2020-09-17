@@ -28,7 +28,7 @@ class ReviewController extends Controller
      */
     public function create(Book $book)
     {
-        return view('review.add', compact('book'));
+        return view('review.form', compact('book'));
     }
 
     /**
@@ -39,10 +39,6 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-
-
-        // $data = $this->form_validation($request);
-
         $request->validate([
             'book_id' => ['exists:books,id', 'required'],
             'shelf' => ['in:read,to_read,reading', 'nullable'],
@@ -50,34 +46,15 @@ class ReviewController extends Controller
             'progress' => ['numeric', 'nullable'],
             'body' => ['nullable']
         ]);
-
-        // if(empty($data['rating']) ){
-        //     $data['rating'] = null;
-        // }
-
-        // if(empty($data['body']) ){
-        //     $data['body'] = null;
-        // }
         
-        $review = Review::updateOrCreate(['book_id' => $request->book_id, 'user_id' => 1],
-    ['body' => $request->body, 'rating' => $request->rating ]);
-        // $item->shelf = $data['shelf'];
-        // $item->update();
+        $review = Review::updateOrCreate(['book_id' => $request->book_id, 'user_id' => Auth::user()->id],
+            ['body' => $request->body, 'shelf' => $request->shelf]);
 
-
-        // $review = new Review();
-        // $review->user_id = auth()->user()->id;
-        // $review->book_id = request('book_id');
-        // $review->body = request('body');
-        // $review->save();
-
-        // $user = User::findOrFail(auth()->user()->id);
-
-        // $review->owner->subscriptions->filter(function ($sub) use ($review){
-        //     return $sub->user_id != $review->user_id;
-        // })->each(function ($sub) use ($review) {
-        //     $sub->user->notify(new ReviewHasBeenWritten(auth()->user(), $review));
-        // });
+        $review->owner->subscriptions->filter(function ($sub) use ($review){
+            return $sub->user_id != $review->user_id;
+        })->each(function ($sub) use ($review) {
+            $sub->user->notify(new ReviewHasBeenWritten(auth()->user(), $review));
+        });
 
 
 
@@ -92,8 +69,10 @@ class ReviewController extends Controller
      */
     public function show(Review $review)
     {
+        // dd($review);
         $page_class = "review";
-        return view('review.show', compact('review', 'page_class'));
+        $book = $review->book;
+        return view('review.show', compact('review', 'book', 'page_class'));
     }
 
     /**
@@ -104,7 +83,12 @@ class ReviewController extends Controller
      */
     public function edit(Review $review)
     {
-        //
+        if(Auth::user()->id != $review->owner->id) {
+            return redirect()->back();
+        }
+        $book = $review->book;
+        $page_class = "review";
+        return view('review.form', compact('review', 'book', 'page_class'));
     }
 
     /**
@@ -116,7 +100,7 @@ class ReviewController extends Controller
      */
     public function update(Request $request, Review $review)
     {
-        //
+        dd($review);
     }
 
     /**

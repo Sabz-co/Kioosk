@@ -15,19 +15,9 @@
                     <div class="flex flex-col sm:flex-row justify-between w-full items-center">
                         <div class="text-right">
                             <h4 class="text-brown font-bold text-lg">ملت عشق 
-
-
-
-  <!-- Rating Stars Box -->
-
-    @include('partials.rating', ['rating' => '4'])
-  
-                                {{-- <i class="fas fa-star text-yellow-500"></i>
-                                <i class="fas fa-star text-yellow-500"></i>
-                                <i class="fas fa-star text-yellow-500"></i>
-                                <i class="fas fa-star text-yellow-500"></i>
-                                <i class="far fa-star text-yellow-500"></i> --}}
-                            
+                                <!-- Rating Stars Box -->
+                                @include('partials.rating', ['rating' => '4', 'slug' => 'آخرین انار دنیا'])
+                                {{-- End of rating stars box --}}
                             </h4>
                             <p class="text-sm text-center sm:text-right">الیف شافتاک</p>
                         </div>

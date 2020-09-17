@@ -5,7 +5,7 @@
         <!-- Right side -->
         <div class="w-full sm:w-2/3 lg:w-3/4 p-3">
             <!-- Book Info -->
-            <div class="flex flex-col md:flex-row text-sm md:text-base border-b">
+            <div class="flex flex-col md:flex-row text-sm md:text-base">
                 <div class="text-silver-700 text-center sm:pl-4 py-2 my-2">
                     <img src="{{ $book->image_src ?  asset('images/books/extensive/'. $book->image_src) : asset('images/books/placeholder.png') }}" alt="" class="w-32 lg:w-40 h-40 lg:h-56 object-cover rounded-xl mx-auto">
                     {{-- <div class="mt-4">
@@ -28,14 +28,7 @@
                         <div class="views text-xs text-gray-400 mr-auto ml-2">
                             {{ $book->visits() }} بازدید
                         </div>
-                        {{-- <div class="flex items-center">
-                            <i class="fas fa-star text-yellow-500"></i>
-                            <i class="fas fa-star text-yellow-500"></i>
-                            <i class="fas fa-star text-yellow-500 "></i>
-                            <i class="fas fa-star text-yellow-500"></i>
-                            <i class="far fa-star text-yellow-500"></i>    
-                        </div> --}}
-                            @include('partials.rating', ['rating' => $book->reviews()->avg('rating')])
+                            @include('partials.rating', ['rating' => $book->reviews()->avg('rating'), 'slug' => $book->slug])
                     </div>
 
                     <div class="flex flex-row justify-between w-full items-center my-4 border-t border-b py-2 border-silver-400">
@@ -68,9 +61,63 @@
 
                 </div>
               </div>
+
+
+              @if($on_list)
+              <div class="mb-6">
+                <div class="flex items-center my-4 pb-2 border-b ">
+                    <h1 class="text-lg text-brown font-bold">پیشرفت خوانش</h1>
+                </div>
+
+                <div class="flex flex-col w-full">
+                    <div class="flex flex-row w-full">
+                        <div class="w-32">
+                            نقد بر
+                        </div>
+                        <div class="">
+                            {{ $book->title }}
+                        </div>
+                    </div>
+
+                    <div class="flex flex-row w-full my-1">
+                        <div class="w-32">
+                            امتیاز شما
+                        </div>
+                        <div class="">
+                            @include('partials.rating', ['rating' => $on_list->rating, 'slug' => $book->slug])
+                        </div>
+                    </div>
+
+                    <div class="flex flex-row w-full my-1">
+                        <div class="w-32">
+                            قفسه
+                        </div>
+                        <div class="">
+                            {{ $on_list->shelfTitle }}
+                        </div>
+                    </div>
+
+                    <div class="flex flex-row w-full my-1">
+                        <div class="w-32">
+                            نقد
+                        </div>
+                        <div class="">
+                            @if ($on_list->body)
+                                {!! $on_list->excerpt !!} <a href="#"  class="text-brown text-lg hover:bg-silver-200 rounded-full px-2 hover:text-black">ویرایش</a>
+                                @else
+                                <a href="#"  class="text-brown text-lg hover:bg-silver-200 rounded-full px-2 hover:text-black">نقدی بنویسید</a>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+
+
+              @endif
             <!-- End of Book Info -->
 
-            <div class="flex items-center my-4 pb-2 border-b ">
+            <div class="flex items-center my-4 pb-2 border-b mb-6">
                 <h1 class="text-lg text-brown font-bold">نقدهای این کتاب</h1>
                 <div class="mr-auto flex items-center ">
                     <span>بر اساس</span>
@@ -82,6 +129,7 @@
             </div>
 
 
+            @if (!$on_list)
             <div class="flex flex-row mb-4">
                 <div class="text-silver-700 text-center">
                         <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full object-cover" alt="">
@@ -96,11 +144,13 @@
 
                 </div>
               </div>
+            @endif
 
 
 
 
-            @foreach ($book->reviews as $review)
+
+            @foreach ($book->fullReviews as $review)
             {{-- Review --}}
             <div class="mb-5 border-b flex flex-col">
                 <div class="flex flex-row my-2 justify-start items-center">

@@ -104,11 +104,11 @@ class BookController extends Controller
 
         // $book->recordVisit();
         // dd($book->append('on_shelf')->toArray());
+        $on_list = null;
         if (auth()->user()) {
-            // $on_list = Shelf::where([['user_id', '=', auth()->user()->id], ['book_id', '=',  $book->id]])->first();
+            $on_list = Review::where([['user_id', '=', auth()->user()->id], ['book_id', '=',  $book->id]])->first();
         }
-
-        return view('book.show', compact('book'));
+        return view('book.show', compact('book', 'on_list'));
     }
 
     /**
