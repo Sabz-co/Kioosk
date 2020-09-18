@@ -44,14 +44,12 @@
               </div>
             <!-- End of fellow readers -->
             <hr class="border my-5">
-
             <div class="flex items-center my-4">
                 <h1 class="text-lg">کتاب برتر هفته</h1>
-                <a href="#" class="hover:shadow text-brown rounded-full hover:bg-silver-200 hover:text-black px-2 mr-2 hover:shadow ">دیدن همه</a>
+                <a href="#" class="text-brown rounded-full hover:bg-silver-200 hover:text-black px-2 mr-2 hover:shadow ">دیدن همه</a>
             </div>
 
             <div class="flex flex-wrap justify-start">
-
                 @foreach ($trending as $book)
                 <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
                     <a href="{{ url($book->path) }}">
@@ -63,11 +61,7 @@
                     </a>
                 </div>                    
                 @endforeach
-
-
-                
             </div>
-
 
 
             {{-- Start of Timeline --}}

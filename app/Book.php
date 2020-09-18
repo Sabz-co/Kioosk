@@ -58,6 +58,9 @@ class Book extends Model
 
   public function fullReviews()
   {
+    if(Auth::user()) {
+      return $this->hasMany(Review::class)->whereNotNull('body')->where('body', '!=', '')->where('user_id', '!=', Auth::user()->id);
+    }
     return $this->hasMany(Review::class)->whereNotNull('body')->where('body', '!=', '');
   }
 

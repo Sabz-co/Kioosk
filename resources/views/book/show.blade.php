@@ -101,7 +101,7 @@
                         <div class="w-32">
                             نقد
                         </div>
-                        <div class="">
+                        <div class="flex items-center">
                             @if ($on_list->body)
                                 {!! $on_list->excerpt !!} <a href="#"  class="text-brown text-lg hover:bg-silver-200 rounded-full px-2 hover:text-black">ویرایش</a>
                                 @else
@@ -129,7 +129,7 @@
             </div>
 
 
-            @if (!$on_list)
+            @if (Auth::user() && !$on_list)
             <div class="flex flex-row mb-4">
                 <div class="text-silver-700 text-center">
                         <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full object-cover" alt="">
@@ -145,9 +145,6 @@
                 </div>
               </div>
             @endif
-
-
-
 
 
             @foreach ($book->fullReviews as $review)
