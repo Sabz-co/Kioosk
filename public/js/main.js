@@ -177,18 +177,64 @@ $(document).ready(function() {
         responseMessage(msg);
 
     });
+
+
+
+
     $(".save-review").on("click", function(e) {
+
         e.preventDefault(); /* prevent form submiting here */
-        var $form = $('.update-review-form');
-        $(".update-review-form").toggleClass('hidden');
-        $(".save-review").toggleClass('hidden');
+        if (window.Kioosk.user != null) {
 
-        $(".update-review").toggleClass('hidden');
-        var $sourceItem = $form;
+            $(".update-review-form").toggleClass('hidden');
+            $(".save-review").toggleClass('hidden');
+            $(".update-review").toggleClass('hidden');
 
-        var currentRating = $sourceItem.data('review-id')
 
-        console.log(currentRating)
+            var $form = $('.update-review-form');
+            var $sourceItem = $form;
+            var sourceId = $sourceItem.parent().data('review-id');
+            var pageNumbers = $sourceItem.parent().data('pages');
+
+            var $inputs = $form.find("input, select, button, textarea");
+            // Let's disable the inputs for the duration of the Ajax request.
+            // Note: we disable elements AFTER the form data has been serialized.
+            // Disabled form elements will not be serialized.
+            // $inputs.prop("disabled", true);
+            var values = {};
+            $inputs.each(function() {
+                values[this.name] = $(this).val();
+            });
+
+            var data = [
+                { 'name': 'pages', 'value': values['pages'] },
+                { 'name': 'shelf', 'value': values['shelf'] }
+            ];
+
+            // console.log(data);
+            $.ajax({
+                url: "/review/" + sourceId,
+                type: "PUT",
+                data: data,
+                success: function(response) {
+
+                    console.log(response);
+                    if (response.success = 'updated') {
+                        percent = calculatePercent(parseInt(values['pages']), parseInt(pageNumbers))
+                        console.log(percent)
+                        console.log(values['pages'])
+                        $('.progress-bar').attr('style', 'width: ' + percent + '%');
+                        $('.progress-bar').text(percent + "%")
+                            // $sourceItem.children("span").html(parseInt($($sourceItem.children("span")).html(), 10) + 1)
+                    } else {
+                        responseMessage("error");
+                    }
+                },
+            });
+
+        }
+
+
     });
 
 
@@ -212,4 +258,8 @@ $(document).ready(function() {
 function responseMessage(msg) {
     $('.success-box').fadeIn(200);
     $('.success-box div.text-message').html("<span>" + msg + "</span>");
+}
+
+function calculatePercent(num, percent) {
+    return Math.round(num / (percent / 100), 0)
 }

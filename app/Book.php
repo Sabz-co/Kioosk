@@ -64,6 +64,8 @@ class Book extends Model
     return $this->hasMany(Review::class)->whereNotNull('body')->where('body', '!=', '');
   }
 
+
+
     /**
      * Get all of the post's comments.
      */

@@ -16,9 +16,16 @@ class PagesController extends Controller
     public function home(BookFilters $filters) {
         $books = Book::latest()->withCount('reviews')->filter($filters)->get();
         $trending = array_map('json_decode', Redis::zrevrange('trending_books', 0, 14));
+        $currently_reading = null;
 
+        if (Auth::user()) {
+            $currently_reading = auth()->user()->reading_list()->whereHas('book', function($q){
+                $q->where('page_count', '>' , 0);
+             })->first();
 
-        return view('home', compact('books', 'trending'));
+        }
+
+        return view('home', compact('books', 'trending', 'currently_reading'));
     }
     
 

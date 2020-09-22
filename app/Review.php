@@ -62,6 +62,18 @@ class Review extends Model
       return $excerpt;
   }
 
+  function getPercentAttribute()
+{
+
+  $total = $this->book->page_count;
+  $number = $this->progress;
+  if ( $total > 0) {
+   return round($number / ($total / 100),0);
+  } else {
+    return 0;
+  }
+}
+
     /**
      * Get all of the review's comments.
      */

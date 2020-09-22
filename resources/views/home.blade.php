@@ -5,6 +5,7 @@
         <div class="w-full sm:w-2/3 lg:w-3/4 p-2">
             <h1 class="text-xl mb-2">از کتاب‌هایی که شما مطالعه می‌کنید:</h1>
             <!-- Fellow readers -->
+            @if ($currently_reading)
             <div class="flex bg-silver-200 flex-col md:flex-row rounded-lg text-sm md:text-base">
                 <div class="mx-auto text-silver-700 text-center px-4 py-2 m-2 w-2/6 md:w-1/4 lg:w-1/5">
                     <div class="relative aspect-ratio-book w-full">
@@ -14,44 +15,43 @@
                 <div class="flex flex-col flex-1 text-center p-4 m-2 items-center justify-between">
                     <div class="flex flex-col sm:flex-row justify-between w-full items-center">
                         <div class="text-right">
-                            <h4 class="text-brown font-bold text-lg">ملت عشق 
+                            <h4 class="text-brown font-bold text-lg">{{ $currently_reading->book->title }}
                                 <!-- Rating Stars Box -->
-                                @include('partials.rating', ['rating' => '4', 'slug' => 'آخرین انار دنیا'])
+                                @include('partials.rating', ['rating' => $currently_reading->rating, 'slug' => $currently_reading->book->slug])
                                 {{-- End of rating stars box --}}
                             </h4>
                             <p class="text-sm text-center sm:text-right">الیف شافتاک</p>
                         </div>
-                        <div class="bg-white text-black rounded-full py-1 px-2">تاریخ شروع: ۱۲ مرداد ۱۳۹۷</div>
+                        <div class="bg-white text-black rounded-full py-1 px-2">تاریخ شروع: {{\Morilog\Jalali\Jalalian::fromCarbon($currently_reading->created_at)->format('%d %B  %Y ')}}</div>
                     </div>
-                    <form action="" method="post"></form>
-                    <div class=" flex flex-col lg:flex-row w-full " data-review-id="3">
-                        {!! Form::open(['route' => ['review.update', 1],'files' => true, 'data-review-id' => '3', 'class' => 'update-review-form flex w-full justify-between hidden']) !!}
+                    <div class=" flex flex-col lg:flex-row w-full " data-pages="{{ $currently_reading->book->page_count}}" data-review-id="{{ $currently_reading->id }}">
+                        {!! Form::open(['route' => ['review.update', 1],'files' => true, 'class' => 'update-review-form flex w-full justify-between hidden']) !!}
                             {!! Form::token() !!}
                             <div class="flex items-center mb-6">
                                 <div class="">
-                                  <label class="block text-gray-500 text-right mb-0" for="inline-full-name">
+                                  <label class="block text-gray-500 text-right mb-0" for="pages">
                                     خوانده شده
                                   </label>
                                 </div>
                                 <div class="w-16 mx-2">
-                                  <input class="bg-white appearance-none border-2 border-white rounded w-full p-1 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" value="">
+                                  <input name="pages" value="{{ $currently_reading->progress }}" class="bg-white appearance-none border-2 border-white rounded w-full p-1 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" value="">
                                 </div>
-                                <span>صفحه از ۸۰۰ صفحه</span>
+                                <span>صفحه از {{ $currently_reading->book->page_count }} صفحه</span>
                               </div>
 
 
 
                               <div class="flex items-center mb-6">
                                 <div class="">
-                                  <label class="block text-gray-500 text-right ml-2 mb-0" for="inline-full-name">
+                                  <label class="block text-gray-500 text-right ml-2 mb-0" for="shelf">
                                     قفسه
                                   </label>
                                 </div>
                                 <div class="">
-                                    <select class="block appearance-none w-full bg-white border border-white text-gray-700 p-1 rounded leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="grid-state">
-                                        <option>برای خواندن</option>
-                                        <option>در حال خواندن</option>
-                                        <option>خوانده شده</option>
+                                    <select name="shelf" class="block appearance-none w-full bg-white border border-white text-gray-700 p-1 rounded leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="grid-state">
+                                        <option value="to_read" {{isset($currently_reading) && $currently_reading->shelf == 'to_read' ? 'selected' : '' }}>برای خواندن</option>
+                                        <option value="reading" {{isset($currently_reading) && $currently_reading->shelf == 'reading' ? 'selected' : '' }}>در حال خواندن</option>
+                                        <option value="read" {{isset($currently_reading) && $currently_reading->shelf == 'read' ? 'selected' : '' }}>خوانده شده</option>
                                       </select>
                                 </div>
                               </div>
@@ -60,17 +60,17 @@
                     </div>
 
                     <div class="flex flex-col justify-between w-full items-center my-4">
-                        <p class="text-silver-700 mr-auto">۸۰۳ صفحه</p>
+                        <p class="text-silver-700 mr-auto">{{ $currently_reading->book->page_count }} صفحه</p>
 
                         <div class="progress-bar-wrapper">
-                            <div class="progress-bar" style="width: 75%">75%</div>
+                            <div class="progress-bar" style="width: {{ $currently_reading->percent }}%">{{ $currently_reading->percent }}%</div>
                           </div>
                     </div>
 
 
                     <div class="flex flex-col sm:flex-row justify-between w-full items-center">
                         <div class="text-right">
-                            <h4 class="">۵۹ نقد دارد</h4>
+                            <h4 class="">{{ $currently_reading->book->reviews()->count() }} نقد دارد</h4>
                         </div>
                         <a href="#" class="update-review hover:shadow sm:mr-auto text-silver-700 hover:text-brown hover:bg-white p-1 rounded-lg sm:ml-4">بروز رسانی مطالعه</a>
                         <a href="#" class="save-review hover:shadow sm:mr-auto text-silver-700 hover:text-brown hover:bg-white p-1 rounded-lg sm:ml-4 hidden">ذخیره</a>
@@ -78,7 +78,8 @@
 
                     </div>
                 </div>
-              </div>
+          </div>
+            @endif
             <!-- End of fellow readers -->
             <hr class="border my-5">
             <div class="flex items-center my-4">
