@@ -23,6 +23,41 @@
                         </div>
                         <div class="bg-white text-black rounded-full py-1 px-2">تاریخ شروع: ۱۲ مرداد ۱۳۹۷</div>
                     </div>
+                    <form action="" method="post"></form>
+                    <div class=" flex flex-col lg:flex-row w-full " data-review-id="3">
+                        {!! Form::open(['route' => ['review.update', 1],'files' => true, 'data-review-id' => '3', 'class' => 'update-review-form flex w-full justify-between hidden']) !!}
+                            {!! Form::token() !!}
+                            <div class="flex items-center mb-6">
+                                <div class="">
+                                  <label class="block text-gray-500 text-right mb-0" for="inline-full-name">
+                                    خوانده شده
+                                  </label>
+                                </div>
+                                <div class="w-16 mx-2">
+                                  <input class="bg-white appearance-none border-2 border-white rounded w-full p-1 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" value="">
+                                </div>
+                                <span>صفحه از ۸۰۰ صفحه</span>
+                              </div>
+
+
+
+                              <div class="flex items-center mb-6">
+                                <div class="">
+                                  <label class="block text-gray-500 text-right ml-2 mb-0" for="inline-full-name">
+                                    قفسه
+                                  </label>
+                                </div>
+                                <div class="">
+                                    <select class="block appearance-none w-full bg-white border border-white text-gray-700 p-1 rounded leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="grid-state">
+                                        <option>برای خواندن</option>
+                                        <option>در حال خواندن</option>
+                                        <option>خوانده شده</option>
+                                      </select>
+                                </div>
+                              </div>
+
+                        {!! Form::close() !!}
+                    </div>
 
                     <div class="flex flex-col justify-between w-full items-center my-4">
                         <p class="text-silver-700 mr-auto">۸۰۳ صفحه</p>
@@ -37,8 +72,10 @@
                         <div class="text-right">
                             <h4 class="">۵۹ نقد دارد</h4>
                         </div>
-                        <a href="#" class="hover:shadow sm:mr-auto text-silver-700 hover:text-brown hover:bg-white p-1 rounded-lg sm:ml-4">بروز رسانی مطالعه</a>
+                        <a href="#" class="update-review hover:shadow sm:mr-auto text-silver-700 hover:text-brown hover:bg-white p-1 rounded-lg sm:ml-4">بروز رسانی مطالعه</a>
+                        <a href="#" class="save-review hover:shadow sm:mr-auto text-silver-700 hover:text-brown hover:bg-white p-1 rounded-lg sm:ml-4 hidden">ذخیره</a>
                         <a href="#" class="hover:shadow text-silver-700 hover:text-brown hover:bg-white p-1 rounded-lg">دیدن بقیه لیست</a>
+
                     </div>
                 </div>
               </div>

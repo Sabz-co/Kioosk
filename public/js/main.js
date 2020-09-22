@@ -177,6 +177,33 @@ $(document).ready(function() {
         responseMessage(msg);
 
     });
+    $(".save-review").on("click", function(e) {
+        e.preventDefault(); /* prevent form submiting here */
+        var $form = $('.update-review-form');
+        $(".update-review-form").toggleClass('hidden');
+        $(".save-review").toggleClass('hidden');
+
+        $(".update-review").toggleClass('hidden');
+        var $sourceItem = $form;
+
+        var currentRating = $sourceItem.data('review-id')
+
+        console.log(currentRating)
+    });
+
+
+
+    $(".update-review").on("click", function(e) {
+        e.preventDefault(); /* prevent form submiting here */
+        $(".update-review-form").toggleClass('hidden');
+        $(".update-review").toggleClass('hidden');
+        $(".save-review").toggleClass('hidden');
+        // $(this).text(($(this).text() == 'بروز رسانی مطالعه') ? 'ذخیره' : 'بروز رسانی مطالعه');
+    });
+
+
+
+
 
 
 });
