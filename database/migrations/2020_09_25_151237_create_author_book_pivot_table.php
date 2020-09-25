@@ -14,8 +14,18 @@ class CreateAuthorBookPivotTable extends Migration
     public function up()
     {
         Schema::create('author_book', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->primary(['author_id','book_id']);
+            $table->bigInteger('author_id')->unsigned();
+            $table->bigInteger('book_id')->unsigned();
+            $table->enum('role', ['author', 'translator'])->default('author');
+            $table->string('note')->nullable()->default(null);
             $table->timestamps();
+            $table->foreign('author_id')
+                ->references('id')
+                ->on('authors');
+             $table->foreign('book_id')
+                ->references('id')
+                ->on('books');
         });
     }
 

@@ -77,7 +77,7 @@ class BookController extends Controller
                 $thumbnailImage->save($thumbnailPath.time().$originalImage->getClientOriginalName()); 
         
                 $imagemodel= new Image();
-                $book->image_src=time().$originalImage->getClientOriginalName();
+                $book->thumb=time().$originalImage->getClientOriginalName();
             }
             //Temporary
             // $book->slug = $book->title;
@@ -98,7 +98,7 @@ class BookController extends Controller
         // Redis::del('trending_books');
         Redis::zincrby('trending_books', 1, json_encode([
             'title' => $book->title,
-            'image' => $book->image_src,
+            'image' => $book->thumb,
             'path' => $book->path()
         ]));
 

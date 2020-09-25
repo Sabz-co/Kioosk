@@ -8,6 +8,13 @@ class Author extends Model
 {
 
   protected $appends = ['full_name'];
+
+  public function getRouteKeyName()
+  {
+    return 'slug';
+  }
+
+
   public function books()
   {
     return $this->belongsToMany('App\Book');

@@ -42,7 +42,7 @@ class ScriptController extends Controller
                 $arr = [];
                 $arr['title'] = $title;
                 $arr['author'] = $author;
-                $arr['image_src'] = $img;
+                $arr['thumb'] = $img;
                 $arr['category'] = null;
                 $arr['publisher'] = null;
                 $arr['category'] = null;
@@ -52,9 +52,9 @@ class ScriptController extends Controller
                 $arr['description'] = null; // Do
 
                 if ($img == "https://www.banasher.com/images/placeholders/book.jpeg") {
-                    $arr['image_src'] = null;
+                    $arr['thumb'] = null;
                 } else {
-                    $arr['image_src'] = "https://www.banasher.com/".$img_replaced;
+                    $arr['thumb'] = "https://www.banasher.com/".$img_replaced;
                 }
 
                 $arr['link'] = $link;
@@ -106,15 +106,15 @@ class ScriptController extends Controller
             $new_book->number_of_pages = $book['page_count'];
             $new_book->isbn = $book['isbn'];
             $new_book->publisher = $book['publisher'];
-            $new_book->image_src = $book['image_src'];
+            $new_book->thumb = $book['thumb'];
 
-            if (!is_null($book['image_src'])) {
-                $path = $book['image_src'];
+            if (!is_null($book['thumb'])) {
+                $path = $book['thumb'];
                 $filename = basename($path);
                 $extension = pathinfo($filename, PATHINFO_EXTENSION);
                 $image_name = 'images/books/' . $new_book->id . "-" . time() . "book." . $extension;
                 Image::make($path)->save(public_path($image_name));
-                $new_book->image_src = $image_name;
+                $new_book->thumb = $image_name;
                 echo "not null!!";
             }
             $new_book->save();

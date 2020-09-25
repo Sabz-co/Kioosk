@@ -27,7 +27,7 @@
             <div class="flex flex-row">
                 <div class="text-silver-700 text-center m-2">
                     <div class="relative aspect-ratio-book w-16">
-                        <img src="{{ asset('images/books/extensive/'.$book->image_src) }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
+                        <img src="{{ asset('images/books/extensive/'.$book->thumb) }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                     </div>
                 </div>
                 <div class="flex flex-col text-silver-700 text-right m-2 justify-center">

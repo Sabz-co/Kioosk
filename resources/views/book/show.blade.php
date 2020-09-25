@@ -7,7 +7,7 @@
             <!-- Book Info -->
             <div class="flex flex-col md:flex-row text-sm md:text-base">
                 <div class="text-silver-700 text-center sm:pl-4 py-2 my-2">
-                    <img src="{{ $book->image_src ?  asset('images/books/extensive/'. $book->image_src) : asset('images/books/placeholder.png') }}" alt="" class="w-32 lg:w-40 h-40 lg:h-56 object-cover rounded-xl mx-auto">
+                    <img src="{{ $book->thumb ?  asset('images/books/extensive/'. $book->thumb) : asset('images/books/placeholder.png') }}" alt="" class="w-32 lg:w-40 h-40 lg:h-56 object-cover rounded-xl mx-auto">
                     {{-- <div class="mt-4">
                         <a href="#" class="w-full h-full rounded-lg p-2 bg-green-500 hover:bg-green-600 text-white hover:shadow-lg mt-4">افزودن به لیست</a>
                     </div> --}}
@@ -44,7 +44,10 @@
                         </div>
 
                         <div>
-                            <h6>ارسلان فسیحی</h6>
+                            @foreach ($book->authors as $author)
+                            <a href="{{ route('author.show', $author->slug) }}">{{ $author->fullName }}</a>
+                            @endforeach
+                            
                         </div>
                     </div>
 

@@ -115,7 +115,7 @@
                 <div class="text-center mb-4 pb-2">
                     <div class="flex flex-col items-center justify-center p-3 rounded-xl bg-silver-200">
                         <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full" alt="">
-                        <h2 class="font-bold text-black my-2">الیف شافتاک</h2>
+                        <h2 class="font-bold text-black my-2">{{ $author->fullName }}</h2>
                         <h3 class="mb-2">تهران، ایران</h3>
 
                         <a href="#" class="my-2 mx-auto w-full sm:w-5/6 rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-silver-100 text-white py-1 px-2 lg:px-6">دنبال کردن</a>
