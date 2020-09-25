@@ -31,9 +31,15 @@ class Book extends Model
     });
   }
 
-  public function author()
+  // public function author()
+  // {
+  //   return $this->belongsTo('App\Author');
+  // }
+
+
+  public function authors()
   {
-    return $this->belongsTo('App\Author');
+      return $this->belongsToMany('App\Author');
   }
 
   public function translators()

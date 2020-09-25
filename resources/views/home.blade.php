@@ -3,9 +3,11 @@
 @section('content')
         <!-- Right side -->
         <div class="w-full sm:w-2/3 lg:w-3/4 p-2">
-            <h1 class="text-xl mb-2">از کتاب‌هایی که شما مطالعه می‌کنید:</h1>
+            
             <!-- Fellow readers -->
             @if ($currently_reading)
+            <h1 class="text-xl mb-2">از کتاب‌هایی که شما مطالعه می‌کنید:</h1>
+            
             <div class="flex bg-silver-200 flex-col md:flex-row rounded-lg text-sm md:text-base">
                 <div class="mx-auto text-silver-700 text-center px-4 py-2 m-2 w-2/6 md:w-1/4 lg:w-1/5">
                     <div class="relative aspect-ratio-book w-full">
