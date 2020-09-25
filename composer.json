@@ -23,6 +23,7 @@
         "laravelcollective/html": "^6.0",
         "morilog/jalali": "^3.1",
         "predis/predis": "^1.1",
+        "rtconner/laravel-tagging": "^4.0",
         "willvincent/laravel-rateable": "^2.2"
     },
     "require-dev": {
