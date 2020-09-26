@@ -32,23 +32,25 @@
                     </div>
 
                     <div class="flex flex-row justify-between w-full items-center my-4 border-t border-b py-2 border-silver-400">
-                        @if($book->author)
-                        <div>
-                            <h6>{{ $book->author->first_name . ' ' . $book->author->last_name}}</h6>
 
-                        </div>
-                        @endif
 
                         <div>
                             <h6>{{ $book->publisher()->exists() ?  $book->publisher->title : 'ناشر نامشخص' }}</h6>
                         </div>
 
+                        @if($book->author->first())
                         <div>
+                            <h6>{{ $book->author->first()->fullName}}</h6>
+
+                        </div>
+                        @endif
+                        
+                        {{-- <div>
                             @foreach ($book->authors as $author)
                             <a href="{{ route('author.show', $author->slug) }}">{{ $author->fullName }}</a>
                             @endforeach
                             
-                        </div>
+                        </div> --}}
                     </div>
 
                     <div class="text-black text-justify my-3">

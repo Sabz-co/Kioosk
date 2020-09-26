@@ -39,6 +39,11 @@ class Book extends Model
   // }
 
 
+  public function author()
+  {
+      return $this->belongsToMany('App\Author')->limit(1);
+  }
+
   public function authors()
   {
       return $this->belongsToMany('App\Author');
