@@ -6,11 +6,13 @@ use Auth;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use willvincent\Rateable\Rateable;
+use Conner\Tagging\Taggable;
+
 
 class Book extends Model
 {
 
-  use RecordsActivity, RecordsVisits, Sluggable, Rateable;
+  use RecordsActivity, RecordsVisits, Sluggable, Rateable, Taggable;
 
   protected $guarded = [];
 

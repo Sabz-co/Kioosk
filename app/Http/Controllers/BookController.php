@@ -94,7 +94,8 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-
+        // $book->untag();
+        // $book->retag(['علمی تخیلی', 'رمان خارجی', 'رمان ایرانی', 'فانتزی']);
         // Redis::del('trending_books');
         Redis::zincrby('trending_books', 1, json_encode([
             'title' => $book->title,
