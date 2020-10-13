@@ -28,6 +28,8 @@ Route::get('/genres', function () {
     return view('genres.index');
 });
 
+Route::resource('/genre', 'GenreController');
+
 Route::get('/publisher', function () {
     return view('publisher.show');
 });

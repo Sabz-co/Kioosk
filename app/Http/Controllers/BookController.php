@@ -58,7 +58,7 @@ class BookController extends Controller
             $book = new Book();
 
             $book->title = request('title');
-            $book->author_id = request('collector');
+            // $book->author_id = request('collector');
             $book->publisher_id = request('publisher_id');
 
             $book->description = request('description');
@@ -83,7 +83,7 @@ class BookController extends Controller
             // $book->slug = $book->title;
             $book->save();
             
-        return redirect()->route('book.show', $book->id);
+        return redirect()->route('book.show', $book->slug);
     }
 
     /**
