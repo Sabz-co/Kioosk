@@ -97,7 +97,10 @@
                             <img src="{{ !empty($book->image) ? asset('images/books/thumbnail/' . $book->image) : asset('images/books/placeholder.png') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                         </div>
                         <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">{{ $book->title }} </h4>
-                        <p class="text-sm">الیف شافتاک</p>
+                        {{-- @if ($book->author)
+                        <p class="text-sm">{{ $book->author->name }}</p>
+
+                        @endif --}}
                     </a>
                 </div>                    
                 @endforeach
