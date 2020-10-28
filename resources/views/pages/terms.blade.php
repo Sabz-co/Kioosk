@@ -29,10 +29,10 @@
             </div>
 
             <div class="flex flex-col">
-                <a href="#" class="text-silver-800 hover:text-brown my-1">تماس با ما</a>
-                <a href="#" class="text-silver-800 hover:text-brown my-1">درباره کیوسک</a>
-                <a href="#" class="text-silver-800 hover:text-brown my-1">سازندگان</a>
-                <a href="#" class="text-silver-800 hover:text-brown my-1">قوانین</a>
+                <a href="#" class="text-silver-800 hover:text-brown-500 my-1">تماس با ما</a>
+                <a href="#" class="text-silver-800 hover:text-brown-500 my-1">درباره کیوسک</a>
+                <a href="#" class="text-silver-800 hover:text-brown-500 my-1">سازندگان</a>
+                <a href="#" class="text-silver-800 hover:text-brown-500 my-1">قوانین</a>
             </div>
         </div>
         <!-- End of sidebar -->

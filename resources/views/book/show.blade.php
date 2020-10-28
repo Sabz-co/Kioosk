@@ -17,10 +17,10 @@
                 <div class="flex flex-col flex-1 text-center py-2 pl-2 sm:pl-0 pr-2 sm:py-4 sm:pr-2 my-2 items-center justify-between">
                     <div class="flex flex-col sm:flex-row justify-between w-full items-center">
                         <div class="text-center sm:text-right">
-                            <h4 class="text-brown font-bold text-2xl">{{ isset($book) ? $book->title : 'ملت عشق'}}                      
+                            <h4 class="text-brown-500 font-bold text-2xl">{{ isset($book) ? $book->title : 'ملت عشق'}}                      
                             </h4>
                             @if (!isset($book))
-                            <h4 class="text-brown font-bold text-xl">ُThe Love Nation                      
+                            <h4 class="text-brown-500 font-bold text-xl">ُThe Love Nation                      
                             </h4>                                
                             @endif
 
@@ -58,38 +58,61 @@
                         </p>
 
                     </div>
-                    <div class="mr-auto">
                         {{-- <a href="#" class="text-lg text-blue-500 hover:text-blue-600 mr-auto font-bold">اطلاعات بیشتر </a> --}}
-                        <div class="flex items-center justify-center w-full mb-24">
-  
-                            <!-- Toggle Button -->
-                            <label 
-                              for="toogleA"
-                              class="flex items-center cursor-pointer"
-                            >
-                              <!-- toggle -->
-                              <div class="relative">
-                                <!-- input -->
-                                <input id="toogleA" type="checkbox" class="hidden" />
-                                <!-- line -->
-                                <div
-                                  class="toggle__line w-10 h-4 bg-gray-400 rounded-full shadow-inner"
-                                ></div>
-                                <!-- dot -->
-                                <div
-                                  class="toggle__dot absolute w-6 h-6 bg-white rounded-full shadow inset-y-0 left-0"
-                                ></div>
-                              </div>
-                              <!-- label -->
-                              <div
-                                class="ml-3 text-gray-700 font-medium"
-                              >
-                                بیشترین اطلاعات
-                              </div>
-                            </label>
+                        <div class="flex items-center justify-center w-full mb-6">
+                            <div class="flex-col text-right w-full">
+                                <div class="toggalable hidden">
+                                    <p>منتشر شده در مهرماه ۱۳۹۷ توسط <a href="#">نشر چشمه</a></p>
+                                <div class="flex flex-col">
+                                    <div class="flex flex-row">
+                                        <div class="w-1/4 text-brown-600" >
+                                            عنوان اصلی
+                                        </div>
+                                        <div class="flex-1">
+                                            پاسخ با تاریخ
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row">
+                                        <div class="w-1/4 text-brown-600" >
+                                            شابک
+                                        </div>
+                                        <div class="flex-1">
+                                            978-3-16-148410-0
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row">
+                                        <div class="w-1/4 text-brown-600" >
+                                            تعداد صفحات
+                                        </div>
+                                        <div class="flex-1">
+                                            ۳۱۶ صفحه
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row">
+                                        <div class="w-1/4 text-brown-600" >
+                                            نویسنده
+                                        </div>
+                                        <div class="flex-1">
+                                            <a href="#">احمد شاملو</a>
+                                            <a href="#">محمدرضا پهلوی</a>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row">
+                                        <div class="w-1/4 text-brown-600" >
+                                            مترجم
+                                        </div>
+                                        <div class="flex-1">
+                                            <a href="#">ناصر حقیقت‌جو</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <a href="#" class="show-more text-brown-600 hover:text-brown-700 hover:underline">اطلاعات بیشتر...</a>
+
+                            </div>
+                            
                             
                           </div>
-                    </div>
 
 
                 </div>
@@ -99,7 +122,7 @@
               @if($on_list)
               <div class="mb-6">
                 <div class="flex items-center my-4 pb-2 border-b ">
-                    <h1 class="text-lg text-brown font-bold">پیشرفت خوانش</h1>
+                    <h1 class="text-lg text-brown-500 font-bold">پیشرفت خوانش</h1>
                 </div>
 
                 <div class="flex flex-col w-full">
@@ -136,9 +159,9 @@
                         </div>
                         <div class="flex items-center">
                             @if ($on_list->body)
-                                {!! $on_list->excerpt !!} <a href="#"  class="text-brown text-lg hover:bg-silver-200 rounded-full px-2 hover:text-black">ویرایش</a>
+                                {!! $on_list->excerpt !!} <a href="#"  class="text-brown-500 text-lg hover:bg-silver-200 rounded-full px-2 hover:text-black">ویرایش</a>
                                 @else
-                                <a href="#"  class="text-brown text-lg hover:bg-silver-200 rounded-full px-2 hover:text-black">نقدی بنویسید</a>
+                                <a href="#"  class="text-brown-500 text-lg hover:bg-silver-200 rounded-full px-2 hover:text-black">نقدی بنویسید</a>
                             @endif
                         </div>
                     </div>
@@ -151,7 +174,7 @@
             <!-- End of Book Info -->
 
             <div class="flex items-center my-4 pb-2 border-b mb-6">
-                <h1 class="text-lg text-brown font-bold">نقدهای این کتاب</h1>
+                <h1 class="text-lg text-brown-500 font-bold">نقدهای این کتاب</h1>
                 <div class="mr-auto flex items-center ">
                     <span>بر اساس</span>
                     <select name="" id="" class="rounded text-silver-700 bg-silver-100 mr-2">
@@ -172,7 +195,7 @@
                         <h4 class="text-lg text-black">{{ Auth::user()->name }}، برای کتاب {{ $book->title }} نقدی بنویسید</h4>
                     </div>
                     <div class="flex flex-row">
-                        <a href="{{ route('review.create', [$book->slug]) }}" class="text-brown text-lg hover:bg-silver-200 rounded-full px-2 hover:text-black">نوشتن نقد</a>                        
+                        <a href="{{ route('review.create', [$book->slug]) }}" class="text-brown-500 text-lg hover:bg-silver-200 rounded-full px-2 hover:text-black">نوشتن نقد</a>                        
                     </div>
 
                 </div>
@@ -261,54 +284,48 @@
 
         <!-- Sidebar -->
         <div class="flex sm:w-1/3 lg:w-1/4 p-3">
-            <div class="">
+            <div class="w-full">
                 <div class="sticky top-0 bg-white">
+                    @if (!empty($book->author->first()) && $book->author->first()->books->count() > 3)
                     <div class="border-b flex mb-1 py-2">
                         <div class="text-silver-800 flex items-baseline">
-    
                             <h2 class="mr-1 font-bold">از همین نویسنده</h2>
                         </div>
-                        <a href="#" class="mr-auto text-brown hover:bg-silver-200 rounded-full px-2 hover:text-black">دیدن همه</a>
-    
+                        <a href="{{ route('author.show',$book->author->first()->slug ) }}" class="mr-auto text-brown-500 hover:bg-silver-200 rounded-full px-2 hover:text-black">دیدن همه</a>
                     </div>
     
-                    <div class="flex flex-row mb-6 border-b mb-3 pb-3">
+                    <div class="flex flex-row border-b mb-3 pb-3">
+                        @foreach ($book->author->first()->books->take(3)->where('book_id', '!=', $book->id) as $item)
                         <div class="w-1/3 p-1">
-                            <a href="#">
-                                <img src="{{ asset('images/books/16.jpg') }}" class="rounded-lg hover:grow" alt="">
+                            <a href="{{ $item->slug }}">
+                                <img src="{{ asset($item->cover) }}" class="rounded-lg hover:grow" alt="">
                             </a>
                         </div>
-                        <div class="w-1/3 p-1">
-                            <a href="#">
-                                <img src="{{ asset('images/books/17.jpg') }}" class="rounded-lg hover:grow" alt="">
-                            </a>
-                        </div>
-                        <div class="w-1/3 p-1">
-                            <a href="#">
-                                <img src="{{ asset('images/books/10.jpg') }}" class="rounded-lg hover:grow" alt="">
-                            </a>
-                        </div>
-                    </div>
+                        @endforeach
+                    </div>                        
+                    @endif
 
 
-                    <div class=" flex mb-1 py-2">
+
+                    <div class="w-full flex mb-1 py-2">
                         <div class="text-silver-800 flex items-baseline ">
     
                             <h2 class="mr-1 font-bold">ژانر</h2>
                         </div>
     
                     </div>
-                    <div class="flex flex-wrap mb-4 border-b pb-3 mb-3 justify-between">
+
+                    <div class="flex flex-wrap border-b pb-3 mb-3 justify-between">
                         @foreach ($book->tags as $tag)
-                        <a href="#" class="rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white px-2 mb-2 text-sm">{{ $tag->name }}</a>
+                        <a href="#" class="rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white px-2 mb-2 text-sm">{{ $tag->name }}</a>
 
                         @endforeach
-                        {{-- <a href="#" class="rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white px-2 mb-2 text-sm">تخیلی</a>
-                        <a href="#" class="rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white px-2 mb-2 text-sm">رمان</a>
-                        <a href="#" class="rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white px-2 mb-2 text-sm">ادبیات مقاومت</a>
-                        <a href="#" class="rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white px-2 mb-2 text-sm">جنایی</a>
+                        {{-- <a href="#" class="rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white px-2 mb-2 text-sm">تخیلی</a>
+                        <a href="#" class="rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white px-2 mb-2 text-sm">رمان</a>
+                        <a href="#" class="rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white px-2 mb-2 text-sm">ادبیات مقاومت</a>
+                        <a href="#" class="rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white px-2 mb-2 text-sm">جنایی</a>
     
-                        <a href="#" class="rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white px-2 mb-2 text-sm">داستان عاشقانه</a> --}}
+                        <a href="#" class="rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white px-2 mb-2 text-sm">داستان عاشقانه</a> --}}
                     </div>
                     
 

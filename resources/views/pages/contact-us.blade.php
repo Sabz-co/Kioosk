@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="w-full mx-auto mb-6 flex flex-col">
-                    <a href="#" class="mr-auto px-3 rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-silver-100 text-white py-1 px-2 shadow hover:shadow-xl">فرستادن</a>
+                    <a href="#" class="mr-auto px-3 rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-silver-100 text-white py-1 px-2 shadow hover:shadow-xl">فرستادن</a>
 
                 </div>
 
@@ -59,10 +59,10 @@
             </div>
 
             <div class="flex flex-col">
-                <a href="#" class="text-silver-800 hover:text-brown my-1">تماس با ما</a>
-                <a href="#" class="text-silver-800 hover:text-brown my-1">درباره کیوسک</a>
-                <a href="#" class="text-silver-800 hover:text-brown my-1">سازندگان</a>
-                <a href="#" class="text-silver-800 hover:text-brown my-1">قوانین</a>
+                <a href="#" class="text-silver-800 hover:text-brown-500 my-1">تماس با ما</a>
+                <a href="#" class="text-silver-800 hover:text-brown-500 my-1">درباره کیوسک</a>
+                <a href="#" class="text-silver-800 hover:text-brown-500 my-1">سازندگان</a>
+                <a href="#" class="text-silver-800 hover:text-brown-500 my-1">قوانین</a>
             </div>
         </div>
         <!-- End of sidebar -->

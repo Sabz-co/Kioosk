@@ -5,7 +5,7 @@
 <section class="w-full flex h-screen">
     <div class="items-center justify-center hidden lg:flex w-1/2 h-20 bg-silver-200 min-h-full p-20">
         <div>
-            <h1 class="text-brown font-light text-4xl">کیوسک، کاتالوگ اجتماعی کتاب</h1>
+            <h1 class="text-brown-500 font-light text-4xl">کیوسک، کاتالوگ اجتماعی کتاب</h1>
             <p class="text-2xl">متنی در مورد کیوسک و خدماتی که ارائه می‌دهیم اینجا قرار می‌گیرد.</p>
         </div>
 

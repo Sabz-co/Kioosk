@@ -20,11 +20,11 @@
                                 </div>
                                 <div class="flex flex-col text-silver-700 text-center m-2 justify-between">
                                     <div class="flex justify-between">
-                                        <p class="text-brown">{{ $activity->subject->title }}</p>
+                                        <p class="text-brown-500">{{ $activity->subject->title }}</p>
                                         <p>{{ $activity->subject->reviews()->count() }} نقد</p>
                                     </div>
                                     <p>فئودور داستایوفسکی</p>
-                                    <a href="#" class="rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-white text-white p-2 shadow hover:shadow-xl">اضافه کردن به قفسه</a>
+                                    <a href="#" class="rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-white text-white p-2 shadow hover:shadow-xl">اضافه کردن به قفسه</a>
                                 </div>
                               </div>
                         </div>

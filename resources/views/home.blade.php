@@ -17,7 +17,7 @@
                 <div class="flex flex-col flex-1 text-center p-4 m-2 items-center justify-between">
                     <div class="flex flex-col sm:flex-row justify-between w-full items-center">
                         <div class="text-right">
-                            <h4 class="text-brown font-bold text-lg">{{ $currently_reading->book->title }}
+                            <h4 class="text-brown-500 font-bold text-lg">{{ $currently_reading->book->title }}
                                 <!-- Rating Stars Box -->
                                 @include('partials.rating', ['rating' => $currently_reading->rating, 'slug' => $currently_reading->book->slug])
                                 {{-- End of rating stars box --}}
@@ -74,9 +74,9 @@
                         <div class="text-right">
                             <h4 class="">{{ $currently_reading->book->reviews()->count() }} نقد دارد</h4>
                         </div>
-                        <a href="#" class="update-review hover:shadow sm:mr-auto text-silver-700 hover:text-brown hover:bg-white p-1 rounded-lg sm:ml-4">بروز رسانی مطالعه</a>
-                        <a href="#" class="save-review hover:shadow sm:mr-auto text-silver-700 hover:text-brown hover:bg-white p-1 rounded-lg sm:ml-4 hidden">ذخیره</a>
-                        <a href="#" class="hover:shadow text-silver-700 hover:text-brown hover:bg-white p-1 rounded-lg">دیدن بقیه لیست</a>
+                        <a href="#" class="update-review hover:shadow sm:mr-auto text-silver-700 hover:text-brown-500 hover:bg-white p-1 rounded-lg sm:ml-4">بروز رسانی مطالعه</a>
+                        <a href="#" class="save-review hover:shadow sm:mr-auto text-silver-700 hover:text-brown-500 hover:bg-white p-1 rounded-lg sm:ml-4 hidden">ذخیره</a>
+                        <a href="#" class="hover:shadow text-silver-700 hover:text-brown-500 hover:bg-white p-1 rounded-lg">دیدن بقیه لیست</a>
 
                     </div>
                 </div>
@@ -86,7 +86,7 @@
             <hr class="border my-5">
             <div class="flex items-center my-4">
                 <h1 class="text-lg">کتاب برتر هفته</h1>
-                <a href="#" class="text-brown rounded-full hover:bg-silver-200 hover:text-black px-2 mr-2 hover:shadow ">دیدن همه</a>
+                <a href="#" class="text-brown-500 rounded-full hover:bg-silver-200 hover:text-black px-2 mr-2 hover:shadow ">دیدن همه</a>
             </div>
 
             <div class="flex flex-wrap justify-start">
@@ -96,11 +96,8 @@
                         <div class="relative aspect-ratio-book">
                             <img src="{{ !empty($book->image) ? asset('images/books/thumbnail/' . $book->image) : asset('images/books/placeholder.png') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                         </div>
-                        <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">{{ $book->title }} </h4>
-                        {{-- @if ($book->author)
-                        <p class="text-sm">{{ $book->author->name }}</p>
+                        <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">{{ $book->title }} </h4>
 
-                        @endif --}}
                     </a>
                 </div>                    
                 @endforeach
@@ -113,7 +110,7 @@
 
             <div class="flex items-center my-4">
                 <h1 class="text-lg">آخرین اتفاقات</h1>
-                <a href="#" class="text-brown rounded-full hover:bg-silver-200 hover:text-black px-2 mr-2 hover:shadow ">دیدن همه</a>
+                <a href="#" class="text-brown-500 rounded-full hover:bg-silver-200 hover:text-black px-2 mr-2 hover:shadow ">دیدن همه</a>
             </div>
 
 
@@ -128,7 +125,7 @@
                                 <h3>محمد قمارباز، <span class="font-bold">قلعه حیوانات</span>  را به قفسه‌ی حال مطالعه‌ی خود اضافه کرد </h3>
                                 <h6 class="text-silver-600">سه دقیقه پیش</h6>
                             </div>
-                            <a href="#" class="text-brown hover:text-yellow-700 my-2">دیدن این قفسه (۴۸ کتاب)</a>
+                            <a href="#" class="text-brown-500 hover:text-yellow-700 my-2">دیدن این قفسه (۴۸ کتاب)</a>
 
                             <div class="flex flex-row">
                                 <div class="text-silver-700 text-center m-2">
@@ -138,11 +135,11 @@
                                 </div>
                                 <div class="flex flex-col text-silver-700 text-center m-2 justify-between">
                                     <div class="flex justify-between">
-                                        <p class="text-brown">قمارباز</p>
+                                        <p class="text-brown-500">قمارباز</p>
                                         <p>۳۴ نقد</p>
                                     </div>
                                     <p>فئودور داستایوفسکی</p>
-                                    <a href="#" class="rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-white text-white p-2 shadow hover:shadow-xl">اضافه کردن به قفسه</a>
+                                    <a href="#" class="rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-white text-white p-2 shadow hover:shadow-xl">اضافه کردن به قفسه</a>
                                 </div>
                               </div>
                         </div>
@@ -166,7 +163,7 @@
                                 <h3>سروناز برای <span class="font-bold">ملت عشق</span>  یک نقد نوشت </h3>
                                 <h6 class="text-silver-600">پانزده دقیقه پیش</h6>
                             </div>
-                            <a href="#" class="text-brown hover:text-yellow-700 my-2">دیدن این نقد</a>
+                            <a href="#" class="text-brown-500 hover:text-yellow-700 my-2">دیدن این نقد</a>
 
                             <div class="flex flex-col">
                                 <p class="text-silver-600 mb-3">نیروی عقلانی و عشق از مواد متفاوتی ساخته شده اند، نیروی عقلانی انسان ها را سردرگم می کند و هیچ خطری را نمی پذیرد، اما عشق تمام درهم پیچیدگی ها و آشفتگی ها را از بین می برد و خطر هرچیزی را می پذیرد. نیروی عقلانی همیشه محتاط است و نصیحت می کند. «از شور و شعف بیش از حد بر حذر باش»، حال آن که عشق می گوید. «آه مهم نیست! دل به دریا بزن!» نیروی عقلانی به راحتی با شکست مواجه نمی شود. در حالی که عشق می تواند بدون زحمت، خودش را به کلی ویران کند. اما گنج ها در میان ویرانه ها پنهان هستند. یک قلب شکسته، نهانگاه گنج هاست.</p>
@@ -220,11 +217,11 @@
                                     </div>                                </div>
                                 <div class="flex flex-col text-silver-700 text-center m-2 justify-between">
                                     <div class="flex justify-between">
-                                        <p class="text-brown">قمارباز</p>
+                                        <p class="text-brown-500">قمارباز</p>
                                         <p>۳۴ نقد</p>
                                     </div>
                                     <p>فئودور داستایوفسکی</p>
-                                    <a href="#" class="rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-white text-white p-2 shadow hover:shadow-xl">اضافه کردن به قفسه</a>
+                                    <a href="#" class="rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-white text-white p-2 shadow hover:shadow-xl">اضافه کردن به قفسه</a>
                                 </div>
                               </div>
                         </div>
@@ -241,7 +238,7 @@
 
             <div class="flex items-center my-4">
                 <h1 class="text-lg">نویسنده‌های برتر</h1>
-                <a href="#" class="text-brown rounded-full hover:bg-silver-200 hover:text-black px-2 mr-2 hover:shadow ">دیدن همه</a>
+                <a href="#" class="text-brown-500 rounded-full hover:bg-silver-200 hover:text-black px-2 mr-2 hover:shadow ">دیدن همه</a>
             </div>
 
             <div class="flex flex-wrap">
@@ -252,10 +249,10 @@
                             <p>امیرمسعود مهرابیان</p>
                             <p>۵۹ کتاب</p>
                         </div>
-                        <h6 class="text-brown text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
+                        <h6 class="text-brown-500 text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
                     </div> 
                     <div class="flex my-1">
-                        <a href="#" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-silver-100 text-white py-1 px-2 shadow hover:shadow-xl">مشاهده پروفایل</a>
+                        <a href="#" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-silver-100 text-white py-1 px-2 shadow hover:shadow-xl">مشاهده پروفایل</a>
                     </div>
                 </div>
 
@@ -266,10 +263,10 @@
                             <p>امیرمسعود مهرابیان</p>
                             <p>۵۹ کتاب</p>
                         </div>
-                        <h6 class="text-brown text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
+                        <h6 class="text-brown-500 text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
                     </div> 
                     <div class="flex my-1">
-                        <a href="#" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-silver-100 text-white py-1 px-2 shadow hover:shadow-xl">مشاهده پروفایل</a>
+                        <a href="#" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-silver-100 text-white py-1 px-2 shadow hover:shadow-xl">مشاهده پروفایل</a>
                     </div>
                 </div>
 
@@ -280,10 +277,10 @@
                             <p>امیرمسعود مهرابیان</p>
                             <p>۵۹ کتاب</p>
                         </div>
-                        <h6 class="text-brown text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
+                        <h6 class="text-brown-500 text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
                     </div> 
                     <div class="flex my-1">
-                        <a href="#" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-silver-100 text-white py-1 px-2 shadow hover:shadow-xl">مشاهده پروفایل</a>
+                        <a href="#" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-silver-100 text-white py-1 px-2 shadow hover:shadow-xl">مشاهده پروفایل</a>
                     </div>
                 </div>
 
@@ -294,10 +291,10 @@
                             <p>امیرمسعود مهرابیان</p>
                             <p>۵۹ کتاب</p>
                         </div>
-                        <h6 class="text-brown text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
+                        <h6 class="text-brown-500 text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
                     </div> 
                     <div class="flex my-1">
-                        <a href="#" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-silver-100 text-white py-1 px-2 shadow hover:shadow-xl">مشاهده پروفایل</a>
+                        <a href="#" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-silver-100 text-white py-1 px-2 shadow hover:shadow-xl">مشاهده پروفایل</a>
                     </div>
                 </div>
 
@@ -326,7 +323,7 @@
                     </div>
                     <h6 class="my-2 text-sm">سورنا و سه نفر دیگر در حال مطالعه‌ی ملت عشق هستند.</h6>
 
-                    <a href="#" class="mx-auto w-full sm:w-5/6 rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white py-1 px-2 lg:px-6 shadow hover:shadow-xl">دیدن تمام هم‌خوان‌ها</a>
+                    <a href="#" class="mx-auto w-full sm:w-5/6 rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white py-1 px-2 lg:px-6 shadow hover:shadow-xl">دیدن تمام هم‌خوان‌ها</a>
                 </div>
 
                 <div class="sticky top-0 bg-white">
@@ -336,7 +333,7 @@
                             <i class="fas fa-check"></i>
                             <h2 class="mr-1">آخرین خوانده شده‌ها</h2>
                         </div>
-                        <a href="#" class="mr-auto text-brown hover:bg-silver-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
+                        <a href="#" class="mr-auto text-brown-500 hover:bg-silver-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
     
                     </div>
     
@@ -371,7 +368,7 @@
                             <i class="fas fa-book"></i>
                             <h2 class="mr-1">آخرین در حال خواندن</h2>
                         </div>
-                        <a href="#" class="mr-auto text-brown hover:bg-silver-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
+                        <a href="#" class="mr-auto text-brown-500 hover:bg-silver-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
     
                     </div>
     
@@ -405,7 +402,7 @@
                             <i class="fas fa-star"></i>
                             <h2 class="mr-1">آخرین نشان شده‌ها</h2>
                         </div>
-                        <a href="#" class="mr-auto text-brown hover:bg-silver-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
+                        <a href="#" class="mr-auto text-brown-500 hover:bg-silver-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
     
                     </div>
     
@@ -438,7 +435,7 @@
                             <i class="far fa-user"></i>
                             <h2 class="mr-1">شاید بشناسید</h2>
                         </div>
-                        <a href="#" class="mr-auto text-brown hover:bg-silver-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
+                        <a href="#" class="mr-auto text-brown-500 hover:bg-silver-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
     
                     </div>
     
@@ -450,7 +447,7 @@
                                 <h6 class="text-black font-bold">حسین مهرنواز</h6>
                                 <span class="text-silver-600">۲۳۷ دنبال کننده</span>
                             </div>
-                            <a href="#" class="mr-auto  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white py-1 px-2  shadow hover:shadow-xl">دنبال کردن</a>
+                            <a href="#" class="mr-auto  rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white py-1 px-2  shadow hover:shadow-xl">دنبال کردن</a>
                         </div>
     
                         <div class="flex flex-row items-center mb-4">
@@ -460,7 +457,7 @@
                                 <h6 class="text-black font-bold">حسین مهرنواز</h6>
                                 <span class="text-silver-600">۲۳۷ دنبال کننده</span>
                             </div>
-                            <a href="#" class="mr-auto  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white py-1 px-2  shadow hover:shadow-xl">دنبال کردن</a>
+                            <a href="#" class="mr-auto  rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white py-1 px-2  shadow hover:shadow-xl">دنبال کردن</a>
                         </div>
     
                         <div class="flex flex-row items-center mb-4">
@@ -470,7 +467,7 @@
                                 <h6 class="text-black font-bold">حسین مهرنواز</h6>
                                 <span class="text-silver-600">۲۳۷ دنبال کننده</span>
                             </div>
-                            <a href="#" class="mr-auto  rounded-full hover:bg-brown border hover:border-transparent text-brown border-brown bg-silver-100 hover:text-white py-1 px-2  shadow hover:shadow-xl">دنبال کردن</a>
+                            <a href="#" class="mr-auto  rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white py-1 px-2  shadow hover:shadow-xl">دنبال کردن</a>
                         </div>
     
     

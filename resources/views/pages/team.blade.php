@@ -16,9 +16,9 @@
                             <p class="font-bold">امیرمسعود مهرابیان</p>
                             <p class="font-light">مهندس محصول</p>
                         </div>
-                        <h6 class="text-brown text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
+                        <h6 class="text-brown-500 text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
                     </div> 
-                    <div class="flex -mt-1 bg-brown rounded-b-xl p-2 text-white text-lg items-center justify-center">
+                    <div class="flex -mt-1 bg-brown-500 rounded-b-xl p-2 text-white text-lg items-center justify-center">
                         <i class="fab fa-twitter    px-2 "></i>
                         <i class="fab fa-telegram    px-2 "></i>
                         <i class="fab fa-instagram   px-2  "></i>
@@ -33,9 +33,9 @@
                             <p class="font-bold">محمد ذکایی</p>
                             <p class="font-light">مدیر محصول</p>
                         </div>
-                        <h6 class="text-brown text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
+                        <h6 class="text-brown-500 text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
                     </div> 
-                    <div class="flex -mt-1 bg-brown rounded-b-xl p-2 text-white text-lg items-center justify-center">
+                    <div class="flex -mt-1 bg-brown-500 rounded-b-xl p-2 text-white text-lg items-center justify-center">
                         <i class="fab fa-twitter    px-2 "></i>
                         <i class="fab fa-telegram    px-2 "></i>
                         <i class="fab fa-instagram   px-2  "></i>
@@ -50,9 +50,9 @@
                             <p class="font-bold">علیرضا حسن زاده</p>
                             <p class="font-light">طراح محصول</p>
                         </div>
-                        <h6 class="text-brown text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
+                        <h6 class="text-brown-500 text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
                     </div> 
-                    <div class="flex -mt-1 bg-brown rounded-b-xl p-2 text-white text-lg items-center justify-center">
+                    <div class="flex -mt-1 bg-brown-500 rounded-b-xl p-2 text-white text-lg items-center justify-center">
                         <i class="fab fa-twitter    px-2 "></i>
                         <i class="fab fa-telegram    px-2 "></i>
                         <i class="fab fa-instagram   px-2  "></i>
@@ -79,10 +79,10 @@
             </div>
 
             <div class="flex flex-col">
-                <a href="#" class="text-silver-800 hover:text-brown my-1">تماس با ما</a>
-                <a href="#" class="text-silver-800 hover:text-brown my-1">درباره کیوسک</a>
-                <a href="#" class="text-silver-800 hover:text-brown my-1">سازندگان</a>
-                <a href="#" class="text-silver-800 hover:text-brown my-1">قوانین</a>
+                <a href="#" class="text-silver-800 hover:text-brown-500 my-1">تماس با ما</a>
+                <a href="#" class="text-silver-800 hover:text-brown-500 my-1">درباره کیوسک</a>
+                <a href="#" class="text-silver-800 hover:text-brown-500 my-1">سازندگان</a>
+                <a href="#" class="text-silver-800 hover:text-brown-500 my-1">قوانین</a>
             </div>
         </div>
         <!-- End of sidebar -->

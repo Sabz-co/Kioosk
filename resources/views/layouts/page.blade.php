@@ -26,7 +26,7 @@
     
         </div>
     
-        <div class="h-48 bg-brown w-full flex items-center justify-start text-white p-10">
+        <div class="h-48 bg-brown-500 w-full flex items-center justify-start text-white p-10">
             <h4 class="text-2xl font-bold">در قانون، انسان وقتی مجرم است که حقوق دیگران را نقض کند</h4>
         </div>
         <div class="container mb-4 mx-auto mt-6">

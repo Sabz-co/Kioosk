@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex-reserse sm:flex">
+<div class="flex-reserse sm:flex w-full">
         <!-- Main side -->
         <div class="w-full sm:w-5/6 md:w-4/5 mx-auto p-3">
             <!-- Book Info -->
@@ -23,16 +23,16 @@
                     </div>
 
                     <div class="flex flex-row justify-center sm:justify-start text-xl font-bold w-full items-center my-2 py-2 border-silver-400">
-                        <div class="pl-4 text-brown">
+                        <div class="pl-4 text-brown-500">
                             <h6>{{ $review->book->title }}</h6>
                         </div>
 
-                        @if (!empty($review->book->author))
+                        @foreach ($review->book->authors as $author)
                         <div class="flex pr-4 border-r text-silver-700 items-center">
                             <img src="{{ asset('images/avatar.jpg') }}" class="w-10 h-10 rounded-full object-cover" alt="">
-                            <h6 class=" mr-2">{{ $review->book->author->first_name . ' ' . $review->book->author->last_name }}</h6>
+                            <h6 class=" mr-2">{{ $author->full_name }}</h6>
                         </div>                        
-                        @endif
+                        @endforeach
                     </div>
 
                     <div class="text-black text-justify my-3 w-full">
@@ -57,7 +57,7 @@
 
                     {{-- Comments section's title --}}
                     <div class="flex items-center my-5 py-2 border-t w-full ">
-                        <h1 class="text-lg text-brown font-bold">نظرهای این نقد</h1>
+                        <h1 class="text-lg text-brown-500 font-bold">نظرهای این نقد</h1>
                         <div class="mr-auto flex items-center ">
                             <span>بر اساس</span>
                             <select name="" id="" class="rounded text-silver-700 bg-silver-100 mr-2">

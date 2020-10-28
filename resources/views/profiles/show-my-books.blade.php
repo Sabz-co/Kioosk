@@ -7,7 +7,7 @@
 
             <table class="table-auto">
                 <thead>
-                  <tr class="text-right border-b border-brown">
+                  <tr class="text-right border-b border-brown-500">
                     <th class="px-4 py-2">کاور</th>
                     <th class="px-4 py-2">عنوان</th>
                     <th class="px-4 py-2">نویسنده</th>
@@ -30,7 +30,7 @@
 
                         </td>
                         <td class="border-b border-gray-100 px-2 py-4"> 
-                            <a href="{{ route('book.show', $item->book->slug) }}" class="text-brown">{{ $item->book->title }}</a>
+                            <a href="{{ route('book.show', $item->book->slug) }}" class="text-brown-500">{{ $item->book->title }}</a>
                         </td>
                         <td class="border-b border-gray-100 px-2 py-4">
                             @foreach ($item->book->author()->get() as $author)
@@ -58,9 +58,9 @@
                             @endif
                         </td>
                         <td class="border-b border-gray-100 px-2 py-4 max-w-xs text-sm">
-                        <a href="#" class="text-brown">نمایش</a>
-                        <a href="#" class="text-brown">ویرایش</a>
-                        <a href="#" class="text-brown">حذف</a>
+                        <a href="#" class="text-brown-500">نمایش</a>
+                        <a href="#" class="text-brown-500">ویرایش</a>
+                        <a href="#" class="text-brown-500">حذف</a>
                         </td>
                       </tr>                        
                     @endforeach

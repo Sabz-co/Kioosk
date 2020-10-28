@@ -10,7 +10,7 @@
                                 <h3>{{ $user->name }} برای <span class="font-bold">{{ $activity->subject->book->title }}</span>  یک نقد نوشت </h3>
                                 <h6 class="text-silver-600">{{ $activity->subject->created_at->diffForHumans() }}</h6>
                             </div>
-                            <a href="{{route('review.show', $activity->subject->id)}}" class="text-brown hover:text-yellow-700 my-2">دیدن این نقد</a>
+                            <a href="{{route('review.show', $activity->subject->id)}}" class="text-brown-500 hover:text-yellow-700 my-2">دیدن این نقد</a>
 
                             <div class="flex flex-col">
                                 <p class="text-silver-600 mb-3">

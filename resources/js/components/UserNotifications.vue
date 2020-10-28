@@ -3,7 +3,7 @@
 
   <div class="dropdown inline-block relative">
     <button class="mt-4 hidden lg:inline-flex items-center p-1 rounded lg:mt-0 text-gray-200 hover:text-white hover:bg-gray-700 mr-3 xl:mr-5  -ml-1">
-                    <span class="ml-2 flex items-center justify-center  rounded bg-brown border border-transparent border-brown text-white px-2 text-sm">{{notifications.length}}</span>
+                    <span class="ml-2 flex items-center justify-center  rounded bg-brown-500 border border-transparent border-brown-500 text-white px-2 text-sm">{{notifications.length}}</span>
 
                     <i class="fa fa-bullhorn"></i>
     </button>

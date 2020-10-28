@@ -2190,7 +2190,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['active'],
   computed: {
     classes: function classes() {
-      return ['outline-none focus:outline-none my-2 mx-auto w-full sm:w-5/6 rounded-lg  py-1 px-2 lg:px-6', this.active ? 'bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-silver-100 text-white' : 'hover:bg-brown border  text-brown border-brown bg-silver-100 hover:text-white'];
+      return ['outline-none focus:outline-none my-2 mx-auto w-full sm:w-5/6 rounded-lg  py-1 px-2 lg:px-6', this.active ? 'bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-silver-100 text-white' : 'hover:bg-brown-500 border  text-brown-500 border-brown-500 bg-silver-100 hover:text-white'];
     }
   },
   data: function data() {
@@ -38681,7 +38681,7 @@ var render = function() {
               "label",
               {
                 staticClass:
-                  "w-4/5 bg-white flex flex-row p-2 items-center text-brown rounded-lg shadow-lg uppercase border border-brown cursor-pointer hover:bg-brown hover:text-white"
+                  "w-4/5 bg-white flex flex-row p-2 items-center text-brown-500 rounded-lg shadow-lg uppercase border border-brown-500 cursor-pointer hover:bg-brown-500 hover:text-white"
               },
               [
                 _c(
@@ -38927,7 +38927,7 @@ var render = function() {
                 "span",
                 {
                   staticClass:
-                    "ml-2 flex items-center justify-center  rounded bg-brown border border-transparent border-brown text-white px-2 text-sm"
+                    "ml-2 flex items-center justify-center  rounded bg-brown-500 border border-transparent border-brown-500 text-white px-2 text-sm"
                 },
                 [_vm._v(_vm._s(_vm.notifications.length))]
               ),

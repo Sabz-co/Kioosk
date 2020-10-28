@@ -17,55 +17,55 @@
 
                 <div class="flex flex-row justify-between mb-4">
                     <div class="flex-1 text-right">
-                        <a href="#" class="mb-2 text-sm text-brown">علمی</a>
+                        <a href="#" class="mb-2 text-sm text-brown-500">علمی</a>
                     </div>
                     <div class="flex-1 text-right">
-                        <a href="#" class="mb-2 text-sm text-brown">تخیلی</a>
-                    </div>
-                </div>
-
-                <div class="flex flex-row justify-between mb-4">
-                    <div class="flex-1 text-right">
-                        <a href="#" class="mb-2 text-sm text-brown">قرن دهم</a>
-                    </div>
-                    <div class="flex-1 text-right">
-                        <a href="#" class="mb-2 text-sm text-brown">قرن یازدهم</a>
+                        <a href="#" class="mb-2 text-sm text-brown-500">تخیلی</a>
                     </div>
                 </div>
 
                 <div class="flex flex-row justify-between mb-4">
                     <div class="flex-1 text-right">
-                        <a href="#" class="mb-2 text-sm text-brown">کلاسیک</a>
+                        <a href="#" class="mb-2 text-sm text-brown-500">قرن دهم</a>
                     </div>
                     <div class="flex-1 text-right">
-                        <a href="#" class="mb-2 text-sm text-brown">فانتزی</a>
-                    </div>
-                </div>
-
-                <div class="flex flex-row justify-between mb-4">
-                    <div class="flex-1 text-right">
-                        <a href="#" class="mb-2 text-sm text-brown">وحشتناک</a>
-                    </div>
-                    <div class="flex-1 text-right">
-                        <a href="#" class="mb-2 text-sm text-brown">شعر نو</a>
+                        <a href="#" class="mb-2 text-sm text-brown-500">قرن یازدهم</a>
                     </div>
                 </div>
 
                 <div class="flex flex-row justify-between mb-4">
                     <div class="flex-1 text-right">
-                        <a href="#" class="mb-2 text-sm text-brown">مدیریتی</a>
+                        <a href="#" class="mb-2 text-sm text-brown-500">کلاسیک</a>
                     </div>
                     <div class="flex-1 text-right">
-                        <a href="#" class="mb-2 text-sm text-brown">شاهنامه‌خوانی</a>
+                        <a href="#" class="mb-2 text-sm text-brown-500">فانتزی</a>
                     </div>
                 </div>
 
                 <div class="flex flex-row justify-between mb-4">
                     <div class="flex-1 text-right">
-                        <a href="#" class="mb-2 text-sm text-brown">زبان خارجی</a>
+                        <a href="#" class="mb-2 text-sm text-brown-500">وحشتناک</a>
                     </div>
                     <div class="flex-1 text-right">
-                        <a href="#" class="mb-2 text-sm text-brown">آموزشی</a>
+                        <a href="#" class="mb-2 text-sm text-brown-500">شعر نو</a>
+                    </div>
+                </div>
+
+                <div class="flex flex-row justify-between mb-4">
+                    <div class="flex-1 text-right">
+                        <a href="#" class="mb-2 text-sm text-brown-500">مدیریتی</a>
+                    </div>
+                    <div class="flex-1 text-right">
+                        <a href="#" class="mb-2 text-sm text-brown-500">شاهنامه‌خوانی</a>
+                    </div>
+                </div>
+
+                <div class="flex flex-row justify-between mb-4">
+                    <div class="flex-1 text-right">
+                        <a href="#" class="mb-2 text-sm text-brown-500">زبان خارجی</a>
+                    </div>
+                    <div class="flex-1 text-right">
+                        <a href="#" class="mb-2 text-sm text-brown-500">آموزشی</a>
                     </div>
                 </div>
 
@@ -86,7 +86,7 @@
             <div class="category pb-4">
                 <div class="flex items-center my-4">
                     <h5>انتشارات جدید در خاطره و زندگی‌نامه</h5>
-                    <a href="#" class="text-brown rounded-full hover:bg-silver-200 hover:text-black px-2 mr-auto">دیدن همه</a>
+                    <a href="#" class="text-brown-500 rounded-full hover:bg-silver-200 hover:text-black px-2 mr-auto">دیدن همه</a>
                 </div>
     
                 <div class="flex flex-wrap justify-start border-b">
@@ -96,7 +96,7 @@
                         <div class="relative aspect-ratio-book">
                             <img src="{{ asset('images/books/1.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                         </div>
-                        <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                        <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                         <p class="text-sm">الیف شافتاک</p>
                     </a>
                 </div>
@@ -107,7 +107,7 @@
                         <div class="relative aspect-ratio-book">
                             <img src="{{ asset('images/books/2.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                         </div>
-                        <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                        <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                         <p class="text-sm">الیف شافتاک</p>
                     </a>
                 </div>
@@ -117,7 +117,7 @@
                         <div class="relative aspect-ratio-book">
                             <img src="{{ asset('images/books/3.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                         </div>
-                        <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                        <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                         <p class="text-sm">الیف شافتاک</p>
                     </a>
                 </div>
@@ -126,7 +126,7 @@
                         <div class="relative aspect-ratio-book">
                             <img src="{{ asset('images/books/3.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                         </div>
-                        <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                        <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                         <p class="text-sm">الیف شافتاک</p>
                     </a>
                 </div>
@@ -136,7 +136,7 @@
                         <div class="relative aspect-ratio-book">
                             <img src="{{ asset('images/books/4.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                         </div>
-                        <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                        <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                         <p class="text-sm">الیف شافتاک</p>
                     </a>
                 </div>
@@ -146,7 +146,7 @@
                         <div class="relative aspect-ratio-book">
                             <img src="{{ asset('images/books/5.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                         </div>
-                        <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                        <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                         <p class="text-sm">الیف شافتاک</p>
                     </a>
                 </div>
@@ -159,7 +159,7 @@
             <div class="category pb-4">
                 <div class="flex items-center my-4">
                     <h5>انتشارات جدید در خاطره و زندگی‌نامه</h5>
-                    <a href="#" class="text-brown rounded-full hover:bg-silver-200 hover:text-black px-2 mr-auto">دیدن همه</a>
+                    <a href="#" class="text-brown-500 rounded-full hover:bg-silver-200 hover:text-black px-2 mr-auto">دیدن همه</a>
                 </div>
     
                 <div class="flex flex-wrap justify-start border-b">
@@ -169,7 +169,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/10.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -179,7 +179,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/3.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -188,7 +188,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/11.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -198,7 +198,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/12.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -208,7 +208,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/13.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -218,7 +218,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/14.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -234,7 +234,7 @@
             <div class="category pb-4">
                 <div class="flex items-center my-4">
                     <h5>این ماه منتشر شده</h5>
-                    <a href="#" class="text-brown rounded-full hover:bg-silver-200 hover:text-black px-2 mr-auto">دیدن همه</a>
+                    <a href="#" class="text-brown-500 rounded-full hover:bg-silver-200 hover:text-black px-2 mr-auto">دیدن همه</a>
                 </div>
     
                 <div class="flex flex-wrap justify-start border-b">
@@ -244,7 +244,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/19.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -254,7 +254,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/3.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -263,7 +263,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/18.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -274,7 +274,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/17.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -285,7 +285,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/16.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -296,7 +296,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/15.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -314,7 +314,7 @@
             <div class="category pb-4">
                 <div class="flex items-center my-4">
                     <h5>امسال منتشر شده</h5>
-                    <a href="#" class="text-brown rounded-full hover:bg-silver-200 hover:text-black px-2 mr-auto">دیدن همه</a>
+                    <a href="#" class="text-brown-500 rounded-full hover:bg-silver-200 hover:text-black px-2 mr-auto">دیدن همه</a>
                 </div>
     
                 <div class="flex flex-wrap justify-start border-b">
@@ -324,7 +324,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/21.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -334,7 +334,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/3.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -344,7 +344,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/22.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -355,7 +355,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/23.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -366,7 +366,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/24.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -376,7 +376,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/25.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -396,7 +396,7 @@
             <div class="category pb-4">
                 <div class="flex items-center my-4">
                     <h5>محبوب‌های این هفته</h5>
-                    <a href="#" class="text-brown rounded-full hover:bg-silver-200 hover:text-black px-2 mr-auto">دیدن همه</a>
+                    <a href="#" class="text-brown-500 rounded-full hover:bg-silver-200 hover:text-black px-2 mr-auto">دیدن همه</a>
                 </div>
     
                 <div class="flex flex-wrap justify-start border-b">
@@ -406,7 +406,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/31.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -416,7 +416,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/3.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -426,7 +426,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/32.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -437,7 +437,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/33.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -448,7 +448,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/34.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>
@@ -459,7 +459,7 @@
                             <div class="relative aspect-ratio-book">
                                 <img src="{{ asset('images/books/35.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
-                            <h4 class="text-brown font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
+                            <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
                             <p class="text-sm">الیف شافتاک</p>
                         </a>
                     </div>

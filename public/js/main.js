@@ -179,7 +179,23 @@ $(document).ready(function() {
     });
 
 
+    $(".show-more").on('click', function(e) {
+        e.preventDefault();
+        var $target = $(this);
+        var $sourceItem = $target.parent();
 
+        sourceDiv = $sourceItem.data('source-div');
+        console.log($target.text())
+
+        if ($target.text() == "اطلاعات بیشتر...") {
+            console.log('we here');
+            $target.text("اطلاعات کم‌تر...")
+        } else {
+            console.log('we there');
+            $target.text("اطلاعات بیشتر...");
+        }
+        $($sourceItem.find('.toggalable')).toggleClass('hidden')
+    });
 
     $(".save-review").on("click", function(e) {
 

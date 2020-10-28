@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col text-silver-700 text-right m-2 justify-center">
-                    <p class="text-brown text-lg">{{ $book->title }}</p>
+                    <p class="text-brown-500 text-lg">{{ $book->title }}</p>
                     <p>فئودور داستایوفسکی</p>
                 </div>
               </div>

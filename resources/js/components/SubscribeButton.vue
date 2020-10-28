@@ -8,7 +8,7 @@
 
         computed: {
             classes() {
-                return ['outline-none focus:outline-none my-2 mx-auto w-full sm:w-5/6 rounded-lg  py-1 px-2 lg:px-6',  this.active ? 'bg-brown border border-transparent hover:text-brown hover:border-brown hover:bg-silver-100 text-white' : 'hover:bg-brown border  text-brown border-brown bg-silver-100 hover:text-white']
+                return ['outline-none focus:outline-none my-2 mx-auto w-full sm:w-5/6 rounded-lg  py-1 px-2 lg:px-6',  this.active ? 'bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-silver-100 text-white' : 'hover:bg-brown-500 border  text-brown-500 border-brown-500 bg-silver-100 hover:text-white']
             }
             
         },
