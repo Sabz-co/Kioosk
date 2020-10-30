@@ -109,9 +109,6 @@ class BookController extends Controller
         if (auth()->user()) {
             $on_list = Review::where([['user_id', '=', auth()->user()->id], ['book_id', '=',  $book->id]])->first();
         }
-
-        
-
         return view('book.show', compact('book', 'on_list'));
     }
 
