@@ -68,25 +68,30 @@
                                             عنوان اصلی
                                         </div>
                                         <div class="flex-1">
-                                            پاسخ با تاریخ
+                                        {{ $book->title }}
                                         </div>
                                     </div>
+                                    @if (!empty($book->isbn))
                                     <div class="flex flex-row">
                                         <div class="w-1/4 text-brown-600" >
                                             شابک
                                         </div>
                                         <div class="flex-1">
-                                            978-3-16-148410-0
+                                            {{ $book->isbn }}
                                         </div>
-                                    </div>
+                                    </div>                                        
+                                    @endif
+                                    @if (!empty($book->page_count))
                                     <div class="flex flex-row">
                                         <div class="w-1/4 text-brown-600" >
                                             تعداد صفحات
                                         </div>
-                                        <div class="flex-1">
-                                            ۳۱۶ صفحه
+                                        <div class="flex-1 is-persian">
+                                            {{ $book->page_count }} صفحه
                                         </div>
-                                    </div>
+                                    </div>                                        
+                                    @endif
+
                                     <div class="flex flex-row">
                                         <div class="w-1/4 text-brown-600" >
                                             نویسنده

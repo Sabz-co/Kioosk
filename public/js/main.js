@@ -263,12 +263,18 @@ $(document).ready(function() {
         // $(this).text(($(this).text() == 'بروز رسانی مطالعه') ? 'ذخیره' : 'بروز رسانی مطالعه');
     });
 
-
-
-
-
-
 });
+
+
+var atJS = {
+    init: function() {
+        var $elements = $(".is-persian");
+        $.each($elements, function(index, item) {
+            $(item).html(persianDigit($(item).html()));
+        });
+    }
+}
+
 
 
 function responseMessage(msg) {
@@ -279,3 +285,27 @@ function responseMessage(msg) {
 function calculatePercent(num, percent) {
     return Math.round(num / (percent / 100), 0)
 }
+
+function persianDigit(a) {
+    var newStr = a + '';
+    return newStr.replace(/\d+/g, function(digit) {
+        var digitArr = [],
+            pDigitArr = [];
+        for (var i = 0, len = digit.length; i < len; i++) {
+            digitArr.push(digit.charCodeAt(i));
+        }
+
+        for (var j = 0, leng = digitArr.length; j < leng; j++) {
+            pDigitArr.push(String.fromCharCode(digitArr[j] + ((!!a && a == true) ? 1584 : 1728)));
+        }
+
+        return pDigitArr.join('');
+    });
+}
+
+
+window.onload = function() {
+    $(function() {
+        atJS.init();
+    });
+};
