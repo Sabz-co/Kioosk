@@ -54,14 +54,25 @@
                     </div>
 
                     <div class="text-black text-justify my-3">
-                        {!! $book->description !!}
+                        @if ($book->description)
+                            {!! $book->description !!}
+                            @else
+                                <p>هنوز توضیحاتی برای این کتاب ثبت نشده. با کلیک برروی این لینک توضیحات این کتاب را اضافه نموده و به در کامل‌تر شدن اطلاعات این مجموعه همکاری کنید.</p>
+                        @endif
+                        
 
                     </div>
                         {{-- <a href="#" class="text-lg text-blue-500 hover:text-blue-600 mr-auto font-bold">اطلاعات بیشتر </a> --}}
                         <div class="flex items-center justify-center w-full mb-6">
                             <div class="flex-col text-right w-full">
                                 <div class="toggalable hidden">
-                                    <p>منتشر شده در مهرماه ۱۳۹۷ توسط <a href="#">نشر چشمه</a></p>
+
+
+                                    @if (!empty($book->publisher) && !empty($book->publish_year))
+                                        <p>منتشر شده در سال ۱۳۹۷ توسط <a href="#">نشر چشمه</a></p>
+                                            @elseif(!empty($book->publisher))
+                                                <p>منتشر شده توسط <a href="#">نشر چشمه</a></p>
+                                    @endif
                                 <div class="flex flex-col">
                                     <div class="flex flex-row">
                                         <div class="w-1/4 text-brown-600" >
@@ -91,16 +102,24 @@
                                         </div>
                                     </div>                                        
                                     @endif
-
+                                    @if(!empty($book->author))
                                     <div class="flex flex-row">
                                         <div class="w-1/4 text-brown-600" >
                                             نویسنده
                                         </div>
                                         <div class="flex-1">
-                                            <a href="#">احمد شاملو</a>
-                                            <a href="#">محمدرضا پهلوی</a>
+                                            <ul>
+                                                @foreach ($book->authors as $author)
+                                                <li>
+                                                    <a href="{{ route('author.show', $author->slug) }}">{{ $author->full_name }}</a>
+                                                </li>
+                                                @endforeach
+
+                                            </ul>
+
                                         </div>
                                     </div>
+                                    @endif
                                     <div class="flex flex-row">
                                         <div class="w-1/4 text-brown-600" >
                                             مترجم

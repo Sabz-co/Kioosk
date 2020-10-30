@@ -266,7 +266,7 @@ $(document).ready(function() {
 });
 
 
-var atJS = {
+var onLoad = {
     init: function() {
         var $elements = $(".is-persian");
         $.each($elements, function(index, item) {
@@ -306,6 +306,6 @@ function persianDigit(a) {
 
 window.onload = function() {
     $(function() {
-        atJS.init();
+        onLoad.init();
     });
 };
