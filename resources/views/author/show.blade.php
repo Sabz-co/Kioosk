@@ -6,13 +6,13 @@
         <div class="w-full sm:w-2/3 lg:w-3/4 p-2">
 
             <div class="flex items-center my-4 border-b pb-2">
-                <h1 class="text-lg">کتاب برتر منتشر شده از این نویسنده</h1>
+                <h1 class="text-lg">آثار این نویسنده</h1>
                 <a href="#" class="text-brown-500 rounded-full hover:bg-silver-200 hover:text-black px-2 mr-auto">دیدن همه</a>
             </div>
 
             <div class="flex flex-wrap justify-start">
 
-                @if (!empty($author->books))
+                @if (count($author->books))
                     @foreach ($author->books as $book)
                         <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
                             <a href="{{ route('book.show', $book->slug) }}">
@@ -24,7 +24,7 @@
                 @else
                     <div>
                         <p>
-                            در حال حاضر کتابی برای این نویسنده ثبت نشده. می‌توانید آثار این نویسنده را از اینجا به سیستم اضافه کنید.
+                            در حال حاضر کتابی برای این نویسنده ثبت نشده. می‌توانید آثار این نویسنده را <a class="text-brown-500 hover:text-yellow-700" href="{{ route('book.create') }}">از اینجا</a> به سیستم اضافه کنید.
                         </p>
                     </div>
                 @endif
@@ -49,12 +49,12 @@
                         <a href="#" class="my-2 mx-auto w-full sm:w-5/6 rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-silver-100 text-white py-1 px-2 lg:px-6">دنبال کردن</a>
                         <div class="flex flex-row justify-around text-silver-700 w-full  mt-2">
                             <div>
-                                <i class="fas fa-book    "></i>
+                                <i class="fas fa-book"></i>
                                 ۲۷ دنبال کننده
                             </div>
                             <div>
-                                <i class="fas fa-book    "></i>
-                                ۹ کتاب
+                                <i class="fas fa-book"></i>
+                                <span class="is-persian">{{ count($author->books) }}</span> کتاب
                             </div>
                         </div>
                     </div>
