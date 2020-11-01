@@ -2,7 +2,7 @@
 
 @section('content')
         <!-- Right side -->
-        <div class="flex flex-col sm:flex-row">
+        <div class="flex flex-col sm:flex-row w-full">
         <div class="w-full sm:w-2/3 lg:w-3/4 p-2">
 
             <div class="flex items-center my-4 border-b pb-2">
