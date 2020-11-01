@@ -11,99 +11,27 @@
             </div>
 
             <div class="flex flex-wrap justify-start">
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="">
-                        <img src="{{ asset('images/books/2.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl group-hover:shadow-lg">
-                        <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
-                        <p class="text-sm">الیف شافتاک</p>
-                    </a>
-                </div>
 
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="">
-                        <img src="{{ asset('images/books/13.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl group-hover:shadow-lg">
-                        <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
-                        <p class="text-sm">الیف شافتاک</p>
-                    </a>
-                </div>
-
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="">
-                        <img src="{{ asset('images/books/4.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl group-hover:shadow-lg">
-                        <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
-                        <p class="text-sm">الیف شافتاک</p>
-                    </a>
-                </div>
-
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="">
-                        <img src="{{ asset('images/books/17.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl group-hover:shadow-lg">
-                        <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
-                        <p class="text-sm">الیف شافتاک</p>
-                    </a>
-                </div>
-
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="">
-                        <img src="{{ asset('images/books/3.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl group-hover:shadow-lg">
-                        <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
-                        <p class="text-sm">الیف شافتاک</p>
-                    </a>
-                </div>
-
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="">
-                        <img src="{{ asset('images/books/3.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl group-hover:shadow-lg">
-                        <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
-                        <p class="text-sm">الیف شافتاک</p>
-                    </a>
-                </div>
-                
+                @if (!empty($author->books))
+                    @foreach ($author->books as $book)
+                        <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
+                            <a href="{{ route('book.show', $book->slug) }}">
+                                <img src="{{ asset($book->cover) }}" alt="" class="w-full lg:h-56 object-cover rounded-xl group-hover:shadow-lg">
+                                <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">{{ $book->title }}</h4>
+                            </a>
+                        </div>                    
+                    @endforeach                    
+                @else
+                    <div>
+                        <p>
+                            در حال حاضر کتابی برای این نویسنده ثبت نشده. می‌توانید آثار این نویسنده را از اینجا به سیستم اضافه کنید.
+                        </p>
+                    </div>
+                @endif
 
 
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="">
-                        <img src="{{ asset('images/books/4.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl group-hover:shadow-lg">
-                        <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
-                        <p class="text-sm">الیف شافتاک</p>
-                    </a>
-                </div>
 
 
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="">
-                        <img src="{{ asset('images/books/5.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl group-hover:shadow-lg">
-                        <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
-                        <p class="text-sm">الیف شافتاک</p>
-                    </a>
-                </div>
-
-
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="">
-                        <img src="{{ asset('images/books/13.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl group-hover:shadow-lg">
-                        <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
-                        <p class="text-sm">الیف شافتاک</p>
-                    </a>
-                </div>
-
-
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="">
-                        <img src="{{ asset('images/books/6.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl group-hover:shadow-lg">
-                        <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
-                        <p class="text-sm">الیف شافتاک</p>
-                    </a>
-                </div>
-
-
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
-                    <a href="">
-                        <img src="{{ asset('images/books/7.jpg') }}" alt="" class="w-full lg:h-56 object-cover rounded-xl group-hover:shadow-lg">
-                        <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">ملت عشق </h4>
-                        <p class="text-sm">الیف شافتاک</p>
-                    </a>
-                </div>
             </div>
 
         </div>
