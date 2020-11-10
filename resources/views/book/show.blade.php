@@ -182,9 +182,9 @@
                         </div>
                         <div class="flex items-center">
                             @if ($on_list->body)
-                                {!! $on_list->excerpt !!} <a href="#"  class="text-brown-500 text-lg hover:bg-silver-200 rounded-full px-2 hover:text-black">ویرایش</a>
+                                {!! $on_list->excerpt !!} <a href="{{ route('review.edit', $on_list->id) }}"  class="text-brown-500 text-lg hover:bg-silver-200 rounded-full px-2 hover:text-black">ویرایش</a>
                                 @else
-                                <a href="#"  class="text-brown-500 text-lg hover:bg-silver-200 rounded-full px-2 hover:text-black">نقدی بنویسید</a>
+                                <a href="{{ route('review.edit', $on_list->id) }}"  class="text-brown-500 text-lg hover:bg-silver-200 rounded-full px-2 hover:text-black">نقدی بنویسید</a>
                             @endif
                         </div>
                     </div>

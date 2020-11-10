@@ -27,7 +27,7 @@
             <div class="flex flex-row">
                 <div class="text-silver-700 text-center m-2">
                     <div class="relative aspect-ratio-book w-16">
-                        <img src="{{ asset('images/books/extensive/'.$book->thumb) }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
+                        <img src="{{ asset($book->cover) }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                     </div>
                 </div>
                 <div class="flex flex-col text-silver-700 text-right m-2 justify-center">
@@ -41,7 +41,7 @@
 
                 {!! Form::open(['route' => [ (isset($review) ? 'review.update' : 'review.store' ), isset($review) ? $review->id : $book->slug], 'files' => true]) !!}
                 {!! Form::token() !!}
-                  <input type="text"  name="book_id" value="{{ $book->id }}" placeholder="">
+                  <input type="hidden"  name="book_id" value="{{ $book->id }}" placeholder="">
                   <input type="hidden" name="_method" value="{{ isset($review) ? 'PUT' : 'POST' }}">
                 <div class="mx-auto mb-4 flex items-center">
                     <span class="ml-1">امتیاز من: </span>
