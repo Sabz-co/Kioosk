@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('author/search/{query}', 'AutoCompleteController@authors');
 
-Route::get('/home', 'PagesController@home');
+Route::get('/home', 'PagesController@home')->name('homepage');
 
 Route::get('/test', 'PagesController@test');
 
