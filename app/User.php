@@ -85,6 +85,17 @@ class User extends Authenticatable
         return $this->reviews()->where('shelf', 'reading');
     }
 
+    public function subscribers()
+    {
+        return $this->morphedByMany('App\User', 'subscribable','subscriptions');
+    }
+
+    public function subscriptions()
+    {
+        return $this->morphMany(Subscription::class, 'subscribable');
+    }
+    
+    
     public function subscribeUser($userId = null)
     {
         $this->subscriptions()->create([
@@ -98,10 +109,7 @@ class User extends Authenticatable
         $this->subscriptions()->where('user_id', $userId ?: auth()->id())->delete();
     }
 
-    public function subscriptions()
-    {
-        return $this->morphMany(Subscription::class, 'subscribable');
-    }
+
 
     public function getIsSubscribedToAttribute()
     {

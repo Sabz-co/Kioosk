@@ -35,7 +35,11 @@ class SubscriptionController extends Controller
      */
     public function store(User $user)
     {
-        $user->subscribeUser();
+        if($user->isSubscribedTo) {
+            $user->unsubscribeUser();
+        } else {
+            $user->subscribeUser();
+        }
     }
 
     /**

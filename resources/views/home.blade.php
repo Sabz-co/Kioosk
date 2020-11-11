@@ -113,7 +113,14 @@
                 <a href="#" class="text-brown-500 rounded-full hover:bg-silver-200 hover:text-black px-2 mr-2 hover:shadow ">دیدن همه</a>
             </div>
 
-
+            <div class="flex flex-col items-center my-4 border-b pb-2">
+                @foreach ($timeline as $date => $activity)
+                    <h3 class="text-lg text-right font-bold ml-auto mb-4 mt-2 border-b">{{ $date }} </h3>
+                    @foreach ($activity as $record)
+                        @include("profiles.activities.{$record->type}", ['activity' => $record, 'user' => $record->user])
+                    @endforeach
+                @endforeach
+            </div>
             {{-- added book card --}}
             <div class="flex flex-col justify-start text-sm sm:text-base mb-5">
                 <div class="bg-white rounded-xl border p-4">

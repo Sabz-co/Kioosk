@@ -254,6 +254,54 @@ $(document).ready(function() {
     });
 
 
+    $('#subscribe-user').on('click', function(e) {
+        e.preventDefault(); /* prevent form submiting here */
+
+        if (window.Kioosk.user != null) {
+            var $button = $(this);
+            var $sourceItem = $button;
+            sourceId = $sourceItem.data('source-id');
+            console.log(sourceId)
+            var data = [
+                { 'name': 'sourceId', 'value': sourceId }
+            ];
+
+            $.ajax({
+                url: "/profiles/" + sourceId + "/subscribe",
+                type: "POST",
+                data: data,
+                success: function(response) {
+
+                    if ($button.text() == "دنبال کردن") {
+                        console.log('we here');
+                        $button.text("دنبال شده")
+                    } else {
+                        console.log('we there');
+                        $button.text("دنبال کردن");
+                    }
+                    // $sourceItem.toggleClass("hover:text-red-500 text-red-500").children(".far, .fas").toggleClass("far fas");
+                    // console.log(response.success);
+                },
+            });
+
+
+        } else {
+            alert("not logged in")
+        }
+
+
+
+        var msg = "";
+        // if (ratingValue > 1) {
+        //     msg = "Thanks! You rated this " + ratingValue + " stars.";
+        // } else {
+        //     msg = "We will improve ourselves. You rated this " + ratingValue + " stars.";
+        // }
+        responseMessage(msg);
+
+    });
+
+
 
     $(".update-review").on("click", function(e) {
         e.preventDefault(); /* prevent form submiting here */

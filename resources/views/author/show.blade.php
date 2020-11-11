@@ -46,7 +46,7 @@
                         <h2 class="font-bold text-black my-2">{{ $author->fullName }}</h2>
                         <h3 class="mb-2">تهران، ایران</h3>
 
-                        <a href="#" class="my-2 mx-auto w-full sm:w-5/6 rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-silver-100 text-white py-1 px-2 lg:px-6">دنبال کردن</a>
+                        <a href="#" class="my-2 mx-auto w-full sm:w-5/6 rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-silver-100 text-white py-1 px-2 lg:px-6" id="subscribe-user" data-source-id="{{ $user->id }}">دنبال کردن</a>
                         <div class="flex flex-row justify-around text-silver-700 w-full  mt-2">
                             <div>
                                 <i class="fas fa-book"></i>
