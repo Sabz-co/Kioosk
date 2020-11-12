@@ -19,13 +19,15 @@ class Activity extends Model
 
     public static function timeline($user, $take = 50)
     {
-        foreach($user->subscribers as $subscriber) {
-            $timeline = $subscriber->activity()->latest()->with('subject')->take($take)->get()->groupBy(function($activity) {
-                return $activity->created_at->format('Y-m-d');
-            });
-            $user->put($timeline);
+        $result = collect();
+        foreach($user->subscribers as $key => $subscriber) {
+                $result[$key] = collect($subscriber->activity()->latest()->with('subject')->take($take)->get()->groupBy(function($activity) {
+                    return $activity->created_at->format('Y-m-d');
+                }));
+                $result = $result->merge($result[$key]);
         }
-        return $user;
+        dd($result);
+        return $result;
     }
 
     public static function feed($user, $take = 50)

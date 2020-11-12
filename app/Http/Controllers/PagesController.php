@@ -17,7 +17,6 @@ class PagesController extends Controller
 {
 
     public function home(BookFilters $filters) {
-        $timeline = array();
 
         $books = Book::latest()->withCount('reviews')->filter($filters)->get();
         $trending = array_map('json_decode', Redis::zrevrange('trending_books', 0, 14));
@@ -28,10 +27,9 @@ class PagesController extends Controller
                 $q->where('page_count', '>' , 0);
              })->first();
              $timeline = Activity::timeline(Auth::user());
-             dd($timeline);
         }
 
-        // return $timeline;
+        // var_dump($timeline);
 
         return view('home', compact('books', 'trending', 'currently_reading', 'timeline'));
     }
