@@ -19,8 +19,6 @@ class Activity extends Model
 
     public static function timeline($user, $take = 50)
     {
-
-
         return Activity::latest()->with('subject')->take($take)->whereIn('user_id', $user->subscribers->pluck('id')->toArray())->get()->groupBy(function($activity) {
             return \Morilog\Jalali\Jalalian::fromCarbon($activity->created_at)->format('%d %B  %Y ');
         });

@@ -115,4 +115,13 @@ class User extends Authenticatable
     {
         return $this->subscriptions()->where('user_id', auth()->id())->exists();
     }
+
+
+    public static function reading($user, $take = 1)
+    {
+        return auth()->user()->reading_list()->latest()->with('book')->whereHas('book', function($q){
+            $q->where('page_count', '>' , 0);
+         })->take($take)->get();
+    }
+
 }

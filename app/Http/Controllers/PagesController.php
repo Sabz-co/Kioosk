@@ -20,18 +20,16 @@ class PagesController extends Controller
 
         $books = Book::latest()->withCount('reviews')->filter($filters)->get();
         $trending = array_map('json_decode', Redis::zrevrange('trending_books', 0, 14));
-        $currently_reading = null;
+        $reading = null;
 
         if (Auth::user()) {
-            $currently_reading = auth()->user()->reading_list()->whereHas('book', function($q){
-                $q->where('page_count', '>' , 0);
-             })->first();
+            $reading = User::reading(Auth::user());
              $timeline = Activity::timeline(Auth::user());
         }
 
-        // var_dump($timeline);
+        // dd($reading);
 
-        return view('home', compact('books', 'trending', 'currently_reading', 'timeline'));
+        return view('home', compact('books', 'trending', 'reading', 'timeline'));
     }
     
 

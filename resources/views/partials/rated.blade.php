@@ -1,5 +1,5 @@
 
-  <div class='rated-stars text-right'>
+  <div class='rating-stars text-right'>
     <ul id='stars' class="stars" data-rating="{{ $rating ?? '0' }}" >
       <li class='star' title='خوب نبود'>
         <i class='fa fa-star fa-fw'></i>

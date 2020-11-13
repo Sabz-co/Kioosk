@@ -1,6 +1,6 @@
 
   <div class='rating-stars text-right'>
-    <ul id='stars' class="stars" data-rating="{{ $rating ?? '0' }}" data-test='John'>
+    <ul id='stars' class="stars" data-rating="{{ $rating ?? '0' }}">
       <li class='star' title='خوب نبود' data-value='1'  data-source-type="book" data-source-id="3" data-source-slug="{{ $slug }}">
         <i class='fa fa-star fa-fw'></i>
       </li>

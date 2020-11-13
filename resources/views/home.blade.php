@@ -5,9 +5,10 @@
         <div class="w-full sm:w-2/3 lg:w-3/4 p-2">
             
             <!-- Fellow readers -->
-            @if ($currently_reading)
+            @if ($reading)
             <h1 class="text-xl mb-2">از کتاب‌هایی که شما مطالعه می‌کنید:</h1>
-            
+
+            @foreach ($reading as $currently_reading)
             <div class="flex bg-silver-200 flex-col md:flex-row rounded-lg text-sm md:text-base">
                 <div class="mx-auto text-silver-700 text-center px-4 py-2 m-2 w-2/6 md:w-1/4 lg:w-1/5">
                     <div class="relative aspect-ratio-book w-full">
@@ -80,7 +81,10 @@
 
                     </div>
                 </div>
-          </div>
+          </div>                
+            @endforeach
+            
+
             @endif
             <!-- End of fellow readers -->
             <hr class="border my-5">
@@ -124,7 +128,7 @@
                 @endforeach
             </div>
             {{-- added book card --}}
-            <div class="flex flex-col justify-start text-sm sm:text-base mb-5">
+            {{-- <div class="flex flex-col justify-start text-sm sm:text-base mb-5">
                 <div class="bg-white rounded-xl border p-4">
                     <div class="flex flex-col sm:flex-row items-center sm:items-start">
                         <img src="{{ asset('images/avatar.jpg') }}" class="w-24 h-24 rounded-full mb-3 sm:mb-0" alt="">
@@ -154,7 +158,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             {{-- End of added book --}}
 
 
@@ -162,7 +166,7 @@
 
 
             {{-- added book card --}}
-            <div class="flex flex-col justify-start text-sm sm:text-base mb-5">
+            {{-- <div class="flex flex-col justify-start text-sm sm:text-base mb-5">
                 <div class="bg-white rounded-xl border p-4">
                     <div class="flex flex-col sm:flex-row items-center sm:items-start">
                         <img src="{{ asset('images/avatar.jpg') }}" class="w-24 h-24 rounded-full mb-3 sm:mb-0" alt="">
@@ -195,14 +199,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             {{-- End of added book --}}
 
 
 
 
             {{-- Rated book card --}}
-            <div class="flex flex-col justify-start text-sm sm:text-base mb-5">
+            {{-- <div class="flex flex-col justify-start text-sm sm:text-base mb-5">
                 <div class="bg-white rounded-xl border p-4">
                     <div class="flex flex-col sm:flex-row items-center sm:items-start">
                         <img src="{{ asset('images/avatar.jpg') }}" class="w-24 h-24 rounded-full mb-3 sm:mb-0" alt="">
@@ -236,7 +240,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             {{-- End of rated book --}}
 
 
