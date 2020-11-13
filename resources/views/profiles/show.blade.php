@@ -29,9 +29,12 @@
 
             <div class="flex flex-col items-center my-4 border-b pb-2">
                 @foreach ($activities as $date => $activity)
-                    <h3 class="text-lg text-right font-bold ml-auto mb-4 mt-2 border-b">{{ $date }} </h3>
+                    <h3 class="text-lg text-right font-bold ml-auto mb-4 mt-2 border-b ">{{ $date }} </h3>
+
                     @foreach ($activity as $record)
-                        @include("profiles.activities.{$record->type}", ['activity' => $record])
+                        @if (view()->exists("profiles.activities.{$record->type}"))
+                            @include("profiles.activities.{$record->type}", ['activity' => $record])
+                        @endif
                     @endforeach
                 @endforeach
             </div>
