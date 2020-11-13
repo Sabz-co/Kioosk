@@ -119,7 +119,7 @@
 
             <div class="flex flex-col items-center my-4 border-b pb-2">
                 @foreach ($timeline as $date => $activity)
-                    <h3 class="text-lg text-right font-bold ml-auto mb-4 mt-2 border-b">{{ $date }} </h3>
+                    <h3 class="text-lg text-right font-bold ml-auto mb-4 mt-2 border-b is-persian">{{ $date }} </h3>
                     @foreach ($activity as $record)
                         @if (view()->exists("profiles.activities.{$record->type}"))
                             @include("profiles.activities.{$record->type}", ['activity' => $record, 'user' => $record->user])     
