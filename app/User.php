@@ -124,7 +124,11 @@ class User extends Authenticatable
          })->first();
     }
 
-
+    public function getAvatarAttribute()
+    {
+        $hash = md5(strtolower(trim($this->attributes['email'])));
+        return "http://www.gravatar.com/avatar/$hash";
+    }
 
 
 }
