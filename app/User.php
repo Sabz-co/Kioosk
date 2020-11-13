@@ -121,7 +121,10 @@ class User extends Authenticatable
     {
         return auth()->user()->reading_list()->latest()->with('book')->whereHas('book', function($q){
             $q->where('page_count', '>' , 0);
-         })->take($take)->get();
+         })->first();
     }
+
+
+
 
 }

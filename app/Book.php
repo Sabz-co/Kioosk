@@ -132,14 +132,20 @@ class Book extends Model
 
 
     /**
- * Get the route key for the model.
- *
- * @return string
- */
-public function getRouteKeyName()
-{
-    return 'slug';
-}
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+
+    public static function coreaders($book, $take = 3)
+    {
+        return Review::latest()->with('owner')->where([['book_id', $book], ['shelf', 'reading']])->get();
+    }
 
 
 }

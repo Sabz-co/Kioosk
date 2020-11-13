@@ -5,10 +5,9 @@
         <div class="w-full sm:w-2/3 lg:w-3/4 p-2">
             
             <!-- Fellow readers -->
-            @if ($reading)
+            @if ($currently_reading)
             <h1 class="text-xl mb-2">از کتاب‌هایی که شما مطالعه می‌کنید:</h1>
 
-            @foreach ($reading as $currently_reading)
             <div class="flex bg-silver-200 flex-col md:flex-row rounded-lg text-sm md:text-base">
                 <div class="mx-auto text-silver-700 text-center px-4 py-2 m-2 w-2/6 md:w-1/4 lg:w-1/5">
                     <div class="relative aspect-ratio-book w-full">
@@ -82,9 +81,7 @@
                     </div>
                 </div>
           </div>                
-            @endforeach
             
-
             @endif
             <!-- End of fellow readers -->
             <hr class="border my-5">
@@ -321,11 +318,14 @@
             <div>
                 <div class="text-center mb-4 pb-4">
                     <div class="flex items-center justify-center">
-                        <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full" alt="">
-                        <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full -mr-4" alt="">
-                        <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full -mr-4" alt="">
+                        @foreach ($coreaders as $key => $reader)
+                        <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full {{ $key != 0 ? '-mr-4' : '' }}" alt="">
+
+                        @endforeach
+                        {{-- <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full -mr-4" alt=""> --}}
+                        {{-- <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full -mr-4" alt=""> --}}
                     </div>
-                    <h6 class="my-2 text-sm">سورنا و سه نفر دیگر در حال مطالعه‌ی ملت عشق هستند.</h6>
+                    <h6 class="my-2 text-sm">{{ count($coreaders) }} نفر در حال مطالعه‌ی ملت عشق هستند.</h6>
 
                     <a href="#" class="mx-auto w-full sm:w-5/6 rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white py-1 px-2 lg:px-6 shadow hover:shadow-xl">دیدن تمام هم‌خوان‌ها</a>
                 </div>
