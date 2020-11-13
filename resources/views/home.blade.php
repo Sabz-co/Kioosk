@@ -115,9 +115,11 @@
 
             <div class="flex flex-col items-center my-4 border-b pb-2">
                 @foreach ($timeline as $date => $activity)
-                    {{-- <h3 class="text-lg text-right font-bold ml-auto mb-4 mt-2 border-b">{{ $date }} </h3> --}}
+                    <h3 class="text-lg text-right font-bold ml-auto mb-4 mt-2 border-b">{{ $date }} </h3>
                     @foreach ($activity as $record)
-                        @include("profiles.activities.{$record->type}", ['activity' => $record, 'user' => $record->user])
+                        @if (view()->exists("profiles.activities.{$record->type}"))
+                            @include("profiles.activities.{$record->type}", ['activity' => $record, 'user' => $record->user])     
+                        @endif
                     @endforeach
                 @endforeach
             </div>
@@ -304,15 +306,6 @@
                         <a href="#" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-silver-100 text-white py-1 px-2 shadow hover:shadow-xl">مشاهده پروفایل</a>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
               </div>
 
 
