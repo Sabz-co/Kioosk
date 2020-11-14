@@ -126,6 +126,6 @@
 
 
 
-    @livewireAssets
+
 </body>
 </html>

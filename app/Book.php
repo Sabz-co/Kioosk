@@ -7,12 +7,29 @@ use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use willvincent\Rateable\Rateable;
 use Conner\Tagging\Taggable;
+use ScoutElastic\Searchable;
 
 
 class Book extends Model
 {
 
-  use RecordsActivity, RecordsVisits, Sluggable, Rateable, Taggable;
+  use RecordsActivity, RecordsVisits, Sluggable, Rateable, Taggable, Searchable;
+
+  protected $indexConfigurator = MyIndexConfigurator::class;
+
+  protected $searchRules = [
+      //
+  ];
+
+      // Here you can specify a mapping for model fields
+      protected $mapping = [
+        'properties' => [
+            'title' => [
+                'type' => 'text',
+                // Also you can configure multi-fields, more details you can find here https://www.elastic.co/guide/en/elasticsearch/reference/current/multi-fields.html
+            ],
+        ]
+    ];
 
   protected $guarded = [];
 
