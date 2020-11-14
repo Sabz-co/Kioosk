@@ -4,6 +4,9 @@
         <!-- Right side -->
         <div class="w-full sm:w-2/3 lg:w-3/4 p-2">
             
+
+
+            @livewire('search')
             <!-- Fellow readers -->
             @if ($currently_reading)
             <h1 class="text-xl mb-2">از کتاب‌هایی که شما مطالعه می‌کنید:</h1>

@@ -18,7 +18,7 @@
     </script>
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/trix.css') }}">
-
+    @livewireStyles
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -53,5 +53,6 @@
     
     <script type="text/javascript" src="{{ asset('js/jquery.autocomplete.js') }}"></script>
     <script type="text/javascript" src="{{ asset("js/main.js") }}"></script>
+    @livewireScripts
     @yield('footer-assets')
 </html>

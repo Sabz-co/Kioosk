@@ -46,9 +46,24 @@
                     class="mt-4 hidden lg:inline-flex py-1 px-2 rounded lg:mt-0 text-gray-200 hover:text-white hover:bg-gray-700 ml-3 xl:ml-5">
                     <i class="fas fa-ellipsis-h"></i>
                 </a>
-                <input
+                {{-- <input
                     class="w-full lg:w-auto inline-block bg-gray-200 text-gray-700 border-transparent rounded px-3 py-2 leading-tight focus:outline-none focus:bg-white"
-                    id="grid-first-name" type="text" placeholder="جستجو" />
+                    id="grid-first-name" type="text" placeholder="جستجو" /> --}}
+
+
+
+                    <div class="rounded shadow-md my-2 relative pin-t pin-l">
+                        <ul class="list-reset">
+                          <li class="p-2"><input class="border-2 rounded h-8 w-full"><br></li>
+                          <li><p class="p-2 block text-black hover:bg-grey-light cursor-pointer">
+                              USA
+                              <svg class="float-right" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path d="M6.61 11.89L3.5 8.78 2.44 9.84 6.61 14l8.95-8.95L14.5 4z"/></svg>
+                          </p></li>
+                          <li><p class="p-2 block text-black hover:bg-grey-light cursor-pointer">Montenegro</p></li>
+                        </ul>
+                    </div>
+
+                    
             </div>
             <div class="flex items-center mr-auto">
                 @if (Auth::guest())
