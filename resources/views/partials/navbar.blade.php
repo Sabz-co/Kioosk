@@ -51,18 +51,6 @@
                     id="grid-first-name" type="text" placeholder="جستجو" />
 
 
-
-                    {{-- <div class="rounded shadow-md my-2 relative pin-t pin-l">
-                        <ul class="list-reset">
-                          <li class="p-2"><input class="border-2 rounded h-8 w-full"><br></li>
-                          <li><p class="p-2 block text-black hover:bg-grey-light cursor-pointer">
-                              USA
-                              <svg class="float-right" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path d="M6.61 11.89L3.5 8.78 2.44 9.84 6.61 14l8.95-8.95L14.5 4z"/></svg>
-                          </p></li>
-                          <li><p class="p-2 block text-black hover:bg-grey-light cursor-pointer">Montenegro</p></li>
-                        </ul>
-                    </div> --}}
-
                     
             </div>
             <div class="flex items-center mr-auto">
@@ -70,12 +58,6 @@
                     
                 @else
                 <user-notifications></user-notifications>
-                {{-- <a href="#responsive-header"
-                    class="mt-4 hidden lg:inline-flex items-center p-1 rounded lg:mt-0 text-gray-200 hover:text-white hover:bg-gray-700 mr-3 xl:mr-5  -ml-1">
-                    <span class="ml-2 flex items-center justify-center  rounded bg-brown-500 border border-transparent border-brown-500 text-white px-2 text-sm">۲۳</span>
-
-                    <i class="fa fa-bullhorn"></i>
-                </a> --}}
 
 
 
@@ -86,11 +68,6 @@
               
                 @endif
 
-
-
-                {{-- <a href="#"
-                    class="hidden lg:inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white">پروفایل
-                    کاربری</a> --}}
             </div>
         </div>
         <div class="block lg:hidden mr-6">
@@ -104,3 +81,111 @@
         </div>
     </nav>
 </div>
+
+
+
+
+{{-- <nav id="header" class="w-full">
+
+    <!--Nav-->
+    <div class="relative w-full top-0 border-b border-grey-light">
+      <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+        <div class="pl-4 flex items-center">
+          <img src="{{ asset('images/logo.jpg') }}" class="rounded-full w-10" alt="">
+
+        </div>
+
+        <div class="pr-4">
+          <button id="nav-toggle" class="block lg:hidden flex items-center px-3 py-2 border rounded text-grey border-grey-dark hover:text-black hover:border-purple appearance-none focus:outline-none">
+            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg>
+          </button>
+        </div>
+
+        <div class="w-full flex-grow lg:flex lg:flex-1 lg:content-center lg:justify-start lg:w-auto hidden lg:block mt-2 lg:mt-0 z-20" id="nav-content">
+
+          <ul class="list-reset lg:flex justify-end items-center">
+            <li class="mr-3 py-2 lg:py-0">
+                <a href="/home"
+                    class="mt-4 hidden lg:inline-block py-1 px-2 rounded lg:mt-0 text-gray-200 hover:text-white hover:bg-gray-700 ml-3 xl:ml-5">
+                    خانه
+                </a>
+            </li>
+
+            @if(Auth::user())
+            <li class="mr-3 py-2 lg:py-0">
+                <a href="{{ route('my-books', Auth::user()->id) }}"
+                    class="mt-4 hidden lg:inline-block py-1 px-2 rounded lg:mt-0 text-gray-200 hover:text-white hover:bg-gray-700 ml-3 xl:ml-5">
+                    کتاب‌های من
+                </a>    
+            </li>
+            @endif
+
+            <li class="mr-3 py-2 lg:py-0">
+                <a href="{{ url('genres') }}"
+                    class="mt-4 hidden lg:inline-block py-1 px-2 rounded lg:mt-0 text-gray-200 hover:text-white hover:bg-gray-700 ml-3 xl:ml-5">
+                    کتب
+                </a>
+            </li>
+
+            <li class="mr-3 py-2 lg:py-0">
+                <a href="#responsive-header"
+                    class="mt-4 hidden lg:inline-block py-1 px-2 rounded lg:mt-0 text-gray-200 hover:text-white hover:bg-gray-700 ml-3 xl:ml-5">
+                    ناشران
+                </a>
+            </li>
+
+
+            <li class="mr-3 py-2 lg:py-0">
+                <a href="#responsive-header"
+                    class="mt-4 hidden lg:inline-block py-1 px-2 rounded lg:mt-0 text-gray-200 hover:text-white hover:bg-gray-700 ml-3 xl:ml-5">
+                    نویسندگان
+                </a>
+            </li>
+            <li id="search-toggle" class="mr-3 py-2 lg:py-0 search-icon cursor-pointer">
+                    <svg class="fill-current pointer-events-none text-grey-darkest w-4 h-4 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                      <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
+                    </svg>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="w-full flex-grow lg:flex lg:flex-1 lg:content-center lg:justify-end lg:w-auto hidden lg:block mt-2 lg:mt-0 z-20" id="nav-content">
+
+            <ul class="list-reset lg:flex justify-end items-center">
+                @if(Auth::user())
+                <li class="mr-3 py-2 lg:py-0">
+                    <user-notifications></user-notifications>
+                </li>
+
+                <li class="mr-3 py-2 lg:py-0">
+                    <profile-dropdown/>
+                </li>
+                @endif
+              <li class="mr-3 py-2 lg:py-0">
+                <a href="{{ route('book.create') }}" class="mt-4 hidden lg:inline-flex items-center justify-center rounded lg:mt-0 text-white hover:text-white hover:bg-gray-700 mr-3 xl:mr-5 border-2 border-white rounded-full h-8 w-8">
+                    <i class="fas fa-plus"></i>
+                </a>    
+              </li>
+            </ul>
+  
+          </div>
+
+      </div>
+    </div>
+
+    <!--Search-->
+    <div class="relative w-full hidden bg-white" id="search-content">
+      <div class="container mx-auto py-4 text-black shadow-xl">
+        <input id="searchfield" type="search" placeholder="جستجو کنید ..." autofocus="autofocus" class="w-full text-grey-800 transition focus:outline-none focus:border-transparent p-2 appearance-none leading-normal text-xl lg:text-2xl">
+      </div>
+      <ul>
+          <li>
+              میوه بهشتی
+          </li>
+          <li>چیپس</li>
+      </ul>
+
+    </div>
+
+  </nav> --}}
