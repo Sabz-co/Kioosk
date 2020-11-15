@@ -54,6 +54,10 @@ class PagesController extends Controller
         return view('pages.contact-us');
     }
 
+    public function search(){
+        return view('pages.search');
+    }
+
     public function test(){
         dd(Auth::user()->rated()); 
     }

@@ -27,7 +27,7 @@
                             </h4>
                             <p class="text-sm text-center sm:text-right">الیف شافتاک</p>
                         </div>
-                        <div class="bg-white text-black rounded-full py-1 px-2">تاریخ شروع: {{\Morilog\Jalali\Jalalian::fromCarbon($currently_reading->created_at)->format('%d %B  %Y ')}}</div>
+                        <div class="bg-white text-black rounded-full py-1 px-2 is-persian">تاریخ شروع: {{\Morilog\Jalali\Jalalian::fromCarbon($currently_reading->created_at)->format('%d %B  %Y ')}}</div>
                     </div>
                     <div class=" flex flex-col lg:flex-row w-full " data-pages="{{ $currently_reading->book->page_count}}" data-review-id="{{ $currently_reading->id }}">
                         {!! Form::open(['route' => ['review.update', 1],'files' => true, 'class' => 'update-review-form flex w-full justify-between hidden']) !!}
@@ -41,7 +41,7 @@
                                 <div class="w-16 mx-2">
                                   <input name="pages" value="{{ $currently_reading->progress }}" class="bg-white appearance-none border-2 border-white rounded w-full p-1 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="pages" type="number" min="1" max="{{ $currently_reading->book->page_count }}">
                                 </div>
-                                <span>صفحه از {{ $currently_reading->book->page_count }} صفحه</span>
+                                <span >صفحه از {{ $currently_reading->book->page_count }} صفحه</span>
                               </div>
 
 
@@ -65,7 +65,7 @@
                     </div>
 
                     <div class="flex flex-col justify-between w-full items-center my-4">
-                        <p class="text-silver-700 mr-auto">{{ $currently_reading->book->page_count }} صفحه</p>
+                        <p class="text-silver-700 mr-auto is-persian">{{ $currently_reading->book->page_count }} صفحه</p>
 
                         <div class="progress-bar-wrapper">
                             <div class="progress-bar" style="width: {{ $currently_reading->percent }}%">{{ $currently_reading->percent }}%</div>
@@ -75,7 +75,7 @@
 
                     <div class="flex flex-col sm:flex-row justify-between w-full items-center">
                         <div class="text-right">
-                            <h4 class="">{{ $currently_reading->book->reviews()->count() }} نقد دارد</h4>
+                            <h4 class=" is-persian">{{ $currently_reading->book->reviews()->count() }} نقد دارد</h4>
                         </div>
                         <a href="#" class="update-review hover:shadow sm:mr-auto text-silver-700 hover:text-brown-500 hover:bg-white p-1 rounded-lg sm:ml-4">بروز رسانی مطالعه</a>
                         <a href="#" class="save-review hover:shadow sm:mr-auto text-silver-700 hover:text-brown-500 hover:bg-white p-1 rounded-lg sm:ml-4 hidden">ذخیره</a>

@@ -9,7 +9,7 @@
 
         <div class="w-full">
             <div class="flex items-center my-4 border-b pb-2">
-                <h1 class="text-lg">علمی/تخیلی</h1>
+                <h1 class="text-lg">آخرین کتاب‌ها</h1>
                 <a href="#" class="text-brown-500 rounded-full hover:bg-silver-200 hover:text-black px-2 mr-auto">دیدن همه</a>
             </div>
 
