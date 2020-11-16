@@ -227,7 +227,6 @@ $(document).ready(function() {
                 { 'name': 'shelf', 'value': values['shelf'] }
             ];
 
-            // console.log(data);
             $.ajax({
                 url: "/review/" + sourceId,
                 type: "PUT",

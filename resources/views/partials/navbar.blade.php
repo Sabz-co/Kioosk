@@ -1,4 +1,4 @@
-<div class="container mx-auto">
+{{-- <div class="container mx-auto">
     <nav class="flex items-center justify-between flex-wrap py-2 h-16">
         <div class="flex items-center flex-shrink-0 text-white ml-6">
             <svg class="fill-current h-8 w-8 ml-2" width="54" height="54" viewBox="0 0 54 54"
@@ -80,20 +80,20 @@
             </button>
         </div>
     </nav>
-</div>
+</div> --}}
 
 
 
 
-{{-- <nav id="header" class="w-full">
+<nav id="header" class="w-full">
 
     <!--Nav-->
     <div class="relative w-full top-0 border-b border-grey-light">
       <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
         <div class="pl-4 flex items-center">
           <img src="{{ asset('images/logo.jpg') }}" class="rounded-full w-10" alt="">
-
         </div>
+        <span class="hidden md:inline-block font-semibold text-xl tracking-tight lg:ml-6 text-white">کیوسک</span>
 
         <div class="pr-4">
           <button id="nav-toggle" class="block lg:hidden flex items-center px-3 py-2 border rounded text-grey border-grey-dark hover:text-black hover:border-purple appearance-none focus:outline-none">
@@ -142,7 +142,7 @@
                 </a>
             </li>
             <li id="search-toggle" class="mr-3 py-2 lg:py-0 search-icon cursor-pointer">
-                    <svg class="fill-current pointer-events-none text-grey-darkest w-4 h-4 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <svg class="fill-current pointer-events-none text-white w-4 h-4 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                       <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
                     </svg>
             </li>
@@ -153,6 +153,12 @@
         <div class="w-full flex-grow lg:flex lg:flex-1 lg:content-center lg:justify-end lg:w-auto hidden lg:block mt-2 lg:mt-0 z-20" id="nav-content">
 
             <ul class="list-reset lg:flex justify-end items-center">
+
+                <li class="mr-3 py-2 lg:py-0">
+                    <a href="{{ route('book.create') }}" class="mt-4 hidden lg:inline-flex items-center justify-center rounded lg:mt-0 text-white hover:text-white hover:bg-gray-700 mr-3 xl:mr-5 border-2 border-white rounded-full h-8 w-8">
+                        <i class="fas fa-plus"></i>
+                    </a>    
+                  </li>
                 @if(Auth::user())
                 <li class="mr-3 py-2 lg:py-0">
                     <user-notifications></user-notifications>
@@ -162,11 +168,7 @@
                     <profile-dropdown/>
                 </li>
                 @endif
-              <li class="mr-3 py-2 lg:py-0">
-                <a href="{{ route('book.create') }}" class="mt-4 hidden lg:inline-flex items-center justify-center rounded lg:mt-0 text-white hover:text-white hover:bg-gray-700 mr-3 xl:mr-5 border-2 border-white rounded-full h-8 w-8">
-                    <i class="fas fa-plus"></i>
-                </a>    
-              </li>
+
             </ul>
   
           </div>
@@ -188,4 +190,4 @@
 
     </div>
 
-  </nav> --}}
+  </nav>
