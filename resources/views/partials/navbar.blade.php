@@ -177,7 +177,7 @@
     </div>
 
     <!--Search-->
-    <div class="relative w-full hidden bg-white" id="search-content">
+    {{-- <div class="absolute z-10 w-full hidden bg-white" id="search-content">
       <div class="container mx-auto py-4 text-black shadow-xl">
         <input id="searchfield" type="search" placeholder="جستجو کنید ..." autofocus="autofocus" class="w-full text-grey-800 transition focus:outline-none focus:border-transparent p-2 appearance-none leading-normal text-xl lg:text-2xl">
       </div>
@@ -188,6 +188,6 @@
           <li>چیپس</li>
       </ul>
 
-    </div>
-
+    </div> --}}
+    @livewire('search')
   </nav>

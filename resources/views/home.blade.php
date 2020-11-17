@@ -6,7 +6,7 @@
             
 
 
-            @livewire('search')
+            
             <!-- Fellow readers -->
             @if ($currently_reading)
             <h1 class="text-xl mb-2">از کتاب‌هایی که شما مطالعه می‌کنید:</h1>
