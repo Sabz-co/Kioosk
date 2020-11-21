@@ -270,49 +270,6 @@
                     </div>
                 </div>
                 @endforeach
-
-
-                <div class=" text-center p-3 w-1/2 lg:w-1/3 xl:w-1/4">
-                    <img src="{{ asset('images/avatar.jpg') }}" class="w-20 h-20 rounded-full mx-auto -mb-8  border-4  border-silver-200" alt="">
-                    <div class="bg-silver-200 rounded-xl p-2 pt-8">
-                        <div class="text-center text-black my-3">
-                            <p>امیرمسعود مهرابیان</p>
-                            <p>۵۹ کتاب</p>
-                        </div>
-                        <h6 class="text-brown-500 text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
-                    </div> 
-                    <div class="flex my-1">
-                        <a href="#" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-silver-100 text-white py-1 px-2 shadow hover:shadow-xl">مشاهده پروفایل</a>
-                    </div>
-                </div>
-
-                <div class=" text-center p-3 w-1/2 lg:w-1/3 xl:w-1/4">
-                    <img src="{{ asset('images/avatar.jpg') }}" class="w-20 h-20 rounded-full mx-auto -mb-8  border-4  border-silver-200" alt="">
-                    <div class="bg-silver-200 rounded-xl p-2 pt-8">
-                        <div class="text-center text-black my-3">
-                            <p>امیرمسعود مهرابیان</p>
-                            <p>۵۹ کتاب</p>
-                        </div>
-                        <h6 class="text-brown-500 text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
-                    </div> 
-                    <div class="flex my-1">
-                        <a href="#" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-silver-100 text-white py-1 px-2 shadow hover:shadow-xl">مشاهده پروفایل</a>
-                    </div>
-                </div>
-
-                <div class=" text-center p-3 w-1/2 lg:w-1/3 xl:w-1/4">
-                    <img src="{{ asset('images/avatar.jpg') }}" class="w-20 h-20 rounded-full mx-auto -mb-8  border-4  border-silver-200" alt="">
-                    <div class="bg-silver-200 rounded-xl p-2 pt-8">
-                        <div class="text-center text-black my-3">
-                            <p>امیرمسعود مهرابیان</p>
-                            <p>۵۹ کتاب</p>
-                        </div>
-                        <h6 class="text-brown-500 text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
-                    </div> 
-                    <div class="flex my-1">
-                        <a href="#" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-silver-100 text-white py-1 px-2 shadow hover:shadow-xl">مشاهده پروفایل</a>
-                    </div>
-                </div>
               </div>
 
 
