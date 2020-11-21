@@ -6,6 +6,7 @@ use App\Book;
 use App\User;
 use App\Subscription;
 use App\Activity;
+use App\Author;
 
 use App\Filters\BookFilters;
 use Illuminate\Support\Facades\Redis;
@@ -31,9 +32,11 @@ class PagesController extends Controller
             }
         }
 
+        $authors = Author::inRandomOrder()->take(4)->get();
+
 
         
-        return view('home', compact('books', 'trending', 'currently_reading', 'timeline', 'coreaders'));
+        return view('home', compact('books', 'authors', 'trending', 'currently_reading', 'timeline', 'coreaders'));
     }
     
 
