@@ -43,9 +43,7 @@
                                 </div>
                                 <span >صفحه از {{ $currently_reading->book->page_count }} صفحه</span>
                               </div>
-
-
-
+                              
                               <div class="flex items-center mb-6">
                                 <div class="">
                                   <label class="block text-gray-500 text-right ml-2 mb-0" for="shelf">
@@ -271,8 +269,6 @@
                 </div>
                 @endforeach
               </div>
-
-
         </div>
         <!-- End of right side -->
 
