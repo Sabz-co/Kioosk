@@ -21,15 +21,8 @@
 </head>
 <body>
     <div id="app">
-
-    
-    
             {{-- Content goes here --}}
             @yield('content')
-    
     </div>
-
-
-
 </body>
 </html>
