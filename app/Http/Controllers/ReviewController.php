@@ -49,6 +49,8 @@ class ReviewController extends Controller
         
         $review = Review::updateOrCreate(['book_id' => $request->book_id, 'user_id' => Auth::user()->id],
             ['body' => $request->body, 'shelf' => $request->shelf]);
+        return $review;
+        
 
         $review->owner->subscriptions->filter(function ($sub) use ($review){
             return $sub->user_id != $review->user_id;

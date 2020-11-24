@@ -127,6 +127,13 @@ class Book extends Model
         }
     }
 
+    public function getIsOnShelfAttribute()
+    {
+        if (Auth::guest()) {
+          return false;
+        }
+        
+    }
 
     public function getCoverAttribute()
     {

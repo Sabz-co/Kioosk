@@ -12,7 +12,7 @@
                         <a href="#" class="w-full h-full rounded-lg p-2 bg-green-500 hover:bg-green-600 text-white hover:shadow-lg mt-4">افزودن به لیست</a>
                     </div> --}}
 
-                    {{-- @include('partials.shelves.list') --}}
+                    @include('partials.shelves.list', ['book' => $book, 'list' => $on_list])
                 </div>
                 <div class="flex flex-col flex-1 text-center py-2 pl-2 sm:pl-0 pr-2 sm:py-4 sm:pr-2 my-2 items-center justify-between">
                     <div class="flex flex-col sm:flex-row justify-between w-full items-center">
