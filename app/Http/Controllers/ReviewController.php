@@ -126,17 +126,17 @@ class ReviewController extends Controller
 
 
 
-        // Thanks to Mikey for this clean validation
-        private function form_validation(Request $request)
-        {
-            return $request->validate([
-                'book_id' => ['exists:books,id', 'required'],
-                'shelf' => ['in:read,to_read,reading', 'sometimes|required'],
-                'rating' => ['numeric', 'nullable'],
-                'progress' => ['numeric', 'nullable'],
-                'body' => ['nullable']
-            ]);
-        }
+    // Thanks to Mikey for this clean validation
+    private function form_validation(Request $request)
+    {
+        return $request->validate([
+            'book_id' => ['exists:books,id', 'required'],
+            'shelf' => ['in:read,to_read,reading', 'sometimes|required'],
+            'rating' => ['numeric', 'nullable'],
+            'progress' => ['numeric', 'nullable'],
+            'body' => ['nullable']
+        ]);
+    }
 
 
 
