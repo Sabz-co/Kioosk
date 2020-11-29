@@ -34,8 +34,7 @@ class PagesController extends Controller
 
         $authors = Author::inRandomOrder()->take(4)->get();
 
-        $users = User::inRandomOrder()->take(4)->get();
-
+        $users = User::inRandomOrder()->where('id', '!=', Auth::user()->id)->take(4)->get();
 
         
         return view('home', compact('books', 'users', 'authors', 'trending', 'currently_reading', 'timeline', 'coreaders'));
