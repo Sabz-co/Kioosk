@@ -57,7 +57,7 @@
                         <h2 class="font-bold text-black my-2">{{ $user->name }}</h2>
                         <h3 class="mb-2">تهران، ایران</h3>
                         @if ($user->id != auth()->id() )
-                        <a href="#" class="my-2 mx-auto w-full sm:w-5/6 rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-silver-100 text-white py-1 px-2 lg:px-6" id="subscribe-user" data-source-id="{{ $user->id }}">{{ $user->isSubscribedTo ? 'دنبال کردن' : 'دنبال شده' }}</a>
+                        <a href="#" class="my-2 mx-auto w-full sm:w-5/6 rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-silver-100 text-white py-1 px-2 lg:px-6" id="subscribe-user" data-source-id="{{ $user->id }}">{{ $user->isSubscribedTo ? 'دنبال شده' : 'دنبال کردن' }}</a>
 
                             {{-- <subscribe-button :active="{{ json_encode($user->isSubscribedTo) }}"></subscribe-button> --}}
                         @endif

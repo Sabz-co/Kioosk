@@ -9,6 +9,10 @@ $(document).ready(function() {
         }
     });
 
+
+
+
+
     $('.stars').each(function(index, rated) {
         var $button = $(this);
         var $sourceItem = $button;
