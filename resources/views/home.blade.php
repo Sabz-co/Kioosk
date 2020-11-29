@@ -14,7 +14,7 @@
             <div class="flex bg-silver-200 flex-col md:flex-row rounded-lg text-sm md:text-base">
                 <div class="mx-auto text-silver-700 text-center px-4 py-2 m-2 w-2/6 md:w-1/4 lg:w-1/5">
                     <div class="relative aspect-ratio-book w-full">
-                        <img src="{{ asset('images/books/13.jpg') }}" alt="" class="absolute h-full object-cover rounded-xl group-hover:shadow-lg">
+                        <img src="{{ asset($currently_reading->book->cover) }}" alt="" class="absolute h-full object-cover rounded-xl group-hover:shadow-lg">
                     </div>
                 </div>
                 <div class="flex flex-col flex-1 text-center p-4 m-2 items-center justify-between">
@@ -294,9 +294,9 @@
                         <div class="text-silver-600 flex items-baseline">
     
                             <i class="fas fa-check"></i>
-                            <h2 class="mr-1">آخرین خوانده شده‌ها</h2>
+                            <h2 class="mr-1">خوانده شده</h2>
                         </div>
-                        <a href="#" class="mr-auto text-brown-500 hover:bg-silver-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
+                        <a href="{{ route('my-books', Auth::user()->id) }}" class="mr-auto text-brown-500 hover:bg-silver-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
     
                     </div>
     
@@ -329,9 +329,9 @@
                         <div class="text-silver-600 flex items-baseline">
     
                             <i class="fas fa-book"></i>
-                            <h2 class="mr-1">آخرین در حال خواندن</h2>
+                            <h2 class="mr-1">در حال خواندن‌ها</h2>
                         </div>
-                        <a href="#" class="mr-auto text-brown-500 hover:bg-silver-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
+                        <a href="{{ route('my-books', Auth::user()->id) }}" class="mr-auto text-brown-500 hover:bg-silver-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
     
                     </div>
     
@@ -363,9 +363,9 @@
                         <div class="text-silver-600 flex items-baseline">
     
                             <i class="fas fa-star"></i>
-                            <h2 class="mr-1">آخرین نشان شده‌ها</h2>
+                            <h2 class="mr-1">نشان شده</h2>
                         </div>
-                        <a href="#" class="mr-auto text-brown-500 hover:bg-silver-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
+                        <a href="{{ route('my-books', Auth::user()->id) }}" class="mr-auto text-brown-500 hover:bg-silver-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
     
                     </div>
     
@@ -398,7 +398,7 @@
                             <i class="far fa-user"></i>
                             <h2 class="mr-1">شاید بشناسید</h2>
                         </div>
-                        <a href="#" class="mr-auto text-brown-500 hover:bg-silver-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
+                        {{-- <a href="#" class="mr-auto text-brown-500 hover:bg-silver-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a> --}}
     
                     </div>
     
