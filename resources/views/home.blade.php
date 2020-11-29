@@ -406,7 +406,6 @@
                         @foreach ($users as $randomUser)
                         <div class="flex flex-row items-center mb-4">
                             <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full" alt="">
-    
                             <div class="mr-2">
                                 <h6 class="text-black font-bold">{{ $randomUser->name }}</h6>
                                 <span class="text-silver-600">{{ $randomUser->subscriptions()->count() }} دنبال کننده</span>
@@ -414,29 +413,6 @@
                             <a href="#" class="mr-auto  rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white py-1 px-2  shadow hover:shadow-xl" id="subscribe-user" data-source-id="{{ $randomUser->id }}">{{ $randomUser->isSubscribedTo ? 'دنبال شده' : 'دنبال کردن' }}</a>
                         </div>                            
                         @endforeach
-
-    
-                        <div class="flex flex-row items-center mb-4">
-                            <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full" alt="">
-    
-                            <div class="mr-2">
-                                <h6 class="text-black font-bold">حسین مهرنواز</h6>
-                                <span class="text-silver-600">۲۳۷ دنبال کننده</span>
-                            </div>
-                            <a href="#" class="mr-auto  rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white py-1 px-2  shadow hover:shadow-xl">دنبال کردن</a>
-                        </div>
-    
-                        <div class="flex flex-row items-center mb-4">
-                            <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full" alt="">
-    
-                            <div class="mr-2">
-                                <h6 class="text-black font-bold">حسین مهرنواز</h6>
-                                <span class="text-silver-600">۲۳۷ دنبال کننده</span>
-                            </div>
-                            <a href="#" class="mr-auto  rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white py-1 px-2  shadow hover:shadow-xl">دنبال کردن</a>
-                        </div>
-    
-    
                     </div>
                     {{-- End of sticly --}}
                 </div>
