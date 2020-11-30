@@ -339,7 +339,8 @@
                     </div>                        
                     @endif
 
-    
+                    
+                    @if (Auth::user()->want_to_read_list()->count() > 2)
                     <div class="border-b flex mb-1 pb-2">
                         <div class="text-silver-600 flex items-baseline">
     
@@ -360,21 +361,9 @@
                             </a>
                         </div>
                         @endforeach
-                        <div class="w-1/3 p-1">
-                            <a href="#">
-                                <div class="relative aspect-ratio-book w-full">
-                                    <img src="{{ asset('images/books/25.jpg') }}" alt="" class="hover:grow absolute w-full h-full object-cover rounded-lg group-hover:shadow-lg">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="w-1/3 p-1">
-                            <a href="#">
-                                <div class="relative aspect-ratio-book w-full">
-                                    <img src="{{ asset('images/books/26.jpg') }}" alt="" class="hover:grow absolute w-full h-full object-cover rounded-lg group-hover:shadow-lg">
-                                </div>
-                            </a>
-                        </div>
                     </div>
+                    @endif
+
                     <div class="border-b mb-1 pb-2 hidden xl:flex">
                         <div class="text-silver-600 flex items-baseline">
     
