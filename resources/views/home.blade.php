@@ -324,7 +324,6 @@
                             <h2 class="mr-1">در حال خواندن‌ها</h2>
                         </div>
                         <a href="{{ route('my-books', Auth::user()->id) }}" class="mr-auto text-brown-500 hover:bg-silver-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
-    
                     </div>
     
                     <div class="flex flex-row mb-6"> 
@@ -352,13 +351,15 @@
                     </div>
     
                     <div class="flex flex-row mb-6">
+                        @foreach (Auth::user()->want_to_read_list()->take(3)->get() as $wantToRead)
                         <div class="w-1/3 p-1">
-                            <a href="#">
+                            <a href="{{ route('book.show', $wantToRead->book->slug) }}">
                                 <div class="relative aspect-ratio-book w-full">
-                                    <img src="{{ asset('images/books/24.jpg') }}" alt="" class="hover:grow absolute w-full h-full object-cover rounded-lg group-hover:shadow-lg">
+                                    <img src="{{ asset($wantToRead->book->cover) }}" alt="" class="hover:grow absolute w-full h-full object-cover rounded-lg group-hover:shadow-lg">
                                 </div>
                             </a>
                         </div>
+                        @endforeach
                         <div class="w-1/3 p-1">
                             <a href="#">
                                 <div class="relative aspect-ratio-book w-full">
