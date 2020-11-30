@@ -290,6 +290,8 @@
                 </div>
 
                 <div class="sticky top-0 bg-white">
+
+                    @if (Auth::user()->read_list()->count() > 2)
                     <div class="border-b flex mb-1 pb-2">
                         <div class="text-silver-600 flex items-baseline">
     
@@ -301,28 +303,18 @@
                     </div>
     
                     <div class="flex flex-row mb-6">
+                        @foreach (Auth::user()->read_list()->take(3)->get() as $readBook)
                         <div class="w-1/3 p-1">
-                            <a href="#">
+                            <a href="{{ route('book.show', $readBook->book->slug) }}">
                                 <div class="relative aspect-ratio-book w-full">
-                                    <img src="{{ asset('images/books/18.jpg') }}" alt="" class="hover:grow absolute w-full h-full object-cover rounded-lg group-hover:shadow-lg">
+                                    <img src="{{ asset($readBook->book->cover) }}" alt="" class="hover:grow absolute w-full h-full object-cover rounded-lg group-hover:shadow-lg">
                                 </div>
                             </a>
                         </div>
-                        <div class="w-1/3 p-1">
-                            <a href="#">
-                                <div class="relative aspect-ratio-book w-full">
-                                    <img src="{{ asset('images/books/19.jpg') }}" alt="" class="hover:grow absolute w-full h-full object-cover rounded-lg group-hover:shadow-lg">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="w-1/3 p-1">
-                            <a href="#">
-                                <div class="relative aspect-ratio-book w-full">
-                                    <img src="{{ asset('images/books/20.jpg') }}" alt="" class="hover:grow absolute w-full h-full object-cover rounded-lg group-hover:shadow-lg">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                        @endforeach
+                    </div>                        
+                    @endif
+
     
 
                     <div class="border-b flex mb-1 pb-2">
