@@ -264,7 +264,7 @@
                         <h6 class="text-brown-500 text-right text-sm">گذشت در گذر زمان* ملکه مورچه‌ها و ۹ کتاب دیگر ...</h6>
                     </div> 
                     <div class="flex my-1">
-                        <a href="#" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-silver-100 text-white py-1 px-2 shadow hover:shadow-xl">مشاهده پروفایل</a>
+                        <a href="{{ route('author.show', $author->slug) }}" class="mx-auto w-full sm:w-5/6 rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-silver-100 text-white py-1 px-2 shadow hover:shadow-xl">مشاهده پروفایل</a>
                     </div>
                 </div>
                 @endforeach
@@ -279,10 +279,7 @@
                     <div class="flex items-center justify-center">
                         @foreach ($coreaders->take(3) as $key => $reader)
                         <img src="{{ $reader->owner->avatar }}" class="w-16 h-16 rounded-full {{ $key != 0 ? '-mr-4' : '' }}" alt="">
-
                         @endforeach
-                        {{-- <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full -mr-4" alt=""> --}}
-                        {{-- <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full -mr-4" alt=""> --}}
                     </div>
                     <h6 class="my-2 text-sm">{{ count($coreaders) }} نفر در حال مطالعه‌ی {{ $reader->book->title }} هستند.</h6>
 
@@ -294,12 +291,10 @@
                     @if (Auth::user()->read_list()->count() > 2)
                     <div class="border-b flex mb-1 pb-2">
                         <div class="text-silver-600 flex items-baseline">
-    
                             <i class="fas fa-check"></i>
                             <h2 class="mr-1">خوانده شده</h2>
                         </div>
                         <a href="{{ route('my-books', Auth::user()->id) }}" class="mr-auto text-brown-500 hover:bg-silver-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
-    
                     </div>
     
                     <div class="flex flex-row mb-6">
@@ -343,12 +338,10 @@
                     @if (Auth::user()->want_to_read_list()->count() > 2)
                     <div class="border-b flex mb-1 pb-2">
                         <div class="text-silver-600 flex items-baseline">
-    
                             <i class="fas fa-star"></i>
                             <h2 class="mr-1">نشان شده</h2>
                         </div>
                         <a href="{{ route('my-books', Auth::user()->id) }}" class="mr-auto text-brown-500 hover:bg-silver-200 rounded-full px-2 hover:text-black hover:shadow ">دیدن همه</a>
-    
                     </div>
     
                     <div class="flex flex-row mb-6">
