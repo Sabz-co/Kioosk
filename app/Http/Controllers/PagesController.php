@@ -23,6 +23,7 @@ class PagesController extends Controller
         $trending = array_map('json_decode', Redis::zrevrange('trending_books', 0, 14));
         $reading = null;
         $timeline = [];
+        $coreaders = null;
 
         if (Auth::user()) {
             $timeline = Activity::timeline(Auth::user());

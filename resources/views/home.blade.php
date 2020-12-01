@@ -275,6 +275,7 @@
         <!-- Sidebar -->
         <div class="hidden sm:block sm:w-1/3 lg:w-1/4 p-2 text-xs md:text-sm lg:text-base">
             <div>
+                @if (!empty($coreaders))
                 <div class="text-center mb-4 pb-4">
                     <div class="flex items-center justify-center">
                         @foreach ($coreaders->take(3) as $key => $reader)
@@ -284,7 +285,9 @@
                     <h6 class="my-2 text-sm">{{ count($coreaders) }} نفر در حال مطالعه‌ی {{ $reader->book->title }} هستند.</h6>
 
                     {{-- <a href="#" class="mx-auto w-full sm:w-5/6 rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white py-1 px-2 lg:px-6 shadow hover:shadow-xl">دیدن تمام هم‌خوان‌ها</a> --}}
-                </div>
+                </div>                    
+                @endif
+
 
                 <div class="sticky top-0 bg-white">
 
