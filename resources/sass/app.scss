@@ -403,4 +403,22 @@ input:checked~.toggle__dot {
     background-color: #48bb78;
 }
 
+nav {
+    z-index: 10
+}
+
+nav.scrolled {
+    @apply shadow-2xl;
+    border-bottom: 0px;
+}
+
+.icon {
+    fill: #fff;
+}
+
+.st0 {
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+}
+
 @tailwind utilities;

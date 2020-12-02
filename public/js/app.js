@@ -2170,7 +2170,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -38833,7 +38832,7 @@ var render = function() {
         "button",
         {
           staticClass:
-            "bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white",
+            "bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white",
           attrs: { id: "navbar-menu", "aria-haspopup": "true" },
           on: {
             click: function($event) {
@@ -38848,7 +38847,6 @@ var render = function() {
             "svg",
             {
               staticClass: "h-6 w-6 ",
-              staticStyle: { "enable-background": "new 0 0 512 512" },
               attrs: {
                 version: "1.1",
                 id: "Layer_1",
@@ -51397,7 +51395,31 @@ Vue.component('trix', {
   template: '<trix-editor></trix-editor>'
 });
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  // a beforeMount call to add a listener to the window
+  data: function data() {
+    return {
+      view: {
+        atTopOfPage: true
+      }
+    };
+  },
+  beforeMount: function beforeMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    // the function to call when the user scrolls, added as a method
+    handleScroll: function handleScroll() {
+      // when the user scrolls, check the pageYOffset
+      if (window.pageYOffset > 0) {
+        // user is scrolled
+        if (this.view.atTopOfPage) this.view.atTopOfPage = false;
+      } else {
+        // user is at top of page
+        if (!this.view.atTopOfPage) this.view.atTopOfPage = true;
+      }
+    }
+  }
 });
 
 /***/ }),
