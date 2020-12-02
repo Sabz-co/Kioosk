@@ -29,6 +29,8 @@ Vue.component('author-input', require('./components/AuthorsInputComponent.vue').
 
 Vue.component('image-input', require('./components/ImageInputComponent.vue').default);
 Vue.component('profile-dropdown', require('./components/ProfileDropdown.vue').default);
+Vue.component('navbar-dropdown', require('./components/NavbarDropdown.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
