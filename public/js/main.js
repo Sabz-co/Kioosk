@@ -361,7 +361,7 @@ var searchMenu = document.getElementById("search-toggle");
 var navMenuDiv = document.getElementById("nav-content");
 var navMenu = document.getElementById("nav-toggle");
 
-document.onclick = check;
+// document.onclick = check;
 
 function check(e) {
     var target = (e && e.target) || (event && event.srcElement);

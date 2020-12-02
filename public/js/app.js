@@ -2171,11 +2171,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      isOpen: false
+      isNavbarOpen: false
     };
   },
   created: function created() {
@@ -2183,7 +2182,7 @@ __webpack_require__.r(__webpack_exports__);
 
     var handleEscape = function handleEscape(e) {
       if (e.key === 'Esc' || e.key === 'Escape') {
-        _this.isOpen = false;
+        _this.isNavbarOpen = false;
       }
     };
 
@@ -38824,8 +38823,122 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "mr-3 relative" }, [
+    _c("div", [
+      _c(
+        "button",
+        {
+          staticClass:
+            "bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white",
+          attrs: { id: "navbar-menu", "aria-haspopup": "true" },
+          on: {
+            click: function($event) {
+              _vm.isNavbarOpen = !_vm.isNavbarOpen
+            }
+          }
+        },
+        [
+          _c("span", { staticClass: "sr-only" }, [_vm._v("Open navbar menu")]),
+          _vm._v(" "),
+          _c(
+            "svg",
+            {
+              staticClass: "h-6 w-6 ",
+              staticStyle: { "enable-background": "new 0 0 512 512" },
+              attrs: {
+                version: "1.1",
+                id: "Layer_1",
+                xmlns: "http://www.w3.org/2000/svg",
+                "xmlns:xlink": "http://www.w3.org/1999/xlink",
+                x: "0px",
+                stroke: "currentColor",
+                y: "0px",
+                viewBox: "0 0 512 512",
+                "xml:space": "preserve"
+              }
+            },
+            [
+              _c("g", [
+                _c("path", {
+                  staticClass: "st0",
+                  attrs: {
+                    d:
+                      "M315.1,452.9c0,32.6-26.5,59.1-59.1,59.1s-59.1-26.5-59.1-59.1s26.5-59.1,59.1-59.1S315.1,420.3,315.1,452.9z\n\t\t M315.1,256c0,32.6-26.5,59.1-59.1,59.1s-59.1-26.5-59.1-59.1s26.5-59.1,59.1-59.1S315.1,223.4,315.1,256z M315.1,59.1\n\t\tc0,32.6-26.5,59.1-59.1,59.1s-59.1-26.5-59.1-59.1S223.4,0,256,0S315.1,26.5,315.1,59.1z"
+                  }
+                })
+              ])
+            ]
+          )
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _vm.isNavbarOpen
+      ? _c("button", {
+          staticClass:
+            "fixed inset-0 w-full h-full cursor-default focus:outline-none",
+          attrs: { tabindex: "-1" },
+          on: {
+            click: function($event) {
+              _vm.isNavbarOpen = false
+            }
+          }
+        })
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.isNavbarOpen
+      ? _c(
+          "div",
+          {
+            staticClass:
+              "z-50 origin-top-right absolute right-0 left-auto sm:right-auto sm:left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5",
+            attrs: {
+              role: "menu",
+              "aria-orientation": "vertical",
+              "aria-labelledby": "user-menu"
+            }
+          },
+          [
+            _c(
+              "a",
+              {
+                staticClass:
+                  "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100",
+                attrs: { href: "#", role: "menuitem" }
+              },
+              [_vm._v("کتب")]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass:
+                  "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100",
+                attrs: { href: "#", role: "menuitem" }
+              },
+              [_vm._v("ناشران")]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass:
+                  "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100",
+                attrs: { href: "#", role: "menuitem" }
+              },
+              [_vm._v("نویسندگان")]
+            )
+          ]
+        )
+      : _vm._e()
+  ])
+}
 var staticRenderFns = []
+render._withStripped = true
 
 
 
@@ -38846,7 +38959,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "mr-3 relative" }, [
+  return _c("div", { staticClass: "mr-6 relative" }, [
     _c("div", [
       _c(
         "button",
@@ -51269,9 +51382,9 @@ Vue.component('subscribe-button', __webpack_require__(/*! ./components/Subscribe
 Vue.component('user-notifications', __webpack_require__(/*! ./components/UserNotifications.vue */ "./resources/js/components/UserNotifications.vue")["default"]);
 Vue.component('tag-input', __webpack_require__(/*! ./components/TagsComponent.vue */ "./resources/js/components/TagsComponent.vue")["default"]);
 Vue.component('author-input', __webpack_require__(/*! ./components/AuthorsInputComponent.vue */ "./resources/js/components/AuthorsInputComponent.vue")["default"]);
+Vue.component('navbar', __webpack_require__(/*! ./components/NavbarDropdown.vue */ "./resources/js/components/NavbarDropdown.vue")["default"]);
 Vue.component('image-input', __webpack_require__(/*! ./components/ImageInputComponent.vue */ "./resources/js/components/ImageInputComponent.vue")["default"]);
 Vue.component('profile-dropdown', __webpack_require__(/*! ./components/ProfileDropdown.vue */ "./resources/js/components/ProfileDropdown.vue")["default"]);
-Vue.component('navbar-dropdown', __webpack_require__(/*! ./components/NavbarDropdown.vue */ "./resources/js/components/NavbarDropdown.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

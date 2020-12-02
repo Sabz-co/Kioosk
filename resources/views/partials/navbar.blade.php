@@ -115,13 +115,13 @@
             <img class="block lg:hidden h-8 w-auto rounded-full" src="{{ asset('images/logo.jpg') }}" alt="Workflow">
             <img class="hidden lg:block h-8 w-auto rounded-full" src="{{ asset('images/logo.jpg') }}" alt="Workflow">
           </div>
-          <div class="hidden sm:block sm:mr-6">
-            <div class="flex space-x-4">
-              <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900">Dashboard</a>
-              <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700">Team</a>
-              <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700">Projects</a>
-              <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700">Calendar</a>
-              <input type="text" class="bg-white rounded sm:w-1/2" placeholder="جستجو">
+          <div class="hidden sm:flex sm:mr-6 lg:w-1/2 lg:mx-auto">
+            <div class="flex space-x-4 w-full">
+              {{-- <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900">داشبورد</a>
+              <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700">کتب</a>
+              <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700">ناشران</a>
+              <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700">نویسندگان</a> --}}
+              <input type="text" class="lg:w-full bg-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 focus:text-black focus:outline-none focus:b-1 " placeholder="جستجو">
             </div>
           </div>
         </div>
@@ -135,30 +135,9 @@
           </button>
   
           <!-- Profile dropdown -->
-          <profile-dropdown/>
-          <div class="mr-3 relative">
-            <div>
-              <button class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu" aria-haspopup="true">
-                <span class="sr-only">Open user menu</span>
-                <img class="h-8 w-8 rounded-full" src="{{ asset('images/avatar.jpg') }}" alt="">
-              </button>
-            </div>
-            <!--
-              Profile dropdown panel, show/hide based on dropdown state.
-  
-              Entering: "transition ease-out duration-100"
-                From: "transform opacity-0 scale-95"
-                To: "transform opacity-100 scale-100"
-              Leaving: "transition ease-in duration-75"
-                From: "transform opacity-100 scale-100"
-                To: "transform opacity-0 scale-95"
-            -->
-            <div class="origin-top-right absolute right-0 left-auto sm:right-auto sm:left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Your Profile</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Settings</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Sign out</a>
-            </div>
-          </div>
+          {{-- <profile-dropdown/> --}}
+          <navbar/>
+
         </div>
       </div>
     </div>
@@ -170,15 +149,15 @@
     -->
     <div id="mobile-menu" class="hidden">
       <div class="px-2 pt-2 pb-3 space-y-1">
-        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900">Dashboard</a>
-        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Team</a>
-        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Projects</a>
-        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Calendar</a>
+        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900">داشبورد</a>
+        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">کتب</a>
+        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">نویسندگان</a>
+        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">ناشران</a>
       </div>
     </div>
   </nav>
 
-<nav id="header" class="w-full">
+{{-- <nav id="header" class="w-full">
 
     <!--Nav-->
     <div class="relative w-full top-0 border-b border-grey-light">
@@ -196,21 +175,19 @@
         <div class="w-20 lg:flex  lg:content-center lg:justify-start lg:w-1/2 hidden lg:block mt-2 lg:mt-0 z-20 bg-gray-300" id="nav-content">
 
           <ul class="list-reset lg:flex justify-end items-center">
-            {{-- <li class="mr-3 py-2 lg:py-0">
+             <li class="mr-3 py-2 lg:py-0">
                 <a href="/home"
                     class="mt-4 hidden lg:inline-block py-1 px-2 rounded lg:mt-0 text-gray-200 hover:text-white hover:bg-gray-700 ml-3 xl:ml-5">
                     خانه
                 </a>
             </li>
 
-            @if(Auth::user())
             <li class="mr-3 py-2 lg:py-0">
                 <a href="{{ route('my-books', Auth::user()->id) }}"
                     class="mt-4 hidden lg:inline-block py-1 px-2 rounded lg:mt-0 text-gray-200 hover:text-white hover:bg-gray-700 ml-3 xl:ml-5">
                     کتاب‌های من
                 </a>    
             </li>
-            @endif
 
             <li class="mr-3 py-2 lg:py-0">
                 <a href="{{ url('genres') }}"
@@ -232,7 +209,7 @@
                     class="mt-4 hidden lg:inline-block py-1 px-2 rounded lg:mt-0 text-gray-200 hover:text-white hover:bg-gray-700 ml-3 xl:ml-5">
                     نویسندگان
                 </a>
-            </li> --}}
+            </li> 
             <li id="search-toggle" class="mr-3 py-2 lg:py-0 search-icon cursor-pointer">
                     <svg class="fill-current pointer-events-none text-white w-4 h-4 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                       <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
@@ -268,8 +245,7 @@
       </div>
     </div>
 
-    <!--Search-->
-    {{-- <div class="absolute z-10 w-full hidden bg-white" id="search-content">
+     <div class="absolute z-10 w-full hidden bg-white" id="search-content">
       <div class="container mx-auto py-4 text-black shadow-xl">
         <input id="searchfield" type="search" placeholder="جستجو کنید ..." autofocus="autofocus" class="w-full text-grey-800 transition focus:outline-none focus:border-transparent p-2 appearance-none leading-normal text-xl lg:text-2xl">
       </div>
@@ -280,6 +256,6 @@
           <li>چیپس</li>
       </ul>
 
-    </div> --}}
+    </div> 
     @livewire('search')
-  </nav>
+  </nav> --}}

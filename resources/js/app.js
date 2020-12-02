@@ -26,10 +26,10 @@ Vue.component('subscribe-button', require('./components/SubscribeButton.vue').de
 Vue.component('user-notifications', require('./components/UserNotifications.vue').default);
 Vue.component('tag-input', require('./components/TagsComponent.vue').default);
 Vue.component('author-input', require('./components/AuthorsInputComponent.vue').default);
+Vue.component('navbar', require('./components/NavbarDropdown.vue').default);
 
 Vue.component('image-input', require('./components/ImageInputComponent.vue').default);
 Vue.component('profile-dropdown', require('./components/ProfileDropdown.vue').default);
-Vue.component('navbar-dropdown', require('./components/NavbarDropdown.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
