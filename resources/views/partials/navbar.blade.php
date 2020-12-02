@@ -90,12 +90,11 @@
     <!--Nav-->
     <div class="relative w-full top-0 border-b border-grey-light">
       <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
-        <div class="pl-4 flex items-center">
+        <div class="pr-4 flex items-center">
           <img src="{{ asset('images/logo.jpg') }}" class="rounded-full w-10" alt="">
         </div>
-        <span class="hidden md:inline-block font-semibold text-xl tracking-tight lg:ml-6 text-white">کیوسک</span>
 
-        <div class="pr-4">
+        <div class="pl-4">
           <button id="nav-toggle" class="block lg:hidden flex items-center px-3 py-2 border rounded text-grey border-grey-dark hover:text-black hover:border-purple appearance-none focus:outline-none">
             <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg>
           </button>
