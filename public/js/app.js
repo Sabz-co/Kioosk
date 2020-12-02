@@ -38816,7 +38816,7 @@ var render = function() {
                   "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100",
                 attrs: { href: "#", role: "menuitem" }
               },
-              [_vm._v("Your Profile")]
+              [_vm._v("پروفایل شما")]
             ),
             _vm._v(" "),
             _c(
@@ -38826,7 +38826,7 @@ var render = function() {
                   "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100",
                 attrs: { href: "#", role: "menuitem" }
               },
-              [_vm._v("Settings")]
+              [_vm._v("تنظیمات")]
             ),
             _vm._v(" "),
             _c(
@@ -38836,7 +38836,7 @@ var render = function() {
                   "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100",
                 attrs: { href: "#", role: "menuitem" }
               },
-              [_vm._v("Sign out")]
+              [_vm._v("خروج")]
             )
           ]
         )
