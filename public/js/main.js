@@ -304,7 +304,9 @@ $(document).ready(function() {
 
     });
 
-
+    $('#mobile-icon').click(function() {
+        $('#mobile-menu').toggleClass('hidden block'); //Adds 'a', removes 'b' and vice versa
+    });
 
     $(".update-review").on("click", function(e) {
         e.preventDefault(); /* prevent form submiting here */

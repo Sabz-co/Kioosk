@@ -2149,6 +2149,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -38745,25 +38758,30 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "relative" }, [
-    _c(
-      "button",
-      {
-        staticClass:
-          "relative z-10 block mt-4 items-center justify-center rounded-full lg:mt-0 text-white h-8 w-8 hover:text-white hover:bg-gray-700 mr-3 xl:mr-5 border-2 border-white focus:outline-none",
-        on: {
-          click: function($event) {
-            _vm.isOpen = !_vm.isOpen
+  return _c("div", { staticClass: "mr-3 relative" }, [
+    _c("div", [
+      _c(
+        "button",
+        {
+          staticClass:
+            "bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white",
+          attrs: { id: "user-menu", "aria-haspopup": "true" },
+          on: {
+            click: function($event) {
+              _vm.isOpen = !_vm.isOpen
+            }
           }
-        }
-      },
-      [
-        _c("img", {
-          staticClass: " rounded-full",
-          attrs: { src: "/images/avatar.jpg", alt: "" }
-        })
-      ]
-    ),
+        },
+        [
+          _c("span", { staticClass: "sr-only" }, [_vm._v("Open user menu")]),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "h-8 w-8 rounded-full",
+            attrs: { src: "/images/avatar.jpg", alt: "" }
+          })
+        ]
+      )
+    ]),
     _vm._v(" "),
     _vm.isOpen
       ? _c("button", {
@@ -38783,37 +38801,42 @@ var render = function() {
           "div",
           {
             staticClass:
-              "absolute mt-2 py-2 w-48 bg-white rounded-lg shadow-lg left-0"
+              "z-50 origin-top-right absolute right-0 left-auto sm:right-auto sm:left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5",
+            attrs: {
+              role: "menu",
+              "aria-orientation": "vertical",
+              "aria-labelledby": "user-menu"
+            }
           },
           [
             _c(
               "a",
               {
                 staticClass:
-                  "block px-4 py-2 text-gray-800 hover:bg-gray-500 hover:text-white",
-                attrs: { href: "#" }
+                  "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100",
+                attrs: { href: "#", role: "menuitem" }
               },
-              [_vm._v("تنظیمات پروفایل")]
+              [_vm._v("Your Profile")]
             ),
             _vm._v(" "),
             _c(
               "a",
               {
                 staticClass:
-                  "block px-4 py-2 text-gray-800 hover:bg-gray-500 hover:text-white",
-                attrs: { href: "#" }
+                  "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100",
+                attrs: { href: "#", role: "menuitem" }
               },
-              [_vm._v("پشتیبانی")]
+              [_vm._v("Settings")]
             ),
             _vm._v(" "),
             _c(
               "a",
               {
                 staticClass:
-                  "block px-4 py-2 text-gray-800 hover:bg-gray-500 hover:text-white",
-                attrs: { href: "#" }
+                  "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100",
+                attrs: { href: "#", role: "menuitem" }
               },
-              [_vm._v("خروج")]
+              [_vm._v("Sign out")]
             )
           ]
         )
