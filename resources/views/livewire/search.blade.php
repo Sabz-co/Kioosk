@@ -12,7 +12,7 @@
           @endif --}}
           <a  href="{{ route('book.show', $book->slug) }}" class="flex flex-row h-16 text-sm text-gray-700 hover:bg-brown-100 hover:text-gray-900">
             <div class="w-16">
-              <img src="http://localhost:8000/images/books/thumbnail/1605270071be63161c-9563-46a6-aee7-38c5fbe4bc49.jpg" class="h-full object-cover mx-auto" alt="">
+              <img src="{{ asset($book->cover) }}" class="h-full object-cover mx-auto" alt="">
             </div>
             <div class="flex flex-col px-4 py-2 text-sm text-gray-700 hover:text-gray-900 flex-grow h-full justify-around text-right">
               <h4 class="text-lg text-bold">{{ $book->title }}</h4>
