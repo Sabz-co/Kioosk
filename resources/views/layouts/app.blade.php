@@ -54,5 +54,6 @@
     
     <script type="text/javascript" src="{{ asset('js/jquery.autocomplete.js') }}"></script>
     <script type="text/javascript" src="{{ asset("js/main.js") }}"></script>
+    <script src="{{ asset('js/share.js') }}"></script>
     @yield('footer-assets')
 </html>

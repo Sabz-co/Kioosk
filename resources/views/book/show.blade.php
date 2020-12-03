@@ -309,6 +309,24 @@
         <div class="flex sm:w-1/3 lg:w-1/4 p-3">
             <div class="w-full">
                 <div class="sticky top-0 bg-white">
+
+                    <div class="w-full flex mb-1 py-2">
+                        <div class="text-silver-800 flex items-baseline ">
+    
+                            <h2 class="mr-1 font-bold">هم‌رسانی</h2>
+                        </div>
+    
+                    </div>
+
+                    {!! 
+                        Share::currentPage(null, ['class' => 'fa-2x'], '<ul class=\'border-b pb-3 mb-3 flex flex-row justify-between\'>', '</ul>')
+                        ->twitter($book->title .' اثر امیرمسعود مهرابیان. @Kioosk')
+                        ->whatsapp()
+                        ->reddit()
+                        ->telegram()
+                         !!}
+
+
                     @if (!empty($book->author->first()) && $book->author->first()->books->count() > 3)
                     <div class="border-b flex mb-1 py-2">
                         <div class="text-silver-800 flex items-baseline">
