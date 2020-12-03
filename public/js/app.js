@@ -38853,7 +38853,7 @@ var render = function() {
                 xmlns: "http://www.w3.org/2000/svg",
                 "xmlns:xlink": "http://www.w3.org/1999/xlink",
                 x: "0px",
-                stroke: "currentColor",
+                stroke: "fill-current text-green-600",
                 y: "0px",
                 viewBox: "0 0 512 512",
                 "xml:space": "preserve"
@@ -51400,7 +51400,8 @@ var app = new Vue({
   data: function data() {
     return {
       view: {
-        atTopOfPage: true
+        atTopOfPage: true,
+        navbarHeightClass: 'h-16'
       }
     };
   },
@@ -51414,9 +51415,11 @@ var app = new Vue({
       if (window.pageYOffset > 0) {
         // user is scrolled
         if (this.view.atTopOfPage) this.view.atTopOfPage = false;
+        this.view.navbarHeightClass = 'h-12';
       } else {
         // user is at top of page
         if (!this.view.atTopOfPage) this.view.atTopOfPage = true;
+        this.view.navbarHeightClass = 'h-16';
       }
     }
   }

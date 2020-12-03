@@ -85,7 +85,7 @@
 
 <nav class="bg-gray-800 fixed w-full top-0 main-header" :class="{ 'scrolled': !view.atTopOfPage }" >
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-      <div class="relative flex items-center justify-between h-16">
+      <div class="relative flex items-center justify-between transition duration-500 ease-in-out"  v-bind:class="view.navbarHeightClass">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile menu button-->
           <button id="mobile-icon" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-expanded="false">
@@ -121,7 +121,7 @@
               <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700">کتب</a>
               <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700">ناشران</a>
               <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700">نویسندگان</a> --}}
-              <input type="text" class="lg:w-full bg-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 focus:text-black focus:outline-none focus:b-1 " placeholder="جستجو">
+              <input type="text" class=" transition duration-500 ease-in-out lg:w-full bg-gray-100 focus:bg-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 focus:text-black focus:outline-none focus:b-1 " placeholder="جستجو">
             </div>
           </div>
         </div>
@@ -156,7 +156,7 @@
       </div>
     </div>
   </nav>
-  <div style="padding-top:64px;"></div>
+  <div style="padding-top:64px;" class="bg-white"></div>
 
 {{-- <nav id="header" class="w-full">
 

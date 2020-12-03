@@ -3,7 +3,7 @@
             <div>
               <button  @click="isNavbarOpen = !isNavbarOpen" class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="navbar-menu" aria-haspopup="true">
                 <span class="sr-only">Open navbar menu</span>
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" stroke="currentColor" class="h-6 w-6 " y="0px"
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" stroke="fill-current text-green-600" class="h-6 w-6 " y="0px"
 	 viewBox="0 0 512 512" xml:space="preserve">
 <g>
 	<path class="st0" d="M315.1,452.9c0,32.6-26.5,59.1-59.1,59.1s-59.1-26.5-59.1-59.1s26.5-59.1,59.1-59.1S315.1,420.3,315.1,452.9z

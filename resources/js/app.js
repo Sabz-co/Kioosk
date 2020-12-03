@@ -47,7 +47,8 @@ const app = new Vue({
     data() {
         return {
             view: {
-                atTopOfPage: true
+                atTopOfPage: true,
+                navbarHeightClass: 'h-16'
             }
         }
     },
@@ -61,9 +62,11 @@ const app = new Vue({
             if (window.pageYOffset > 0) {
                 // user is scrolled
                 if (this.view.atTopOfPage) this.view.atTopOfPage = false
+                this.view.navbarHeightClass = 'h-12'
             } else {
                 // user is at top of page
                 if (!this.view.atTopOfPage) this.view.atTopOfPage = true
+                this.view.navbarHeightClass = 'h-16'
             }
         }
     }

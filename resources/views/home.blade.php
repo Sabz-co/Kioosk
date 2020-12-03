@@ -39,7 +39,7 @@
                                   </label>
                                 </div>
                                 <div class="w-16 mx-2">
-                                  <input name="pages" value="{{ $currently_reading->progress }}" class="bg-white appearance-none border-2 border-white rounded w-full p-1 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="pages" type="number" min="1" max="{{ $currently_reading->book->page_count }}">
+                                  <input name="pages" value="{{ $currently_reading->progress }}" class="bg-white  appearance-none border-2 border-white rounded w-full p-1 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="pages" type="number" min="1" max="{{ $currently_reading->book->page_count }}">
                                 </div>
                                 <span >صفحه از {{ $currently_reading->book->page_count }} صفحه</span>
                               </div>
