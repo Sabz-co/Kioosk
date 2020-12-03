@@ -8,7 +8,10 @@ require('./bootstrap');
 
 // import 'jquery-ui/ui/widgets/autocomplete.js';
 
-window.Vue = require('vue');
+import Vue from 'vue';
+// import 'livewire-vue'
+
+window.Vue = Vue;
 
 /**
  * The following block of code may be used to automatically register your

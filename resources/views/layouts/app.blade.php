@@ -47,12 +47,12 @@
 
 
 </body>
+@livewireScripts
 
 <script src="{{ asset('js/app.js') }}" ></script>
     <script type="text/javascript" src="{{ asset('js/trix.js') }}"></script>
     
     <script type="text/javascript" src="{{ asset('js/jquery.autocomplete.js') }}"></script>
     <script type="text/javascript" src="{{ asset("js/main.js") }}"></script>
-    @livewireScripts
     @yield('footer-assets')
 </html>

@@ -7,7 +7,7 @@
     {{-- <input type="text" class=" transition duration-500 ease-in-out lg:w-full bg-gray-100 focus:bg-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 focus:text-black focus:outline-none focus:b-1 " placeholder="جستجو"> --}}
     <div class="relative inline-block text-left lg:w-full">
       <div>
-        <input id="searchfield" wire:model="searchTerm" type="search" class=" transition duration-500 ease-in-out lg:w-full bg-gray-100 focus:bg-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 focus:text-black focus:outline-none focus:b-1 " placeholder="جستجو">
+        <input autocomplete="off" id="searchfield"  wire:model="searchTerm" type="text" class=" transition duration-500 ease-in-out lg:w-full bg-gray-100 focus:bg-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 focus:text-black focus:outline-none focus:b-1 " placeholder="جستجو">
 
       </div>
     
@@ -42,7 +42,7 @@
         @if ($key == 0)
           <h3 class="text-right px-4 py-2 text-brown-800">نویسندگان:</h3>
         @endif
-          <a  href="{{ route('book.show', $author->slug) }}" class="flex flex-row h-16 text-sm text-gray-700 hover:bg-brown-100 hover:text-gray-900">
+          <a  href="{{ route('author.show', $author->slug) }}" class="flex flex-row h-16 text-sm text-gray-700 hover:bg-brown-100 hover:text-gray-900">
             <div class="w-16">
               <img src="{{ asset($author->avatar) }}" class="h-full object-cover mx-auto" alt="">
             </div>

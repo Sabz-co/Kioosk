@@ -51353,9 +51353,13 @@ module.exports = function(module) {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -51364,7 +51368,9 @@ module.exports = function(module) {
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // import 'jquery-ui/ui/widgets/autocomplete.js';
 
 
-window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+ // import 'livewire-vue'
+
+window.Vue = vue__WEBPACK_IMPORTED_MODULE_0___default.a;
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -51375,14 +51381,14 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
-Vue.component('subscribe-button', __webpack_require__(/*! ./components/SubscribeButton.vue */ "./resources/js/components/SubscribeButton.vue")["default"]);
-Vue.component('user-notifications', __webpack_require__(/*! ./components/UserNotifications.vue */ "./resources/js/components/UserNotifications.vue")["default"]);
-Vue.component('tag-input', __webpack_require__(/*! ./components/TagsComponent.vue */ "./resources/js/components/TagsComponent.vue")["default"]);
-Vue.component('author-input', __webpack_require__(/*! ./components/AuthorsInputComponent.vue */ "./resources/js/components/AuthorsInputComponent.vue")["default"]);
-Vue.component('navbar', __webpack_require__(/*! ./components/NavbarDropdown.vue */ "./resources/js/components/NavbarDropdown.vue")["default"]);
-Vue.component('image-input', __webpack_require__(/*! ./components/ImageInputComponent.vue */ "./resources/js/components/ImageInputComponent.vue")["default"]);
-Vue.component('profile-dropdown', __webpack_require__(/*! ./components/ProfileDropdown.vue */ "./resources/js/components/ProfileDropdown.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('subscribe-button', __webpack_require__(/*! ./components/SubscribeButton.vue */ "./resources/js/components/SubscribeButton.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('user-notifications', __webpack_require__(/*! ./components/UserNotifications.vue */ "./resources/js/components/UserNotifications.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('tag-input', __webpack_require__(/*! ./components/TagsComponent.vue */ "./resources/js/components/TagsComponent.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('author-input', __webpack_require__(/*! ./components/AuthorsInputComponent.vue */ "./resources/js/components/AuthorsInputComponent.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('navbar', __webpack_require__(/*! ./components/NavbarDropdown.vue */ "./resources/js/components/NavbarDropdown.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('image-input', __webpack_require__(/*! ./components/ImageInputComponent.vue */ "./resources/js/components/ImageInputComponent.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('profile-dropdown', __webpack_require__(/*! ./components/ProfileDropdown.vue */ "./resources/js/components/ProfileDropdown.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -51390,11 +51396,11 @@ Vue.component('profile-dropdown', __webpack_require__(/*! ./components/ProfileDr
  */
 
 window.User = window.Kioosk.user;
-Vue.config.ignoredElements = ['trix-editor'];
-Vue.component('trix', {
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.config.ignoredElements = ['trix-editor'];
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('trix', {
   template: '<trix-editor></trix-editor>'
 });
-var app = new Vue({
+var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   // a beforeMount call to add a listener to the window
   data: function data() {
