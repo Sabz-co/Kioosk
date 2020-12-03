@@ -115,15 +115,8 @@
             <img class="block lg:hidden h-8 w-auto rounded-full" src="{{ asset('images/logo.jpg') }}" alt="Workflow">
             <img class="hidden lg:block h-8 w-auto rounded-full" src="{{ asset('images/logo.jpg') }}" alt="Workflow">
           </div>
-          <div class="hidden sm:flex sm:mr-6 lg:w-1/2 lg:mx-auto">
-            <div class="flex space-x-4 w-full">
-              {{-- <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900">داشبورد</a>
-              <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700">کتب</a>
-              <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700">ناشران</a>
-              <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700">نویسندگان</a> --}}
-              <input type="text" class=" transition duration-500 ease-in-out lg:w-full bg-gray-100 focus:bg-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 focus:text-black focus:outline-none focus:b-1 " placeholder="جستجو">
-            </div>
-          </div>
+          @livewire('search')
+
         </div>
         <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
           <button class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">

@@ -29,4 +29,6 @@ class Author extends Model
   {
      return ucfirst($this->first_name) . ' ' . ucfirst($this->last_name);
   }
+
+  
 }
