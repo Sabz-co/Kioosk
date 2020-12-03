@@ -26,11 +26,11 @@
           @if ($key == 0)
             <h3 class="text-right px-4 py-2 text-brown-800">کتاب‌ها:</h3>
           @endif
-          <a  href="{{ route('book.show', $book->slug) }}" class="flex flex-row h-20 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
+          <a  href="{{ route('book.show', $book->slug) }}" class="flex flex-row h-16 text-sm text-gray-700 hover:bg-brown-100 hover:text-gray-900">
             <div class="w-16">
               <img src="http://localhost:8000/images/books/thumbnail/1605270071be63161c-9563-46a6-aee7-38c5fbe4bc49.jpg" class="h-full object-cover mx-auto" alt="">
             </div>
-            <div class="flex flex-col px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex-grow h-full justify-around text-right">
+            <div class="flex flex-col px-4 py-2 text-sm text-gray-700 hover:text-gray-900 flex-grow h-full justify-around text-right">
               <h4 class="text-lg text-bold">{{ $book->title }}</h4>
               @foreach ($book->author as $author)
                 <span>{{ $author->fullName }}</span>
@@ -42,11 +42,11 @@
         @if ($key == 0)
           <h3 class="text-right px-4 py-2 text-brown-800">نویسندگان:</h3>
         @endif
-          <a  href="{{ route('book.show', $author->slug) }}" class="flex flex-row h-20 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
+          <a  href="{{ route('book.show', $author->slug) }}" class="flex flex-row h-16 text-sm text-gray-700 hover:bg-brown-100 hover:text-gray-900">
             <div class="w-16">
-              <img src="http://localhost:8000/images/authors/thumbnail/1605270071be63161c-9563-46a6-aee7-38c5fbe4bc49.jpg" class="h-full object-cover mx-auto" alt="">
+              <img src="{{ asset($author->avatar) }}" class="h-full object-cover mx-auto" alt="">
             </div>
-            <div class="flex flex-col px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex-grow h-full justify-around text-right">
+            <div class="flex flex-col px-4 py-2 text-sm text-gray-700 hover:text-gray-900 flex-grow h-full justify-around text-right">
               <h4 class="text-lg text-bold">{{ $author->fullName }}</h4>
 
             </div>

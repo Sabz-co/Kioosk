@@ -30,5 +30,12 @@ class Author extends Model
      return ucfirst($this->first_name) . ' ' . ucfirst($this->last_name);
   }
 
-  
+  public function getAvatarAttribute()
+  {
+    // if(empty($this->thumb)) {
+    //   return 'images/books/placeholder.png';
+    // }
+
+    return 'images/authors/placeholder.png';
+  }
 }
