@@ -2,7 +2,7 @@
   <div class="flex space-x-4 w-full">
     <div class="relative inline-block text-left lg:w-full">
       <div>
-        <input autocomplete="off" id="searchfield"  wire:model="searchTerm" type="text" class=" transition duration-500 ease-in-out lg:w-full bg-gray-100 focus:bg-white px-3 py-2 rounded-md text-sm font-medium text-gray-300 focus:text-black focus:outline-none focus:b-1 " placeholder="جستجو">
+        <input autocomplete="off" id="searchfield"  wire:model="searchTerm" type="text" class="border border-brown-300 transition duration-100 ease-in-out lg:w-full bg-gray-800 focus:bg-white px-3 py-2 rounded-md text-sm font-medium text-brown-300 placeholder-brown-300 focus:placeholder-brown-800 focus:text-black focus:outline-none " placeholder="جستجو">
       </div>
     
       <div class="origin-top-right lg:w-full absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
