@@ -2,7 +2,7 @@
 
 @section('content')
         <!-- Right side -->
-        <div class="flex flex-col sm:flex-row">
+        <div class="flex flex-col sm:flex-row w-full">
 
         <div class="flex flex-col  sm:w-3/5 lg:w-2/3 p-2">
         {{-- Start of genre --}}
