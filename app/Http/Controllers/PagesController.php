@@ -45,7 +45,8 @@ class PagesController extends Controller
     public function genres(){
         $genres = Genre::all();
         $randomGenres = Genre::inRandomOrder()->take(3)->get();
-        return view('genres.index', compact('genres', 'randomGenres'));
+        $latestBooks = Book::orderBy('created_at', 'desc')->take(5)->get();
+        return view('genres.index', compact('genres', 'randomGenres', 'latestBooks'));
     }
     
 
