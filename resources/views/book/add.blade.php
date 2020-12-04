@@ -55,6 +55,15 @@
                     <p class="mb-1">لطفاً حداقل ۳ تگ را برای کتاب وارد کنید تا کاربران بتوانند راحت‌تر آن را پیدا کنند</p>
                     <tag-input name="tags" :classes="'w-full'"></tag-input>
                 </div>
+                <div class="w-5/6 sm:w-2/3 mx-auto mb-6 flex flex-col">
+
+                    <label class="block mt-4">
+                        <p class="mb-1">ژانر</p>
+                        {!! Form::select('genre', $genres , null, [ 'class' => 'bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 w-full']) !!}
+                      </label>
+                </div>
+
+
 
                 <div class="w-5/6 sm:w-2/3 mx-auto mb-6 flex flex-col">
                     <p class="mb-1">عکس جلد کتاب را انتخاب کنید</p>

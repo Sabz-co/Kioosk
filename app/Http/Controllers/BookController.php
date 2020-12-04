@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Review;
 use App\Book;
 use App\Publisher;
+use App\Genre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
 use Image;
@@ -33,8 +34,9 @@ class BookController extends Controller
     public function create()
     {
         $publishers = Publisher::pluck('title', 'id');
+        $genres = Genre::pluck('name');
         // return $publishers;
-        return view('book.add', compact('publishers'));
+        return view('book.add', compact('publishers', 'genres'));
     }
 
     /**
@@ -79,10 +81,11 @@ class BookController extends Controller
                 $imagemodel= new Image();
                 $book->thumb=time().$originalImage->getClientOriginalName();
             }
-            //Temporary
-            // $book->slug = $book->title;
-            $book->save();
             
+            $book->save();
+            if ($request->has('genre')) {
+                $book->tag($request->genre);
+            }
         return redirect()->route('book.show', $book->slug);
     }
 
