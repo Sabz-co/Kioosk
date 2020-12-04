@@ -46,10 +46,7 @@ class GenreController extends Controller
      */
     public function show(Genre $genre)
     {
-        $tag = \Conner\Tagging\Model\Tag::where('count', '>', 2)->first();
-        foreach($tag->tag() as $book) {
-            echo $book->title;
-        }
+        dd($genre);
         return view('genres.show', compact('genre'));
     }
 

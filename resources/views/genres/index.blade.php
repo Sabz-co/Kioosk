@@ -119,76 +119,13 @@
             <div>
                 <div class="text-center mb-4 pb-2 text-sm">
                     <div class="flex flex-col items-center justify-center p-3 rounded-xl bg-silver-200">
+                        @foreach ($genres->chunk(2) as $twoGenres)
                         <div class="flex flex-row justify-between w-full mb-4">
-                            <a href="">قرن ده‌ام</a>
-                            <a href="">قرن یازده‌ام</a>
-                        </div>
-
-                        <div class="flex flex-row justify-between w-full mb-4">
-                            <a href="">اکشن</a>
-                            <a href="">رمانتیک</a>
-                        </div>
-
-                        <div class="flex flex-row justify-between w-full mb-4">
-                            <a href="">مذهبی</a>
-                            <a href="">سیاسی</a>
-                        </div>
-
-                        <div class="flex flex-row justify-between w-full mb-4">
-                            <a href="">اجتماعی</a>
-                            <a href="">خانوادگی</a>
-                        </div>
-
-                        <div class="flex flex-row justify-between w-full mb-4">
-                            <a href="">عاشقانه</a>
-                            <a href="">رباتیک</a>
-                        </div>
-
-                        <div class="flex flex-row justify-between w-full mb-4">
-                            <a href="">پیشرفت شخصی</a>
-                            <a href="">روانشناسی</a>
-                        </div>
-
-                        <div class="flex flex-row justify-between w-full mb-4">
-                            <a href="">روانپزشکی</a>
-                            <a href="">پزشکی</a>
-                        </div>
-
-                        <div class="flex flex-row justify-between w-full mb-4">
-                            <a href="">قرن ده‌ام</a>
-                            <a href="">قرن یازده‌ام</a>
-                        </div>
-
-                        <div class="flex flex-row justify-between w-full mb-4">
-                            <a href="">اکشن</a>
-                            <a href="">رمانتیک</a>
-                        </div>
-
-                        <div class="flex flex-row justify-between w-full mb-4">
-                            <a href="">مذهبی</a>
-                            <a href="">سیاسی</a>
-                        </div>
-
-                        <div class="flex flex-row justify-between w-full mb-4">
-                            <a href="">اجتماعی</a>
-                            <a href="">خانوادگی</a>
-                            
-                        </div>
-
-                        <div class="flex flex-row justify-between w-full mb-4">
-                            <a href="">عاشقانه</a>
-                            <a href="">رباتیک</a>
-                        </div>
-
-                        <div class="flex flex-row justify-between w-full mb-4">
-                            <a href="">پیشرفت شخصی</a>
-                            <a href="">روانشناسی</a>
-                        </div>
-
-                        <div class="flex flex-row justify-between w-full mb-4">
-                            <a href="">روانپزشکی</a>
-                            <a href="">پزشکی</a>
-                        </div>
+                            @foreach ($twoGenres as $genre)
+                                <a href="{{ route('genre.show', $genre->slug) }}"> {{ $genre->name }}</a>
+                            @endforeach
+                        </div>                            
+                        @endforeach
                     </div>
                 </div>
             </div>

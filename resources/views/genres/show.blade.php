@@ -72,6 +72,7 @@
             <div>
                 <div class="text-center mb-4 pb-2 text-sm">
                     <div class="flex flex-col items-center justify-center p-3 rounded-xl bg-silver-200">
+                        
                         <div class="flex flex-row justify-between w-full mb-4">
                             <a href="">قرن ده‌ام</a>
                             <a href="">قرن یازده‌ام</a>

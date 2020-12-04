@@ -24,9 +24,7 @@ Route::get('/home', 'PagesController@home')->name('homepage');
 
 Route::get('/test', 'PagesController@test');
 
-Route::get('/genres', function () {
-    return view('genres.index');
-});
+Route::get('/genres', 'PagesController@genres');
 
 Route::resource('/genre', 'GenreController');
 
