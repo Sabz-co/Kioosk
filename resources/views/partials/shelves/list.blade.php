@@ -9,7 +9,6 @@
       </button>
       <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 w-full">
         <li class="">
-          {{ $book->id }}
             {!! Form::open(['route' => 'review.store']) !!}
             {!! Form::token() !!}
             {!! Form::hidden('book_id', $book->id) !!}
