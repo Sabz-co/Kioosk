@@ -143,7 +143,7 @@
     <div id="mobile-menu" class="hidden">
       <div class="px-2 pt-2 pb-3 space-y-1">
         <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900">داشبورد</a>
-        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">کتب</a>
+        <a href="{{ route('genre.index') }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">کتب</a>
         <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">نویسندگان</a>
         <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">ناشران</a>
       </div>

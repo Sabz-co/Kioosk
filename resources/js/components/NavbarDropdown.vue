@@ -26,7 +26,7 @@
             -->
             <button v-if="isNavbarOpen" @click="isNavbarOpen = false" tabindex="-1" class="fixed inset-0 w-full h-full cursor-default focus:outline-none"></button>
             <div  v-if="isNavbarOpen" class="z-50 origin-top-right absolute right-0 left-auto sm:right-auto sm:left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">کتب</a>
+              <a href="/genres" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">کتب</a>
               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">ناشران</a>
               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">نویسندگان</a>
             </div>

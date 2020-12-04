@@ -38906,7 +38906,7 @@ var render = function() {
               {
                 staticClass:
                   "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100",
-                attrs: { href: "#", role: "menuitem" }
+                attrs: { href: "/genres", role: "menuitem" }
               },
               [_vm._v("کتب")]
             ),
