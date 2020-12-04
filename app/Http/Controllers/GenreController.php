@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Genre;
+use App\Book;
 use Illuminate\Http\Request;
 
 class GenreController extends Controller
@@ -46,8 +47,9 @@ class GenreController extends Controller
      */
     public function show(Genre $genre)
     {
-        dd($genre);
-        return view('genres.show', compact('genre'));
+        $genres = Genre::all();
+        $books = Book::withAnyTag([$genre->slug])->get();
+        return view('genres.show', compact('books', 'genre', 'genres'));
     }
 
     /**
