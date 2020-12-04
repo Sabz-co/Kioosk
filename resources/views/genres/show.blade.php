@@ -2,16 +2,20 @@
 
 @section('content')
         <!-- Right side -->
-        <div class="flex flex-col sm:flex-row">
+        <div class="flex flex-col sm:flex-row w-full">
 
         <div class="flex flex-col  sm:w-3/5 lg:w-2/3 p-2">
         {{-- Start of genre --}}
 
         <div class="w-full">
-            <div class="flex items-center my-4 border-b pb-2">
-                <h1 class="text-lg">{{ $genre->name }}</h1>
-                <a href="#" class="text-brown-500 rounded-full hover:bg-silver-200 hover:text-black px-2 mr-auto">دیدن همه</a>
+            <div class="flex flex-col items-start text-right my-4 border-b pb-2">
+                <h1 class="text-2xl font-bold text-brown-800">{{ $genre->name }}</h1>
+                @if (!empty($genre->description))
+                    <h3>{{ $genre->description }}</h3>
+                @endif
             </div>
+
+            <h2 class="text-lg font-semibold text-brown-900 pb-2">کتاب‌های ژانر {{ $genre->name }}:</h2>
 
             <div class="flex flex-wrap justify-start">
                 @foreach ($books as $book)
