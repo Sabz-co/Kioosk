@@ -30,4 +30,35 @@ class Activity extends Model
             return \Morilog\Jalali\Jalalian::fromCarbon($activity->created_at)->format('%d %B  %Y ');
         });
     }
+
+
+
+
+
+    public function favorites()
+    {
+      return $this->morphMany(Favorite::class, 'favorited');
+    }
+
+    public function favorite()
+    {
+      $attributes = ['user_id' => auth()->id()];
+      if(! $this->favorites()->where($attributes)->exists()){
+        return $this->favorites()->create($attributes);
+      }
+    }
+
+
+    public function dislike()
+    {
+      $attributes = ['user_id' => auth()->id()];
+      if( $this->favorites()->where($attributes)->exists()){
+        return $this->favorites()->delete($attributes);
+      }
+    }
+
+
+    public function isFavorited(){
+      return $this->favorites()->where('user_id', auth()->id())->exists();
+    }
 }

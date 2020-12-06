@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Favorite;
 use App\Review;
 use App\Comment;
+use App\Activity;
 
 class FavoritesController extends Controller
 {
@@ -32,6 +33,22 @@ class FavoritesController extends Controller
         
     }
 
+
+    public function storeActivity(Activity $activity) 
+    {
+
+        if($activity->isFavorited()) {
+            $activity->dislike();
+            $message = "deleted";
+        } else {
+            $activity->favorite();
+            $message = "created";
+        }
+        
+
+        return response()->json(['success'=>$message]);
+        
+    }
     public function storeComment(Comment $comment) 
     {
 

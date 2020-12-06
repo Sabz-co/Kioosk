@@ -63,6 +63,8 @@ Route::get('/test', 'PagesController@test');
 
 // POST requests
 
+Route::post('/activity/{activity}/like', 'FavoritesController@storeActivity');
+
 Route::post('/review/{review}/like', 'FavoritesController@storeReview');
 
 Route::post('/comment/{comment}/like', 'FavoritesController@storeComment');

@@ -40,17 +40,19 @@
 
                     <div class="flex flex-row text-silver-700 text-center m-2 justify-start">
                         <div class="ml-4">
-                            <a href="#" class="hover:text-red-500">
-                                <i class="far fa-heart    "></i> ۸۵ 
-                            </a>
+                            @include('partials.like-button', 
+                            ['type' => 'activity',  
+                            'id' => $activity->id, 
+                            'is_liked' => $activity->isFavorited(), 
+                            'likes' => $activity->favorites()->count()])
                             
                         </div>
-                        <div>
+                        {{-- <div>
                             <a href="#" class="hover:text-green-500">
                                 <i class="fas fa-reply    "></i> ۶۹ 
                             </a>
                             
-                        </div>
+                        </div> --}}
                     </div>
                   </div>
                 @endif
