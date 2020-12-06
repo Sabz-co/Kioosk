@@ -30,7 +30,7 @@
             {!! Form::open(['route' => 'review.store']) !!}
             {!! Form::token() !!}
             {!! Form::hidden('book_id', $book->id) !!}
-            {!! Form::hidden('shelf', 'to read') !!}
+            {!! Form::hidden('shelf', 'to_read') !!}
             {!! Form::submit('برای خواندن', ['class' => 'w-full rounded-t bg-gray-200 hover:bg-white py-2 px-4 block whitespace-no-wrap']) !!}
             {!! Form::close() !!}
 
