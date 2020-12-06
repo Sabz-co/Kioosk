@@ -23,7 +23,11 @@
                                         <p class="text-brown-500">{{ $activity->subject->title }}</p>
                                         <p>{{ $activity->subject->reviews()->count() }} نقد</p>
                                     </div>
-                                    <p>فئودور داستایوفسکی</p>
+                                    @if($activity->subject->author->first())
+                                    <div>
+                                        <h6>{{ $activity->subject->author->first()->fullName}}</h6>
+                                    </div>
+                                    @endif
                                     <a href="#" class="rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-white text-white p-2 shadow hover:shadow-xl">اضافه کردن به قفسه</a>
                                 </div>
                               </div>

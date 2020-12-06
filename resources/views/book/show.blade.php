@@ -41,7 +41,6 @@
                         @if($book->author->first())
                         <div>
                             <h6>{{ $book->author->first()->fullName}}</h6>
-
                         </div>
                         @endif
                         
