@@ -257,7 +257,7 @@ $(document).ready(function() {
     });
 
 
-    $('#subscribe-user').on('click', function(e) {
+    $('.subscribe-user').on('click', function(e) {
         e.preventDefault(); /* prevent form submiting here */
 
         if (window.Kioosk.user != null) {
