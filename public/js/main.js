@@ -401,6 +401,28 @@ function check(e) {
 
 }
 
+
+function changeAtiveTab(event, tabID) {
+    event.preventDefault();
+    let element = event.target;
+    while (element.nodeName !== "A") {
+        element = element.parentNode;
+    }
+    ulElement = element.parentNode.parentNode;
+    aElements = ulElement.querySelectorAll("li > a");
+    tabContents = document.getElementById("tabs-id").querySelectorAll(".tab-content > div");
+    for (let i = 0; i < aElements.length; i++) {
+        aElements[i].classList.remove("py-4", "px-6", "block", "hover:text-blue-500", "focus:outline-none", "text-blue-500", "border-b-2", "font-medium", "border-blue-500");
+        aElements[i].classList.add("text-gray-600", "py-4", "px-6", "block", "hover:text-blue-500", "focus:outline-none");
+        tabContents[i].classList.add("hidden");
+        tabContents[i].classList.remove("block");
+    }
+    element.classList.remove("text-gray-600", "py-4", "px-6", "block", "hover:text-blue-500", "focus:outline-none");
+    element.classList.add("py-4", "px-6", "block", "hover:text-blue-500", "focus:outline-none", "text-blue-500", "border-b-2", "font-medium", "border-blue-500");
+    document.getElementById(tabID).classList.remove("hidden");
+    document.getElementById(tabID).classList.add("block");
+}
+
 function checkParent(t, elm) {
     while (t.parentNode) {
         if (t == elm) {

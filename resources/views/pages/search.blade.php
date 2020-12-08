@@ -18,131 +18,127 @@
                           
                           <div class="">
                             <button class="bg-brown-500 text-white rounded-full p-4 hover:bg-brown-400 focus:outline-none w-12 h-12 flex items-center justify-center">
-                              icon
+                                <i class="fas fa-search text-base"></i>
                             </button>
                             </div>
                           </div>
                         </div>
-                      
-                    <div class="bg-white pb-2">
-                        <nav class="flex flex-col sm:flex-row">
-                            <button class="py-4 px-6 block hover:text-blue-500 focus:outline-none text-blue-500 border-b-2 font-medium border-blue-500">
-                                کتاب
-                            </button><button class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none">
-                                نویسنده
-                            </button><button class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none">
-                                نقل قول
-                            </button><button class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none">
-                                Tab 4
-                            </button>
-                        </nav>
-                    </div>
-                    <div class="flex flex-wrap justify-start">
-                        @include('partials.book', ['rating' => 3])
-                        @include('partials.book', ['rating' => 5])
-
-                        @include('partials.book', ['rating' => 3])
-                        @include('partials.book', ['rating' => 1])
-                        @include('partials.book', ['rating' => 6])
-                        @include('partials.book', ['rating' => 3])
-                        @include('partials.book', ['rating' => 2])
-
-                    </div>
+                        <div class="bg-white flex items-center shadow-xl" id="tabs-id">
+                            <div class="w-full">
+                              <ul class="flex mb-0 list-none flex-wrap pt-3 flex-row">
+                                <li class="">
+                                  <a href="#" class="py-4 px-6 block hover:text-blue-500 focus:outline-none text-blue-500 border-b-2 font-medium border-blue-500" onclick="changeAtiveTab(event,'tab-books')">
+                                    کتاب‌ها
+                                  </a>
+                                </li>
+                                <li class="">
+                                  <a href="#" class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none" onclick="changeAtiveTab(event,'tab-settings')">
+                                    <i class="fas fa-cog text-base mr-1"></i>  نویسندگان
+                                  </a>
+                                </li>
+                                <li class="">
+                                  <a href="#" class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none" onclick="changeAtiveTab(event,'tab-options')">
+                                    <i class="fas fa-briefcase text-base mr-1"></i>  ناشران
+                                  </a>
+                                </li>
+                                <li class="">
+                                    <a href="#" class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none" onclick="changeAtiveTab(event,'tab-users')">
+                                      <i class="fas fa-briefcase text-base mr-1"></i>  کاربران
+                                    </a>
+                                  </li>
+                              </ul>
+                              <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 rounded">
+                                <div class="px-4 py-5 flex-auto">
+                                  <div class="tab-content tab-space">
+                                    <div class="block" id="tab-books">
+                                        @foreach ($books as $book)
+                                        <div class="flex flex-row mb-3">
+                                            <div class="text-silver-700 text-center m-2">
+                                                <div class="relative aspect-ratio-book w-16">
+                                                    <img src="{{ asset($book->cover) }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col text-silver-700 text-center m-2 justify-between">
+                                                <div class="flex justify-between">
+                                                    <p class="text-brown-500">{{ $book->title }}</p>
+                                                </div>
+                                                <div>
+                                                    <h6>اریک فون دانیکن</h6>
+                                                </div>
+                                                <div>
+                                                    @include('partials.rated', ['rating' => 4])
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @endforeach
+                                    
+                                    </div>
+                                    <div class="hidden" id="tab-settings">
+                                      <p>
+                                        Completely synergize resource taxing relationships via
+                                        premier niche markets. Professionally cultivate one-to-one
+                                        customer service with robust ideas.
+                                        <br />
+                                        <br />
+                                        Dynamically innovate resource-leveling customer service for
+                                        state of the art customer service.
+                                      </p>
+                                    </div>
+                                    <div class="hidden" id="tab-options">
+                                      <p>
+                                        Efficiently unleash cross-media information without
+                                        cross-media value. Quickly maximize timely deliverables for
+                                        real-time schemas.
+                                        <br />
+                                        <br />
+                                        Dramatically maintain clicks-and-mortar solutions
+                                        without functional solutions.
+                                      </p>
+                                    </div>
+                                    <div class="hidden" id="tab-users">
+                                        @foreach ($users as $user)
+                                        <div class="flex flex-row mb-3">
+                                            <div class="text-silver-700 text-center m-2">
+                                                <div class="relative aspect-ratio-book w-16">
+                                                    <img src="{{ asset($user->avatar) }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col text-silver-700 text-center m-2 justify-between">
+                                                <div class="flex justify-between">
+                                                    <p class="text-brown-500">{{ $user->fullName }}</p>
+                                                </div>
+                                                <div>
+                                                    <h6>تهران، ایران</h6>
+                                                </div>
+                                                <div>
+                                                    <h6>۱۱ دوست</h6>
+                                                </div>
+                                                <div>
+                                                    <h6>۲ کتاب</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @endforeach
+                                      </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                 </div>
                 <!-- End of right side -->
         
                 <!-- Sidebar -->
-                <div class="h-16  w-full sm:w-1/3 lg:w-1/4 p-2">
+                <div class="w-full sm:w-2/5 lg:w-1/3 p-2">
                     <div>
-                        <div class="text-center mb-4 pb-2">
+                        <div class="text-center mb-4 pb-2 text-sm">
                             <div class="flex flex-col items-center justify-center p-3 rounded-xl bg-silver-200">
-                                <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full" alt="">
-                                <h2 class="font-bold text-black my-2"></h2>
-                                <h3 class="mb-2">تهران، ایران</h3>
-                                {{-- <a href="#" class="my-2 mx-auto w-full sm:w-5/6 rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-silver-100 text-white py-1 px-2 lg:px-6" id="subscribe-user" data-source-id="{{ $user->id }}">{{ $user->isSubscribedTo ? 'دنبال کردن' : 'دنبال شده' }}</a> --}}
-        
-                                    {{-- <subscribe-button :active="{{ json_encode($user->isSubscribedTo) }}"></subscribe-button> --}}
-                                <div class="flex flex-row justify-around text-silver-700 w-full  mt-2">
-                                    <div>
-                                        <i class="fas fa-book    "></i>
-                                        ۲۷ دنبال کننده
-                                    </div>
-                                    <div>
-                                        <i class="fas fa-book    "></i>
-                                        ۹ کتاب
-                                    </div>
-                                </div>
+                                
+                                <div class="flex flex-row justify-between w-full mb-4">
+                                        <a href="#"> تست</a>
+                                </div>        
                             </div>
                         </div>
-        
-                        <div class=" mb-4 pb-2 border-b text-silver-800">
-                            <div class="flex items-baseline justify-end my-2">
-                                <p class="ml-2">www.cheshmehpub.ir</p><i class="fas fa-globe    "></i> 
-                            </div>
-                            <div class="flex items-baseline justify-end my-2">
-                                <p class="ml-2">021-24622890</p><i class="fas fa-phone    "></i> 
-                            </div>
-                        </div>
-        
-                        <div class="flex flex-wrap mb-4">
-                            <a href="#" class="ml-2  rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white px-2 mb-2 text-sm">علمی</a>
-                            <a href="#" class="ml-2  rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white px-2 mb-2 text-sm">تخیلی</a>
-                            <a href="#" class="ml-2  rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white px-2 mb-2 text-sm">رمان</a>
-                            <a href="#" class="ml-2  rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white px-2 mb-2 text-sm">ادبیات مقاومت</a>
-                            <a href="#" class="ml-2  rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white px-2 mb-2 text-sm">جنایی</a>
-        
-                            <a href="#" class="ml-2  rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white px-2 mb-2 text-sm">داستان عاشقانه</a>
-                        </div>
-        
-                        <div class="sticky top-0 bg-white">
-        
-        
-                            <div class="border-b flex mb-1 pb-2 hidden xl:flex">
-                                <div class="text-silver-600 flex items-baseline">
-            
-                                    <i class="far fa-user"></i>
-                                    <h2 class="mr-1">شاید بشناسید</h2>
-                                </div>
-                                <a href="#" class="mr-auto text-brown-500 hover:bg-silver-200 rounded-full px-2 hover:text-black">دیدن همه</a>
-            
-                            </div>
-            
-                            <div class="flex flex-col hidden xl:block">
-                                <div class="flex flex-row items-center mb-4">
-                                    <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full" alt="">
-            
-                                    <div class="mr-2">
-                                        <h6 class="text-black font-bold">حسین مهرنواز</h6>
-                                        <span class="text-silver-600">۲۳۷ دنبال کننده</span>
-                                    </div>
-                                    <a href="#" class="mr-auto  rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white py-1 px-2">دنبال کردن</a>
-                                </div>
-            
-                                <div class="flex flex-row items-center mb-4">
-                                    <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full" alt="">
-            
-                                    <div class="mr-2">
-                                        <h6 class="text-black font-bold">حسین مهرنواز</h6>
-                                        <span class="text-silver-600">۲۳۷ دنبال کننده</span>
-                                    </div>
-                                    <a href="#" class="mr-auto  rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white py-1 px-2">دنبال کردن</a>
-                                </div>
-            
-                                <div class="flex flex-row items-center mb-4">
-                                    <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full" alt="">
-            
-                                    <div class="mr-2">
-                                        <h6 class="text-black font-bold">حسین مهرنواز</h6>
-                                        <span class="text-silver-600">۲۳۷ دنبال کننده</span>
-                                    </div>
-                                    <a href="#" class="mr-auto  rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white py-1 px-2">دنبال کردن</a>
-                                </div>
-            
-            
-                            </div>
-                        </div>
-        
-        
                     </div>
         
         

@@ -67,8 +67,18 @@ class PagesController extends Controller
         return view('pages.contact-us');
     }
 
-    public function search(){
-        return view('pages.search');
+    public function search($term){
+
+        $term = '%' . $term . '%';
+        
+        return view('pages.search', [
+            'books' => Book::when(!empty($term) , function ($query) use($term){
+                return $query->where('title', 'LIKE', $term)->take(3)->get();
+                }),
+            'authors' => Author::when(!empty($term) , function ($query) use($term){
+                return $query->whereRaw("concat(first_name, ' ', last_name) like '{$term}' ")->take(3)->get();
+                }),
+        ]);
     }
 
     public function test(){
