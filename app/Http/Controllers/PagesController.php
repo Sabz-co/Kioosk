@@ -89,8 +89,9 @@ class PagesController extends Controller
 
 
         $tags = $books->map(function($book, $key) {
-            return $book->existingTags()->where('count', '>', '2');
+            return $book->existingTags();
        });
+    //    return $tags;
        
         return view('pages.search', compact('books', 'term', 'tags', 'authors', 'users', 'publishers'));
     }

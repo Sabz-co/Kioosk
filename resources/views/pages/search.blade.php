@@ -157,12 +157,22 @@
                 <!-- Sidebar -->
                 <div class="w-full sm:w-2/5 lg:w-1/3 p-2">
                     <div>
-                        <div class="text-center mb-4 pb-2 text-sm">
-                            <div class="flex flex-col items-center justify-center p-3 rounded-xl bg-silver-200">
-                                
-                                <div class="flex flex-row justify-between w-full mb-4">
-                                        <a href="#"> تست</a>
-                                </div>        
+                        
+                        <div class="text-right mb-4 pb-2 text-sm">
+
+                            <div class="flex flex-col items-start justify-center p-3 rounded-xl bg-silver-200">
+                                <h6 class="text-lg border-b mb-3">ژانرهای مرتبط</h6>
+    
+                                @foreach ($tags as $genres)
+
+                        @foreach ($genres->chunk(2) as $twoGenres)
+                        <div class="flex flex-row justify-between w-full mb-4">
+                            @foreach ($twoGenres as $genre)
+                                <a href="{{ route('genre.show', $genre->slug) }}"> {{ $genre->name }}</a>
+                            @endforeach
+                        </div>                            
+                        @endforeach
+                                    @endforeach
                             </div>
                         </div>
                     </div>
