@@ -70,23 +70,29 @@ class PagesController extends Controller
 
     public function search(Request $request){
 
+        $term = $request->term;
+
         $input = '%' . $request->term . '%';
-        
-        return view('pages.search', [
-            'term' => $request->term,
-            'books' => Book::when(!empty($request->term) , function ($query) use($input){
-                return $query->where('title', 'LIKE', $input)->take(35)->get();
-                }),
-            'authors' => Author::when(!empty($request->term) , function ($query) use($input){
-                return $query->whereRaw("concat(first_name, ' ', last_name) like '{$input}' ")->take(35)->get();
-                }),
-            'users' => User::when(!empty($request->term) , function ($query) use($input){
-                return $query->where("name", 'like', $input )->take(35)->get();
-                }),
-            'publishers' => Publisher::when(!empty($request->term) , function ($query) use($input){
-                return $query->where("title", 'like', $input )->take(35)->get();
-                }),
-        ]);
+
+        $books = Book::when(!empty($request->term) , function ($query) use($input){
+            return $query->where('title', 'LIKE', $input)->take(35)->get();
+            });
+        $authors = Author::when(!empty($request->term) , function ($query) use($input){
+            return $query->whereRaw("concat(first_name, ' ', last_name) like '{$input}' ")->take(35)->get();
+            });
+        $users = User::when(!empty($request->term) , function ($query) use($input){
+            return $query->where("name", 'like', $input )->take(35)->get();
+            });
+        $publishers = Publisher::when(!empty($request->term) , function ($query) use($input){
+            return $query->where("title", 'like', $input )->take(35)->get();
+            });
+
+
+        $tags = $books->map(function($book, $key) {
+            return $book->existingTags()->where('count', '>', '2');
+       });
+       
+        return view('pages.search', compact('books', 'term', 'tags', 'authors', 'users', 'publishers'));
     }
 
     public function test(){

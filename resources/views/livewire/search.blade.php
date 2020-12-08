@@ -36,6 +36,12 @@
             </div>
           </a>
         @endforeach
+        @if (!empty($searchTerm))
+        <a  href="/search?term={{ $searchTerm }}" class="flex text-sm text-gray-700 hover:bg-brown-100 hover:text-gray-900 p-2 text-center">
+          دیدن تمام نتایج برای {{ $searchTerm }}
+        </a>            
+        @endif
+
       </div>
     </div>
   </div>
