@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use App\User;
+use App\Publisher;
 use App\Subscription;
 use App\Activity;
 use App\Author;
@@ -69,14 +70,21 @@ class PagesController extends Controller
 
     public function search($term){
 
-        $term = '%' . $term . '%';
+        $input = '%' . $term . '%';
         
         return view('pages.search', [
-            'books' => Book::when(!empty($term) , function ($query) use($term){
-                return $query->where('title', 'LIKE', $term)->take(3)->get();
+            'term' => $term,
+            'books' => Book::when(!empty($input) , function ($query) use($input){
+                return $query->where('title', 'LIKE', $input)->take(3)->get();
                 }),
-            'authors' => Author::when(!empty($term) , function ($query) use($term){
-                return $query->whereRaw("concat(first_name, ' ', last_name) like '{$term}' ")->take(3)->get();
+            'authors' => Author::when(!empty($input) , function ($query) use($input){
+                return $query->whereRaw("concat(first_name, ' ', last_name) like '{$input}' ")->take(3)->get();
+                }),
+            'users' => User::when(!empty($input) , function ($query) use($input){
+                return $query->where("name", 'like', $input )->take(3)->get();
+                }),
+            'publishers' => Publisher::when(!empty($input) , function ($query) use($input){
+                return $query->where("title", 'like', $input )->take(3)->get();
                 }),
         ]);
     }

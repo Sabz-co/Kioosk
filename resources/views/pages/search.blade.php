@@ -14,7 +14,7 @@
 
                     <div class="py-8">
                         <div class="bg-white flex items-center rounded-full shadow-xl">
-                          <input class="rounded-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none" id="search" type="text" placeholder="جستجو">
+                          <input value="{{ $term or '' }}" class="rounded-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none" id="search" type="text" placeholder="جستجو">
                           
                           <div class="">
                             <button class="bg-brown-500 text-white rounded-full p-4 hover:bg-brown-400 focus:outline-none w-12 h-12 flex items-center justify-center">
@@ -32,12 +32,12 @@
                                   </a>
                                 </li>
                                 <li class="">
-                                  <a href="#" class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none" onclick="changeAtiveTab(event,'tab-settings')">
+                                  <a href="#" class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none" onclick="changeAtiveTab(event,'tab-authors')">
                                     <i class="fas fa-cog text-base mr-1"></i>  نویسندگان
                                   </a>
                                 </li>
                                 <li class="">
-                                  <a href="#" class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none" onclick="changeAtiveTab(event,'tab-options')">
+                                  <a href="#" class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none" onclick="changeAtiveTab(event,'tab-publishers')">
                                     <i class="fas fa-briefcase text-base mr-1"></i>  ناشران
                                   </a>
                                 </li>
@@ -51,7 +51,7 @@
                                 <div class="px-4 py-5 flex-auto">
                                   <div class="tab-content tab-space">
                                     <div class="block" id="tab-books">
-                                        @foreach ($books as $book)
+                                        @forelse ($books as $book)
                                         <div class="flex flex-row mb-3">
                                             <div class="text-silver-700 text-center m-2">
                                                 <div class="relative aspect-ratio-book w-16">
@@ -70,42 +70,65 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        @endforeach
+                                        @empty
+                                        <h5 class="text-xl">کتابی با این عبارت یافت نشد</h5>
+                                        @endforelse
                                     
                                     </div>
-                                    <div class="hidden" id="tab-settings">
-                                      <p>
-                                        Completely synergize resource taxing relationships via
-                                        premier niche markets. Professionally cultivate one-to-one
-                                        customer service with robust ideas.
-                                        <br />
-                                        <br />
-                                        Dynamically innovate resource-leveling customer service for
-                                        state of the art customer service.
-                                      </p>
+                                    <div class="hidden" id="tab-authors">
+                                        @forelse ($authors as $author)
+                                        <div class="flex flex-row mb-4">
+                                            <div class="text-silver-700 text-center m-2">
+                                                <div class="relative aspect-ratio-book w-16">
+                                                    <img src="{{ asset($author->avatar) }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col text-silver-700 text-right m-2 justify-between">
+                                                <div class="flex justify-between"> 
+                                                    <p class="text-brown-500">{{ $author->fullName }}</p>
+                                                </div>
+                                                <div>
+                                                    <h6>تهران، ایران</h6>
+                                                </div>
+                                                <div>
+                                                    <h6>۲ کتاب</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @empty
+                                        <h5 class="text-xl">نویسنده‌ای با این عبارت یافت نشد</h5>
+                                        @endforelse
                                     </div>
-                                    <div class="hidden" id="tab-options">
-                                      <p>
-                                        Efficiently unleash cross-media information without
-                                        cross-media value. Quickly maximize timely deliverables for
-                                        real-time schemas.
-                                        <br />
-                                        <br />
-                                        Dramatically maintain clicks-and-mortar solutions
-                                        without functional solutions.
-                                      </p>
+                                    <div class="hidden" id="tab-publishers">
+                                        <div class="flex flex-row mb-4">
+                                            @forelse ($publishers as $publisher)
+                                            <div class="flex flex-col text-silver-700 text-right m-2 justify-between">
+                                                <div class="flex justify-between"> 
+                                                    <p class="text-brown-500">{{ $publisher->title }}</p>
+                                                </div>
+                                                <div>
+                                                    <h6>تهران، ایران</h6>
+                                                </div>
+                                                <div>
+                                                    <h6>۲ کتاب</h6>
+                                                </div>
+                                            </div>
+                                            @empty
+                                            <h5 class="text-xl">ناشری با این عبارت یافت نشد</h5>
+                                            @endforelse
+                                        </div>
                                     </div>
                                     <div class="hidden" id="tab-users">
-                                        @foreach ($users as $user)
+                                        @forelse ($users as $user)
                                         <div class="flex flex-row mb-3">
                                             <div class="text-silver-700 text-center m-2">
                                                 <div class="relative aspect-ratio-book w-16">
                                                     <img src="{{ asset($user->avatar) }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                                                 </div>
                                             </div>
-                                            <div class="flex flex-col text-silver-700 text-center m-2 justify-between">
+                                            <div class="flex flex-col text-silver-700 text-right m-2 justify-between">
                                                 <div class="flex justify-between">
-                                                    <p class="text-brown-500">{{ $user->fullName }}</p>
+                                                    <p class="text-brown-500">{{ $user->name }}</p>
                                                 </div>
                                                 <div>
                                                     <h6>تهران، ایران</h6>
@@ -118,7 +141,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        @endforeach
+                                        @empty
+                                        <h5 class="text-xl">کاربری با این عبارت یافت نشد</h5>
+                                        @endforelse
                                       </div>
                                   </div>
                                 </div>
