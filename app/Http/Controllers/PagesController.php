@@ -68,12 +68,12 @@ class PagesController extends Controller
         return view('pages.contact-us');
     }
 
-    public function search($term){
+    public function search(Request $request){
 
-        $input = '%' . $term . '%';
+        $input = '%' . $request->term . '%';
         
         return view('pages.search', [
-            'term' => $term,
+            'term' => $request->term,
             'books' => Book::when(!empty($input) , function ($query) use($input){
                 return $query->where('title', 'LIKE', $input)->take(3)->get();
                 }),

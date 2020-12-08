@@ -45,7 +45,7 @@ Route::get('/review', function () {
     return view('review.show');
 })->name('review');
 
-Route::get('/search/{term}', 'PagesController@search');
+Route::get('/search', 'PagesController@search')->name('search');
 
 
 Route::get('/profiles/{user}', 'ProfilesController@show');
