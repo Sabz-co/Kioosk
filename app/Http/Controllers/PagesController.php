@@ -75,16 +75,16 @@ class PagesController extends Controller
         return view('pages.search', [
             'term' => $request->term,
             'books' => Book::when(!empty($request->term) , function ($query) use($input){
-                return $query->where('title', 'LIKE', $input)->take(3)->get();
+                return $query->where('title', 'LIKE', $input)->take(35)->get();
                 }),
             'authors' => Author::when(!empty($request->term) , function ($query) use($input){
-                return $query->whereRaw("concat(first_name, ' ', last_name) like '{$input}' ")->take(3)->get();
+                return $query->whereRaw("concat(first_name, ' ', last_name) like '{$input}' ")->take(35)->get();
                 }),
             'users' => User::when(!empty($request->term) , function ($query) use($input){
-                return $query->where("name", 'like', $input )->take(3)->get();
+                return $query->where("name", 'like', $input )->take(35)->get();
                 }),
             'publishers' => Publisher::when(!empty($request->term) , function ($query) use($input){
-                return $query->where("title", 'like', $input )->take(3)->get();
+                return $query->where("title", 'like', $input )->take(35)->get();
                 }),
         ]);
     }
