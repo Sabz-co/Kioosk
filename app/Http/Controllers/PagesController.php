@@ -86,12 +86,9 @@ class PagesController extends Controller
         $publishers = Publisher::when(!empty($request->term) , function ($query) use($input){
             return $query->where("title", 'like', $input )->take(35)->get();
             });
-
-
         $tags = $books->map(function($book, $key) {
             return $book->existingTags();
        });
-    //    return $tags;
        
         return view('pages.search', compact('books', 'term', 'tags', 'authors', 'users', 'publishers'));
     }

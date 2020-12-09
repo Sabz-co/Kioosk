@@ -12,7 +12,6 @@ class Search extends Component
 
     public function render()
     {
-
         $term = '%' . $this->searchTerm . '%';
         
         return view('livewire.search', [
