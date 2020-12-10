@@ -151,7 +151,7 @@
   </nav>
 
 
-@if (Route::currentRouteName() == 'book.show' && isset($book))
+@if (Route::currentRouteName() === 'book.show' && isset($book))
 <div class=" hidden lg:block">
   <nav class="bg-blue-100 w-full top-0 book-navbar fixed hidden" >
     <div class="max-w-6xl mx-auto px-2 sm:px-4 lg:px-6">

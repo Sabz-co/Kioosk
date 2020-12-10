@@ -180,8 +180,9 @@
                             نقد
                         </div>
                         <div class="flex items-center">
-                            @if ($on_list->body)
-                                {!! $on_list->excerpt !!} <a href="{{ route('review.edit', $on_list->id) }}"  class="text-brown-500 text-lg hover:bg-silver-200 rounded-full px-2 hover:text-black">ویرایش</a>
+                            
+                            @if (!empty($on_list->body))
+                                {{  $on_list->excerpt  }} <a href="{{ route('review.edit', $on_list->id) }}"  class="text-brown-500 text-lg hover:bg-silver-200 rounded-full px-2 hover:text-black">ویرایش</a>
                                 @else
                                 <a href="{{ route('review.edit', $on_list->id) }}"  class="text-brown-500 text-lg hover:bg-silver-200 rounded-full px-2 hover:text-black">نقدی بنویسید</a>
                             @endif
@@ -240,12 +241,12 @@
                     
                 </div> --}}
 
-                <div class="flex flex-row my-2 justify-start text-justify items-end">
+                <div class="flex flex-col my-2 justify-start text-justify items-end">
                     <p>
                         {!! $review->body !!}
-                        <a href="{{ $review->path() }}" class="text-blue-400 hover:text-blue-500">مشاهده‌ی این نقد ...</a> 
                     </p>
-                    
+                    <a href="{{ $review->path() }}" class="text-blue-400 hover:text-blue-500">مشاهده‌ی این نقد ...</a> 
+
                 </div>
 
                 <div class="flex flex-row my-2 justify-end text-silver-700">

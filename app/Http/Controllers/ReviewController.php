@@ -105,6 +105,7 @@ class ReviewController extends Controller
         $review = $review->update( 
             ['user_id' => Auth::user()->id,
             'progress' => $request->pages,
+            'body' => $request->body,
             'shelf' => $request->shelf]);
         return response()->json('updated');
     }
