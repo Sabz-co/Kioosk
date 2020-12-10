@@ -143,7 +143,7 @@
 
               @if($on_list)
               <div class="mb-6">
-                <div class="flex items-center my-4 pb-2 border-b " id="book-reviews">
+                <div class="flex items-center my-4 pb-2 border-b ">
                     <h1 class="text-lg text-brown-500 font-bold">پیشرفت خوانش</h1>
                 </div>
 
@@ -195,7 +195,7 @@
               @endif
             <!-- End of Book Info -->
 
-            <div class="flex items-center my-4 pb-2 border-b mb-6">
+            <div class="flex items-center my-4 pb-2 border-b mb-6"  id="book-reviews">
                 <h1 class="text-lg text-brown-500 font-bold">نقدهای این کتاب</h1>
                 <div class="mr-auto flex items-center ">
                     <span>بر اساس</span>

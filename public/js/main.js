@@ -355,6 +355,14 @@ function persianDigit(a) {
         return pDigitArr.join('');
     });
 }
+
+$('.scrollToTop').click(function(){
+    $('html, body').animate({scrollTop : 0},800);
+    return false;
+});
+
+
+
 var searchMenuDiv = document.getElementById("search-content");
 var searchMenu = document.getElementById("search-toggle");
 
@@ -362,6 +370,9 @@ var navMenuDiv = document.getElementById("nav-content");
 var navMenu = document.getElementById("nav-toggle");
 
 // document.onclick = check;
+
+
+
 
 function check(e) {
     var target = (e && e.target) || (event && event.srcElement);
@@ -447,11 +458,13 @@ var distance = $('#book-reviews').offset().top,
 
 $window.scroll(function() {
     if ( $window.scrollTop() >= distance ) {
-        // $( ".main-header" ).addClass("hidden")
+        $('.book-navbar').removeClass("hidden").slideDown(200)  ;
+
+
         console.log(distance)
         // Your div has reached the top
     } else {
-        // $( ".main-header" ).removeClass("hidden")
+        $('.book-navbar').slideUp(200)  ;;
 
     }
 });
