@@ -83,7 +83,7 @@
 </div> --}}
 
 
-<nav class="bg-gray-800 fixed w-full top-0 main-header" :class="{ 'scrolled': !view.atTopOfPage }" >
+<nav class="bg-gray-800 w-full top-0 main-header" :class="{ 'scrolled': !view.atTopOfPage }" >
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div class="relative flex items-center justify-between transition duration-500 ease-in-out"  v-bind:class="view.navbarHeightClass">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -149,7 +149,38 @@
       </div>
     </div>
   </nav>
-  <div style="padding-top:64px;" class="bg-white"></div>
+  <nav class="bg-gray-100 w-full top-0 book-header" >
+    <div class="max-w-6xl mx-auto px-2 sm:px-4 lg:px-6">
+      <div class="relative flex items-center justify-between transition duration-500 ease-in-out text-brown-700"  v-bind:class="view.navbarHeightClass">
+        <div class="absolute inset-y-0 right-0 font-bold flex items-center">
+          <!-- Mobile menu button-->
+          <h4>عنوان کتاب اینجا قرار می‌گیرد</h4>
+        </div>
+        <div class="absolute inset-y-0 left-0 font-bold flex items-center">
+          <!-- Mobile menu button-->
+          <a href="#" class="hover:text-brown-900">
+            <i class="fas fa-arrow-up border p-2 rounded-full"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  
+    <!--
+      Mobile menu, toggle classes based on menu state.
+  
+      Menu open: "block", Menu closed: "hidden"
+    -->
+    <div id="mobile-menu" class="hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900">داشبورد</a>
+        <a href="{{ route('genre.index') }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">کتب</a>
+        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">نویسندگان</a>
+        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">ناشران</a>
+      </div>
+    </div>
+  </nav>
+  {{-- <div style="padding-top:64px;" class="bg-white"></div> --}}
 
 {{-- <nav id="header" class="w-full">
 

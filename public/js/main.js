@@ -435,12 +435,23 @@ function checkParent(t, elm) {
 
 window.onload = function() {
 
-
-
-
-
     $(function() {
         onLoad.init();
     });
 
 };
+
+
+var distance = $('#book-reviews').offset().top,
+    $window = $(window);
+
+$window.scroll(function() {
+    if ( $window.scrollTop() >= distance ) {
+        // $( ".main-header" ).addClass("hidden")
+        console.log(distance)
+        // Your div has reached the top
+    } else {
+        // $( ".main-header" ).removeClass("hidden")
+
+    }
+});
