@@ -27,8 +27,9 @@
         </div>
         <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
           <div class="flex-shrink-0 flex items-center">
-            <img class="block lg:hidden h-8 w-auto rounded-full" src="{{ asset('images/logo.jpg') }}" alt="Workflow">
-            <img class="hidden lg:block h-8 w-auto rounded-full" src="{{ asset('images/logo.jpg') }}" alt="Workflow">
+            <a href="{{ route('homepage') }}">
+              <img class="h-8 w-auto rounded-full" src="{{ asset('images/logo.jpg') }}" alt="Workflow">
+            </a>
           </div>
           @livewire('search')
 
