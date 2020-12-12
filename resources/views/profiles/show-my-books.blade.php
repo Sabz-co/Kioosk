@@ -49,8 +49,8 @@
                             {{ $item->shelfTitle }}
                         </td>
                         <td class="border-b border-gray-100 px-2 py-4 max-w-xs">
-                            @if ($item->review)
-                            <a href="{{ route('review.show',$item->review->id) }}">{{ $item->review->excerpt }}</a>
+                            @if ($item->body)
+                            <a href="{{ route('review.show',$item->id) }}">{{ Strip_tags($item->excerpt) }}</a>
 
                                 @else
                                 <a href="#">نقدی بنویسید ...</a>
