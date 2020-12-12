@@ -9,6 +9,7 @@ use App\Subscription;
 use App\Activity;
 use App\Author;
 use App\Genre;
+use App\Review;
 
 use App\Filters\BookFilters;
 use Illuminate\Support\Facades\Redis;
@@ -23,21 +24,25 @@ class PagesController extends Controller
 
         $books = Book::latest()->withCount('reviews')->filter($filters)->get();
         $trending = array_map('json_decode', Redis::zrevrange('trending_books', 0, 14));
-        $reading = null;
-        $timeline = [];
         $coreaders = null;
-
-        if (Auth::user()) {
-            $timeline = Activity::timeline(Auth::user());
-            $currently_reading = User::reading(Auth::user());
-            if ($currently_reading) {
-                $coreaders = Book::coreaders($currently_reading->book_id);
-            }
-        }
 
         $authors = Author::inRandomOrder()->take(4)->get();
 
-        $users = User::inRandomOrder()->where('id', '!=', Auth::user()->id)->take(4)->get();
+        $users = User::inRandomOrder()->when(Auth::user(), function ($query) {
+            $query->where('id', '!=', Auth::user()->id);
+        })->take(4)->get();
+
+        $timeline = Activity::when(Auth::user(), function () {
+            return Activity::timeline(Auth::user());
+        });
+
+        $currently_reading = Review::inRandomOrder()->when(Auth::user(), function (){
+            return User::reading(Auth::user());
+        });
+        if (!empty($currently_reading->book)) {
+            $coreaders = Book::coreaders($currently_reading->book_id);   
+        }
+
 
         
         return view('home', compact('books', 'users', 'authors', 'trending', 'currently_reading', 'timeline', 'coreaders'));

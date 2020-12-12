@@ -1,14 +1,11 @@
+
 @extends('layouts.app')
 
 @section('content')
         <!-- Right side -->
         <div class="w-full sm:w-2/3 lg:w-3/4 p-2">
-            
-
-
-            
             <!-- Fellow readers -->
-            @if ($currently_reading)
+            @if (isset($currently_reading->book))
             <h1 class="text-xl mb-2">از کتاب‌هایی که شما مطالعه می‌کنید:</h1>
 
             <div class="flex bg-silver-200 flex-col md:flex-row rounded-lg text-sm md:text-base">
@@ -108,13 +105,15 @@
 
             {{-- Start of Timeline --}}
 
+            @if (Auth::user())
             <hr class="border my-5">
 
             <div class="flex items-center my-4">
                 <h1 class="text-lg">آخرین اتفاقات</h1>
                 <a href="#" class="text-brown-500 rounded-full hover:bg-silver-200 hover:text-black px-2 mr-2 hover:shadow ">دیدن همه</a>
-            </div>
-
+            </div>    
+            
+            
             <div class="flex flex-col items-center my-4 border-b pb-2">
                 @foreach ($timeline as $date => $activity)
                     <h3 class="text-lg text-right font-bold ml-auto mb-4 mt-2 border-b is-persian">{{ $date }} </h3>
@@ -125,6 +124,10 @@
                     @endforeach
                 @endforeach
             </div>
+            @endif
+
+
+
             {{-- added book card --}}
             {{-- <div class="flex flex-col justify-start text-sm sm:text-base mb-5">
                 <div class="bg-white rounded-xl border p-4">
@@ -291,7 +294,7 @@
 
                 <div class="sticky top-0 bg-white">
 
-                    @if (Auth::user()->read_list()->count() > 2)
+                    @if (Auth::user() && Auth::user()->read_list()->count() > 2)
                     <div class="border-b flex mb-1 pb-2">
                         <div class="text-silver-600 flex items-baseline">
                             <i class="fas fa-check"></i>
@@ -314,7 +317,7 @@
                     @endif
 
     
-                    @if (Auth::user()->reading_list()->count() > 2)
+                    @if (Auth::user() && Auth::user()->reading_list()->count() > 2)
                     <div class="border-b flex mb-1 pb-2">
                         <div class="text-silver-600 flex items-baseline">
     
@@ -338,7 +341,7 @@
                     @endif
 
                     
-                    @if (Auth::user()->want_to_read_list()->count() > 2)
+                    @if (Auth::user() && Auth::user()->want_to_read_list()->count() > 2)
                     <div class="border-b flex mb-1 pb-2">
                         <div class="text-silver-600 flex items-baseline">
                             <i class="fas fa-star"></i>
