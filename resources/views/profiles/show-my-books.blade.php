@@ -13,7 +13,7 @@
                     <th class="px-4 py-2">نویسنده</th>
                     <th class="px-4 py-2">مترجم</th>
                     <th class="px-4 py-2">میانگین امتیاز</th>
-                    <th class="px-4 py-2">امتیاز شما</th>
+                    <th class="px-4 py-2">امتیاز {{ $user->name }}</th>
                     <th class="px-4 py-2">قفسه</th>
                     <th class="px-4 py-2">بررسی</th>
                     <th class="px-4 py-2"></th>
@@ -40,10 +40,11 @@
                             <td class="border-b border-gray-100 px-2 py-4"></td>
 
                         <td class="border-b border-gray-100 px-2 py-4">
-                            {{ $item->avg('rating') }}
+                            @include('partials.rated', ['rating' => $item->book->reviews()->avg('rating')])
                         </td>
                         <td class="border-b border-gray-100 px-2 py-4">
-                            {{ $item->rating }}
+                            @include('partials.rated', ['rating' => $item->rating])
+
                         </td>
                         <td class="border-b border-gray-100 px-2 py-4">
                             {{ $item->shelfTitle }}
@@ -58,9 +59,11 @@
                             @endif
                         </td>
                         <td class="border-b border-gray-100 px-2 py-4 max-w-xs text-sm">
-                        <a href="#" class="text-brown-500">نمایش</a>
-                        <a href="#" class="text-brown-500">ویرایش</a>
-                        <a href="#" class="text-brown-500">حذف</a>
+                        <a href="{{ route('review.show', $item->id) }}" class="text-brown-500">نمایش</a>
+                        @if(Auth::user() && Auth::user()->id ==  $item->user_id)
+                            <a href="#" class="text-brown-500">ویرایش</a>
+                            <a href="#" class="text-brown-500">حذف</a>
+                        @endif
                         </td>
                       </tr>                        
                     @endforeach
