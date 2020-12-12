@@ -1,8 +1,12 @@
 <div class="hidden sm:flex sm:mr-6 lg:w-1/2 lg:mx-auto">
   <div class="flex space-x-4 w-full">
-    <div class="relative inline-block text-left lg:w-full">
+    <div class="transition lg:w-full duration-500 ease-in-out relative inline-block text-left" >
+    {{-- :class="[
+      view.searchFocus ? 'lg:w-full' : 'lg:w-2/3',
+    ]" --}}
       <div>
-        <input autocomplete="off" id="searchfield"  wire:model="searchTerm" type="text" class="border border-brown-300 transition duration-100 ease-in-out lg:w-full bg-gray-800 focus:bg-white px-3 py-2 rounded-md text-sm font-medium text-brown-300 placeholder-brown-300 focus:placeholder-brown-800 focus:text-black focus:outline-none " placeholder="جستجو">
+        
+        <input  autocomplete="off" id="searchfield"  wire:model="searchTerm" type="text" class="border border-brown-300 transition duration-100 ease-in-out lg:w-full bg-gray-800 focus:bg-white px-3 py-2 rounded-md text-sm font-medium text-brown-300 placeholder-brown-300 focus:placeholder-brown-800 focus:text-black focus:outline-none " placeholder="جستجو"> {{-- @focus="view.searchFocus = true" @blur="view.searchFocus = false" --}}
       </div>
     
       <div class="origin-top-right lg:w-full absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">

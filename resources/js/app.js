@@ -51,7 +51,8 @@ const app = new Vue({
         return {
             view: {
                 atTopOfPage: true,
-                navbarHeightClass: 'h-12'
+                navbarHeightClass: 'h-12',
+                searchFocus: false
             }
         }
     },

@@ -36,7 +36,7 @@
         </div>
     
     
-        <div class="container flex flex-col flex-col-reverse sm:flex-row mb-4 mx-auto mt-6 xl:max-w-6xl">
+        <div class="container flex flex-col-reverse sm:flex-row mb-4 mx-auto mt-6 xl:max-w-6xl">
     
             {{-- Content goes here --}}
             @yield('content')
@@ -48,12 +48,13 @@
 
 </body>
 @livewireScripts
-
+    <script src="https://cdn.jsdelivr.net/gh/livewire/vue@v0.2.x/dist/livewire-vue.js"></script>
 <script src="{{ asset('js/app.js') }}" ></script>
     <script type="text/javascript" src="{{ asset('js/trix.js') }}"></script>
     
     <script type="text/javascript" src="{{ asset('js/jquery.autocomplete.js') }}"></script>
     <script type="text/javascript" src="{{ asset("js/main.js") }}"></script>
     <script src="{{ asset('js/share.js') }}"></script>
+
     @yield('footer-assets')
 </html>

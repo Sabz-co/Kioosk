@@ -51376,7 +51376,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     return {
       view: {
         atTopOfPage: true,
-        navbarHeightClass: 'h-12'
+        navbarHeightClass: 'h-12',
+        searchFocus: false
       }
     };
   },
