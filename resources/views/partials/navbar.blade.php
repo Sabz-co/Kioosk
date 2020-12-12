@@ -83,7 +83,7 @@
 </div> --}}
 
 
-<nav class="bg-gray-800 w-full top-0 main-header" :class="{ 'scrolled': !view.atTopOfPage }" >
+<nav class="bg-gray-800 w-full top-0 main-header h-12"  > {{-- :class="{ 'scrolled': !view.atTopOfPage } --}} 
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div class="relative flex items-center justify-between transition duration-500 ease-in-out"  v-bind:class="view.navbarHeightClass">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">

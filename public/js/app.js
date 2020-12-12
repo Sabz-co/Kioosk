@@ -2163,13 +2163,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -38832,7 +38825,7 @@ var render = function() {
         "button",
         {
           staticClass:
-            "bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white",
+            "flex bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white",
           attrs: { id: "navbar-menu", "aria-haspopup": "true" },
           on: {
             click: function($event) {
@@ -38843,34 +38836,10 @@ var render = function() {
         [
           _c("span", { staticClass: "sr-only" }, [_vm._v("Open navbar menu")]),
           _vm._v(" "),
-          _c(
-            "svg",
-            {
-              staticClass: "h-6 w-6 ",
-              attrs: {
-                version: "1.1",
-                id: "Layer_1",
-                xmlns: "http://www.w3.org/2000/svg",
-                "xmlns:xlink": "http://www.w3.org/1999/xlink",
-                x: "0px",
-                stroke: "fill-current text-green-600",
-                y: "0px",
-                viewBox: "0 0 512 512",
-                "xml:space": "preserve"
-              }
-            },
-            [
-              _c("g", [
-                _c("path", {
-                  staticClass: "st0",
-                  attrs: {
-                    d:
-                      "M315.1,452.9c0,32.6-26.5,59.1-59.1,59.1s-59.1-26.5-59.1-59.1s26.5-59.1,59.1-59.1S315.1,420.3,315.1,452.9z\n\t\t M315.1,256c0,32.6-26.5,59.1-59.1,59.1s-59.1-26.5-59.1-59.1s26.5-59.1,59.1-59.1S315.1,223.4,315.1,256z M315.1,59.1\n\t\tc0,32.6-26.5,59.1-59.1,59.1s-59.1-26.5-59.1-59.1S223.4,0,256,0S315.1,26.5,315.1,59.1z"
-                  }
-                })
-              ])
-            ]
-          )
+          _c("i", {
+            staticClass: "fa fa-ellipsis-v text-xl",
+            attrs: { "aria-hidden": "true" }
+          })
         ]
       )
     ]),
@@ -51407,7 +51376,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     return {
       view: {
         atTopOfPage: true,
-        navbarHeightClass: 'h-16'
+        navbarHeightClass: 'h-12'
       }
     };
   },
@@ -51420,12 +51389,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       // when the user scrolls, check the pageYOffset
       if (window.pageYOffset > 0) {
         // user is scrolled
-        if (this.view.atTopOfPage) this.view.atTopOfPage = false;
-        this.view.navbarHeightClass = 'h-12';
+        if (this.view.atTopOfPage) this.view.atTopOfPage = false; // this.view.navbarHeightClass = 'h-12'
       } else {
         // user is at top of page
-        if (!this.view.atTopOfPage) this.view.atTopOfPage = true;
-        this.view.navbarHeightClass = 'h-16';
+        if (!this.view.atTopOfPage) this.view.atTopOfPage = true; // this.view.navbarHeightClass = 'h-16'
       }
     }
   }

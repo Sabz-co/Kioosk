@@ -12,9 +12,9 @@
                     <th class="px-4 py-2">عنوان</th>
                     <th class="px-4 py-2">نویسنده</th>
                     <th class="px-4 py-2">مترجم</th>
-                    <th class="px-4 py-2">میانگین امتیاز</th>
-                    <th class="px-4 py-2">امتیاز {{ $user->name }}</th>
-                    <th class="px-4 py-2">قفسه</th>
+                    <th class="px-4 py-2 w-32">میانگین امتیاز</th>
+                    <th class="px-4 py-2 w-32">امتیاز {{ $user->name }}</th>
+                    <th class="px-4 py-2 w-32">قفسه</th>
                     <th class="px-4 py-2">بررسی</th>
                     <th class="px-4 py-2"></th>
 
