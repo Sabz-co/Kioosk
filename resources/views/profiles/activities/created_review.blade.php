@@ -47,12 +47,6 @@
                             'likes' => $activity->favorites()->count()])
                             
                         </div>
-                        {{-- <div>
-                            <a href="#" class="hover:text-green-500">
-                                <i class="fas fa-reply    "></i> ۶۹ 
-                            </a>
-                            
-                        </div> --}}
                     </div>
                   </div>
                 @endif
