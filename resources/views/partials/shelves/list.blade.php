@@ -13,7 +13,7 @@
             {!! Form::token() !!}
             {!! Form::hidden('book_id', $book->id) !!}
             {!! Form::hidden('shelf', 'read') !!}
-            {!! Form::submit('خوانده شده', ['class' => 'w-full rounded-t bg-gray-200 hover:bg-white py-2 px-4 block whitespace-no-wrap']) !!}
+            {!! Form::submit('خوانده شده', ['class' => 'w-full rounded-t bg-brown-200 hover:bg-white py-1 px-2 block whitespace-no-wrap']) !!}
             {!! Form::close() !!}
 
         </li>
@@ -22,7 +22,7 @@
             {!! Form::token() !!}
             {!! Form::hidden('book_id', $book->id) !!}
             {!! Form::hidden('shelf', 'reading') !!}
-            {!! Form::submit('در حال خواندن', ['class' => 'w-full rounded-t bg-gray-200 hover:bg-white py-2 px-4 block whitespace-no-wrap']) !!}
+            {!! Form::submit('در حال خواندن', ['class' => 'w-full rounded-t bg-brown-200 hover:bg-white py-1 px-2 block whitespace-no-wrap']) !!}
             {!! Form::close() !!}
 
         </li>
@@ -31,7 +31,7 @@
             {!! Form::token() !!}
             {!! Form::hidden('book_id', $book->id) !!}
             {!! Form::hidden('shelf', 'to_read') !!}
-            {!! Form::submit('برای خواندن', ['class' => 'w-full rounded-t bg-gray-200 hover:bg-white py-2 px-4 block whitespace-no-wrap']) !!}
+            {!! Form::submit('برای خواندن', ['class' => 'w-full rounded-t bg-brown-200 hover:bg-white py-1 px-2 block whitespace-no-wrap']) !!}
             {!! Form::close() !!}
 
         </li>

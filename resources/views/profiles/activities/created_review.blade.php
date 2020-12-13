@@ -21,7 +21,7 @@
                                 </div>
                                 <div class="flex flex-col text-silver-700 text-center m-2 justify-between">
                                     <div class="flex justify-between">
-                                        <p class="text-brown-500">{{ $activity->subject->book->title }}</p>
+                                        <a href="{{ route('book.show', $activity->subject->book->slug) }}" class="text-brown-500">{{ $activity->subject->book->title }}</a>
                                         <p>{{ $activity->subject->book->reviews()->count() }} نقد</p>
                                     </div>
                                     @if($activity->subject->book->author->first())
@@ -29,7 +29,8 @@
                                         <h6>{{ $activity->subject->book->author->first()->fullName}}</h6>
                                     </div>
                                     @endif
-                                    <a href="#" class="rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-white text-white p-2 shadow hover:shadow-xl">اضافه کردن به قفسه</a>
+                                    {{-- <a href="#" class="rounded-lg bg-brown-500 border border-transparent hover:text-brown-500 hover:border-brown-500 hover:bg-white text-white p-2 shadow hover:shadow-xl">اضافه کردن به قفسه</a> --}}
+                                    @include('partials.shelves.list', ['book' => $activity->subject->book, 'list' => $activity->subject->book->reviews()->where('user_id', Auth::user()->id)->first()])
                                 </div>
                               </div>                  
                 @else
