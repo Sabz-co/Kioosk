@@ -35,7 +35,7 @@
                 @else
                 <div class="flex flex-col">
                     <p class="text-silver-600 mb-3">
-                        {{ $activity->subject->body }}
+                        {{ Strip_tags($activity->subject->body) }}
                     </p>
 
                     <div class="flex flex-row text-silver-700 text-center m-2 justify-start">
