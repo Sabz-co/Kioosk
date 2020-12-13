@@ -46,7 +46,7 @@
                 <div class="mx-auto mb-4 flex items-center">
                     <span class="ml-1">امتیاز من: </span>
                     @include('partials.rating', ['rating' => $review->rating ?? 0, 'slug' => $book->slug])
-                </div>
+                </div> 
 
                 <div class="mx-auto mb-4 flex items-center">
                     <span class="ml-1">قفسه: </span>
@@ -58,6 +58,21 @@
                       </select>
                     </div>
                 </div>
+
+                @if ($review->book->page_count > 0)
+                <div class="mx-auto mb-4 flex items-center">
+                  <div class="">
+                    <label class="block text-gray-500 text-right mb-0" for="pages">
+                      خوانده شده
+                    </label>
+                  </div>
+                  <div class="w-16 mx-2">
+                    <input name="pages" value="{{ $review->progress }}" class="bg-white  appearance-none border-2 border-white rounded w-full p-1 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="pages" type="number" min="1" max="{{ $review->book->page_count }}">
+                  </div>
+                  <span >صفحه از {{ $review->book->page_count }} صفحه</span>
+                </div>                    
+                @endif
+
 
 
                 <div class=" mx-auto mb-4">

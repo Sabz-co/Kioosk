@@ -102,12 +102,18 @@ class ReviewController extends Controller
      */
     public function update(Request $request, Review $review)
     {
+        $book = $review->book;
         $review = $review->update( 
             ['user_id' => Auth::user()->id,
             'progress' => $request->pages,
             'body' => $request->body,
             'shelf' => $request->shelf]);
-        return response()->json('updated');
+
+            if ($request->expectsJson()) {
+                return response()->json('updated');
+            }
+            return redirect()->route('book.show',$book->slug);
+        
     }
 
     /**

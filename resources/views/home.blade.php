@@ -27,7 +27,7 @@
                         <div class="bg-white text-black rounded-full py-1 px-2 is-persian">تاریخ شروع: {{\Morilog\Jalali\Jalalian::fromCarbon($currently_reading->created_at)->format('%d %B  %Y ')}}</div>
                     </div>
                     <div class=" flex flex-col lg:flex-row w-full " data-pages="{{ $currently_reading->book->page_count}}" data-review-id="{{ $currently_reading->id }}">
-                        {!! Form::open(['route' => ['review.update', 1],'files' => true, 'class' => 'update-review-form flex w-full justify-between hidden']) !!}
+                        {!! Form::open(['route' => ['review.update', $currently_reading->id],'files' => true, 'class' => 'update-review-form flex w-full justify-between hidden']) !!}
                             {!! Form::token() !!}
                             <div class="flex items-center mb-6">
                                 <div class="">
