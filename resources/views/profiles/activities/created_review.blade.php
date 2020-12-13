@@ -22,7 +22,7 @@
                                 <div class="flex flex-col text-silver-700 text-center m-2 justify-between">
                                     <div class="flex justify-between">
                                         <a href="{{ route('book.show', $activity->subject->book->slug) }}" class="text-brown-500">{{ $activity->subject->book->title }}</a>
-                                        <p>{{ $activity->subject->book->reviews()->count() }} نقد</p>
+                                        <p class="mr-2">{{ $activity->subject->book->reviews()->count() }} نقد</p>
                                     </div>
                                     @if($activity->subject->book->author->first())
                                     <div>
