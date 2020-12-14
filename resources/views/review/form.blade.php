@@ -99,7 +99,7 @@
 
 
                 <div  class="mb-6 flex items-end justify-end mx-auto">
-                    {{ Form::submit('اضافه کردن کتاب', ['class' => 'text-white bg-green-500 hover:bg-green-600 rounded-lg py-2 px-3 mx-2']) }}
+                    {{ Form::submit( 'ثبت نقد' , ['class' => 'text-white bg-green-500 hover:bg-green-600 rounded-lg py-2 px-3 mx-2']) }}
                     <a href="#" name="term" class="text-white bg-silver-500 hover:bg-silver-600 rounded-lg py-2 px-3">انصراف</a>
                 </div>
                 {!! Form::close() !!}
