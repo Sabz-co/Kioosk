@@ -13,7 +13,8 @@
 
 
 Route::get('/', function () {
-    return view('welcome');
+    $books = \App\Book::take(6)->get();
+    return view('welcome', compact('books'));
 });
 
 // Search authors

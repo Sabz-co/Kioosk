@@ -118,7 +118,10 @@ class Book extends Model
     {
       return '/book/' . $this->slug;
     }
-
+    public function getPathAttribute()
+    {
+      return '/book/' . $this->slug;
+    }
 
     public function getOnShelfAttribute()
     {

@@ -20,7 +20,7 @@
                                 </div>
                                 <div class="flex flex-col text-silver-700 text-center m-2 justify-between">
                                     <div class="flex justify-between">
-                                        <p class="text-brown-500">{{ $activity->subject->title }}</p>
+                                        <a href="{{ $activity->subject->path }}" class="text-brown-500">{{ $activity->subject->title }}</a>
                                         <p class="mr-2">{{ $activity->subject->reviews()->count() }} نقد</p>
                                     </div>
                                     @if($activity->subject->author->first())

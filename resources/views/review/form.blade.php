@@ -59,7 +59,7 @@
                     </div>
                 </div>
 
-                @if ($review->book->page_count > 0)
+                @if (isset($review) && $review->book->page_count)
                 <div class="mx-auto mb-4 flex items-center">
                   <div class="">
                     <label class="block text-gray-500 text-right mb-0" for="pages">
