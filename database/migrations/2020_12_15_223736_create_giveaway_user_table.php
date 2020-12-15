@@ -14,7 +14,8 @@ class CreateGiveawayUserTable extends Migration
     public function up()
     {
         Schema::table('giveaway_user', function (Blueprint $table) {
-            //
+            $table->unsignedInteger('giveaway_id');
+            $table->unsignedInteger('user_id');
         });
     }
 
