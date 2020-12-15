@@ -51,7 +51,7 @@
     <script src="https://cdn.jsdelivr.net/gh/livewire/vue@v0.2.x/dist/livewire-vue.js"></script>
 <script src="{{ asset('js/app.js') }}" ></script>
     <script type="text/javascript" src="{{ asset('js/trix.js') }}"></script>
-    
+    <script type="text/javascript" src="{{ asset('js/nprogress.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.autocomplete.js') }}"></script>
     <script type="text/javascript" src="{{ asset("js/main.js") }}"></script>
     <script src="{{ asset('js/share.js') }}"></script>
