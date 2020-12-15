@@ -48,6 +48,10 @@ class User extends Authenticatable
         return $this->hasMany(Activity::class);
     }
 
+    public function giveaways()
+    {
+        return $this->belongsToMany(Giveaway::class);
+    }
 
     public function achievements()
     {
