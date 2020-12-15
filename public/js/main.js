@@ -260,6 +260,7 @@ $(document).ready(function() {
     $('.subscribe-user').on('click', function(e) {
         e.preventDefault(); /* prevent form submiting here */
 
+
         if (window.Kioosk.user != null) {
             var $button = $(this);
             var $sourceItem = $button;
@@ -268,12 +269,14 @@ $(document).ready(function() {
             var data = [
                 { 'name': 'sourceId', 'value': sourceId }
             ];
+            NProgress.start();
 
             $.ajax({
                 url: "/profiles/" + sourceId + "/subscribe",
                 type: "POST",
                 data: data,
                 success: function(response) {
+                    NProgress.set(0.4);
 
                     if ($button.text() == "دنبال کردن") {
                         console.log('we here');
@@ -282,6 +285,8 @@ $(document).ready(function() {
                         console.log('we there');
                         $button.text("دنبال کردن");
                     }
+                    NProgress.done();
+
                     // $sourceItem.toggleClass("hover:text-red-500 text-red-500").children(".far, .fas").toggleClass("far fas");
                     // console.log(response.success);
                 },
@@ -307,6 +312,15 @@ $(document).ready(function() {
     $('#mobile-icon').click(function() {
         $('#mobile-menu').toggleClass('hidden block'); //Adds 'a', removes 'b' and vice versa
     });
+
+
+    $(document).on("input change", "#rangeSlider" ,function() {
+
+        var valNumb = parseInt($(this).val()) - $(this).attr('min');
+        var progress = valNumb / ($(this).attr('max') - $(this).attr('min')) * 100
+        $('#pages_read').html(progress);
+        $(".rangeProgress").val(progress);
+  });
 
     $(".update-review").on("click", function(e) {
         e.preventDefault(); /* prevent form submiting here */
