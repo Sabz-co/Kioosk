@@ -19,7 +19,7 @@ class CreateGiveawaysTable extends Migration
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('owner_id');
             $table->unsignedInteger('availability');
-            $table->date('ends_at')->default(DB::raw('NOW() + INTERVAL 1 MONTH'));
+            $table->date('ends_at');
             $table->timestamps();
         });
     }

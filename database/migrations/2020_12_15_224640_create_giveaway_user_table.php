@@ -13,9 +13,11 @@ class CreateGiveawayUserTable extends Migration
      */
     public function up()
     {
-        Schema::table('giveaway_user', function (Blueprint $table) {
+        Schema::create('giveaway_user', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->unsignedInteger('giveaway_id');
             $table->unsignedInteger('user_id');
+            $table->timestamps();
         });
     }
 
@@ -26,8 +28,6 @@ class CreateGiveawayUserTable extends Migration
      */
     public function down()
     {
-        Schema::table('giveaway_user', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('giveaway_user');
     }
 }
