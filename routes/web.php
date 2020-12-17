@@ -27,6 +27,8 @@ Route::get('/test', 'PagesController@test');
 
 Route::get('/genres', 'PagesController@genres');
 
+Route::resource('/giveaways', 'GiveawayController');
+
 Route::resource('/genre', 'GenreController');
 
 Route::get('/publisher', function () {
