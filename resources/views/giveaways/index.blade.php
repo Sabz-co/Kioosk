@@ -20,7 +20,9 @@
                     <div class="flex flex-col md:flex-row border-b mb-4">
                         <div class=" md:w-1/6 p-1">
                             <div class="relative aspect-ratio-book">
-                                <img src="{{ asset($giveaway->book->cover) }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
+                                <a href="{{ route('book.show', $giveaway->book->slug) }}">
+                                    <img src="{{ asset($giveaway->book->cover) }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
+                                </a>
                             </div>
                         </div>
                         <div class=" md:w-3/6 p-1">
