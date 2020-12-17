@@ -17,7 +17,14 @@ class CreateGiveawayUserTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedInteger('giveaway_id');
             $table->unsignedInteger('user_id');
+            $table->unsignedInteger('owner_id');
             $table->timestamps();
+            $table->foreign('giveaway')
+            ->references('id')
+            ->on('giveaways');
+         $table->foreign('user_id')
+            ->references('id')
+            ->on('users');
         });
     }
 
