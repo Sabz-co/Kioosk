@@ -18,7 +18,7 @@
             <div class="flex flex-wrap justify-start">
                 @foreach ($giveaways as $giveaway)
                     <div class="flex flex-col md:flex-row border-b mb-4 w-full">
-                        <div class=" md:w-1/6 p-1">
+                        <div class="w-1/3 sm:w-1/5 md:w-1/6 p-1 mx-auto">
                             <div class="relative aspect-ratio-book">
                                 <a href="{{ route('book.show', $giveaway->book->slug) }}">
                                     <img src="{{ asset($giveaway->book->cover) }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
@@ -34,9 +34,9 @@
                             <p>{{ $giveaway->book->description }}</p>
                         </div>
 
-                        <div class=" md:w-2/6 p-1">
-                            <div class="mb-2">
-                                <a href="#" class=" w-full rounded-lg hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white py-1 px-2  shadow hover:shadow-xl">ورود به رای‌گیری</a>
+                        <div class="flex flex-col-reverse md:flex-col md:w-2/6 p-1">
+                            <div class="mt-2 md:mt-0 md:mb-2 md:pb-2 flex">
+                                <a href="#" class=" flex-none rounded-lg hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white py-1 px-2  shadow hover:shadow-xl">ورود به رای‌گیری</a>
 
                             </div>
                             <h5 class="font-semibold">فرمت کتاب: <span class="font-normal">کاغذی</span></h5>
@@ -59,9 +59,10 @@
         <div class="w-full sm:w-2/5 lg:w-1/3 p-2">
             <div>
                 <div class="text-center mb-4 pb-2 text-sm">
-                    <div class="flex flex-col items-center justify-center p-3 rounded-xl bg-silver-200">
-
+                    <div class="flex flex-col items-start justify-center p-3 rounded-xl bg-silver-200">
+                        <h3 class="text-lg">بر اساس ژانر</h3>
                     </div>
+
                 </div>
             </div>
 
