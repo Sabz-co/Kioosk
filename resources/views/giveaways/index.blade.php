@@ -28,7 +28,7 @@
                         <div class=" md:w-3/6 p-1 flex flex-col">
                             <a href="{{ route('book.show', $giveaway->book->slug) }}" class="hover:underline text-xl font-semibold">{{ $giveaway->book->title }}</a>
                             @if (!empty($giveaway->book->author->first()))
-                                <a href="{{ route('author.show', $giveaway->book->author->first()->id) }}" class="hover:underline">{{ $giveaway->book->author->first()->fullName }}</a>
+                                <a href="{{ route('author.show', $giveaway->book->author->first()->slug) }}" class="hover:underline">{{ $giveaway->book->author->first()->fullName }}</a>
                             @endif
 
                             <p>{{ $giveaway->book->description }}</p>
