@@ -24,7 +24,7 @@
                             </div>
                         </div>
                         <div class=" md:w-3/6 p-1">
-                            <h3 class="text-xl font-semibold">{{ $giveaway->book->title }}</h3>
+                            <a href="{{ route('book.show', $giveaway->book->slug) }}" class="hover:underline text-xl font-semibold">{{ $giveaway->book->title }}</a>
                             @if (!empty($giveaway->book->author->first()))
                                 <h4>{{ $giveaway->book->author->first()->fullName }}</h4>
                             @endif
