@@ -15,12 +15,18 @@ class CreateGiveawaysTable extends Migration
     {
         Schema::create('giveaways', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('book_id');
-            $table->unsignedInteger('user_id');
+            $table->bigInteger('book_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->unsignedInteger('owner_id');
             $table->unsignedInteger('availability');
             $table->date('ends_at');
             $table->timestamps();
+            $table->foreign('book_id')
+            ->references('id')
+            ->on('books');
+         $table->foreign('user_id')
+            ->references('id')
+            ->on('users');
         });
     }
 

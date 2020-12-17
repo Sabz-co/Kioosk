@@ -17,7 +17,7 @@
 
             <div class="flex flex-wrap justify-start">
                 @foreach ($giveaways as $giveaway)
-                    <div class="flex flex-col md:flex-row border-b mb-4">
+                    <div class="flex flex-col md:flex-row border-b mb-4 w-full">
                         <div class=" md:w-1/6 p-1">
                             <div class="relative aspect-ratio-book">
                                 <a href="{{ route('book.show', $giveaway->book->slug) }}">
@@ -49,14 +49,6 @@
                 @endforeach
             </div>
         </div>
-        {{-- End of genre --}}
-    
-                {{-- Start of genre --}}
-
-                <div class="w-full">
-
-                </div>
-                {{-- End of genre --}}
     
     </div>
         

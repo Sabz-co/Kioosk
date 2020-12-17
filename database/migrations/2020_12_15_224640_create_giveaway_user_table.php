@@ -14,12 +14,12 @@ class CreateGiveawayUserTable extends Migration
     public function up()
     {
         Schema::create('giveaway_user', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedInteger('giveaway_id');
-            $table->unsignedInteger('user_id');
+            $table->primary(['giveaway_id','user_id']);
+            $table->bigInteger('giveaway_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->unsignedInteger('owner_id');
             $table->timestamps();
-            $table->foreign('giveaway')
+            $table->foreign('giveaway_id')
             ->references('id')
             ->on('giveaways');
          $table->foreign('user_id')
