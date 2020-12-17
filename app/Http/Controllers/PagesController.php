@@ -10,6 +10,7 @@ use App\Activity;
 use App\Author;
 use App\Genre;
 use App\Review;
+use App\Giveaway;
 
 use App\Filters\BookFilters;
 use Illuminate\Support\Facades\Redis;
@@ -99,6 +100,10 @@ class PagesController extends Controller
     }
 
     public function test(){
-        dd(Auth::user()->rated()); 
+        $giveaway = Giveaway::first();
+
+        foreach($giveaway->users as $user) {
+            echo $user->name;
+        }
     }
 }

@@ -1,5 +1,6 @@
 module.exports = {
     theme: {
+
         // Transition
         transitionProperty: { // defaults to these values
             'none': 'none',
@@ -52,6 +53,9 @@ module.exports = {
             'book': [1, 1.5],
         },
         extend: {
+            height: {
+                'menu': '56px',
+            },
             colors: {
                 'brown': {
                     50: '#FCFBF8',
@@ -77,6 +81,7 @@ module.exports = {
                     '900': '#101010',
                     'light': '#e6e6e6',
                     'dark': '#d6d6d6',
+                    'menu': '#363636',
                 },
                 silver: {
                     '100': '#F7FAFC',

@@ -14,7 +14,7 @@ class GiveawayController extends Controller
      */
     public function index()
     {
-        //
+        return view('giveaways.index');
     }
 
     /**

@@ -6,7 +6,7 @@
     ]" --}}
       <div>
         
-        <input  autocomplete="off" id="searchfield"  wire:model="searchTerm" type="text" class="border border-brown-300 transition duration-100 ease-in-out lg:w-full bg-gray-800 focus:bg-white px-3 py-2 rounded-md text-sm font-medium text-brown-300 placeholder-brown-300 focus:placeholder-brown-800 focus:text-black focus:outline-none " placeholder="جستجو"> {{-- @focus="view.searchFocus = true" @blur="view.searchFocus = false" --}}
+        <input  autocomplete="off" id="searchfield"  wire:model="searchTerm" type="text" class="border border-gray-400 transition duration-100 ease-in-out lg:w-full bg-gray-menu focus:bg-white px-3 py-2 rounded-md text-sm font-medium text-brown-300 placeholder-brown-300 focus:placeholder-brown-800 focus:text-black focus:outline-none " placeholder="جستجو"> {{-- @focus="view.searchFocus = true" @blur="view.searchFocus = false" --}}
       </div>
     
       <div class="origin-top-right lg:w-full absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">

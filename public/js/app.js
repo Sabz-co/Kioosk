@@ -38825,7 +38825,7 @@ var render = function() {
         "button",
         {
           staticClass:
-            "flex bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white",
+            "flex bg-gray-menu p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white",
           attrs: { id: "navbar-menu", "aria-haspopup": "true" },
           on: {
             click: function($event) {
@@ -51376,7 +51376,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     return {
       view: {
         atTopOfPage: true,
-        navbarHeightClass: 'h-12',
+        navbarHeightClass: 'h-menu',
         searchFocus: false
       }
     };

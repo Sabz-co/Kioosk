@@ -1,7 +1,7 @@
 <template>
           <div class="mr-3 relative">
             <div>
-              <button  @click="isNavbarOpen = !isNavbarOpen" class="flex bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="navbar-menu" aria-haspopup="true">
+              <button  @click="isNavbarOpen = !isNavbarOpen" class="flex bg-gray-menu p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="navbar-menu" aria-haspopup="true">
                 <span class="sr-only">Open navbar menu</span>
                 <i class="fa fa-ellipsis-v text-xl" aria-hidden="true"></i>
 
