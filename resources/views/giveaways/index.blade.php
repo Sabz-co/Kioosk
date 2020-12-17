@@ -20,7 +20,7 @@
                     <div class="flex flex-col md:flex-row border-b mb-4">
                         <div class=" md:w-1/6 p-1">
                             <div class="relative aspect-ratio-book">
-                                <img src="{{ asset('images/1579956343mbda___zmyn_v_syarat.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
+                                <img src="{{ asset($giveaway->book->cover) }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                             </div>
                         </div>
                         <div class=" md:w-3/6 p-1">
