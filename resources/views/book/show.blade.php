@@ -232,7 +232,7 @@
             {{-- Review --}}
             <div class="mb-5 border-b flex flex-col">
                 <div class="flex flex-row my-2 justify-start items-center">
-                    <img src="{{ asset('images/avatar.jpg') }}" class="w-16 h-16 rounded-full object-cover" alt="">
+                    <img src="{{ asset($review->owner->avatar) }}" class="w-16 h-16 rounded-full object-cover" alt="">
                     <h2 class="text-silver-600 font-bold text-lg mr-2">{{ $review->owner->name }}</h2>
                     @include('partials.rated', ['rating' => $review->rating])
                 </div>
@@ -260,12 +260,12 @@
                         'likes' => $review->favorites()->count()])
                         
                     </div>
-                    <div>
+                    {{-- <div>
                         <a href="#" class="hover:text-green-500">
                             <i class="fas fa-reply    "></i> ۶۹ 
                         </a>
                         
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             {{-- End of review --}}                
