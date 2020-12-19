@@ -28,6 +28,9 @@ Route::get('/test', 'PagesController@test');
 Route::get('/genres', 'PagesController@genres');
 
 Route::resource('/giveaways', 'GiveawayController');
+Route::post('/giveaways/{id}/participate', 'GiveawayController@manageParticipations')->middleware('auth');
+Route::delete('/giveaways/{id}/participate', 'GiveawayController@destroyParticipations')->middleware('auth');
+
 
 Route::resource('/genre', 'GenreController');
 

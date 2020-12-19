@@ -33,6 +33,7 @@ Vue.component('navbar', require('./components/NavbarDropdown.vue').default);
 
 Vue.component('image-input', require('./components/ImageInputComponent.vue').default);
 Vue.component('profile-dropdown', require('./components/ProfileDropdown.vue').default);
+Vue.component('patricipate-button', require('./components/ParticipateButton.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

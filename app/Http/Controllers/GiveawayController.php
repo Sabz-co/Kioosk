@@ -39,6 +39,19 @@ class GiveawayController extends Controller
         //
     }
 
+    public function manageParticipations(Giveaway $giveaway) {
+        if($giveaway->isParticipatededIn) {
+            $giveaway->unparticipateUser();
+        } else {
+            $giveaway->participateUser();
+        }
+    }
+
+    public function destroyParticipations(Giveaway $giveaway) {
+        $giveaway->unparticipateUser();
+
+    }
+
     /**
      * Display the specified resource.
      *

@@ -16,6 +16,7 @@
                     <div class="flex flex-col md:flex-row border-b mb-4 w-full">
                         <div class="w-1/3 sm:w-1/5 md:w-1/6 p-1 mx-auto">
                             <div class="relative aspect-ratio-book">
+                                <patricipate-button :active="{{ json_encode($giveaway->isParticipatedIn) }}"></patricipate-button>
                                 <a href="{{ route('book.show', $giveaway->book->slug) }}">
                                     <img src="{{ asset($giveaway->book->cover) }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
                                 </a>
@@ -53,9 +54,18 @@
         <div class="w-full sm:w-2/5 lg:w-1/3 p-2">
             <div>
                 <div class="text-center mb-4 pb-2 text-sm">
+                    @if ($giveaway->participants()->count() > 0)
                     <div class="flex flex-col items-start justify-center p-3 rounded-xl bg-silver-200">
-                        <h3 class="text-lg">بر اساس ژانر</h3>
+                        <h4>{{ $giveaway->participants()->count() }} نفر مشتاق دریافت این کتاب هستند</h4>
+                        <div class="flex flex-wrap justify-between">
+                            @foreach ($giveaway->participants()->take(6)->get() as $participant)
+                                <img src="{{ $participant->avatar }}" class="w-10 h-10 object-cover" alt="">
+                            @endforeach  
+                        </div> 
                     </div>
+                     
+                    @endif
+
 
                 </div>
             </div>
