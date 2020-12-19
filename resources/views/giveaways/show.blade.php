@@ -33,12 +33,11 @@
                         <div class="flex flex-col-reverse md:flex-col md:w-2/6 p-1">
                             <div class="mt-2 md:mt-0 md:mb-2 md:pb-2 flex">
                                 <a href="#" class=" flex-none rounded-lg hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white py-1 px-2  shadow hover:shadow-xl">ورود به رای‌گیری</a>
-
                             </div>
-                            <h5 class="font-semibold">فرمت کتاب: <span class="font-normal">کاغذی</span></h5>
-                            <h5 class="font-semibold">پایان زمان: <span class="font-normal">کاغذی</span></h5>
-                            <h5 class="font-semibold">دسترسی: <span class="font-normal">کاغذی</span></h5>
-                            <h5 class="font-semibold">تاریخ اهدا: <span class="font-normal">۱۸ شهریور</span></h5>
+                            <h5 class="font-semibold is-persian">فرمت کتاب: <span class="font-normal">کاغذی</span></h5>
+                            <h5 class="font-semibold is-persian">دسترسی: <span class="font-normal">ایران</span></h5>
+                            <h5 class="font-semibold is-persian">تعداد: <span class="font-normal">{{ $giveaway->availability }} جلد</span></h5>
+                            <h5 class="font-semibold is-persian">تاریخ رای‌گیری: <span class="font-normal">{{ Carbon\Carbon::now()->diffInDays($giveaway->ends_at) }} روز دیگر</span></h5>
                             
                         </div>
                     </div>
