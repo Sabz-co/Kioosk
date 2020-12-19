@@ -14,6 +14,11 @@ use Auth;
 
 class BookController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except('show', 'index');
+    }
     /**
      * Display a listing of the resource.
      *
