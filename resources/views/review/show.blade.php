@@ -24,7 +24,7 @@
 
                     <div class="flex flex-row justify-center sm:justify-start  font-bold w-full items-center my-2 py-2 border-silver-400">
                         <div class="pl-4 text-brown-500">
-                            <h6 class="text-xl">{{ $review->book->title }}</h6>
+                            <a href="{{ route('book.show', $review->book->slug) }}" class="text-xl">{{ $review->book->title }}</a>
                         </div>
 
                         @foreach ($review->book->authors as $author)
