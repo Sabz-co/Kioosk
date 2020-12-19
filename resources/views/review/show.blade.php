@@ -7,7 +7,7 @@
             <!-- Book Info -->
             <div class="flex flex-col md:flex-row text-sm md:text-base">
                 <div class="text-silver-700 text-center sm:pl-4 py-2 my-2">
-                    <img src="{{ asset('images/books/13.jpg') }}" alt="" class="w-32 lg:w-40 h-40 lg:h-56 object-cover rounded-xl mx-auto">
+                    <img src="{{ asset($review->book->cover) }}" alt="" class="w-32 lg:w-40 h-40 lg:h-56 object-cover rounded-xl mx-auto">
                     <div class="mt-4">
                         @include('partials.shelves.list', ['book' => $book, 'list' => Auth::user() ? App\Review::where([['user_id', '=', auth()->user()->id], ['book_id', '=',  $book->id]])->first() : null])
                     </div>
@@ -136,10 +136,6 @@
                             {!! Form::hidden('model_id', $review->id) !!}
                             {!! Form::hidden('model', 'review') !!}
                             <textarea class=" w-full bg-white focus:outline-none border border-silver-300 rounded-lg py-2 px-4 appearance-none leading-normal focus:shadow"  id="" rows="10" name="body"></textarea>
-        
-
-        
-        
                     </div>
                     <div class="flex justify-end my-2">
                         {!! Form::submit('ثبت نظر', ['class' => 'mr-auto py-2 px-3 text-white bg-green-500 hover:bg-green-600 rounded-lg hover:shadow-lg']) !!}
