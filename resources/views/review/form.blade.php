@@ -31,8 +31,10 @@
                     </div>
                 </div>
                 <div class="flex flex-col text-silver-700 text-right m-2 justify-center">
-                    <p class="text-brown-500 text-lg">{{ $book->title }}</p>
-                    <p>فئودور داستایوفسکی</p>
+                    <h3 class="text-brown-500 text-lg">{{ $book->title }}</h3>
+                    @if($book->author->first())
+                      <h4>{{ $book->author->first()->fullName}}</h4>
+                    @endif
                 </div>
               </div>
 
