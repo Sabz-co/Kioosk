@@ -49,7 +49,7 @@
                         </div>
                         <div>
                             <a href="#" class="hover:text-green-500">
-                                <i class="fas fa-reply"></i> ۶۹ 
+                                <i class="fas fa-reply"></i> <span class="is-persian">{{ $review->comments->count() }}</span>
                             </a>
                             
                         </div>
@@ -88,12 +88,12 @@
                                     'likes' => $comment->favorites()->count()])
                                     
                                 </div>
-                                <div>
+                                {{-- <div>
                                     <a href="#" class="hover:text-green-500">
                                         <i class="fas fa-reply"></i> ۶۹ 
                                     </a>
                                     
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
