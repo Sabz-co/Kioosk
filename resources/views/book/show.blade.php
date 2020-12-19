@@ -199,10 +199,12 @@
             <div class="flex items-center my-4 pb-2 border-b mb-6"  id="book-reviews">
                 <h1 class="text-lg text-brown-500 font-bold">نقدهای این کتاب</h1>
                 <div class="mr-auto flex items-center ">
-                    <span>بر اساس</span>
-                    <select name="" id="" class="rounded text-silver-700 bg-silver-100 mr-2">
-                        <option value="">جدیدترین</option>
-                        <option value="">قدیمی ترین</option>
+                    {{-- <span>بر اساس</span> --}}
+                    <select onchange="location = this.value;" class="rounded text-silver-700 bg-silver-100 mr-2">
+                        <option value="">بر اساس:</option>
+                        <option value="?sortBy=newest" {{ (request('sortBy') == 'newest' ? 'selected=selected' : '') }}>جدیدترین</option>
+                        <option value="?sortBy=oldest" {{ (request('sortBy') == 'oldest' ? 'selected=selected' : '') }}>قدیمی‌ترین</option>
+                        <option value="?sortBy=best" {{ (request('sortBy') == 'best' ? 'selected=selected' : '') }}>محبوب‌ترین</option>
                     </select>
                 </div>
             </div>
@@ -226,7 +228,7 @@
             @endif
 
 
-            @foreach ($book->fullReviews as $review)
+            @foreach ($book->fullReviews()->sortBy($sorted_by)->get() as $review)
             {{-- Review --}}
             <div class="mb-5 border-b flex flex-col">
                 <div class="flex flex-row my-2 justify-start items-center">
@@ -251,12 +253,11 @@
 
                 <div class="flex flex-row my-2 justify-end text-silver-700">
                     <div class="ml-4">
-                        <form action="/reviews/{{ $review->id }}/favorites" method="post">
-                        {{ csrf_field() }}
-                        <button type="submit" class="hover:text-red-500 cursor-pointer focus:outline-none" {{ $review->isFavorited() ? "disabled" : "" }}>
-                            <i class="far fa-heart    "></i>  {{ $review->favorites()->count() }}
-                        </button>
-                        </form>
+                        @include('partials.like-button', 
+                        ['type' => 'review', 
+                        'id' => $review->id, 
+                        'is_liked' => $review->isFavorited(), 
+                        'likes' => $review->favorites()->count()])
                         
                     </div>
                     <div>

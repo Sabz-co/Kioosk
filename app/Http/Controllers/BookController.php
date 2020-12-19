@@ -102,6 +102,22 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
+
+
+
+        switch (request('sortBy')) {
+            case 'newest':
+                $sorted_by = ['id', 'desc'];
+                break;
+            case 'oldest':
+                $sorted_by = ['id', 'asc'];
+                break;
+            default:
+            $sorted_by = ['id', 'desc'];
+                break;
+            }
+
+
         // $book->untag();
         // $book->retag(['علمی تخیلی', 'رمان خارجی', 'رمان ایرانی', 'فانتزی']);
         // Redis::del('trending_books');
@@ -117,7 +133,7 @@ class BookController extends Controller
         if (auth()->user()) {
             $on_list = Review::where([['user_id', '=', auth()->user()->id], ['book_id', '=',  $book->id]])->first();
         }
-        return view('book.show', compact('book', 'on_list'));
+        return view('book.show', compact('book', 'on_list', 'sorted_by'));
     }
 
     /**

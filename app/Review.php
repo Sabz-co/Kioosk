@@ -59,7 +59,7 @@ class Review extends Model
           $excerpt = $this->body;
       }
       
-      return $excerpt;
+      return Strip_tags($excerpt);
   }
 
   function getPercentAttribute()
