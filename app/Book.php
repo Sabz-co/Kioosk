@@ -89,26 +89,24 @@ class Book extends Model
   public function fullReviews()
   {
 
-
-
-
     if(Auth::user()) {
       $query = $this->hasMany(Review::class)->whereNotNull('body')->where('body', '!=', '')->where('user_id', '!=', Auth::user()->id);
     }
+
     $query = $this->hasMany(Review::class)->whereNotNull('body')->where('body', '!=', '');
 
     switch (request('sortBy')) {
       case 'newest':
-          $query->orderBy('id', 'desc')->get();
+          $query->orderBy('id', 'desc');
           break;
       case 'oldest':
-          $query->orderBy('id', 'asc')->get();
+          $query->orderBy('id', 'asc');
           break;
           case 'best':
             $query->withCount('favorites')->orderBy('favorites_count', 'desc');
             break;
       default:
-      $query->orderBy('id', 'desc')->get();
+      $query->orderBy('id', 'desc');
           break;
       }
 
