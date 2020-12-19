@@ -9,14 +9,10 @@
 
         <div class="w-full">
             <div class="flex flex-col items-start my-4 border-b pb-2">
-                <h1 class="text-3xl">هدایا</h1>
-                <h4>
-                    جزو اولین خواننده‌های کتاب‌ها باشید. ناشران و نویسندگان کتاب‌هایشان را گاهاً حتی پیش از نشر برای اهدا اینجا قرار می‌دهند و کاربران می‌توانند برای برنده شدن اسم بنویسند. در پایان مهلت اهدا برندگان به صورت تصادفی انتخاب خواهند شد.
-                </h4>
+                <h1 class="text-3xl">اهدای کتاب «{{ $giveaway->book->title }}»</h1>
             </div>
 
             <div class="flex flex-wrap justify-start">
-                @foreach ($giveaways as $giveaway)
                     <div class="flex flex-col md:flex-row border-b mb-4 w-full">
                         <div class="w-1/3 sm:w-1/5 md:w-1/6 p-1 mx-auto">
                             <div class="relative aspect-ratio-book">
@@ -39,14 +35,13 @@
                                 <a href="#" class=" flex-none rounded-lg hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white py-1 px-2  shadow hover:shadow-xl">ورود به رای‌گیری</a>
 
                             </div>
-                            <h5 class="font-semibold is-persian">فرمت کتاب: <span class="font-normal">کاغذی</span></h5>
-                            <h5 class="font-semibold is-persian">دسترسی: <span class="font-normal">ایران</span></h5>
-                            <h5 class="font-semibold is-persian">تعداد: <span class="font-normal">{{ $giveaway->availability }} جلد</span></h5>
-                            <h5 class="font-semibold is-persian">تاریخ رای‌گیری: <span class="font-normal">{{ Carbon\Carbon::now()->diffInDays($giveaway->ends_at) }} روز دیگر</span></h5>
+                            <h5 class="font-semibold">فرمت کتاب: <span class="font-normal">کاغذی</span></h5>
+                            <h5 class="font-semibold">پایان زمان: <span class="font-normal">کاغذی</span></h5>
+                            <h5 class="font-semibold">دسترسی: <span class="font-normal">کاغذی</span></h5>
+                            <h5 class="font-semibold">تاریخ اهدا: <span class="font-normal">۱۸ شهریور</span></h5>
                             
                         </div>
                     </div>
-                @endforeach
             </div>
         </div>
     

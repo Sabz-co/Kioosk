@@ -47,7 +47,7 @@ class GiveawayController extends Controller
      */
     public function show(Giveaway $giveaway)
     {
-        //
+        return view('giveaways.show', compact('giveaway'));
     }
 
     /**
