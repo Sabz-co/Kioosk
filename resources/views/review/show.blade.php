@@ -9,28 +9,28 @@
                 <div class="text-silver-700 text-center sm:pl-4 py-2 my-2">
                     <img src="{{ asset('images/books/13.jpg') }}" alt="" class="w-32 lg:w-40 h-40 lg:h-56 object-cover rounded-xl mx-auto">
                     <div class="mt-4">
-                        <a href="#" class="w-full h-full rounded-lg p-2 bg-green-500 hover:bg-green-600 text-white hover:shadow-lg mt-4">افزودن به لیست</a>
+                        @include('partials.shelves.list', ['book' => $book, 'list' => Auth::user() ? App\Review::where([['user_id', '=', auth()->user()->id], ['book_id', '=',  $book->id]])->first() : null])
                     </div>
                 </div>
-                <div class="flex flex-col flex-1 text-center my-2 items-center justify-between">
-                    <div class="flex flex-col sm:flex-row justify-between w-full items-center">
+                <div class="flex flex-col flex-1 my-2 items-center justify-between text-center lg:text-right">
+                    {{-- <div class="flex flex-col sm:flex-row justify-between w-full items-center">
                         <div class="text-center sm:text-right">
                             <h4 class="text-black font-bold text-2xl">کتاب خوبی بود اما ...                        
                             </h4>
                         </div>
                         <h5 class="text-silver-600">۴ ماه پیش</h5>
 
-                    </div>
+                    </div> --}}
 
-                    <div class="flex flex-row justify-center sm:justify-start text-xl font-bold w-full items-center my-2 py-2 border-silver-400">
+                    <div class="flex flex-row justify-center sm:justify-start  font-bold w-full items-center my-2 py-2 border-silver-400">
                         <div class="pl-4 text-brown-500">
-                            <h6>{{ $review->book->title }}</h6>
+                            <h6 class="text-xl">{{ $review->book->title }}</h6>
                         </div>
 
                         @foreach ($review->book->authors as $author)
-                        <div class="flex pr-4 border-r text-silver-700 items-center">
-                            <img src="{{ asset('images/avatar.jpg') }}" class="w-10 h-10 rounded-full object-cover" alt="">
-                            <h6 class=" mr-2">{{ $author->full_name }}</h6>
+                        <div class="flex pr-2 mr-2 border-r text-silver-700 items-center">
+                            <img src="{{ asset($author->avatar) }}" class="w-10 h-10 rounded-full object-cover" alt="">
+                            <h6 class="text-sm mr-2">{{ $author->full_name }}</h6>
                         </div>                        
                         @endforeach
                     </div>
