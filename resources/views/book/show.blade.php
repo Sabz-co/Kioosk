@@ -228,7 +228,7 @@
             @endif
 
 
-            @foreach ($book->fullReviews()->sortBy($sorted_by)->get() as $review)
+            @foreach ($book->fullReviews as $review)
             {{-- Review --}}
             <div class="mb-5 border-b flex flex-col">
                 <div class="flex flex-row my-2 justify-start items-center">
