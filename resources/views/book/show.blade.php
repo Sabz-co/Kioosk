@@ -233,7 +233,7 @@
             <div class="mb-5 border-b flex flex-col">
                 <div class="flex flex-row my-2 justify-start items-center">
                     <img src="{{ asset($review->owner->avatar) }}" class="w-16 h-16 rounded-full object-cover" alt="">
-                    <h2 class="text-silver-600 font-bold text-lg mr-2">{{ $review->owner->name }}</h2>
+                    <h2 class="text-silver-600 font-bold text-lg mx-2">{{ $review->owner->name }}</h2>
                     @include('partials.rated', ['rating' => $review->rating])
                 </div>
 
