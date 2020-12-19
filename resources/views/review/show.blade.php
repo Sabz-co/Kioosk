@@ -127,20 +127,21 @@
                     {{-- End of comment --}}                        
                     @endforeach
 
-                    {!! Form::open(['route' => 'comment.store', 'class' => 'w-full  border-b mb-4 pb-2']) !!}
+                        @if (Auth::user())
+                        {!! Form::open(['route' => 'comment.store', 'class' => 'w-full  border-b mb-4 pb-2']) !!}
+                        <div class="flex flex-row w-full items-start">
+                            {!! Form::token() !!}
+                                <img src="{{ asset('images/avatar.jpg') }}" class="hidden sm:flex w-16 h-16 rounded-full object-cover ml-2" alt="">
+                                {!! Form::hidden('model_id', $review->id) !!}
+                                {!! Form::hidden('model', 'review') !!}
+                                <textarea class=" w-full bg-white focus:outline-none border border-silver-300 rounded-lg py-2 px-4 appearance-none leading-normal focus:shadow"  id="" rows="10" name="body"></textarea>
+                        </div>
+                        <div class="flex justify-end my-2">
+                            {!! Form::submit('ثبت نظر', ['class' => 'mr-auto py-2 px-3 text-white bg-green-500 hover:bg-green-600 rounded-lg hover:shadow-lg']) !!}
+                        </div>
+                        {!! Form::close() !!}
+                        @endif
 
-                    <div class="flex flex-row w-full items-start">
-
-                        {!! Form::token() !!}
-                            <img src="{{ asset('images/avatar.jpg') }}" class="hidden sm:flex w-16 h-16 rounded-full object-cover ml-2" alt="">
-                            {!! Form::hidden('model_id', $review->id) !!}
-                            {!! Form::hidden('model', 'review') !!}
-                            <textarea class=" w-full bg-white focus:outline-none border border-silver-300 rounded-lg py-2 px-4 appearance-none leading-normal focus:shadow"  id="" rows="10" name="body"></textarea>
-                    </div>
-                    <div class="flex justify-end my-2">
-                        {!! Form::submit('ثبت نظر', ['class' => 'mr-auto py-2 px-3 text-white bg-green-500 hover:bg-green-600 rounded-lg hover:shadow-lg']) !!}
-                    </div>
-                    {!! Form::close() !!}
 
                 </div>
               </div>

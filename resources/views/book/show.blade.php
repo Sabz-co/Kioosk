@@ -196,18 +196,20 @@
               @endif
             <!-- End of Book Info -->
 
+            @if ($book->fullReviews->count() > 0)
             <div class="flex items-center my-4 pb-2 border-b mb-6"  id="book-reviews">
                 <h1 class="text-lg text-brown-500 font-bold">نقدهای این کتاب</h1>
                 <div class="mr-auto flex items-center ">
-                    {{-- <span>بر اساس</span> --}}
+                    <span>بر اساس</span>
                     <select onchange="location = this.value;" class="rounded text-silver-700 bg-silver-100 mr-2">
-                        <option value="">بر اساس:</option>
                         <option value="?sortBy=newest" {{ (request('sortBy') == 'newest' ? 'selected=selected' : '') }}>جدیدترین</option>
                         <option value="?sortBy=oldest" {{ (request('sortBy') == 'oldest' ? 'selected=selected' : '') }}>قدیمی‌ترین</option>
                         <option value="?sortBy=best" {{ (request('sortBy') == 'best' ? 'selected=selected' : '') }}>محبوب‌ترین</option>
                     </select>
                 </div>
-            </div>
+            </div>                
+            @endif
+
 
 
             @if (Auth::user() && !$on_list)
@@ -243,11 +245,9 @@
                     
                 </div> --}}
 
-                <div class="flex flex-col my-2 justify-start text-justify items-end">
-                    <p>
+                <div class="flex flex-col my-2 justify-start text-justify items-start">
                         {!! $review->body !!}
-                    </p>
-                    <a href="{{ $review->path() }}" class="text-blue-400 hover:text-blue-500">مشاهده‌ی این نقد ...</a> 
+                    <a href="{{ $review->path() }}" class="text-blue-400 mr-auto hover:text-blue-500">مشاهده‌ی این نقد ...</a> 
 
                 </div>
 
