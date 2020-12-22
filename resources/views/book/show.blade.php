@@ -281,19 +281,17 @@
 
                     <div class="w-full flex mb-1 py-2">
                         <div class="text-silver-800 flex items-baseline ">
-    
                             <h2 class="mr-1 font-bold">هم‌رسانی</h2>
                         </div>
-    
                     </div>
 
                     {!! 
-                        Share::currentPage(null, ['class' => 'fa-2x'], '<ul class=\'border-b pb-3 mb-3 flex flex-row justify-between\'>', '</ul>')
-                        ->twitter($book->title .' اثر امیرمسعود مهرابیان. @Kioosk')
-                        ->whatsapp()
-                        ->reddit()
-                        ->telegram()
-                         !!}
+                    Share::currentPage(null, ['class' => 'fa-2x'], '<ul class=\'border-b pb-3 mb-3 flex flex-row justify-between\'>', '</ul>')
+                    ->twitter($book->title .' اثر امیرمسعود مهرابیان. @Kioosk')
+                    ->whatsapp()
+                    ->reddit()
+                    ->telegram()
+                        !!}
 
 
                     @if (!empty($book->author->first()) && $book->author->first()->books->count() > 3)
@@ -315,8 +313,6 @@
                     </div>                        
                     @endif
 
-
-
                     <div class="w-full flex mb-1 py-2">
                         <div class="text-silver-800 flex items-baseline ">
     
@@ -328,12 +324,9 @@
                     <div class="flex flex-wrap border-b pb-3 mb-3 justify-between">
                         @foreach ($book->tags as $tag)
                         <a href="#" class="rounded-full hover:bg-brown-500 border hover:border-transparent text-brown-500 border-brown-500 bg-silver-100 hover:text-white px-2 mb-2 text-sm">{{ $tag->name }}</a>
-
                         @endforeach
                     </div>
                     
-
-
                     {{-- End of sticly --}}
                 </div>
 
