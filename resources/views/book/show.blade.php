@@ -271,38 +271,6 @@
             {{-- End of review --}}                
             @endforeach
 
-
-            {{-- <div class="trix-content"></div>
-            <div class="flex flex-col">
-                <div>
-                    <a href="#" class="flex w-full text-black p-2 rounded-lg bg-silver-200 hover:bg-silver-300 items-center justify-center hover:shadow">نقدهای بیشتر</a>
-                </div>
-                {!! Form::open(['route' => 'review.store']) !!}
-                {!! Form::token() !!}
-                <div class="my-3 flex flex-row  items-start">
-                    <img src="{{ asset('images/avatar.jpg') }}" class="hidden sm:flex w-16 h-16 rounded-full object-cover ml-2" alt="">
-                    {!! Form::hidden('book_id', $book->id) !!}
-                    <div class="trix-editor flex flex-col w-full">
-                        <input type="hidden"  name="body" id="body" />
-                        <trix input="body" class="trix-content"></trix>
-                    </div>
-                </div>
-
-                <div class="flex justify-end">
-                    {!! Form::submit('ثبت نقد', ['class' => 'mr-auto py-2 px-3 text-white bg-green-500 hover:bg-green-600 rounded-lg hover:shadow-lg']) !!}
-                </div>
-
-                {!! Form::close() !!}
-
-            </div> --}}
-            
-
-
-
-
-
-
-
         </div>
         <!-- End of right side -->
 
