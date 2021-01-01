@@ -74,7 +74,7 @@
                         </div>
                         <a href="#" class="update-review hover:shadow sm:mr-auto text-silver-700 hover:text-brown-500 hover:bg-white p-1 rounded-lg sm:ml-4">بروز رسانی مطالعه</a>
                         <a href="#" class="save-review hover:shadow sm:mr-auto text-silver-700 hover:text-brown-500 hover:bg-white p-1 rounded-lg sm:ml-4 hidden">ذخیره</a>
-                        <a href="#" class="hover:shadow text-silver-700 hover:text-brown-500 hover:bg-white p-1 rounded-lg">دیدن بقیه لیست</a>
+                        <a href="{{ route('my-books', Auth::user()->id) }}" class="hover:shadow text-silver-700 hover:text-brown-500 hover:bg-white p-1 rounded-lg">دیدن بقیه لیست</a>
 
                     </div>
                 </div>

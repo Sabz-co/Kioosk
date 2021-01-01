@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="text-black text-justify my-3 w-full">
-{!! $review->body !!}
+                        {!! !empty($review->body) ? $review->body : 'نقد این کتاب توسط ' . $review->owner->name .' هنوز شامل نقد نوشتاری نمی‌شود'!!}
                     </div> 
                     <div class="flex flex-row text-silver-700 text-center m-2 justify-start w-full" id="review">
                         <div class="ml-4">
