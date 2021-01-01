@@ -113,7 +113,6 @@
                                                     <a href="{{ route('author.show', $author->slug) }}">{{ $author->full_name }}</a>
                                                 </li>
                                                 @endforeach
-
                                             </ul>
 
                                         </div>
@@ -124,7 +123,13 @@
                                             مترجم
                                         </div>
                                         <div class="flex-1">
-                                            <a href="#">ناصر حقیقت‌جو</a>
+                                            <ul>
+                                                @foreach ($book->translators as $translator)
+                                                <li>
+                                                    <a href="{{ route('author.show', $translator->slug) }}">{{ $translator->full_name }}</a>
+                                                </li>
+                                                @endforeach
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
