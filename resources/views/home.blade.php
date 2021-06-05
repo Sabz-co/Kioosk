@@ -92,13 +92,13 @@
             
             @endif
             <!-- End of fellow readers -->
-            <hr class="border my-5">
+            {{-- <hr class="border my-5">
             <div class="flex items-center my-4">
                 <h1 class="text-lg">کتاب برتر هفته</h1>
                 <a href="#" class="text-brown-500 rounded-full hover:bg-silver-200 hover:text-black px-2 mr-2 hover:shadow ">دیدن همه</a>
-            </div>
+            </div> --}}
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:gap-2 lg:gap-4">
+            {{-- <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:gap-2 lg:gap-4">
                 @foreach ($trending as $book)
                 <div class="text-right mb-3 transition group ">
                     <a href="{{ url($book->path) }}">
@@ -107,19 +107,18 @@
                         </div>
                         <h4 class="text-black font-medium font-estedad text-base mt-2">{{ $book->title }} </h4>
 
-                        {{-- <p class="text-sm text-gray-600 font-light font-estedad">{{ $book->authors()->first()->fullName  ?? ''}}</p> --}}
 
 
                     </a>
                 </div>                    
                 @endforeach
-            </div>
+            </div> --}}
 
 
             {{-- Start of Timeline --}}
 
             @if (Auth::user())
-            <hr class="border my-5">
+            {{-- <hr class="border my-5"> --}}
 
             <div class="flex items-center my-4">
                 <h1 class="text-lg">آخرین اتفاقات</h1>
