@@ -243,7 +243,8 @@ $(document).ready(function() {
                         console.log(percent)
                         console.log(values['pages'])
                         $('.progress-bar').attr('style', 'width: ' + percent + '%');
-                        $('.progress-bar').text(percent + "%")
+                        // $('.progress-bar').text(persianDigit(percent) + "%")
+                        $('.progress-bar-counter').text(persianDigit(percent) + "%")
                             // $sourceItem.children("span").html(parseInt($($sourceItem.children("span")).html(), 10) + 1)
                     } else {
                         responseMessage("error");
@@ -314,12 +315,13 @@ $(document).ready(function() {
     });
 
 
-    $(document).on("input change", "#rangeSlider" ,function() {
+    $(document).on("input change", "#pages" ,function() {
 
         var valNumb = parseInt($(this).val()) - $(this).attr('min');
         var progress = valNumb / ($(this).attr('max') - $(this).attr('min')) * 100
-        $('#pages_read').html(progress);
         $(".rangeProgress").val(progress);
+        console.log(progress)
+        console.log('we here')
   });
 
     $(".update-review").on("click", function(e) {
@@ -466,20 +468,24 @@ window.onload = function() {
 
 };
 
-if($('#book-reviews').length) {
-    var distance = $('#book-reviews').offset().top,
-    $window = $(window);
-
-$window.scroll(function() {
-    if ( $window.scrollTop() >= distance ) {
-        $('.book-navbar').removeClass("hidden").slideDown(200)  ;
 
 
-        console.log(distance)
-        // Your div has reached the top
-    } else {
-        $('.book-navbar').slideUp(200)  ;;
 
+    if($('#book-reviews').length) {
+        var distance = $('#book-reviews').offset().top,
+            $window = $(window);
+
+        $window.scroll(function() {
+            if ( $window.scrollTop() >= distance ) {
+                $('.book-navbar').removeClass("hidden").slideDown(200);
+                $('.sticky-sidebar').css("top", "65px");
+        
+                console.log(distance)
+                // Your div has reached the top
+            } else {
+                $('.book-navbar').slideUp(200)  ;
+                $('.sticky-sidebar').css("top", "0px");
+        
+            }
+        });
     }
-});
-}

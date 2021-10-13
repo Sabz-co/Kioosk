@@ -27,28 +27,24 @@
                         <div class="bg-white text-black rounded-full py-1 px-2 is-persian">تاریخ شروع: {{\Morilog\Jalali\Jalalian::fromCarbon($currently_reading->created_at)->format('%d %B  %Y ')}}</div>
                     </div>
                     <div class=" flex flex-col lg:flex-row w-full " data-pages="{{ $currently_reading->book->page_count}}" data-review-id="{{ $currently_reading->id }}">
-                        {!! Form::open(['route' => ['review.update', $currently_reading->id],'files' => true, 'class' => 'update-review-form flex w-full justify-between hidden']) !!}
+                        {!! Form::open(['route' => ['review.update', $currently_reading->id],'files' => true, 'class' => 'update-review-form py-2 flex w-full justify-between hidden']) !!}
                             {!! Form::token() !!}
-                            <div class="flex items-center mb-6">
-                                <div class="">
-                                  <label class="block text-gray-500 text-right mb-0" for="pages">
-                                    خوانده شده
-                                  </label>
+                            <div class="flex items-center">
+                                <div class="mx-2 w-14">
+
+                                  <input name="pages" value="{{ $currently_reading->progress }}" class="bg-silver-200  appearance-none rounded w-full p-1 text-gray-500 text-sm leading-tight focus:outline-none" id="pages" type="number" min="1" max="{{ $currently_reading->book->page_count }}">
                                 </div>
-                                <div class="w-16 mx-2">
-                                  <input name="pages" value="{{ $currently_reading->progress }}" class="bg-white  appearance-none border-2 border-white rounded w-full p-1 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="pages" type="range" min="1" max="{{ $currently_reading->book->page_count }}">
-                                </div>
-                                <span ><span id="pages_read">{{ $currently_reading->progress }}</span> صفحه از {{ $currently_reading->book->page_count }} صفحه</span>
+                                <span  class="text-sm text-gray-500"><span id="pages_read"></span> صفحه از {{ $currently_reading->book->page_count }} صفحه خوانده شده</span>
                               </div>
                               
-                              <div class="flex items-center mb-6">
+                              <div class="flex items-center">
                                 <div class="">
                                   <label class="block text-gray-500 text-right ml-2 mb-0" for="shelf">
                                     قفسه
                                   </label>
                                 </div>
                                 <div class="">
-                                    <select name="shelf" class="block appearance-none w-full bg-white border border-white text-gray-700 p-1 rounded leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="grid-state">
+                                    <select name="shelf" class="block appearance-none w-full bg-white border border-white text-gray-700 p-1 rounded leading-tight focus:outline-none focus:bg-white focus:border-brown-500" id="grid-state">
                                         <option value="to_read" {{isset($currently_reading) && $currently_reading->shelf == 'to_read' ? 'selected' : '' }}>برای خواندن</option>
                                         <option value="reading" {{isset($currently_reading) && $currently_reading->shelf == 'reading' ? 'selected' : '' }}>در حال خواندن</option>
                                         <option value="read" {{isset($currently_reading) && $currently_reading->shelf == 'read' ? 'selected' : '' }}>خوانده شده</option>
@@ -60,10 +56,24 @@
                     </div>
 
                     <div class="flex flex-col justify-between w-full items-center my-4">
-                        <p class="text-silver-700 mr-auto is-persian">{{ $currently_reading->book->page_count }} صفحه</p>
+                        {{-- <p class="text-silver-700 mr-auto is-persian">{{ $currently_reading->book->page_count }} صفحه</p> --}}
+                        <div class="relative pt-1 w-full">
+                            <div class="flex mb-2 items-center justify-between">
+                                <div class="text-right">
+                                    <span class="text-xs  is-persian font-semibold inline-block text-brown-600 is-persian progress-bar-counter">
+                                        {{ $currently_reading->percent }}%
+                                    </span>
+                                  </div>
+                              <div>
+                                <span class="text-xs is-persian font-semibold inline-block py-1 px-2 uppercase rounded-full text-brown-600 bg-brown-200">
+                                    {{ $currently_reading->book->page_count }} صفحه
+                                </span>
+                              </div>
 
-                        <div class="progress-bar-wrapper">
-                            <div class="progress-bar" style="width: {{ $currently_reading->percent }}%">{{ $currently_reading->percent }}%</div>
+                            </div>
+                            <div class="overflow-hidden h-5 mb-4 text-xs flex rounded bg-brown-200">
+                              <div style="width:{{ $currently_reading->percent }}%" class="progress-bar is-persian shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-brown-500"></div>
+                            </div>
                           </div>
                     </div>
 
@@ -88,14 +98,17 @@
                 <a href="#" class="text-brown-500 rounded-full hover:bg-silver-200 hover:text-black px-2 mr-2 hover:shadow ">دیدن همه</a>
             </div>
 
-            <div class="flex flex-wrap justify-start">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:gap-2 lg:gap-4">
                 @foreach ($trending as $book)
-                <div class="w-1/2 px-2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-right mb-3 hover:grow group ">
+                <div class="text-right mb-3 transition group ">
                     <a href="{{ url($book->path) }}">
                         <div class="relative aspect-ratio-book">
-                            <img src="{{ !empty($book->image) ? asset('images/books/thumbnail/' . $book->image) : asset('images/books/placeholder.png') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
+                            <img src="{{ !empty($book->image) ? asset('images/books/thumbnail/' . $book->image) : asset('images/books/placeholder.png') }}" alt="" class="absolute w-full h-full object-cover rounded-sm group-hover:shadow-lg">
                         </div>
-                        <h4 class="text-brown-500 font-bold text-base lg:text-lg xl:text-xl mt-2">{{ $book->title }} </h4>
+                        <h4 class="text-black font-medium font-estedad text-base mt-2">{{ $book->title }} </h4>
+
+                        {{-- <p class="text-sm text-gray-600 font-light font-estedad">{{ $book->authors()->first()->fullName  ?? ''}}</p> --}}
+
 
                     </a>
                 </div>                    
@@ -144,7 +157,7 @@
                             <div class="flex flex-row">
                                 <div class="text-silver-700 text-center m-2">
                                     <div class="relative aspect-ratio-book w-24">
-                                        <img src="{{ asset('images/books/3.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
+                                        <img src="{{ asset('images/books/3.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-sm group-hover:shadow-lg">
                                     </div>
                                 </div>
                                 <div class="flex flex-col text-silver-700 text-center m-2 justify-between">
@@ -227,7 +240,7 @@
                             <div class="flex flex-row">
                                 <div class="text-silver-700 text-center m-2">
                                     <div class="relative aspect-ratio-book w-24">
-                                        <img src="{{ asset('images/books/3.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-xl group-hover:shadow-lg">
+                                        <img src="{{ asset('images/books/3.jpg') }}" alt="" class="absolute w-full h-full object-cover rounded-sm group-hover:shadow-lg">
                                     </div>                                </div>
                                 <div class="flex flex-col text-silver-700 text-center m-2 justify-between">
                                     <div class="flex justify-between">

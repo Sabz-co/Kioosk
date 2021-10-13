@@ -1,4 +1,4 @@
-<div class="hidden sm:flex sm:mr-6 lg:w-1/2 lg:mx-auto">
+<div class="hidden sm:flex sm:mr-6 lg:w-1/2 lg:mx-auto items-center">
   <div class="flex space-x-4 w-full">
     <div class="transition lg:w-full duration-500 ease-in-out relative inline-block text-left" >
     {{-- :class="[
@@ -12,12 +12,12 @@
             {{-- <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
             </button> --}}
           </span>
-          <input type="search"  autocomplete="off" id="searchfield"  wire:model="searchTerm" class="transition duration-100 ease-in-out lg:w-full bg-gray-100 px-3 py-2 rounded-md text-sm font-medium text-black placeholder-gray-400 focus:placeholder-brown-800 focus:text-black outline-none focus:outline-none focus:bg-white focus:ring-2 ring-brown-500 ring-opacity-20 transition" placeholder="پویش میان تمام کتب" autocomplete="off">
+          <input type="search"  autocomplete="off" id="searchfield"  wire:model="searchTerm" class="transition duration-100 ease-in-out lg:w-full bg-gray-100 px-3 py-2 rounded-md text-sm font-medium text-black placeholder-gray-400 focus:placeholder-gray-400 focus:text-black outline-none focus:outline-none focus:bg-white focus:ring-2 ring-gray-400 ring-opacity-20 transition" placeholder="پویش میان تمام کتب" autocomplete="off">
         </div>
         {{-- <input  type="text" class="transition duration-100 ease-in-out lg:w-full bg-gray-100 px-3 py-2 rounded-md text-sm font-medium text-black placeholder-gray-400 focus:placeholder-brown-800 focus:text-black outline-none focus:outline-none focus:bg-white focus:ring-2 ring-brown-500 ring-opacity-20 transition" placeholder="جستجو"> @focus="view.searchFocus = true" @blur="view.searchFocus = false" --}}
       </div>
     
-      <div class="origin-top-right lg:w-full absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+      <div class="origin-top-right lg:w-full absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white z-10" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
           @foreach ($books as $key => $book)
           {{-- @if ($key == 0)
             <h3 class="text-right px-4 py-2 text-brown-800">کتاب‌ها:</h3>

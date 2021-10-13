@@ -282,7 +282,7 @@
         <!-- Sidebar -->
         <div class="flex sm:w-1/3 lg:w-1/4 p-3">
             <div class="w-full">
-                <div class="sticky top-0 bg-white">
+                <div class="sticky top-0 bg-white sticky-sidebar transition-all">
 
                     <div class="w-full flex mb-1 py-2">
                         <div class="text-silver-800 flex items-baseline ">

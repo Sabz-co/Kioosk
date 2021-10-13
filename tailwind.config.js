@@ -1,4 +1,13 @@
 module.exports = {
+    purge: {
+        enabled: false,
+        content: [
+            './resources/**/*.php',
+            './resources/*/*.php',
+            './resources/**/*.js',
+            './resources/**/*.vue',
+        ],
+      },
     theme: {
         fontFamily: {
             'sans': ['IRANSans', 'ui-sans-serif', 'system-ui'],
@@ -61,7 +70,9 @@ module.exports = {
             'book': [1, 1.5],
         },
         extend: {
+            boxShadow: ['hover'],
             ringWidth: ['hover', 'active'],
+            backgroundColor: ['hover', 'active'],
             height: {
                 'menu': '65px',
             },

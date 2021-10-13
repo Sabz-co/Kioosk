@@ -305,7 +305,7 @@ body {
 .progress-bar-wrapper {
     width: 100%;
     background-color: #f7fafc;
-    border-radius: 9999px;
+    border-radius: 2px;
 }
 
 .progress-bar {
@@ -316,7 +316,7 @@ body {
     text-align: center;
     color: #ebf8ff;
     @apply bg-green-500;
-    border-radius: 9999px;
+    border-radius: 2px;
 }
 
 .hover\:grow {

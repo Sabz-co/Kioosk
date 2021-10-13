@@ -28,7 +28,9 @@
         <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
           <div class="flex-shrink-0 flex items-center">
             <a href="{{ route('homepage') }}">
-              <img class="h-8 w-auto rounded-full" src="{{ asset('images/logo.jpg') }}" alt="Workflow">
+              <img class="h-12 w-auto rounded-full block lg:hidden" src="{{ asset('images/logo.jpg') }}" alt="Kioosk logo">
+
+              <img class="h-12 w-auto rounded-full hidden lg:block" src="{{ asset('images/logotype.jpg') }}" alt="Kioosk logo">
             </a>
           </div>
           @livewire('search')
@@ -61,9 +63,9 @@
   
       Menu open: "block", Menu closed: "hidden"
     -->
-    <div id="mobile-menu" class="hidden w-full bg-gray-100">
+    <div id="mobile-menu" class="hidden w-full bg-gray-100 z-10">
       <div class="px-2 pt-2 pb-3 space-y-1">
-        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900">داشبورد</a>
+        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-black bg-white">داشبورد</a>
         <a href="{{ route('genre.index') }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-white hover:bg-gray-700">کتب</a>
         <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-white hover:bg-gray-700">نویسندگان</a>
         <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-white hover:bg-gray-700">ناشران</a>
@@ -73,7 +75,8 @@
 
 
 @if (Route::currentRouteName() === 'book.show' && isset($book))
-<div class=" hidden lg:block">
+
+<div class="hidden md:block">
   <nav class="bg-blue-100 w-full top-0 book-navbar fixed hidden" >
     <div class="max-w-6xl mx-auto px-2 sm:px-4 lg:px-6">
       <div class="relative flex items-center justify-between text-gray-700"  v-bind:class="view.navbarHeightClass">
@@ -81,12 +84,12 @@
           <!-- Mobile menu button-->
           <h4>{{ $book->title }}</h4>
           @if ($book->author()->first())
-          <div class="mr-4">
+          <div class="mr-1 sm:mr-2 md:mr-4 hidden lg:block">
             <span class="text-sm">اثر {{ $book->author()->first()->fullName }}</span>
           </div>              
           @endif
 
-          <div class="mr-4">
+          <div class="mr-1 sm:mr-2 md:mr-4 hidden lg:block">
             @include('partials.rated', ['rating' => $book->reviews()->avg('rating')])
           </div>
         </div>

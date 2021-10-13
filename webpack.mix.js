@@ -13,7 +13,7 @@ const tailwindcss = require('tailwindcss')
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js('resources/js/app.js', 'public/js').extract(['vue'])
     .sass('resources/sass/app.scss', 'public/css')
     .copy('~@fortawesome/fontawesome-free/webfonts', 'public/webfonts')
     .options({
