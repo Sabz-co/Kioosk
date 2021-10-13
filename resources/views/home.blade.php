@@ -258,7 +258,7 @@
             <div class="flex flex-wrap">
                 @foreach ($authors as $author)
                 <div class=" text-center p-3 w-1/2 lg:w-1/3 xl:w-1/4">
-                    <img src="{{ asset('images/avatar.jpg') }}" class="w-20 h-20 rounded-full mx-auto -mb-8  border-4  border-silver-200" alt="">
+                    <img src="{{ asset($author->avatar) }}" class="w-20 h-20 rounded-full mx-auto -mb-8  border-4  border-silver-200" alt="">
                     <div class="bg-silver-200 rounded-xl p-2 pt-8">
                         <div class="text-center text-black my-3 is-persian">
                             <p>{{ $author->fullName }}</p>

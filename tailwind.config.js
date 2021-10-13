@@ -1,6 +1,14 @@
 module.exports = {
     theme: {
-
+        fontFamily: {
+            'sans': ['IRANSans', 'ui-sans-serif', 'system-ui'],
+            'serif': ['ui-serif', 'Georgia'],
+            'mono': ['ui-monospace', 'SFMono-Regular'],
+            'display': ['Oswald'],
+            'body': ['"Open Sans"'],
+            'dana': ['dana'],
+            'estedad': ['estedad']
+           },
         // Transition
         transitionProperty: { // defaults to these values
             'none': 'none',
@@ -53,8 +61,9 @@ module.exports = {
             'book': [1, 1.5],
         },
         extend: {
+            ringWidth: ['hover', 'active'],
             height: {
-                'menu': '56px',
+                'menu': '65px',
             },
             colors: {
                 'brown': {
@@ -70,15 +79,6 @@ module.exports = {
                     900: '#3A3324',
                 },
                 gray: {
-                    '100': '#EBEBEB',
-                    '200': '#CDCDCD',
-                    '300': '#AFAFAF',
-                    '400': '#727272',
-                    '500': '#363636',
-                    '600': '#313131',
-                    '700': '#202020',
-                    '800': '#181818',
-                    '900': '#101010',
                     'light': '#e6e6e6',
                     'dark': '#d6d6d6',
                     'menu': '#363636',

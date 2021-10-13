@@ -31,7 +31,7 @@
 <body>
     <div id="app">
         <div class="bg-gray-500">
-            @include('partials.navbar')
+            @include('partials.navbar-white')
     
         </div>
     

@@ -310,7 +310,7 @@ $(document).ready(function() {
     });
 
     $('#mobile-icon').click(function() {
-        $('#mobile-menu').toggleClass('hidden block'); //Adds 'a', removes 'b' and vice versa
+        $('#mobile-menu').toggleClass('hidden absolute'); //Adds 'a', removes 'b' and vice versa
     });
 
 
@@ -466,8 +466,8 @@ window.onload = function() {
 
 };
 
-
-var distance = $('#book-reviews').offset().top,
+if($('#book-reviews').length) {
+    var distance = $('#book-reviews').offset().top,
     $window = $(window);
 
 $window.scroll(function() {
@@ -482,3 +482,4 @@ $window.scroll(function() {
 
     }
 });
+}

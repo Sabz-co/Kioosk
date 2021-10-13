@@ -5,11 +5,19 @@
       view.searchFocus ? 'lg:w-full' : 'lg:w-2/3',
     ]" --}}
       <div>
-        
-        <input  autocomplete="off" id="searchfield"  wire:model="searchTerm" type="text" class="border border-gray-400 transition duration-100 ease-in-out lg:w-full bg-gray-menu focus:bg-white px-3 py-2 rounded-md text-sm font-medium text-brown-300 placeholder-brown-300 focus:placeholder-brown-800 focus:text-black focus:outline-none " placeholder="جستجو"> {{-- @focus="view.searchFocus = true" @blur="view.searchFocus = false" --}}
+        <div class="relative text-gray-600 focus-within:text-gray-400">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-6 h-6"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+
+            {{-- <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
+            </button> --}}
+          </span>
+          <input type="search"  autocomplete="off" id="searchfield"  wire:model="searchTerm" class="transition duration-100 ease-in-out lg:w-full bg-gray-100 px-3 py-2 rounded-md text-sm font-medium text-black placeholder-gray-400 focus:placeholder-brown-800 focus:text-black outline-none focus:outline-none focus:bg-white focus:ring-2 ring-brown-500 ring-opacity-20 transition" placeholder="پویش میان تمام کتب" autocomplete="off">
+        </div>
+        {{-- <input  type="text" class="transition duration-100 ease-in-out lg:w-full bg-gray-100 px-3 py-2 rounded-md text-sm font-medium text-black placeholder-gray-400 focus:placeholder-brown-800 focus:text-black outline-none focus:outline-none focus:bg-white focus:ring-2 ring-brown-500 ring-opacity-20 transition" placeholder="جستجو"> @focus="view.searchFocus = true" @blur="view.searchFocus = false" --}}
       </div>
     
-      <div class="origin-top-right lg:w-full absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+      <div class="origin-top-right lg:w-full absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
           @foreach ($books as $key => $book)
           {{-- @if ($key == 0)
             <h3 class="text-right px-4 py-2 text-brown-800">کتاب‌ها:</h3>

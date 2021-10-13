@@ -32,9 +32,9 @@ class Author extends Model
 
   public function getAvatarAttribute()
   {
-    // if(empty($this->thumb)) {
-    //   return 'images/books/placeholder.png';
-    // }
+    if(!empty($this->avatar)) {
+      return $this->avatar;
+    }
 
     return 'images/authors/placeholder.png';
   }
