@@ -124,8 +124,7 @@ module.exports = {
         willChange: ['responsive'],
     },
     plugins: [
-        require('@tailwindcss/custom-forms'),
-        require('tailwindcss-aspect-ratio')(),
+        require('tailwindcss-aspect-ratio'),
         require('tailwindcss-transitions')(),
     ]
 }
