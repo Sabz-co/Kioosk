@@ -1,6 +1,6 @@
 module.exports = {
     purge: {
-        enabled: false,
+        enabled: true,
         content: [
             './resources/**/*.php',
             './resources/*/*.php',
@@ -16,7 +16,8 @@ module.exports = {
             'display': ['Oswald'],
             'body': ['"Open Sans"'],
             'dana': ['dana'],
-            'estedad': ['estedad']
+            'estedad': ['estedad'],
+            'yekan': ['YekanBakh']
            },
         // Transition
         transitionProperty: { // defaults to these values
@@ -114,17 +115,11 @@ module.exports = {
     variants: {
         boxShadow: ['responsive', 'hover', 'focus', 'group-hover'],
         width: ['responsive', 'hover', 'focus', 'group-hover'],
-        aspectRatio: ['responsive'], // defaults to ['responsive']
+        aspectRatio: ['hover', 'focus', 'responsive'], // defaults to ['responsive']
 
         // Transition
-        transitionProperty: ['responsive'],
-        transitionDuration: ['responsive'],
-        transitionTimingFunction: ['responsive'],
-        transitionDelay: ['responsive'],
-        willChange: ['responsive'],
     },
     plugins: [
         require('tailwindcss-aspect-ratio'),
-        require('tailwindcss-transitions')(),
     ]
 }
