@@ -13,15 +13,14 @@
                     </div>
 
                     <div class="py-8">
-                                {{ Form::open(['route' => ['search'],  'method' => 'GET', 'class' => 'bg-white flex items-center rounded-full shadow-xl']) }}
-                                <input value="{{ $term }}" name="term" class="rounded-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none" id="search" type="text" placeholder="جستجو">
+                        <form action="{{ route('search') }}" method="GET" class="bg-white flex items-center rounded-full shadow-xl">                                <input value="{{ $term }}" name="term" class="rounded-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none" id="search" type="text" placeholder="جستجو">
                           
                                 <div class="">
                                   <button class="bg-brown-500 text-white rounded-full p-4 hover:bg-brown-400 focus:outline-none w-12 h-12 flex items-center justify-center">
                                       <i class="fas fa-search text-base"></i>
                                   </button>
                                   </div>
-                            {{ Form::close() }}
+                                </form>
 
                         </div>
                         <div class="bg-white flex items-center shadow-xl" id="tabs-id">

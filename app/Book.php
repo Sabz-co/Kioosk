@@ -7,13 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use willvincent\Rateable\Rateable;
 use Conner\Tagging\Taggable;
-use ScoutElastic\Searchable;
 
 
 class Book extends Model
 {
 
-  use RecordsActivity, RecordsVisits, Sluggable, Rateable, Taggable, Searchable;
+  use RecordsActivity, RecordsVisits, Sluggable, Rateable, Taggable;
 
   protected $indexConfigurator = MyIndexConfigurator::class;
 
@@ -167,7 +166,7 @@ class Book extends Model
     }
 
 
-    public function sluggable()
+    public function sluggable(): array
     {
         return [
             'slug' => [
@@ -175,6 +174,7 @@ class Book extends Model
             ]
         ];
     }
+
 
 
     /**

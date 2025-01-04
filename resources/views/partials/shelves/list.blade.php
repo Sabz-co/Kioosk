@@ -9,30 +9,36 @@
       </button>
       <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 w-full">
         <li class="">
-            {!! Form::open(['route' => 'review.store']) !!}
-            {!! Form::token() !!}
-            {!! Form::hidden('book_id', $book->id) !!}
-            {!! Form::hidden('shelf', 'read') !!}
-            {!! Form::submit('خوانده شده', ['class' => 'w-full rounded-t bg-brown-200 hover:bg-white py-1 px-2 block whitespace-no-wrap']) !!}
-            {!! Form::close() !!}
+          <form action="{{ route('review.store') }}" method="POST">
+            @csrf
+            <input type="hidden" name="book_id" value="{{ $book->id }}">
+            <input type="hidden" name="shelf" value="read">
+            <button type="submit" class="w-full rounded-t bg-brown-200 hover:bg-white py-1 px-2 block whitespace-no-wrap">
+                خوانده شده
+            </button>
+        </form>
 
         </li>
         <li class="">
-            {!! Form::open(['route' => 'review.store']) !!}
-            {!! Form::token() !!}
-            {!! Form::hidden('book_id', $book->id) !!}
-            {!! Form::hidden('shelf', 'reading') !!}
-            {!! Form::submit('در حال خواندن', ['class' => 'w-full rounded-t bg-brown-200 hover:bg-white py-1 px-2 block whitespace-no-wrap']) !!}
-            {!! Form::close() !!}
+          <form action="{{ route('review.store') }}" method="POST">
+            @csrf
+            <input type="hidden" name="book_id" value="{{ $book->id }}">
+            <input type="hidden" name="shelf" value="reading">
+            <button type="submit" class="w-full rounded-t bg-brown-200 hover:bg-white py-1 px-2 block whitespace-no-wrap">
+                در حال خواندن
+            </button>
+        </form>
 
         </li>
         <li class="">
-            {!! Form::open(['route' => 'review.store']) !!}
-            {!! Form::token() !!}
-            {!! Form::hidden('book_id', $book->id) !!}
-            {!! Form::hidden('shelf', 'to_read') !!}
-            {!! Form::submit('برای خواندن', ['class' => 'w-full rounded-t bg-brown-200 hover:bg-white py-1 px-2 block whitespace-no-wrap']) !!}
-            {!! Form::close() !!}
+          <form action="{{ route('review.store') }}" method="POST">
+            @csrf
+            <input type="hidden" name="book_id" value="{{ $book->id }}">
+            <input type="hidden" name="shelf" value="to_read">
+            <button type="submit" class="w-full rounded-t bg-brown-200 hover:bg-white py-1 px-2 block whitespace-no-wrap">
+                برای خواندن
+            </button>
+        </form>
 
         </li>
     </ul>

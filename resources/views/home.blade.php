@@ -27,8 +27,8 @@
                         <div class="bg-white text-black rounded-full py-1 px-2 is-persian">تاریخ شروع: {{\Morilog\Jalali\Jalalian::fromCarbon($currently_reading->created_at)->format('%d %B  %Y ')}}</div>
                     </div>
                     <div class=" flex flex-col lg:flex-row w-full " data-pages="{{ $currently_reading->book->page_count}}" data-review-id="{{ $currently_reading->id }}">
-                        {!! Form::open(['route' => ['review.update', $currently_reading->id],'files' => true, 'class' => 'update-review-form py-2 flex w-full justify-between hidden']) !!}
-                            {!! Form::token() !!}
+                        <form action="{{ route('review.update', $currently_reading->id) }}" method="POST" enctype="multipart/form-data" class="update-review-form py-2 flex w-full justify-between hidden">
+                            @csrf
                             <div class="flex items-center">
                                 <div class="mx-2 w-14">
 
@@ -52,7 +52,7 @@
                                 </div>
                               </div>
 
-                        {!! Form::close() !!}
+                            </form>
                     </div>
 
                     <div class="flex flex-col justify-between w-full items-center my-4">

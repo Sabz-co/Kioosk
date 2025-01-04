@@ -41,8 +41,11 @@
 
             <div class="flex flex-col w-full text-sm md:text-base mb-5 pb-5 border-b text-silver-700">
 
-                {!! Form::open(['route' => [ (isset($review) ? 'review.update' : 'review.store' ), isset($review) ? $review->id : $book->slug], 'files' => true]) !!}
-                {!! Form::token() !!}
+              <form action="{{ isset($review) ? route('review.update', $review->id) : route('review.store', $book->slug) }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @if (isset($review))
+                    @method('PUT') <!-- For update, use PUT method -->
+                @endif
                   <input type="hidden"  name="book_id" value="{{ $book->id }}" placeholder="">
                   <input type="hidden" name="_method" value="{{ isset($review) ? 'PUT' : 'POST' }}">
                 <div class="mx-auto mb-4 flex items-center">
@@ -101,10 +104,12 @@
 
 
                 <div  class="mb-6 flex items-end justify-end mx-auto">
-                    {{ Form::submit( 'ثبت نقد' , ['class' => 'text-white bg-green-500 hover:bg-green-600 rounded-lg py-2 px-3 mx-2']) }}
-                    <a href="#" name="term" class="text-white bg-silver-500 hover:bg-silver-600 rounded-lg py-2 px-3">انصراف</a>
+                  <button type="submit" class="text-white bg-green-500 hover:bg-green-600 rounded-lg py-2 px-3 mx-2">
+                    ثبت نقد
+                </button>
+                  <a href="#" name="term" class="text-white bg-silver-500 hover:bg-silver-600 rounded-lg py-2 px-3">انصراف</a>
                 </div>
-                {!! Form::close() !!}
+              </form>
               </div>
             <!-- End of Add book form -->
 

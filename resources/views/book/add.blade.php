@@ -6,8 +6,8 @@
         <div class="w-full sm:w-2/3 p-3">
             <!-- Add book form -->
             <div class="flex flex-col w-full text-sm md:text-base mb-5 pb-5 border-b text-silver-700">
-                {!! Form::open(['route' => 'book.store','files' => true]) !!}
-                {!! Form::token() !!}
+                <form action="{{ route('book.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                 <div class="w-5/6 sm:w-2/3 mx-auto mb-4">
                     <input type="text" name="title" class="bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 w-full" placeholder="عنوان">
                 </div>
@@ -35,8 +35,12 @@
                 </div>
 
                 <div class="w-5/6 sm:w-2/3 mx-auto mb-6">
-                    {!! Form::select('publisher_id', $publishers, null, [ 'class' => 'bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 w-full']) !!}
-
+                    <select name="publisher_id" class="bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 w-full">
+                        @foreach ($publishers as $id => $name)
+                            <option value="{{ $id }}">{{ $name }}</option>
+                        @endforeach
+                    </select>
+                    
                 </div>
 
 
@@ -59,8 +63,12 @@
 
                     <label class="block mt-4">
                         <p class="mb-1">ژانر</p>
-                        {!! Form::select('genre', $genres , null, [ 'class' => 'bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 w-full']) !!}
-                      </label>
+                        <select name="genre" class="bg-silver-300 rounded-lg focus:outline-none focus:bg-silver-200 focus:shadow-xl text-silver-700 focus:text-silver-800 p-2 w-full">
+                            @foreach ($genres as $id => $name)
+                                <option value="{{ $id }}">{{ $name }}</option>
+                            @endforeach
+                        </select>
+                    </label>
                 </div>
 
 
@@ -103,10 +111,10 @@
     <input type="text" id='employeeid' readonly>
                   </div>
                 <div  class="w-5/6 sm:w-2/3 mb-6 flex items-end justify-end mx-auto">
-                    {{ Form::submit('اضافه کردن کتاب', ['class' => 'text-white bg-green-500 hover:bg-green-600 rounded-lg py-2 px-3 mx-2']) }}
+                    <button type="submit" class="text-white bg-green-500 hover:bg-green-600 rounded-lg py-2 px-3 mx-2">
                     <a href="#" name="term" class="text-white bg-silver-500 hover:bg-silver-600 rounded-lg py-2 px-3">انصراف</a>
                 </div>
-                {!! Form::close() !!}
+            </form>
               </div>
             <!-- End of Add book form -->
 

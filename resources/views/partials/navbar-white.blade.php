@@ -33,7 +33,7 @@
               <img class="h-12 w-auto rounded-full hidden lg:block" src="{{ asset('images/logotype.jpg') }}" alt="Kioosk logo">
             </a>
           </div>
-          @livewire('search')
+          {{-- @livewire('search') --}}
 
         </div>
         <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:pr-0 gap-2">
