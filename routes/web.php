@@ -29,7 +29,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $books = \App\Models\Book::take(6)->get();
+    $books = \App\Book::take(6)->get();
     return view('welcome', compact('books'));
 });
 

@@ -44,7 +44,6 @@ class PagesController extends Controller
             $coreaders = Book::coreaders($currently_reading->book_id);   
         }
 
-
         
         return view('home', compact('books', 'users', 'authors', 'trending', 'currently_reading', 'timeline', 'coreaders'));
     }

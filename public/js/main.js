@@ -1,3 +1,11 @@
+(function() {
+  function initMainJs() {
+    if (typeof jQuery === "undefined") {
+      console.warn("jQuery not available yet for main.js, waiting...");
+      setTimeout(initMainJs, 100);
+      return;
+    }
+    
 $(document).ready(function() {
 
     $.ajaxSetup({
@@ -489,3 +497,7 @@ window.onload = function() {
             }
         });
     }
+
+  }
+  document.addEventListener("DOMContentLoaded", initMainJs);
+})();

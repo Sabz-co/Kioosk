@@ -19,14 +19,14 @@ class Activity extends Model
 
     public static function timeline($user, $take = 50)
     {
-        return Activity::latest()->with('subject')->take($take)->whereIn('type', ['created_review', 'created_comment', 'created_book'])->whereIn('user_id', $user->subscribers->pluck('id')->toArray())->get()->groupBy(function($activity) {
+        return Activity::latest()->with('subject')->orderBy('created_at', 'desc')->take($take)->whereIn('type', ['created_review', 'created_comment', 'created_book'])->whereIn('user_id', $user->subscribers->pluck('id')->toArray())->get()->groupBy(function($activity) {
             return \Morilog\Jalali\Jalalian::fromCarbon($activity->created_at)->format('%d %B  %Y ');
         });
     }
 
     public static function feed($user, $take = 50)
     {
-        return $user->activity()->latest()->with('subject')->take($take)->get()->groupBy(function($activity) {
+        return $user->activity()->latest()->with('subject')->orderBy('created_at', 'desc')->take($take)->get()->groupBy(function($activity) {
             return \Morilog\Jalali\Jalalian::fromCarbon($activity->created_at)->format('%d %B  %Y ');
         });
     }

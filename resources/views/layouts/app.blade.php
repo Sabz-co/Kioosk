@@ -44,12 +44,38 @@
         </div>
     </div>
 
-
-
-</body>
-@livewireScripts
-    <script src="https://cdn.jsdelivr.net/gh/livewire/vue@v0.2.x/dist/livewire-vue.js"></script>
-<script src="{{ asset('js/app.js') }}" ></script>
+    <!-- Load jQuery first from CDN for guaranteed availability -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ asset('js/jquery-ensure.js') }}"></script>
+    
+    <!-- Load Livewire scripts -->
+    @livewireScripts
+    
+    <!-- Load app.js after jQuery and Livewire scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    
+    <!-- Add a script to ensure Livewire is ready before loading Vue integration -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof window.livewire === 'undefined') {
+                console.warn('Livewire not detected, waiting...');
+                setTimeout(function() {
+                    loadLivewireVue();
+                }, 500);
+            } else {
+                loadLivewireVue();
+            }
+            
+            function loadLivewireVue() {
+                var script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/gh/livewire/vue@v0.2.x/dist/livewire-vue.js';
+                script.type = 'text/javascript';
+                document.head.appendChild(script);
+            }
+        });
+    </script>
+    
+    <!-- Load remaining scripts that depend on jQuery -->
     <script type="text/javascript" src="{{ asset('js/trix.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/nprogress.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.autocomplete.js') }}"></script>
@@ -57,4 +83,5 @@
     <script src="{{ asset('js/share.js') }}"></script>
 
     @yield('footer-assets')
+</body>
 </html>

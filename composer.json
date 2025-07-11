@@ -12,7 +12,7 @@
         "cviebrock/eloquent-sluggable": "11.*",
         "doctrine/dbal": "^3.0",
         "intervention/image": "^2.5",
-        "jorenvanhocht/laravel-share": "^3.3",
+        "jorenvanhocht/laravel-share": "^4.0",
         "laracasts/utilities": "^3.2",
         "laravel/framework": "^11.0",
         "laravel/scout": "^11.1",

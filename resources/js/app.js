@@ -6,7 +6,7 @@
 
  require('./bootstrap');
 
- // import 'jquery-ui/ui/widgets/autocomplete.js';
+ import 'jquery-ui/ui/widgets/autocomplete.js';
  
  import Vue from 'vue';
  // import 'livewire-vue'
